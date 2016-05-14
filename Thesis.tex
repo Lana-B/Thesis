@@ -1,0 +1,164 @@
+\documentclass[twoside,12pt,draft]{PhDThesis}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{epstopdf}
+\usepackage{setspace}
+\usepackage{pbox}
+\usepackage{bbold}
+\usepackage{listings}
+\usepackage{fixme/fixme}
+\fxsetup{theme=color}
+% \usepackage[toc]{glossaries}
+\definecolor{fxnote}{rgb}{0.8000,0.0000,0.0000}
+
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{orange}{cmyk}{0,0.5,1,0}
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,
+	rulecolor=,
+	language=matlab,
+        basicstyle=\scriptsize,
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+\renewcommand{\indexname}{test1} 
+
+\sisetup{number-unit-product = \text{ }}
+%% information for the pdf file
+\hypersetup{
+ pdfauthor={Lana Beck},
+ pdftitle={The Search for the Standard Model Production of Four Top Quarks},
+ pdfsubject={The Search for the Standard Model Production of Four Top Quarks}, 
+ pdfkeywords={University of Bristol, thesis, top, quark, four} }
+
+% Print URLs not in Typewriter Font
+\def\UrlFont{\rm}
+
+\newcommand{\blankpage}{% new clear page without numbering
+ \clearpage{\pagestyle{empty}\cleardoublepage}
+}
+
+%% setup for the entire document
+
+% hyphenation for words
+\hyphenation{
+% one-wo-rd an-other-word
+}
+
+% open index file
+\ifnotdraft{\makeindex}
+% \input{inc/pdefs}
+%\input{inc/MyMacros}
+\input{inc/MathMacros}
+\input{inc/ParticlePhysicsMacros}
+
+\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\doublespace
+\begin{document}
+%roman page numbering for Title page, abstract and index
+\pagenumbering{roman}
+
+
+\include{chapters/0a_titlepage}
+%\addcontentsline{toc}{chapter}{Cover page}
+\include{chapters/0b_abstract}
+%\addcontentsline{toc}{chapter}{Abstract}
+\include{chapters/0c_acknowledgements}
+%\addcontentsline{toc}{chapter}{Acknowledgements}
+%% ++++++++++++++++++++++++++++++++++++++++++
+%% index
+%% ++++++++++++++++++++++++++++++++++++++++++
+% {\parskip 0pt\tableofcontents}
+\tableofcontents
+%\addcontentsline{toc}{chapter}{Table of Contents}
+\cleardoublepage
+%\listoffigures
+%\addcontentsline{toc}{chapter}{List of Figures}
+%\blankpage
+%\listoftables
+%\addcontentsline{toc}{chapter}{List of Tables}
+%\blankpage
+
+%change page numbering back to arabic (and start from 1) 
+\pagenumbering{arabic}
+
+%% ++++++++++++++++++++++++++++++++++++++++++
+%% main part
+%% ++++++++++++++++++++++++++++++++++++++++++
+\mainmatter
+
+\include{chapters/01_introduction}
+%\addcontentsline{toc}{chapter}{Introduction}
+\include{chapters/Theory}
+%\addcontentsline{toc}{chapter}{Theory}
+\include{chapters/Detector}
+%\addcontentsline{toc}{chapter}{Detector}
+\include{chapters/Eventreco}
+%\addcontentsline{toc}{chapter}{Eventreco}
+\include{chapters/Run1}
+%\addcontentsline{toc}{chapter}{Run1}
+\include{chapters/Pheno}
+%\addcontentsline{toc}{chapter}{Pheno}
+\include{chapters/Run2}
+%\addcontentsline{toc}{chapter}{Run2}
+
+%% ++++++++++++++++++++++++++++++++++++++++++
+%% appendix
+%% ++++++++++++++++++++++++++++++++++++++++++
+
+\appendix
+%\include{chapter/XX_A_Appendix_Trigger}
+% \include{chapter/XX_B_Appendix_MET}
+%\include{chapter/z00_MatrixErrorCalculation}
+%\include{chapter/z01_AdditionalPlots}
+%\include{chapter/z03_tables}
+% \include{inc/acronyms}
+% \makeglossaries
+
+%\include{chapter/XX_Z_Glossary} 
+%\addcontentsline{toc}{chapter}{Glossary}
+%% ++++++++++++++++++++++++++++++++++++++++++
+%% Bibliography
+%% ++++++++++++++++++++++++++++++++++++++++++
+%  with the command \nocite also not cited references will be displayed
+\cleardoublepage
+\phantomsection
+\renewcommand{\bibname}{References}
+%\let\oldbibsection\bibsection
+\addcontentsline{toc}{chapter}{\bibname}
+%%
+%\nocite{*} % use only if you want to display not cited references as well
+% \bibliographystyle{gerplain} % abbrvnat unsrtnat
+\bibliographystyle{unsrt}
+
+% spezielle Zitierstile: Labels mit vier Buchstaben und Jahreszahl
+%\bibliographystyle{itmabbrv} % mit abgekürzten Vornamen der Autoren
+%\bibliographystyle{itmalpha}  % ausgeschriebene Vornamen der Autoren
+\bibliography{Thesis}
+%% ++++++++++++++++++++++++++++++++++++++++++
+%% Index
+%% ++++++++++++++++++++++++++++++++++++++++++
+\ifnotdraft{
+%\cleardoublepage
+\phantomsection
+\printindex            % Index
+}
+\end{document}
+%% end of file 

@@ -1,0 +1,16 @@
+\newcommand {\fig}[1]{fig.\ \ref{#1}}
+\newcommand {\Fig}[1]{Fig.\ \ref{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%
+% comments 
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifnotdraftelse{
+\newcommand{\comment}[1]{}
+}{\newcommand{\comment}[1]{{\em #1}}}
+% Alles innerhalb von \Hide{} oder \ignore{} 
+% wird von LaTeX komplett ignoriert (wie ein Kommentar)
+\newcommand{\Hide}[1]{}
+\let\ignore\Hide
+
+\newcommand{\mydot}{~\text{.}}
+
+
