@@ -4,13 +4,28 @@ Object definitions
 
 \section{Software}
 
-\section{Jets}
+CMSSSW, PFPAT2
+
+\section{Particle flow}
+
+The particle flow (PF) algorithm combines information from all sub-detectors, described in section~\ref{c:det}, in order to improve the reconstruction of final state particles such as electrons, muons, photons, neutral hadrons and charged hadrons. From this information more complicated objects can be reconstructed as described in the subsequent sections.\\
+
+The first objects reconstructed are PF muons. Each muon identified from the muon chambers is associated to the compatible hit in the tracker. This track is then removed from the collection. Next, a Gaussian-Sum-filter refit is used to extrapolate electron candidate trajectories to the ECAL. Electrons have relatively short tracks due to losing most of their energy by Bremsstrahlung in the tracker material. Tracker and ECAL variables are combined for the final identification of a PF electron after which the track and ecal clusters are removed from the collection.
+
+Charged hadrons are reconstructed from the remaining tracker, ECAL and HCAL deposits where the calorimeter hits are compatible with the tracker hits. Again, these hits are removed from the collection. Neutral hadrons leave no tracks in the tracker but have deposits in the ECAL and HCAL. Photons leave deposits in the ECAL but not the HCAL.
+\section{Muons}
 
 \section{Electrons}
 
-\section{Muons}
+\section{Jets}
+When partons such as quarks and gluons fragment and hadronise in the detector, predominantly into charged and neutral hadrons, they form showers of particles in approximately the same direction of travel as the original parton. These final state particles can be clustered into what is known as a \emph{jet} using the anti-$\kappa_{\textrm{T}}$ reconstruction algorithm~\cite{Cacciari:2008gp}. For the analyses in this thesis a cone radius of R = 0.4 is used to reconstructed jet objects. Corrections are applied to the jet energy to account for the non-uniform response of the detector in \pt and $\eta$. These are known as the \fixme*{L1FastJet and L2L3Residual}{ref and check if different between 8 \& 13}. The jet energy resolution (JER) is also smeared by 10$\%$ as the resolution is worse in data than in simulation. Loose jet identification critera are applied to suppress fake jets arising from lepton showers. This includes requiring $|\eta|<2.5$, \pt$<30$ and a separation from the nearest loose muon or electron of $\Delta\textrm{R}>0.4$ \fixme{Check R has been defined}.
 
 \section{b-tagging}
+Reconstructing jets gives us the knowledge that the particles emerging from the collision include quarks. Being able to identify which flavour of quark showered in the detector is extremely useful for a wide range of analyses. Particularly for searches for final states containing four top quarks, the ability to identify b-quarks originating from the decay of top quarks is incredibly beneficial in allowing us to suppress backgrounds and for forming discriminating variables between the signal and irreducible backgrounds. 
+
+The particle shower coming from the hadronisation of b-quarks will contain B mesons which travel further in the detector due to having longer decay times than light flavour mesons (u,d,s,g). The \emph{impact parameter} (IP), defined as the distance between the primary vertex and the extrapolated point of closest approach of a track, will be larger for tracks coming from the decay of a B meson. The tracks will form a secondary vertex. This information is exploited in the Combined Secondary Vertex (CSV) algorithm.
+
+Briefly mention c-quark and b sign algoritms.
 
 \section{Pile-Up reweighting}
 \label{sec:pile-up}

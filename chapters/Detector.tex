@@ -4,7 +4,7 @@ This chapter discusses the Large Hadron Collider (LHC) which is located on the F
 
 \section{LHC}
 
-The LHC accelerates two beams of protons which circulate in opposite directions \fixme{describe opposite magnetic dipoles}. The protons are sourced from a bottle of hydrogen where a strong electric field is used to rip apart the electrons from the hydrogen atom leaving protons behind. The protons are then accelerated through the linear accelerator LINAC2 before being injected into the Proton Synchrotron Booster (PSB), then into the Proton Synchrotron (PS) followed by the Super Proton Synchrotron (SPS) which is the final accelerator before the protons are injected into the LHC ring. Each accelerator stage boosts the protons to a higher energy, as seen in fig.\fixme{add figure} before they can be injected into the LHC where their final collision energy can be achieved.
+The LHC accelerates two beams of protons which circulate in opposite directions \fixme{describe opposite magnetic dipoles}. The protons are sourced from a bottle of hydrogen where a strong electric field is used to rip apart the electrons from the hydrogen atom leaving protons behind. The protons are then accelerated through the linear accelerator LINAC2 before being injected into the Proton Synchrotron Booster (PSB), then into the Proton Synchrotron (PS) followed by the Super Proton Synchrotron (SPS) which is the final accelerator before the protons are injected into the LHC ring. Each accelerator stage boosts the protons to a higher energy before they can be injected into the LHC where their final collision energy can be achieved.
 
 \begin{figure}[ht!]
 \centering
@@ -14,7 +14,7 @@ The LHC accelerates two beams of protons which circulate in opposite directions 
 \end{figure}
 
 
- The LHC was designed to have a centre of mass collision energy of $\sqrt{s} = 14 \TeV$. However, after an incident 10 days into operation in 2008 which caused damage to the LHC, it was restarted with the lower energy of $\sqrt{s} = 7 \TeV$ in 2011. In 2012 this was increased to $\sqrt{s} = 8 \TeV$ and a dataset with a \fixme*{explain lumi}{luminosity} of $\approx 20 \fbinv$ was recorded. This dataset was used for the analysis in chapter~\ref{c:Run1}. Further details on the run conditions can be found in \fixme{table of lumi, bunches etc.}. In 2013 after the run phase known as \emph{Run 1}, Long Shutdown 1 (LS1) commenced to make upgrades to the LHC and the detectors to allow the machine to run at $\sqrt{s} = 13 \TeV$ for \emph{Run 2}. Run 2 began in March 2015 and results from Run2 are the focus of the analysis in chapter~\ref{c:Run2}.
+ The LHC was designed to have a centre of mass collision energy of $\sqrt{s} = 14~\TeV$. However, after an incident 10 days into operation in 2008 which caused damage to the LHC, it was restarted with the lower energy of $\sqrt{s} = 7~\TeV$ in 2011. In 2012 this was increased to $\sqrt{s} = 8~\TeV$ and a dataset with a \fixme*{explain lumi}{luminosity} of $\approx 20 \fbinv$ was recorded. This dataset was used for the analysis in chapter~\ref{c:Run1}. Further details on the run conditions can be found in \fixme{table of lumi, bunches etc.}. In 2013 after the run phase known as \emph{Run 1}, Long Shutdown 1 (LS1) commenced to make upgrades to the LHC and the detectors to allow the machine to run at $\sqrt{s} = 13~\TeV$ for \emph{Run 2}. Run 2 began in March 2015 and results from Run2 are the focus of the analysis in chapter~\ref{c:Run2}.
 
 Run1 saw the great success of the discovery of the Higgs boson, one of the main objectives of the LHC. In Run2, the search for new physics continues where precision measurements will test the predictions of the Standard Model.
 
@@ -39,7 +39,7 @@ The solenoid provides a homogeneous magnetic field over the tracking region whic
 The tracking system of CMS lies inside the superconducting solenoid and surrounds the interaction point. It is 5.8 m long with a diameter of 2.5 m.
 Silicon detectors were used as they can provide the high granulity and fast response required to reliably reconstruct the trajectories of particles coming from the collision vertex.
 % and from the secondary vertices which originate from decaying particles. 
-Reconstructing secondary vertices is also particularly important for identifying jets originating from heavy flavour quarks such as bottom quarks. This is integral for distinguishing final states involving top quarks. Silicon detectors also have the radiation hardness to last for the design time of ten years. The minimum material possible was used in order to reduce the amount of multiple scattering, photon conversion and bremsstrahlung. However the high density of electronics mean that the tracker requires cooling to zero degrees celcius in Run 1 and -20 degrees celcius in Run2. Cooling also helps prevent `thermal runaway' from leakage current. 
+Reconstructing secondary vertices is also particularly important for identifying jets originating from heavy flavour quarks such as bottom quarks. This is integral for distinguishing final states involving top quarks. Silicon detectors also have the radiation hardness to last for the design time of ten years. The minimum material possible was used in order to reduce the amount of multiple scattering, photon conversion and bremsstrahlung. However the high density of electronics means that the tracker requires cooling to zero degrees celcius in Run 1 and -20 degrees celcius in Run2. Cooling also helps prevent `thermal runaway' from leakage current. 
 \fixme{1000 particles 20 PU - overlapping p-p collisions}
 %good to limit interaction with material in tracker
 
@@ -55,35 +55,76 @@ The tracking system consists of two main sections; the pixel tracker makes up th
 
 \textbf{Pixel tracker}\\
 
-As the pixel detector is closest to the interaction vertex, it experiences the highest fluence of particles at $\approx$ 1 MHz per mm$^{2}$. The fine granularity of the pixel detector (100 x 150 $\mu$ m in r-$\phi$ x z) is required in order to keep the occupancy below 1\%. It consists of three barrel layers which range between 4cm and 10.2cm from the interaction point and 2 disks which are transverse to be beamlines as seen in Fig.~\ref{fig:TrackerWhole} and Fig.~\ref{fig:pixel}.\\
+As the pixel detector is closest to the interaction vertex, it experiences the highest fluence of particles at $\approx$ 1 MHz per mm$^{2}$. The fine granularity of the pixel detector (100 x 150 $\mu$ m in r-$\phi$ x z) is required in order to keep the occupancy below 1\%. It consists of three barrel layers which range between 4 cm and 10.2cm from the interaction point and 2 disks which are transverse to be beamlines as seen in Fig.~\ref{fig:TrackerWhole}.\\
 
 \textbf{Strip tracker}\\
 Two types of silicon strip tracker are used. Closest to the interaction point (20 - 50 cm) are the tracker inner barrel detectors (TIB) which contain silicon micro-strips (10cm x 80 $\mu$m). An occupancy of $\approx$ 2 - 3~\% is achieved for a fluence of $\approx$ 60 kHz per mm$^{2}$.
-An increased strip pitch of 180$\mu$m can be used in the tracker outer barrel (TOB) due to the lower fluence of 3 kHz per mm$^{2}$. To cover the larger surface area the strip length is increased to 25 cm. However increased strip length increases the noise. To combat this the strips are made thicker to 500 $\mu$m compared to 320$\mu$m in the TIB.
-\fixme{TEC and TID}
+An increased strip pitch of 180$\mu$m can be used in the tracker outer barrel (TOB) due to the lower fluence of 3 kHz per mm$^{2}$. To cover the larger surface area, the strip length is increased to 25 cm. However increased strip length increases the noise. To combat this the strips are made thicker to 500 $\mu$m compared to 320$\mu$m in the TIB.
+The tracker inner disk (TID) and tracker end cap (TEC) have strips which are aligned radially to the beamline with a strip pitch of 80$\mu$m and 200$\mu$m, respectively. The TID and TEC extend the tracker acceptance to \fixme{define eta}{$\abs{\eta}<2.5$}.
+
 \fixme{Mention doping?}
 \fixme{Depletion voltage?}
 
 \subsection{Electromagnetic Calorimeter}
 
-\subsection{Hadronic Calorimeter}
+The electromagnetic calorimeter (ECAL) is a homogenous, hermetic detector made up of 61200 (7324) lead tungstate (PbWO$_{4}$) crystals in the barrel (endcap) region. In the barrel region the light from these scintillating crystals is collected in avalanche photodiodes and by vacuum phototriodes in the endcap region. The barrel region covers $\abs{\eta}<1.479$ whilst the two semi-circular `Dees' which make up the endcaps extend the range to $\abs{\eta}<3.0$. Good resolution can be obtained from PbW0$_{4}$ crystals as well as being fast and radiation resistant. The crystals have a high density so that the ECAL can be compact and importantly they are optically clear. The scintillation decay time is comparable to the time between bunch crossings with 80\% of light being emitted within 25ns. The crystals have a tapered shape in the barrel region and lie parallel in the endcap region. In the barrel the crystals have a length of 230 mm and the front faces have dimensions of 22 x 22 mm$^{2}$, whilst the rear faces measure 26 x 26 mm$^{2}$. The crystals are 1.29 m from the beam line in the barrel region and 3.15 m from the the interaction point in the longitudinal direction in the endcap region. The crystals are contained in thin-walled aluminium structures which make up submodules. In the endcap region there is a preshower detector, seen in Fig.~\ref{fig:ecal}, which is a two-layer sampling calorimeter. There are two layers of lead used as a radiator material to initiate the electromagnetic shower and silicon strip detectors after each layer (orthogonal in each plane) to measure the energy depositied. The preshower detector helps to identify neutral pions and to distinguish electrons from minimum ionising particles.
+
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.95\textwidth]{images/ecal.png}
+    \caption{The ECAL system where modules contain submodules and the 36 supermodules are made up of four modules each. The supercrystals are made up groups of 5 x 5 crystals in the endcap.}
+    \label{fig:ecal}
+\end{figure}
+
+\subsection{Hadron Calorimeter}
+
+The hadron calorimeter (HCAL) is used for identifying hadron jets. It has barrel (HB) and endcap (HE) regions made up of sampling calorimeters which have coverage of $\abs{\eta}<1.3$ and $1.3<\abs{\eta}<3.0$, respectively. The HB and HE are placed between the ECAL and solenoid magnet therefore are restricted to the radial dimensions, R, of 1.77 m $<$ R $<$ 2.95m. The barrel consists of two halves (HB+ and HB-) which are inserted into the magnet cryostat at either end of the detector. The HB+ and HB- are composed of 36 wedges which contain 14 flat brass absorber plates parallel to the beam axis, alternated with plastic scintillator. Stainless steel plates are used for the innermost and outermost plates to provide structural support. The HE has a similar system of alternating absorber and plastic scintillator.
+The HB and HE are complemented by an outer hadron calorimeter (HO) which is situated outside the solenoid magnet. The forward HCAL extends the range from $\abs{\eta}<2.3$ to $\abs{\eta}<5.2$ to detect very forward jets. The hermeticity of the detector ensures a good resolution can be obtained on \ETmiss.
+
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.95\textwidth]{images/HCAL.png}
+    \caption{The HCAL system.}
+    \label{fig:hcal}
+\end{figure}
 
 \subsection{Muon Chambers}
 
-\subsection{Trigger}
+As the name CMS suggests, muon identification and measurement was a central focus in the design of the detector. The muon chambers are interspersed with in the iron flux return yoke. These thick layers of iron act as a hadron absorbed. Muon are much less affected by radiative losses through the tracker material than electrons, therefore they are able to penetrate through to the outermost layers of the detector. Figure~\ref{fig:muonchamber} shows the layout of the muon chambers around the detector. The muon chambers consist of a cylindrical barrel section and 2 planar endcaps. The magnetic field is uniform in the barrel region where drift tubes (DT) are arranged into chambers, some of which make measurements in r-$\phi$ and some of which make measurements in z. This provides a high efficiency for matching individual hits in different stations to one single muon track.
+In the endcaps where the muon flux is high and the magnetic field is non-uniform, cathode strips chambers (CSC) are used due to their fine segmentation, fast response and radiation resistance. The CSC stations are aligned perpendicular to the beam line and are positioned between the flux return plates. The cathode strips are positioned as radial lines and the anode wires run perpendicalar to the cathode strips. Together they can measure the position in r-$\phi$ and $\eta$. The CSCs provide robust pattern recognition for matching hits to other stations and to the tracker as well as for rejecting non-muon backgrounds. 
+Together the barrel and end-cap region provide uninterrupted coverage up to $|\eta|<2.4$
 
+RPCs and triggering
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.95\textwidth]{images/MuonChambers.png}
+    \caption{The muon chamber system ~\cite{Kim:2012ix}.}
+    \label{fig:muonchamber}
+\end{figure}
+
+\subsection{Trigger}
+As each of the subdetectors have now been described, the remaining hardware and software which collects the information for analysis can now be discussed. The amount of information which can be stored is much less than the amount produced within the subdetectors. Collisions occur at a rate of 40 MHz (beam crossing interval of 25 ns) and the rate reduction capability of the trigger system was designed to reduce to rate by at least a factor of $10^6$. This occurs in two main stages, the Level-1 (L1) trigger and High-Level Trigger (HLT). The L1 trigger is the first stage and is composed of highly programmable custom electronics, mainly FPGAs but also ASIC and programmable memory lookup tables where higher speed and radiation hardness is required. The high resolution data is held in the front-end electronics whilst the L1 trigger decides whether or not to keep the event based on courser information from the calorimeters and muon chambers. The HLT trigger is a software based filter farm ($\approx$ 1000 processers) which have access to all of the read-out data from the subdetectors. The HLT can perform more complex information in order to filter out uninteresting events and categorise interesting ones.
 
 
 \subsection{Upgrades for Run II}
 
+In LS1, repairs were made to the LHC magnet splices to allow safe operation at the design energy of $\sqrt{s} = 14 \TeV$. All of the detectors on the LHC ring were able to make essential repairs and upgrades. For CMS this included repairing damaged silicon pixels and strips in the tracker and inserting the tracker back into CMS with better centering around the beam line. The temperature of the tracker was lowered to -20 degrees celcius to mitigate against radiation damage. In the ECAL the EE and ES subsystems underwent minor repairs. New photodetectors were added to the HO in the HCAL to improve the signal to noise ratio. The main change to the muon systems has been to the RPCS with the addition of the fourth disk (RE4). For the muon system CSCs, 72 chambers have been added to the existing 468 chambers. In addition to the detector upgrades, improvements have been made to the trigger and DAQ.
 
+These upgrades have allowed CMS to operate at $\sqrt{s} = 13 \TeV$ in 2015 with smaller bunch spacing of 25ns compared to the previous 50ns bunch spacing in Run 1.
 
-\begin{figure}[ht!]
-\centering
-    \includegraphics[width=0.55\textwidth]{images/TrackerUpgradeXSec.png}
-     \includegraphics[width=0.42\textwidth]{images/TrackerUpgradeBarrel.png}          
-    \caption{Pixel tracker with half initial and half upgrade geometries~\cite{1742-6596-513-2-022032}}
-    \label{fig:pixel}
-\end{figure}
+% Upgrade in energy and 50ns to 25ns bunch\\
+% L1-Trigger system-higher granularity -additional processingcapabilities, 
+% upgrade photo-detectors and electronics for the hadron calorimeters\\
+% (HCAL) to reduce background signals - improve measurement of jets and missing-energy
+% at high PU.
+% Reference to pixel detector paper with upgrades~\cite{Dominguez:1481838}
+
+% \begin{figure}[ht!]
+% \centering
+%     \includegraphics[width=0.55\textwidth]{images/TrackerUpgradeXSec.png}
+%      \includegraphics[width=0.42\textwidth]{images/TrackerUpgradeBarrel.png}          
+%     \caption{Pixel tracker with half initial and half upgrade geometries~\cite{1742-6596-513-2-022032}}
+%     \label{fig:pixel}
+% \end{figure}
 
 
