@@ -1,25 +1,35 @@
 \chapter{Event Reconstruction}
 \label{c:recon}
-In this chapter the software and algorithms used to reconstruct particle physics objects are detailed. The idea is to work backwards from the information obtained from each of the sub-detectors to determine what particles passed through them.
+% In this chapter the software and algorithms used to reconstruct particle physics objects are detailed. The idea is to work backwards from the information obtained from each of the sub-detectors to determine what particles passed through them.\\
+% A software framework known as CMSSW has been developed in order to reconstruct the read out from the detector for each event
 
-\section{Software}
 
-To-do:
-CMSSW, PFPAT2
+In chapter~\ref{c:det} each of the sub-detectors in CMS have been described; how particles interact with them and how electrical signals are read-out. The next step is to combine the read-outs from each detector in order to reconstruct the resulting particles from an interesting proton-proton collision. This snapshot of the collision output is known as an \emph{event}. An event will also contain reconstructed particles from other simultaneous uninteresting collisions from the same bunch crossing which is known as \emph{pile up} (PU). Algorithms are used in order to subtract PU particles from the stored event. 
+As a particle will usually traverse more than one sub-detector, it is advantageous to combine these outputs in order to reconstruct the particle. This is achieved using the \emph{Particle flow} (PF) algorithm described in section~\ref{sec:PF}. The objects which can be reconstructed using the PF algorithm such as primary vertices, muons, electrons, and jets are discussed in sections~\ref{sec:PVreco},~\ref{sec:muonreco},~\ref{sec:electronreco},~\ref{sec:jetreco} respectively. Further information can be obtained from these reconstructed objects such as how likely a jet is to have originated from a b-quark (section~\ref{sec:btagreco}) and how the presence of neutrinos can be inferred by the imbalance of energy in the transverse plane of the detector (section~\ref{sec:METreco}).  
+The information from the detector is processed using a distributed computing infrustruction with the CMSSW software \fixme{reference}.
+% This chapter will discuss the main software used to reconstruct events from the detector read-out, CMSSW, and how a worldwide computer farm is used to process data.
 
-\section{Particle flow}
 
-The particle flow (PF) algorithm combines information from all sub-detectors, described in section~\ref{c:det}, in order to improve the reconstruction of final state particles such as electrons, muons, photons, neutral hadrons and charged hadrons. From this information more complicated objects can be reconstructed as described in the subsequent sections.\\
+% \section{Software}
 
-The first objects reconstructed are PF muons. Each muon identified from the muon chambers is associated to the compatible hit in the tracker. This track is then removed from the collection. Next, a Gaussian-Sum-filter refit is used to extrapolate electron candidate trajectories to the ECAL. Electrons have relatively short tracks due to losing most of their energy by Bremsstrahlung in the tracker material. Tracker and ECAL variables are combined for the final identification of a PF electron after which the track and ecal clusters are removed from the collection.
+% To-do:
+% CMSSW, grid
+
+\section{Track reconstruction}
+
+\section{Particle flow ~\label{sec:PF}}
+
+The particle flow (PF) algorithm combines information from all sub-detectors, described in section~\ref{c:det}, in order to improve the reconstruction of final state particles such as electrons, muons, photons, neutral hadrons and charged hadrons. The biggest gains come from PF jet reconstruction where the jet-matching efficiency, jet energy resolution and the reconstruction of the jet \pt are improved compared to using calorimeter information only. From this information more complicated objects can be reconstructed as described in the subsequent sections~\ref{CMS-PAS-PFT-10-001}.\\
+
+The first objects reconstructed are PF muons. Each muon identified from the muon chambers is associated to the compatible hits in the tracker. This track is then removed from the collection. Next, a Gaussian-Sum-filter refit is used to extrapolate electron candidate trajectories to the ECAL. Electrons have relatively short tracks due to losing most of their energy by Bremsstrahlung in the tracker material. Tracker and ECAL variables are combined for the final identification of a PF electron after which the track and ecal clusters are removed from the collection.
 
 Charged hadrons are reconstructed from the remaining tracker, ECAL and HCAL deposits where the calorimeter hits are compatible with the tracker hits. Again, these hits are removed from the collection. Neutral hadrons leave no tracks in the tracker but have deposits in the ECAL and HCAL. Photons leave deposits in the ECAL but not the HCAL.
 
-\section{Primary vertices}
+\section{Primary vertices \label{sec:PVreco}}
 
 Primary vertices are the point at which the collision occurred, as opposed the secondary vertices which originate at the decay of subsequest particles coming from the collision. The first step in reconstructing primary vertices is to consider tracks which are consistent with the beam spot and cluster them into candidate vertices, separated along the z direction. Next a 3D fit is made and candidates which are compatible with originating from the beamline are kept.
 
-\section{Muons}
+\section{Muons \label{sec:muonreco}}
 The signal muons used in this analysis are selected from the collection of PF muons with the further requirements shown in table~\ref{tab:muon_tight_cuts}.
 Relative isolation (\emph{RelIso}), is a measure of how isolated the muons (or electrons) are from surrounding hits in the detector from charged hadrons, neutral hadrons and photon energy. Only charged hadrons which are consistent with the primary vertex are considered in the calculation. As it is not possible to determine whether neutral hadrons are consistent with the primary vertex we can use the fact that the ratio of neutral to charged energy has been measured to be $\approx 0.5$. Hence the neutral hadronic energy coming from the primary vertex can be calculated as seen in Eqn.~\ref{eqn:neutralE}, where $E_{T,sub-leading}^{charged hadronic}$ is the transverse energy from charged hadrons which are associated to a sub-leading primary vertex. This is called the \emph{deltaBeta correction}. The max() function ensures that the corrected neutral hadronic energy is never defined as negative.
 
@@ -75,7 +85,7 @@ Loose muons are defined as satisfying the following less strict criteria.
 \item  RelIso, $<$ 0.25 
 \end{itemize}
 
-\section{Electrons}
+\section{Electrons \label{sec:electronreco}}
 Signal electrons are selected from the collection of PF electrons and are required to pass the criteria for tight electrons given for electrons which are found in the barrel and endcap in table~\ref{tab:electron_tight_cuts}. The RelIso for electrons is defined similarly to muons however the deltaBeta correction is replaced by a rho correction, defined in equation~\ref{eqn:rhoCorr} where EA denotes Effective Area. [EA: derived from the event-specific average pile-up energy density per unit area in the phi-eta plane (rho) and the effective area based on shower shapes that the EGM POG has measured (depends on supercluster eta).]
 
 \begin{centering}
@@ -123,10 +133,10 @@ pass conversion veto & yes & yes& yes & yes  \\
 \end{table}
 
 
-\section{Jets}
+\section{Jets \label{sec:jetreco}}
 When partons such as quarks and gluons fragment and hadronise in the detector, predominantly into charged and neutral hadrons, they form showers of particles in approximately the same direction of travel as the original parton. These final state particles can be clustered into what is known as a \emph{jet} using the anti-$\kappa_{\textrm{T}}$ reconstruction algorithm~\cite{Cacciari:2008gp}. For the analyses in this thesis a cone radius of R = 0.4 is used to reconstructed jet objects. Corrections are applied to the jet energy to account for the non-uniform response of the detector in \pt and $\eta$. These are known as the \fixme*{ref and check if different between 8 \& 13}{L1FastJet and L2L3Residual}. The jet energy resolution (JER) is also smeared by 10$\%$ as the resolution is worse in data than in simulation. Loose jet identification critera are applied to suppress fake jets arising from lepton showers. This includes requiring $|\eta|<2.5$, \pt$<30$ and a separation from the nearest loose muon or electron of $\Delta\textrm{R}>0.4$ \fixme{Check R has been defined}.
 
-\section{b-tagging}
+\section{b-tagging ~\label{sec:btagreco}}
 Reconstructing jets gives us the knowledge that the particles emerging from the collision include quarks. Being able to identify which flavour of quark showered in the detector is extremely useful for a wide range of analyses. Particularly for searches for final states containing four top quarks, the ability to identify b-quarks originating from the decay of top quarks is incredibly beneficial in allowing us to suppress backgrounds and for forming discriminating variables between the signal and irreducible backgrounds. 
 
 The particle shower coming from the hadronisation of b-quarks will contain B mesons which travel further in the detector due to having longer decay times than light flavour mesons (u,d,s,g). The \emph{impact parameter} (IP), defined as the distance between the primary vertex and the extrapolated point of closest approach of a track, will be larger for tracks coming from the decay of a B meson. The tracks emerging from this decay will form a secondary vertex. This information is exploited in the Combined Secondary Vertex (CSV) algorithm. The CSV algorithm is used to identify or \emph{tag} jets which originate from b-quarks by assigning a discriminator value between 0 and 1, where larger values are more consistent with b-quark jets. Loose (CSVL), medium (CSVM) and tight (CSVT) working points are defined at values of the discriminator for a given mis-identification rate. For analyses at $\sqrt{s} = 13$~TeV the algorithm was improved and is called Combined Secondary Vertex version 2 algorithm (CSVv2). Working points, selection efficiencies for b-quarks and mis-identification rates are gien in table~\ref{tab:btag} \footnote{This efficiency was measured using the TTJets MLM sample for the medium working point at $\sqrt{13}$ TeV. The CSVv2L and CSVv2T efficiences have been taken from here~\cite{btageff} }.
@@ -150,7 +160,7 @@ $\sqrt{s}$ (TeV)    & Name   & \multicolumn{1}{l|}{WorkingPoint} & \multicolumn{
 
 Algorithms are currently in development to tag c-quark jets and to be able to identify the charge of b-quark jets (ref).
 
-\section{Missing transverse energy}
+\section{Missing transverse energy ~\label{sec:METreco}}
 As it is not possible to detect neutrinos, and potentially some BSM particles, we can infer their existence by examining the sum of the momentum of particles in the transverse plane of the detector, where the transverse plane is defined to be transverse to the beamline. We start with the assumption that the total momentum in the transverse plane is zero so an imbalance in the sum of the momentum of detectable particles is consider to be missing transverse energy (\ETmiss), as defined in equation~\ref{eqn:MET}.
 \begin{equation}
 \ETmiss = ~- \sum_{\textrm{all particles,}i} \hat{ {p}_{\textrm{T},i} }
