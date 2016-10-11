@@ -2,7 +2,7 @@
 
 \section{General strategy for searching for four top quarks \label{sec:Strategy}}
 
-The LHC has been said to be a ``top factory'' due to the large cross sections for \ttbar production at 8 TeV and 13 TeV, 253~pb and 831~pb respectively. Hence most analyses within the CMS collaboration which work on top quark physics study \ttbar production. Each of the top quarks will decay to a W boson and a b quark and the final state of the process in the detector is defined by whether the W boson decays leptonically into a lepton and neutrino or hadronically into two quark jets. The standard strategy is to require two b-jets to be present in the event and 0, 1, 2 leptons depending on the final state defined as \emph{all-hadronic}, \emph{semi-leptonic} and \emph{dileptonic} respectively where 6, 4 or 2 jets are required. 
+The LHC has been said to be a ``top factory'' due to the large cross sections for \ttbar production at 8 TeV and 13 TeV, \fxnote*{ref}{253~pb and 831~pb} respectively, hence most analyses within the CMS collaboration which work on top quark physics study \ttbar production. In the SM, each of the top quarks will decay to a W boson and a b quark almost 100$\%$ of the time. The final state of the \ttbar process in the detector is defined by whether the W boson decays leptonically into a lepton and neutrino or hadronically into two quark jets. The standard strategy is to require two b-jets to be present in the event and 0, 1 or 2 leptons depending on the final state defined as \emph{all-hadronic}, \emph{semi-leptonic} and \emph{dileptonic} respectively where 6, 4 or 2 total number of jets are required. 
 
 \begin{figure}[ht!]
 \centering
@@ -12,65 +12,65 @@ The LHC has been said to be a ``top factory'' due to the large cross sections fo
 \end{figure}
 %picture from wiki By Nazar Bartosik - http://bartosik.pp.ua/hep_sketches/tt_decay_channels, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=49739344
 
-Each selection of b-jets, leptons and total number of jets in the event will not be $100\%$ efficient which means not all \ttbar events will be captured within the selection. As the rate of \ttbar production is so high at the LHC, this is satisfactory as the total number of events is still high enough to have statistically relevant studies.\\
+Not all \ttbar events will be captured within the selection due to inefficiences in tagging b-jets, identifying leptons and reconstructing jets. As the rate of \ttbar production is so high at the LHC, this selection still provides a large enough sample of events to have statistically significant studies.\\
 
-The strategy for selecting \tttt events while suppressing the selection of background processes is similar to the \ttbar selection but with the selection of additional two jets. The small cross section for \tttt production, 1.3~fb at 8~TeV and $\approx$~9~fb at 13~TeV dictates the selection. It would be preferential to require 4 b-jets in the selection to obtain the highest signal to background ratio, however as b-tagging is $\approx70\%$ efficient, this would have a detrimental effect on the overall amount of \tttt found in the selection due to some b-jets not being identified correctly or being within the acceptance of the detector. Similarly, it is not possible to require the total number of jets in a \tttt final state as some of the jets may not be within the acceptance of the detector. However, it will be discussed in section~\ref{sec:Cats} how a looser selection can be used to an advance to constrain the main background process.
+The strategy for selecting \tttt events while suppressing background processes is similar to the \ttbar selection but with the requirement of additional two jets. The small cross section for \tttt production in the SM, \fxnote*{ref}{1.3~fb at 8~TeV and 9.2~fb at 13~TeV} dictates the selection. It would be preferential to require 4 b-jets in the selection to obtain the highest signal to background ratio, however this would have a detrimental effect on the overall amount of \tttt found in the selection due to some b-jets not being identified correctly or being within the acceptance of the detector. Similarly, it is not possible to require a jet per quark hadronising in the detector in a \tttt final state as some of the jets may be merged or may not be within the acceptance of the detector. However, it will be discussed in section~\ref{sec:Cats} how a looser selection can be used to an advantage to constrain the main background process.
 
-This thesis will mainly focus on the single lepton channel where only single muon and single electron final states are considered. As can be seen from~\ref{fig:ttttDecay}, the single lepton channel represents the largest branching ratio or four top quark decay channel. The dilepton channel, which has the second largest branching ratio will also briefly be discussed in chapter~\ref{c:Run2} as it was combined with the single lepton channel to achieve an increased sensitivity on the analysis. In the dilepton channel only final states with muons and electrons were considered.
+This thesis will focus on the single lepton channel where only single muon and single electron final states are considered. As can be seen from~\ref{fig:ttttDecay}, the single lepton channel represents the largest branching ratio of the four top quark decay channels. The dilepton channel, which has the second largest branching ratio will also briefly be discussed in chapter~\ref{c:Run2} as it was combined with the single lepton channel to achieve an increased sensitivity on the analysis. In the dilepton channel also only final states with muons and electrons were considered.
 
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.5\textwidth]{images/Analysis/FourTopBR.pdf}
-    \caption{The possible decay channels for \tttt production}
+    \caption{The possible decay channels for \tttt production where the area of each final state is proportional to its branching ratio.}
     \label{fig:ttttDecay}
 \end{figure}
 
 
 
 
-\section{Calibrations of the simulation}
+\section{Corrections to the simulation}
 \label{sec:Calibrations}
-Many of the parameters which go into making simulation for each particle physics process are not precisely known therefore they are tuned to produce the simulation which best matches the data observed. This simulation will still have discrepancies from data which can be measured and accounted for by producing \emph{scale factors} which are combined and adjust the weight of each event in the simulation such that the overall distributions more closely matches data. 
+Many of the parameters which go into simulating each particle physics process are not precisely known. therefore they are tuned to produce the simulation which best matches the data observed. This simulation will still have residual discrepancies from data which can be measured and accounted for by producing \emph{scale factors} (SF) which are usually \pt and $\eta$ dependent and may be dependent on other factors such as jet flavour. These SFs are combined to produce a per-event weight for simulated events such that the overall distributions more closely match data. 
 
 
 \subsection{Pileup modelling}
 \label{sec:pile-up}
-The distribution of the number of primary vertices varies between data and simulation. This can be taken into account by looking at the number of events for each number of primary vertices in data and simulation and applying the scale factor, $SF_{PU}\left( i \right)$ to simulation, where \emph{i} is the number of vertices.
+The distribution of the number of primary vertices varies between data and simulation for a given luminosity. This can be taken into account by looking at the number of events for each number of primary vertices in data and simulation and applying the scale factor, $SF_{PU}\left( i \right)$ to simulation, where \emph{i} is the number of vertices.
 
 \begin{equation}
-SF_{PU}\left( i \right) = \frac{N_{events}^{Data}}{  N_{events}^{simu}} 
+SF_{PU}\left( i \right) = \frac{N_{events}^{Data}}{  N_{events}^{sim}} 
 \label{eqn:PUSF}
 \end{equation}
 
 \subsection{b tag modelling}
 
-There are significant differences between b tagging efficiencies measured by CMS in data and the efficiencies as measured in simulation as it is difficult to simulate the fragmentation and hadronisation of b-quarks. 
-The b-tagging efficiencies are measured for each of the CSVL, CSVM, and CSVT working points in bins of \pt and $\eta$. Depending on which working point was used in an analysis a scale factor, $SF(\eta, P_{T})_{i}$,  can be applied to the simulation for each jet which is dependent on the \pt, $\eta$ and flavour of the jet, shown in equation~\ref{eqn:sfbtagnorm}, where $\epsilon(\eta , \pt)^{data}_{i}$ is the efficiency for correctly identifying a b-jet in data and $\epsilon(\eta , \pt)^{simulation}_{i}$ is the efficiency for correctly identifying a b-jet in simulation.
+There are residual differences between b tagging efficiencies measured by CMS in data and the efficiencies as measured in simulation as it is difficult to simulate the fragmentation and hadronisation of b-quarks. 
+The b-tagging efficiencies are measured for each of the CSVL, CSVM, and CSVT working points in bins of \pt and $\eta$. Depending on which working point was used in an analysis a scale factor, $SF(\eta, P_{T})_{i}$,  can be applied to the simulation for each jet. This is dependent on the \pt, $\eta$ and flavour, \emph{i}, of the jet, shown in equation~\ref{eqn:sfbtagnorm}, where $\epsilon(\eta , \pt)^{data}_{i}$ is the efficiency for a jet to be tagged as a b-jet in data and $\epsilon(\eta , \pt)^{sim}_{i}$ is the efficiency for identifying a jet as a b-jet in simulation.
 
 \begin{centering}
 \begin{equation}
-SF(\eta, P_{T})_{i} = \frac{\epsilon(\eta , \pt)^{data}_{i}}{\epsilon(\eta , \pt)^{simulation}_{i}}
+SF(\eta, P_{T})_{i} = \frac{\epsilon(\eta , \pt)^{data}_{i}}{\epsilon(\eta , \pt)^{sim}_{i}}
 \label{eqn:sfbtagnorm}
 \end{equation}
 \end{centering}
-Separate scale factors are defined by b and light (u, d, s, g) jets. Scale factors for c jets are taken to be the same as for b jets. A weight, $\omega_{btag}$ is applied to simulated events in order to correct for the expected difference between the efficiency in data and simulation. The method proceeds by defining the probability of an event in simulation producing a given number of tagged and untagged jets, P(MC),:
+Separate scale factors are defined for b and light (u, d, s, g) jets. Scale factors for c jets are taken to be the same as for b jets. A weight, $\omega_{btag}$ can be applied to simulated events. The method proceeds by defining the probability of an event in simulation producing a given number of tagged and untagged jets, \emph{P(MC)},:
 
 \begin{centering}
 \begin{equation}
-P(MC) = \prod_{tagged jets}\epsilon_{i} \times \prod_{untagged jets}(1- \epsilon_{i})
+P(MC) = \prod_{tagged jets}\epsilon^{sim}_{i} \times \prod_{untagged jets}(1- \epsilon^{sim}_{i})
 \end{equation}
 \end{centering}
-where $\epsilon_{i}$ is the efficiency of tagging a jet flavour $i$ with the CSV criterion. While the probability of an event in data producing a given number of tagged and untagged jets, P(DATA), is defined as follows:
+where $\epsilon_{i}$ is the efficiency of tagging a jet of flavour $i$ with the CSV criterion in simulation. While the probability of an event in data producing a given number of tagged and untagged jets, P(DATA), is defined as follows:
 
 
 \begin{centering}
 \begin{equation}
-P(DATA) = \prod_{tagged jets}SF_{i}\cdot\epsilon_{i} \times \prod_{untagged jets}(1- SF_{i}\cdot\epsilon_{i})
+P(DATA) = \prod_{tagged jets}SF_{i}\cdot\epsilon^{sim}_{i} \times \prod_{untagged jets}(1- SF_{i}\cdot\epsilon^{sim}_{i})
 \end{equation}
 \end{centering}
 where SF is the appropriate scale factor for a jet of flavour $i$. 
 
-An overall weight to be applied to each event depending on the jet content can be derived from these scale factors using the formula in~\ref{eqn:weightbtagnorm}. This weight, $\omega_{btag}$, must be applied to the selected simulation events in order to predict the correct event yield in data.
+An overall weight to be applied to each event depending on the jet content can be derived from these scale factors using Eqn.~\ref{eqn:weightbtagnorm}. This weight, $\omega_{btag}$, must be applied to the selected simulation events in order to predict the correct event yield in data.
 
 \begin{centering}
 \begin{equation}
@@ -83,8 +83,8 @@ An overall weight to be applied to each event depending on the jet content can b
 Alternatively, the measurements at each working point can be used to fit the shape of the CSV distribution and provide scale factors in bins of \pt and $\eta$ for each jet flavour. Therefore the scale factors for each jet can be derived from the \pt and $\eta$, CSV discriminator value and for each jet flavour as seen in equation~\ref{eqn:btagcsv}. For this method, the jet flavours are defined as heavy for bottom quarks and light for u, s, d, g whilst c-quarks are given $\textrm{SF} = 1$. Further details of the CSV reshaping can be found in Ref.~\cite{CMS-NOTE-2013-130}.
 
 \begin{equation}
-\textrm{SFjet}_{\textrm{B}} \left(\textrm{CSV},\pt,\eta \right) = \frac{\textrm{Data} - \textrm{MC}_{\textrm{A}}}{\textrm{MC}_{\textrm{B}}} ~~;~~ \textrm{A, B = heavy flavour, light flavour or vice versa}
-\label{eqn:btagcsv}
+% \textrm{SFjet}_{\textrm{B}} \left(\textrm{CSV},\pt,\eta \right) = \frac{\textrm{Data} - \textrm{MC}_{\textrm{A}}}{\textrm{MC}_{\textrm{B}}} ~~;~~ \textrm{A, B = heavy flavour, light flavour or vice versa}
+\textrm{SFjet}_{\textrm{i}} \left(\textrm{CSV},\pt,\eta \right) = \frac{\njets^{Data} - {\njets^{MC}}_{,j}}{{\njets^{MC}}_{,i}} ~~;~~ \textrm{i, j = heavy flavour, light flavour or vice versa}\label{eqn:btagcsv}
 \end{equation}
 
 An event weight can be derived by taking the product of the per-jet scale factors as seen in equation~\ref{eqn:btagcsvtot}.
@@ -95,11 +95,11 @@ An event weight can be derived by taking the product of the per-jet scale factor
 \end{equation}
 
 \subsection{Heavy flavour jet modelling}
-There is a discrepancy between data and simulation in the distribution of the number of b-tagged jets (\nbtags) at higher numbers of b-tags which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated. The extra jets can come from processes such as gluon splitting pair-producing \bbbar in \ttbar events. These \ttbb events are most likely to resemble to features of the \tttt signal events and so it is essential that the proportion of them in simulation is correctly modelled.
-The ratio of $R=$\heavyflavour was measured by CMS to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.5 \left(\textrm{sys.} \right)\% $ ~\cite{Khachatryan2015132} at $\sqrt{s} =$ 8~TeV and to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.6 \left(\textrm{sys.} \right)\% $ ~\cite{CMS-PAS-TOP-16-010} at $\sqrt{s} =$ 13~TeV. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets (MC) sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg). Weights are applied to each sub-sample to match the measured ratio whilst preserving the total number of \ttbar events.
+% There is a discrepancy between data and simulation in the distribution of the number of b-tagged jets (\nbtags) at higher numbers of b-tags which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated.
+These \ttbb events are most likely to resemble to features of the \tttt signal events and so it is essential that the proportion of them in simulation is correctly modelled. The ratio of $R=\heavyflavourone~/~\heavyflavourtwo$ was measured by CMS to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.5 \left(\textrm{sys.} \right)\% $ ~\cite{Khachatryan2015132} at $\sqrt{s} =$ 8~TeV and to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.6 \left(\textrm{sys.} \right)\% $ ~\cite{CMS-PAS-TOP-16-010} at $\sqrt{s} =$ 13~TeV. The extra jets in \ttbar events can come from processes such as gluon splitting pair-producing \bbbar. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets (MC) sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg). Weights are applied to each sub-sample to match the measured ratio whilst preserving the total number of \ttbar events.
 
 \subsection{Lepton modelling}
-Due to a difference between data and simulation in the efficiency of lepton identification, isolation, reconstruction and triggering, a weight is applied to events which is dependent on the selected leptons $\eta$, $\pt$ and lepton flavour. The scale factors for each source of efficiency are designed to be multiplicative and the final event weight can be found in equation~\ref{eqn:leptonW}
+A weight is applied to events which is dependent on the selected leptons $\eta$, $\pt$ and lepton flavour. The scale factors for each source of efficiency are designed to be multiplicative and the final event weight can be found in equation~\ref{eqn:leptonW}
 
 \begin{equation}
 \omega_{lepton} = SF_{iso}\times SF_{id}\times SF_{reco}\times SF_{trig}
@@ -108,15 +108,15 @@ Due to a difference between data and simulation in the efficiency of lepton iden
 
 \subsection{Top \pt modelling}
 
-There is a known problem in the modelling of the top quark \pt spectrum where the top quarks found in data appear tend to be lower in \pt than simulation. A scale factor can be derived as a function of the \pt of the top as generated in the simulation before being reconstructed in the detector. The event weight is shown in equation~\ref{eqn:topptW}
+The top quarks which are reconstructed in \ttbar enriched regions of data tend to have a softer \pt spectrum than in \ttbar simulation. A scale factor can be derived as a function of the \pt of the top at generator level of the simulation (before it is reconstructed by the detector). The event weight can be derived by multiplying the independent SFs for each (anti-)top in the event and is shown in equation~\ref{eqn:topptW}. This SF is only applied to \ttbar simulation samples.
 
 \begin{equation}
-\omega_{topPt} = SF_{top}\times SF_{anti-top}
+\omega_{topPt} = SF(\textrm{top}~\pt)\times (\textrm{anti-top}~\pt)
 \label{eqn:topptW}
 \end{equation}
 
 \subsection{Jet multiplicity modelling}
-Good modelling of the jet multiplicity distribution up to a large number of jets (up to fifteen jets) in the main \ttbar background is highly important for this analysis because as the number of jets increase the signal to background ratio increases. Hence, the higher \njets multiplicity categories mentioned in section~\ref{sec:Cats} are where the highest sensitivity in separating the signal \tttt process and the background \ttbar process. It is essential that \ttbar is well modelled in this high jet multiplicity region. 
+Good modelling of the jet multiplicity distribution up to a large number of jets in the main \ttbar background is highly important for this analysis because as the number of jets increases, the signal to background ratio increases. Hence, the higher jet multiplicities have the highest sensitivity in separating the signal \tttt process and the background \ttbar process. It is essential that \ttbar is well modelled in this high jet multiplicity region. 
 Particularly at 13 TeV the simulation was larger than data in the higher \njets bins. The value of $\alpha_S$ in the \ttbar Powheg+Pythia8 sample used in the analysis in chapter~\ref{c:Run2} is 0.137, however the best tune was observed to have a value of $\alpha_S=0.113^{+0.012}_{0.010}$. A scale factor was derived by CMS in order to improve the modelling of the \njets distribution. 
 
 \section{Multi-jet background estimation}
