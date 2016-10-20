@@ -1,29 +1,102 @@
-\chapter{Search for the Standard Model production of four top quarks at $\sqrt{s} =$ 8TeV }
+\chapter{The search for standard model~\tttt production in \runone at $\sqrt{s} =$ 8TeV }
 \label{c:Run1}
 
 \section{Introduction}
-In this chapter, an analysis of the full 2012 CMS dataset at $\sqrt{s} =$ 8TeV is presented where the Standard Model production of four top quarks (\tttt) is sought. Standard model \tttt production has a cross section of $\sigmattttSM \approx 1.3$ fb at NLO with NNLO corrections~\cite{Barger201070,Bevilacqua2012}. With 20 \fbinv of data this equates to approximately 26 events in the 2012 dataset in all decay channels. However, in this analysis, only final states where one of the top quarks decays leptonically into an electron or muon are considered. These are referred to as the single lepton channels and they are the most prevalent decay mode as can be seen in ~\fxnote*{add fig}{figX}. One of the main challenges of this analysis is to distinguish this extremely rare signal process with the overwhelmingly large background process of top-pair production (\ttbar) which is five orders of magnitude greater than the \tttt signal process, the latest measurement putting it at $241.5 \pm 8.5$ \pbinv ~\cite{CMS-PAS-TOP-14-016}. 
-This analysis proceeds as follows; Section~\ref{sec:sigback} discuss the \tttt signal processes and the relevant background and Section~\ref{sec:datasimulation} describes the datasets and simulations of the signal and backrgound used. Section~\ref{sec:baseline} details the initial requirements imposed on the signal region while Section~\ref{sec:Calibrations} describes the calibrations made to the correct the simulation. The multi-jet background estimation is described in Section~\ref{sec:QCDbackground} and the multi-variate techniques used to increase the discrimination power between signal and background are contained in~\ref{sec:discriminating}. Discussion of the systematic uncertainties and extraction of the limit on the \tttt cross section are in Sections~\ref{sec:uncertainties} and~\ref{sec:limit}. Validation of the analysis can be found in Section~\ref{sec:signalinjection}. Finally, a summary and discussion of the ATLAS \tttt cross section limit can be found in Sections~\ref{sec:summary} and~\ref{sec:ATLASresult}.
+In this chapter, an analysis of the full 2012 CMS dataset at $\sqrt{s} =$ 8TeV with 19.7 \fbinv of data is presented where the Standard Model production of four top quarks (\tttt) is sought. Standard model \tttt production has a cross section of $\sigmattttSM \approx 1.3$ fb at NLO with NNLO corrections~\cite{Barger201070,Bevilacqua2012}. 
+
+% this equates to approximately 26 events in the 2012 dataset in all decay channels. However, in this analysis, only final states where one of the top quarks decays leptonically into an electron or muon are considered. These are referred to as the single lepton channels and they are the most prevalent decay mode as can be seen in ~\fxnote*{add fig}{figX}. One of the main challenges of this analysis is to distinguish this extremely rare signal process with the overwhelmingly large background process of top-pair production (\ttbar) which is five orders of magnitude greater than the \tttt signal process, the latest measurement putting it at $241.5 \pm 8.5$ \pbinv ~\cite{CMS-PAS-TOP-14-016}. 
+
+
+%This analysis proceeds as follows; Section~\ref{sec:sigback} discuss the \tttt signal processes and the relevant background and Section~\ref{sec:datasimulation} describes the datasets and simulations of the signal and backrgound used. Section~\ref{sec:baseline} details the initial requirements imposed on the signal region while Section~\ref{sec:Calibrations} describes the calibrations made to the correct the simulation. The multi-jet background estimation is described in Section~\ref{sec:QCDbackground} and the multi-variate techniques used to increase the discrimination power between signal and background are contained in~\ref{sec:discriminating}. Discussion of the systematic uncertainties and extraction of the limit on the \tttt cross section are in Sections~\ref{sec:uncertainties} and~\ref{sec:limit}. Validation of the analysis can be found in Section~\ref{sec:signalinjection}. Finally, a summary and discussion of the ATLAS \tttt cross section limit can be found in Sections~\ref{sec:summary} and~\ref{sec:ATLASresult}.
 Sections~\ref{sec:QCDbackground},~\ref{sec:njetcatlimit} and~\ref{sec:signalinjection} are the authors personal contribution to the analysis.
 
 %An initial baseline selection of requirements on the number of leptons, jets, b-tagged jets, transverse hadronic energy (\HT) and transverse missing energy (\MET) reduces the \ttbar background to three orders of magnitude greater than the \tttt signal. As \ttbar remains a very large background, multi-variate techniques are employed to reconstruct top quarks and then ultimately to find a discriminator value to distinguish between signal and background.
 %In the absence of an excess of events over background, the \CLS method is used to obtain an observed limit on the cross section of \tttt production of 32 fb at 95\% confidence level compared to 32$\pm17$ fb expected.
 
-\section{Signal and background processes}
-\label{sec:sigback}
-\fxnote{Discuss four top signal process and what that would look like in the detector}
-\fxnote{Discuss background process which could mimic 4tops}
-\fxnote{Add feynman diagram}
+
 
 \section{Data and Simulation}
 \label{sec:datasimulation}
+This analysis uses data from proton-proton collision at the CMS experiment in 2012 at $\sqrt{s}=8$~TeV.
+For the muon (electron) channel, the data were collected using a trigger based on the presence of at least one muon (electron) candidate with $\pt > $ 24 (27) GeV and corresponds to an integrated luminosity of 19.7 \fbinv .
+% The full 2012 SingleElectron dataset is used for the electron channel, which requires an electron candidate with $\pt > $ 27 GeV and corresponds to an integrated luminosity of 19.7 \fbinv.
+The signal SM \tttt Monte Carlo (MC) samples and the background MC samples are given in table~\ref{tab:datasets_sim_8tev}, along with the MC generator used to produce these samples, the order at which they were produced and the number of events produced. MC samples were produced for the scale and matching systematics, these can be found in table~\ref{tab:datasets_sys_8tev}. In this analysis the scale uncertainty includes the ME scale and PS scale.
 
-For the muon channel, the full 2012 SingleMu dataset was used, which requires a muon candidate with $\pt > $ 24 GeV and corresponds to an integrated luminosity of 19.7 \fbinv .  The full 2012 SingleElectron dataset is used for the electron channel, which requires an electron candidate with $\pt > $ 27 GeV and corresponds to an integrated luminosity of 19.7 \fbinv.
-The signal SM \tttt Monte Carlo (MC) samples and the background MC samples are given in \fxnote*{add table appendix}{Table X}, along with the MC generator used to produce these samples, the order at which they were produced and the number of events produced. MC samples were produced for each systematic, these can be found in \fxnote*{add table appendix}{Table X}.
+
+\begin{table}[ht!]
+% \tiny
+\centering
+\begin{tabular}{| l | l | l | p{2cm} |}
+ \hline 
+ Dataset & Events & Generator & Order \\
+\hline
+TTTT & 100K & Madgraph  $+$ Tauola& O \\
+\hline
+TTJets\_SemiLeptMGDecays &25M & Madgraph $+$ Tauola & O \\
+\hline
+TTJets\_HadronicMGDecays &31M & Madgraph  $+$ Tauola& O \\
+\hline
+TTJets\_FullLeptMGDecays\ & 12M & Madgraph  $+$ Tauola& O \\
+\hline
+W4JetsToLNu & 13M & Madgraph & O \\
+\hline
+Tbar\_tW-channel & 500K & Powheg $+$ Tauola & O\\
+\hline
+T\_tW-channel & 500K & Powheg $+$ Tauola & O \\
+\hline
+T\_t-channel & 3.8M & Powheg $+$ Tauola & O \\
+\hline
+Tbar\_s-channel & 260K & Powheg $+$ Tauola & O \\
+\hline
+T\_s-channel & 139K & Powheg $+$ Tauola & O \\
+\hline
+Tbar\_t-channel & 2M  & Powheg $+$ Tauola & O \\
+\hline
+DY4JetsToLL & 6.2M & Madgraph & O  \\
+\hline
+DYJetsToLL & 6.7M & Madgraph & O \\
+\hline
+TTZJets  & 200K & Madgraph & O \\
+\hline
+TTWJets\ & 200K & Madgraph & O \\
+\hline
+TTH\_HToBB & 1M & Pythia6 $+$ Tauola & O \\
+\hline
+ZZ & 10M & Pythia6 $+$ Tauola & O \\
+\hline
+WZ &10M & Pythia6 $+$ Tauola & O \\
+\hline
+WW &10M & Pythia6 $+$ Tauola & O \\
+\hline
+\end{tabular}
+ \caption{Dataset name, total number of events, MC generator and order of the simulated samples.}
+  \label{tab:datasets_sim_8tev}
+  \end{table}
+
+
+\begin{table}[ht!]
+% \tiny
+\centering
+\begin{tabular}{| l | l | l | p{2cm} |}
+ \hline 
+ Dataset & Events & Generator & Order \\
+\hline
+TTJets\_scaledown & 5M  & Madgraph $+$ Tauola & O \\
+\hline
+TTJets\_scaleup & 5M  & Madgraph $+$ Tauola & O \\
+\hline
+TTJets\_matchingdown & 5M & Madgraph $+$ Tauola & O  \\
+\hline
+TTJets\_matchingup & 5M & Madgraph $+$ Tauola & O \\
+\hline
+\end{tabular}
+ \caption{Dataset name, total number of events, MC generator and order of the simulated systematic samples.}
+  \label{tab:datasets_sys_8tev}
+\end{table}
 
 \section{Baseline Event Selection}
 \label{sec:baseline}
-In order to select \tttt events and suppress background events, a set of criteria is applied to the reconstructed objects in events which are triggered by the single muon or single electron triggers.
+To select \tttt events and suppress background events, a set of criteria is applied to the reconstructed objects in events which are triggered by the single muon or single electron triggers.
 For the muon channel these are:
 \begin{itemize}
 \setlength\itemsep{0em}
@@ -31,7 +104,7 @@ For the muon channel these are:
 \item Exactly zero additional loose muons
 \item Exactly zero loose electrons
 \item At least 6 jets with $\pt >$ 30 \GeV
-\item At least 2 \fxnote*{CSVM defined in event reco}{CSVM tagged b-jets}
+\item At least 2 CSVM tagged b-jets
 \item $\HT > $ 400 \GeV 
 \item $\MET > $ 30 \GeV 
 \end{itemize}
@@ -47,21 +120,97 @@ For the electron channel these are:
 \item $\MET > $ 30 \GeV 
 \end{itemize}
 
-\section{Calibrations of the simulation}
-\label{sec:Calibrations}
-\subsection{b tag modelling}
+\section{Corrections to the simulation}
+\label{sec:Calibrations8}
+All corrections are described in section~\ref{sec:Calibrations}.
+The events for all background and signal samples which pass the baseline event selection are given a weight which is the product of the weight for the pile up corrections, a weight to correct the b-tag modelling from the method in ~\ref{subsec:method1btag} and a weight for lepton modelling corrections. The heavy flavour jet modelling from section~\ref{ttbbmod} is applied to the \ttbar background.
 
-There are significant differences between b tag efficiencies measured by CMS in data and the efficiencies as measured in simulation. To account for this, a weight must be applied applied to the selected MC events in order to predict the correct event yield in data. The full method can be found in this reference~\cite{CMS-PAS-BTV-13-001}.
 
-\subsection{Heavy flavour jet modelling}
 
-There is a discrepancy between data and simulation in the tails of the \fxnote*{show unweighted}{distribution} of the number of b-tagged jets (\nbtags) which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated. The ratio of \heavyflavour was measured by CMS to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.5 \left(\textrm{sys.} \right)\% $ ~\cite{CMS:2014yxa} at $\sqrt{s} =$ 8TeV. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets MC sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg) . Weights are applied to each sub-sample to match the measured ratio whilst preserving the total number of \ttbar events. After this procedure is applied, the agreement between data and simulation in the \nbtags distribution is improved as can be seen in Fig~\ref{fig:datasimnbtags}.
+% \subsection{b tag modelling}
 
-\subsection{Lepton modelling}
-Due to a difference between data and simulation in the efficiency of lepton identification and isolation, a weight is applied to events which is dependent on the selected leptons $\eta$, $\pt$ and lepton flavour.
-\section{Data-simulation agreement and cutflow}
+% There are significant differences between b tag efficiencies measured by CMS in data and the efficiencies as measured in simulation. To account for this, a weight must be applied applied to the selected MC events in order to predict the correct event yield in data. The full method can be found in this reference~\cite{CMS-PAS-BTV-13-001}.
 
-After the baseline event selection, events are weighted using the prescription for pile-up as described in Section~\ref{sec:pile-up}. The weights are applied for b-tagging, the heavy flavour jet modelling and the lepton modelling as described in Section~\ref{sec:run1:baseline}. The distributions which show the data-simulation agreement for \njets, \nbtags, \HT and \MET after these weights are applied are shown in Figs~\ref{fig:datasimnjets},~\ref{fig:datasimnbtags},~\ref{fig:datasimHT},~\ref{fig:datasimMET}. As the scale uncertainty is the largest uncertainty on the background, it is shown as a hashed error band on the distributions.
+% \subsection{Heavy flavour jet modelling}
+
+% There is a discrepancy between data and simulation in the tails of the \fxnote*{show unweighted}{distribution} of the number of b-tagged jets (\nbtags) which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated. The ratio of \heavyflavour was measured by CMS to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.5 \left(\textrm{sys.} \right)\% $ ~\cite{CMS:2014yxa} at $\sqrt{s} =$ 8TeV. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets MC sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg) . Weights are applied to each sub-sample to match the measured ratio whilst preserving the total number of \ttbar events. After this procedure is applied, the agreement between data and simulation in the \nbtags distribution is improved as can be seen in Fig~\ref{fig:datasimnbtags}.
+
+% \subsection{Lepton modelling}
+% Due to a difference between data and simulation in the efficiency of lepton identification and isolation, a weight is applied to events which is dependent on the selected leptons $\eta$, $\pt$ and lepton flavour.
+\section{Weighted event counts through baseline event selection \label{cutflow}}
+
+The event counts weighted by the various corrections in section~\ref{sec:Calibrations8} are given for the muon (electron) channel in table~\ref{tab:museltable8} (table~\ref{tab:eseltable8}). It is quite evident that the main background is \ttbar production, with smaller contributions coming from W$+$jets, Z$+$jets and single top (ST) as well as almost negligible contributions from the diboson and TT+X background (X $=$ H, Z, W).
+\fxnote {discuss grouping of backgrounds}
+
+
+
+
+\begin{table}
+\tiny
+\caption{Cut flow for the $\mu$ + jets channel ($19695.0~pb^{-1}$ of int. lumi.)}
+\label{tab:museltable8}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&$Data$ &$\tttt$  &$ttH$  &$Wjets$ &$Zjets$ &$ST$ &$WW$ &$WZ$ &$ZZ$ &$TTZ$  &$TTW$  &$\ttbar$ \\
+\hline
+Trigger&  120508.0  &4.5  &171.8  &16094  &3916.3 &3256.2 &272.0  &161.1  &71.5 &219.3  &277.5  &84476  \\
+
+1 iso. $\mu$& 95723.0 &3.5  &141.6  &13655  &2635.1 &2750.2 &232.7  &125.0  &47.6 &168.5  &229.3  &70030  \\
+
+Loose $\mu$ veto& 93385.0 &3.2  &138.9  &13654  &1835.3 &2739.2 &232.3  &114.7  &34.0 &153.5  &222.9  &69503  \\
+
+Loose e veto& 91546.0 &2.5  &132.6  &13593  &1812.0 &2691.6 &228.9  &113.0  &33.3 &143.6  &206.0  &68040  \\
+
+$>$= 6 Jets&  24791.0 &2.3  &59.1 &2428.4 &350.7  &591.9  &41.5 &20.0 &5.1  &71.8 &94.1 &21197  \\
+
+$>$= 2 b-tags&  9260.0  &1.7  &46.0 &68.8 &15.2 &215.5  &3.1  &1.4  &0.6  &35.0 &39.5 &9138.8 \\
+
+HT $>$=  400 GeV& 6342.0  &1.6  &37.7 &49.3 &10.4 &156.9  &2.6  &1.0  &0.4  &29.6 &32.8 &6542.2 \\
+
+\MET $>$=  30 GeV&      5215.0  &1.5    &31.7   &41.5   &7.1    &132.2  &2.2    &0.9    &0.1    &24.4   &28.3   &5415.1 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}
+\tiny
+\caption{Cut flow for the $e$ + jets channel ($19721.7~pb^{-1}$ of int. lumi.)}
+\label{tab:eseltable8}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&$Data$ &$\tttt$  &$ttH$  &$Wjets$ &$Zjets$ &$ST$  &$WW$ &$WZ$ &$ZZ$ &$TTZ$  &$TTW$  &$\ttbar_{other}$ &$\ttbar_{semi-lep}$  \\
+\hline
+Trigger and PV& $1128500$ &$8.6$  &$307.8$  &$28831$  &$25118.7$  &$6494.4$ &$683.8$  &$464.1$  &$228.3$  &$440.4$  &$545.5$  &$14569$  &$157087$ \\
+
+1 iso. e& $103856$  &$3.2$  &$117.6$  &$9631.6$ &$7183.4$ &$2212.4$ &$217.6$  &$136.8$  &$60.9$ &$156.4$  &$207.4$  &$5050$ &$59293$  \\
+
+Loose e veto& $100861$  &$3.0$  &$115.9$  &$9611.2$ &$5354.2$ &$2199.2$ &$216.4$  &$121.7$  &$43.7$ &$144.7$  &$201.9$  &$4611$ &$59201$  \\
+
+Loose mu veto&  $99402$ &$2.3$  &$110.9$  &$9605.0$ &$5340.7$ &$2172.0$ &$215.2$  &$120.8$  &$43.3$ &$134.4$  &$186.3$  &$3456$ &$59128$  \\
+
+$>$= 6 Jets&  $26508$ &$2.1$  &$55.2$ &$1660.3$ &$1108.3$ &$490.7$  &$32.0$ &$20.6$ &$7.2$  &$67.6$ &$84.7$ &$977.8$  &$18799$  \\
+
+$>$= 2 b-tags&  $8945$  &$1.5$  &$43.2$ &$45.4$ &$19.8$ &$179.3$  &$1.3$  &$2.0$  &$0.8$  &$31.5$ &$35.6$ &$421.1$  &$7941$ \\
+
+HT $>$= 400 GeV&  $6278$  &$1.5$  &$35.6$ &$33.2$ &$13.9$ &$134.2$  &$1.0$  &$1.3$  &$0.5$  &$26.1$ &$29.1$ &$321.4$  &$5739.7$ \\
+
+\MET $>$ 30 GeV & $5066$  &$1.3$  &$30.0$ &$25.4$ &$7.0$  &$114.2$  &$0.8$  &$1.1$  &$0.2$  &$21.5$ &$24.5$ &$297.0$  &$4676.9$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+\section{Data-simulation agreement}
+
+% After the baseline event selection, events are weighted using the prescription for pile-up as described in Section~\ref{sec:pile-up}. The weights are applied for b-tagging, the heavy flavour jet modelling and the lepton modelling as described in Section~\ref{sec:run1:baseline}. 
+
+The distributions which show the data-simulation agreement for \njets, \nbtags, \HT and \MET after these weights are applied are shown in Figs~\ref{fig:datasimnjets},~\ref{fig:datasimnbtags},~\ref{fig:datasimHT},~\ref{fig:datasimMET}. As the scale uncertainty is the largest uncertainty on the background, it is shown as a hatched error band on the distributions. It can be seen that there is good agreement between data and simulation in these distributions and that the signal (overlaid and multiplied by 100 for visibility) has a different shape in these variables in the background processes particularly in the \njets, \nbtags, \HT which make them viable candidates to be used in the event-level BDT.
 
 \fxnote{Get version of plots from papers with bigger titles}
 
@@ -97,11 +246,16 @@ After the baseline event selection, events are weighted using the prescription f
     \label{fig:datasimMET}
 \end{figure}
 
-\fxnote{include cutflow table}
+
 
 \section{Multi-jet background estimation}
 \label{sec:QCDbackground}
-The presence of multi-jet events within the signal region defined by the baseline selection is investigated in this section. It is rare for multi-jet events to have a highly energetic undetectable particle. Therefore, the $\MET$ distributions for multi-jet events typically peak at \fxnote*{more specific?}{low values}. It can be seen from the MET distributions in Fig.~\ref{fig:datasimMET} that the data agrees well with the simulation at low values which suggests there are very few multi-jet events which pass the tight requirements in the baseline selection. Due to this small number of events, it is not possible to use multi-jet MC to estimate this background. In this case, a data-driven method known as the \fxnote*{ref?}{ABCD method} may be used. This method proceeds by selecting two uncorrelated variables from the object or baseline selection and defining three control regions (A,B,C) and one signal region (D) in the 2-dimensional phase space of these variables. The event variable \MET and the lepton variable RelIso were selected as they are \fxnote*{uncorrelated proof??}{uncorrelated} and the defined regions are shown below. Trigger requirements place an upper bound on the RelIso which restricts the region choice.\\
+The presence of multi-jet events within the signal region defined by the baseline selection is investigated in this section. 
+%It is rare for multi-jet events to have a highly energetic undetectable particle. Therefore, the $\MET$ distributions for multi-jet events typically peak at \fxnote*{more specific?}{low values}. 
+It can be seen from the MET distributions in Fig.~\ref{fig:datasimMET} that the data agrees well with the simulation at low values which suggests there are very few multi-jet events which pass the tight requirements in the baseline selection. 
+%Due to this small number of events, it is not possible to use multi-jet MC to estimate this background. In this case, a data-driven method known as the \fxnote*{ref?}{ABCD method} may be used. This method proceeds by selecting two uncorrelated variables from the object or baseline selection and defining three control regions (A,B,C) and one signal region (D) in the 2-dimensional phase space of these variables. The event variable \MET and the lepton variable RelIso were selected as they are \fxnote*{uncorrelated proof??}{uncorrelated} and 
+The defined regions in the uncorrelated variables of \MET and $RelIso$ are shown below. The upper bound in $RelIso$ is restricted by the minimum $RelIso$ values required by the HLT in the single muon and single electron streams.\\
+
 For the muon channel these are:
 \begin{itemize}
 \setlength\itemsep{0em}
@@ -119,8 +273,9 @@ For the \eplusjets:
 \item D : 30 $<\MET<$ 500, 0 $<$ RelIso $<$ 0.12
 \end{itemize}
 
-It is assumed that the multi-jet background can be estimated from the data minus the background expectation from all of the other MC samples considered in Section~\ref{sec:datasimulation}. The results of the background subtraction from data and the defined ABCD regions are shown in Fig.~\ref{fig:QCDplots}.
-The number of events, N$_{\textrm{multi-jet}}$, in each of the control regions are found by integrating within their respective ranges. From this, the number of events in region D can be estimated using Eq.~\ref{N-multi-jet}, the results of which are shown in Table~\ref{tab:multijet}.
+%It is assumed that the multi-jet background can be estimated from the data minus the background expectation from all of the other MC samples considered in Section~\ref{sec:datasimulation}. 
+The results of the background subtraction from data and the defined ABCD regions are shown in Fig.~\ref{fig:QCDplots}.
+The number of multi-jet events, N$_{\textrm{multi-jet}}$, in each of the control regions are used to predict the number of multi-jet events in region D using Eq.~\ref{N-multi-jet}, the results of which are shown in Table~\ref{tab:multijet}.
 
 \begin{figure}[!ht]
     \includegraphics[width=0.49\textwidth]{images/Run1/Data_Minus_MC_Mu-1.pdf}
@@ -140,7 +295,7 @@ The number of events, N$_{\textrm{multi-jet}}$, in each of the control regions a
 \centering
 \begin{tabular}{|c |c |c |c |c |}
  \hline 
- Channel & N$^{\textrm{A}}_{\textrm{multi-jet}}$  & N$^{\textrm{B}}_{\textrm{multi-jet}}$ & N$^{\textrm{C}}_{\textrm{multi-jet}}$ &N$^{\textrm{D}}_{\textrm{multi-jet}}$  \\
+ Channel & N$^{\textrm{A}}_{\textrm{multi-jet}}$  & N$^{\textrm{B}}_{\textrm{multi-jet}}$ & N$^{\textrm{C}}_{\textrm{multi-jet}}$ & Prediction for N$^{\textrm{D}}_{\textrm{multi-jet}}$  \\
   \hline
 $\mu$ + jets & 19.1 & 16.1 & -16.8 & -20  \\
  \hline

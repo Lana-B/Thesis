@@ -24,7 +24,11 @@ This thesis will focus on the single lepton channel where only single muon and s
     \label{fig:ttttDecay}
 \end{figure}
 
-
+\section{Signal and background processes}
+\label{sec:sigback}
+\fxnote{Discuss four top signal process and what that would look like in the detector}
+\fxnote{Discuss background process which could mimic 4tops}
+\fxnote{Add feynman diagram}
 
 
 \section{Corrections to the simulation}
@@ -45,6 +49,7 @@ $SF_{PU}$ is derived using \emph{minimum bias} data and simulation. This means t
 
 \subsection{b tag modelling ~\label{sec:btagModelling}}
 
+\subsubsection{Method 1 ~\label{subsec:method1btag}}
 There are residual differences between b tagging efficiencies measured by CMS in data and the efficiencies as measured in simulation as it is difficult to simulate the fragmentation and hadronisation of b-quarks. 
 The b-tagging efficiencies are measured for each of the CSVL, CSVM, and CSVT working points in bins of \pt and $\eta$. Depending on which working point was used in an analysis a scale factor, $SF(\eta, P_{T})_{i}$,  can be applied to the simulation for each jet. This is dependent on the \pt, $\eta$ and flavour, \emph{i}, of the jet, shown in equation~\ref{eqn:sfbtagnorm}, where $\epsilon(\eta , \pt)^{data}_{i}$ is the efficiency for a jet to be tagged as a b-jet in data and $\epsilon(\eta , \pt)^{sim}_{i}$ is the efficiency for identifying a jet as a b-jet in simulation.
 
@@ -80,6 +85,7 @@ An overall weight to be applied to each event depending on the jet content can b
 \end{equation}
 \end{centering}
 
+\subsubsection{Method 2 ~\label{subsec:method2btag}}
 
 Alternatively, the measurements at each working point can be used to fit the shape of the CSV distribution and provide scale factors in bins of \pt and $\eta$ for each jet flavour. Therefore the scale factors for each jet can be derived from the \pt and $\eta$, CSV discriminator value and for each jet flavour as seen in equation~\ref{eqn:btagcsv}. For this method, the jet flavours are defined as heavy for bottom quarks and light for u, s, d, g whilst c-quarks are given $\textrm{SF} = 1$. Further details of the CSV reshaping can be found in Ref.~\cite{CMS-NOTE-2013-130}.
 
@@ -95,7 +101,7 @@ An event weight can be derived by taking the product of the per-jet scale factor
 \label{eqn:btagcsvtot}
 \end{equation}
 
-\subsection{Heavy flavour jet modelling}
+\subsection{Heavy flavour jet modelling ~\label{ttbbmod}}
 % There is a discrepancy between data and simulation in the distribution of the number of b-tagged jets (\nbtags) at higher numbers of b-tags which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated.
 The extra jets in \ttbar events can come from processes such as gluon splitting pair-producing \bbbar. These \ttbb events are most likely to resemble the features of the \tttt signal events and so it is essential that the proportion of them in simulation is correctly modelled. Table~\ref{tab:heavyflavR} shows the heavy flavour ratio $R=\heavyflavourone~/~\heavyflavourtwo$ as measured by CMS at 8~TeV and 13~TeV in data and in simulation. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets (MC) sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg).  A scale factor SF = R(Data)~/~R(Sim) is derived from the information in table~\ref{tab:heavyflavR} which is applied to the \ttbb events. Another SF is applied to \ttll to preserve the total number of \ttbar events.
 
