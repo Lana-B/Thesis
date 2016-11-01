@@ -354,8 +354,59 @@ From the MLF, the number of background events from each source and the number of
 
 \subsection{\CLS method}
 
+The procedure used for setting limits on the strength of the signal process is the modified frequentist method known as the \emph{\CLS method}.
+A test statistic, $\tilde{q}$, can be defined to distinguish between the background only (b-only) hypothesis and signal$+$background (s$+$b) hypothesis which includes the \tttt signal in the case of this analysis. The most common test statistic is the log likelihood ratio defined in eqn.~\ref{eqn:testStat}. The nominal signal strength, $\mu$, can be scaled by some factor and $\hat{\mu}$ is the parameter estimator of the signal strength. Equation~\ref{eqn:testStat} has the constraint of $0\geq \hat{\mu}\geq \mu$ to ensure that the signal strength is positive and to guarantee a one-sided confidence interval.
+
+\begin{equation}
+\tilde{q}_{\mu} = -2ln\frac{\mathcal{L}\left(data|s+b\right)}{\mathcal{L}\left(data|s\right)}
+\label{eqn:testStat}
+\end{equation}
+
+% \begin{equation}
+% \tilde{q}_{\mu} = -2ln\frac{\mathcal{L}\left(data|\mu,\hat{\theta}_{\mu}\right)}{\mathcal{L}\left(data|\hat{\mu},\hat{\theta}\right)}
+% \label{eqn:testStat}
+% \end{equation}
+
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.5\textwidth]{images/Analysis/CLSdemo.pdf}
+    \caption{Demonstration of the \CLS method~\cite{CMS-NOTE-2011-005}}
+    \label{fig:CLSdemo}
+\end{figure}
+
+The value of $p_{s+b}$ denotes the probability of obtaining a value of $\tilde{q}_{\mu}$ which is equal or less likely to happen relative to the $q_{obs}$ given the s+b hypothesis.
+
+\begin{equation}
+p_{s+b} = \int_{\tilde{q}_{obs}}^{\infty} f\left(\tilde{q} | s+b   \right)_{\mu} d\tilde{q}_{\mu}
+\end{equation}
+
+One can similarly define $p_{b}$, however it is better to look at the definition of $1-p_{b}$ in equation~\ref{minuspb} as this is used in the \CLS definition in equation~\ref{eqn:CLS}.
+
+\begin{equation}
+1-p_{b} = \int_{q_{obs}}^{\infty} f\left(\tilde{q} |b   \right) d\tilde{q}_{\mu}
+\label{eqn:minuspb}
+\end{equation}
 
 
+\begin{equation}
+\CLS = \frac{p_{s+b}}{1-p_{b}} 
+\label{eqn:CLS}
+\end{equation}
+
+
+We can say that our model is excluded with a $\left(1-\alpha \right)$ confidence level (C.L) if $\CLS < \alpha$ for a given signal strength, $\mu$. In this thesis 95\% Confidence Level upper limits are set on four top quark production within the standard model which corresponds to signal strengths which have $\CLS < 0.05$ being excluded.
+
+% \begin{equation}
+% p_{\mu} = \int_{\tilde{q}_{\mu}^{obs}}^{\infty} f\left(\tilde{q}_{\mu} | \mu, \theta^{obs}_{\mu}   \right) d\tilde{q}_{\mu}
+% \end{equation}
+
+
+% \begin{equation}
+% 1-p_{b} = \int_{q_{0}^{obs}}^{\infty} f\left(\tilde{q}_{\mu} |0, \theta^{obs}_{0}   \right) d\tilde{q}_{\mu}
+% \end{equation}
+% \begin{equation}
+% \CLS\left(\mu\right) = \frac{p_{\mu}}{1-p_{b}}
+% \end{equation}
 
 \subsection{Categorisation}
 \label{sec:Cats}
