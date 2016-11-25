@@ -1,9 +1,10 @@
 \chapter{Phenomenological study of \runone four-top-quark production cross section limits}
 \label{c:pheno}
 
-The 95\% CL upper limit placed on the production of four top quarks at $\sqrt{s}=8$~TeV can be used to place constraints on various physics models. One particular model, which is described further in Chapter~\ref{c:theory}, is a simplified model of NMSSM in which a new particle, the sgluon, arises. The results of the search in the single lepton channel in Chapter~\ref{c:Run1} are used alongside a search for new physics in the same-sign dilepton channel at $\sqrt{s}=8$~TeV~\cite{Chatrchyan:2013fea}, which also places limit on SM four-quark-production, to place constraints on the mass and coupling of the sgluon. The author personally made contributions to reinterpreting that latter search and hence it will be primarily discussed in this thesis. Full details of the combined analysis and particularly the reinterpretation of the single lepton analysis can be found in~\cite{Beck201548}.
+The 95\% CL upper limit placed on the production of four top quarks at $\sqrt{s}=8$~TeV can be used to place constraints on new physics models which predict an enhancement in the \tttt production cross section. One particular model, which is described further in Chapter~\ref{c:theory}, is a simplified model of NMSSM in which a new particle, the sgluon, arises. The results of the search in the single lepton channel in Chapter~\ref{c:Run1} are used to place constraints on the mass and coupling of the sgluon alongside another complimentary search CMS search for new physics in the same-sign dilepton channel which also places a limit on SM four-quark-production using the same dataset at $\sqrt{s}=8$~TeV~\cite{Chatrchyan:2013fea}. The author personally made contributions to reinterpreting that latter search and hence it will be primarily discussed in this thesis. Full details of the combined analysis and particularly the reinterpretation of the single lepton analysis can be found in~\cite{Beck201548}.\\
+The chapter is organised as follows: in Section~\ref{sec:simpModel} the simplified model which is considered for study is discussed while in Section~\ref{sec:reinterp} the methodology of reinterpreting the CMS same-sign dilepton search is discussed. The simulation of sgluon events is discussed in Section~\ref{sec:sgluonSim} and the analysis of the simulation in the reinterpretation is discussed in Section~\ref{sec:sgluonAna}. The results are given in Section~\ref{sec:sgluonResults} and conclusions in Section~\ref{sec:sgluonConc}.
 
-\section{A simplified model for describing top-philic sgluons }
+\section{A simplified model for describing top-philic sgluons \label{sec:simpModel} }
 $<$\emph{to be completed after theory section is written}$>$
 \begin{figure}[h!]
 \centering
@@ -11,18 +12,19 @@ $<$\emph{to be completed after theory section is written}$>$
     \caption{caption}
     \label{fig:sgluonxsec}
 \end{figure}
-\section{Reinterpretation of same-sign dilepton channel}
+\section{Reinterpretation of same-sign dilepton channel \label{sec:reinterp}}
 
-The analysis by CMS of the same-sign dilepton channel at $\sqrt{s}=8$~TeV~\cite{Chatrchyan:2013fea} utilises the entire 2012 dataset of proton-proton collision of 19.6~\fbinv. The analysis is a collection of counting experiments that contain at least two same sign leptons and a number of jets. There are 28 signal regions which are categorised according to \njets, \nbtags, \HT, \MET and require the leptons to satisfy $\pt>20$~GeV and$|\eta|<2.4$. Signal region 28 (SR28) was chosen to reinterpret as it closely corresponds to the \tttt signature and it can be fully emulated using the parameterisations of selection efficiency given in the paper. It is not possible to combine the results from multiple signal regions without knowledge of the correlation of the uncertainties on the background. 
-
-The efficiency curves for reconstructing an object in the detector given generator-level information are shown in Fig.~\ref{fig:effGraphs} for:
+The analysis by CMS of the same-sign dilepton channel at $\sqrt{s}=8$~TeV~\cite{Chatrchyan:2013fea} utilises the entire 2012 dataset of proton-proton collision of 19.6~\fbinv. The analysis is a collection of counting experiments that contain at least two same sign leptons and a number of jets. There are 28 signal regions which are categorised according to \njets, \nbtags, \HT, \MET and require the leptons to satisfy $\pt>20$~GeV and$|\eta|<2.4$.
+Parameterisations are provided in this CMS paper which give the efficiency for reconstructing an object in simulation given generator-level information. These include:
+% The efficiency curves for reconstructing an object in the detector given generator-level information are shown in Fig.~\ref for:
 \begin{itemize}
 \item The reconstruction of jets with respect to generator-level jet \pt 
 \item The b-tagging of b-quark jets by the CSV algorithm with respect to generator-level jet \pt
 \item The reconstruction of \HT with respect to generator-level \HT ($\varepsilon_{H_T}$)
 \item The reconstruction of muons and electrons with respect to generator-level lepton \pt
-\item The reconstruction of \MET with respect to generator-level \MET ($\varepsilon_{\MET}$)
+\item The reconstruction of \MET with respect to generator-level \MET ($\varepsilon_{\MET}$)\fxnote{epsilons for other curves?}
 \end{itemize}
+as shown in Fig.~\ref{fig:effGraphs}.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -34,13 +36,13 @@ The efficiency curves for reconstructing an object in the detector given generat
 % }
 % \hspace{0.2cm}
 \end{center}
-\caption{Selection efficiencies for the reconstruction of jets and for b-tagging b-quark jets (top-left), for reconstructing \HT (top-right), for reconstructing muons and electrons (bottom-left) and for reconstructing \MET (bottom-right)}
+\caption{Selection efficiencies for the reconstruction of jets and for b-tagging b-quark jets (top-left), for reconstructing \HT (top-right), for reconstructing muons and electrons (bottom-left) and for reconstructing \MET (bottom-right). Adapted from~\cite{Chatrchyan:2013fea}.}
 \label{fig:effGraphs}
 \end{figure}
-
-The requirements of SR28 are \njets$\geq4$, \nbtags$\geq2$, \HT$>400$~GeV, \MET$>$120~GeV and two same-sign leptons with \pt$>20$~GeV and $|\eta|<2.4$. Events which contain any additional leptons which form an opposite-sign-same-flavour (OSSF) pair with one of the signal leptons is vetoed if the invariant mass of the OSSF (M$_{\ell\ell}$) is satisfies either M$_{\ell\ell}<12$~GeV or $76<$M$_{\ell\ell}<106$~GeV. This is to replicate the veto in the CMS search for events which may contain a low mass bound state or a Z boson.
-
-The efficiency, $\varepsilon_{\geq\text{2b-tags}}$, can be calculated using equation~\ref{eqn:2btags} along with the probability, $P_{i}$, for reconstructing a b-jet. $P_{i}$ is the product of the probability to reconstruct a jet$_{i}$ and to tag it as b-jet which can be determined from the parameterisations of the curves Fig.~\ref{fig:effGraphs} (top-left). A uniform efficiency for light quarks to be tagged as b-jet of $1\%$ is included.
+Signal region 28 (SR28) was chosen to reinterpret as it closely corresponds to the \tttt signature and it can be fully emulated using the parameterisations of selection efficiency given in the paper. 
+The requirements of SR28 are \njets$\geq4$, \nbtags$\geq2$, \HT$>400$~GeV, \MET$>$120~GeV and two same-sign leptons with \pt$>20$~GeV and $|\eta|<2.4$. Events which contain any additional leptons which form an opposite-sign-same-flavour (OSSF) pair with one of the signal leptons is vetoed if the invariant mass of the OSSF (M$_{\ell\ell}$) satisfies either M$_{\ell\ell}<12$~GeV or $76<$M$_{\ell\ell}<106$~GeV. This is to replicate the veto in the CMS search for events which may contain a low mass bound state or a Z boson.
+It is not possible to combine the results from multiple signal regions without knowledge of the correlation of the uncertainties on the background. \\
+The efficiency for obtaining at least 2 b-tagged jets, $\varepsilon_{\geq\text{2b-tags}}$, can be calculated using Eq.~\ref{eqn:2btags} along with the probability, $P_{i}$, for reconstructing a b-jet. $P_{i}$ is the product of the probability to reconstruct a jet$_{i}$ and to tag it as b-jet which can be determined from the parameterisations of the curves in Fig.~\ref{fig:effGraphs} (top-left). A uniform efficiency for light quarks to be tagged as b-jet of $1\%$ is included to replicate the CMS study.
 
 
 \begin{equation}
@@ -73,16 +75,16 @@ From the derived efficiencies for obtaining a specific \HT and \MET per event as
     \varepsilon_{\geq\text{2b-tags}} \times \varepsilon_{\geq1 \text{SS2L}} \ ,
 \end{equation}
 
-\section{Simulation of sgluon events}
-The \MGfive software package was used to simulate sgluon pair production with exclusive decays to top quarks at $\sqrt{s}=8$~TeV. \PYTHIAsix was used to perform the hadronisation. The jet clustering was performed using the \antikt clustering algortihm in the \FASTJET package with a cone radius of R$~=0.5$ and \pt$>5$ which is consistent with the CMS analysis.
+\section{Simulation of sgluon events \label{sec:sgluonSim}}
+The \MGfive~\cite{Alwall2014} software package was used to simulate sgluon pair production with exclusive decays to top quarks at $\sqrt{s}=8$~TeV. \PYTHIAsix~\cite{pythia} was used to perform the hadronisation. The jet clustering was performed using the \antikt clustering algorithm in the \FASTJET package with a distance parameter of R$~=0.5$ and \pt$>5$ which is consistent with the same-sign analysis.
 
-A sample of standard model four top quark events was also simulated using \MGfive and \PYTHIAsix. A signal efficiency for these events passing the SR28 selection was $0.6\%$ which can be compared to the $0.49\%$ signal acceptance found in the CMS analysis. These two numbers are agree within the $30\%$ uncertainty quoted for the analysis.
+A sample of standard model four top quark events was also simulated using \MGfive and \PYTHIAsix. A signal efficiency for these events passing the SR28 selection was $0.6\%$ which can be compared to the $0.49\%$ signal acceptance listed in the same-sign analysis paper. These two numbers are agree within the $30\%$ uncertainty quoted for the analysis.
 
 Sgluon events were simulated for a number of sgluon mass points, $m_{S}$, between $350 \geq m_{S} \geq 1000$~GeV and in the range of coupling to the top quark, $\alpha_{t}$, of $0.5 \times 10^{-3}\geq \alpha_{t} \geq 5 \times 10^{-3}$.
 
-\section{Analysis}
+\section{Analysis \label{sec:sgluonAna}}
 
-Using equation~\ref{eqn:phenoWeights} one can obtain the correctly weighted number of events which pass the selection and hence the signal efficiency for each sgluon ($m_{S},\alpha_{t}$) point. The number of sgluon events, $n^{S}_{events}$, which would be found in the CMS analysis are obtained using Eq.~\ref{eqn:equivEvents}, where $\varepsilon\left(m_{S},\alpha_{t}\right)$ is the signal efficiency, $\sigma\left(m_{S},\alpha_{t}\right)$ is the cross section and $F^{SGK}\left(m_{S},\alpha_{t}\right)$ is the GSK factor for that mass and coupling point. The luminosity, $\mathcal{L}$, is taken from the analysis to be 19.6~\fbinv. Rather than running the analysis in \MADAN for every coupling point, a nominal coupling can be provided and the program will produce weights, $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right)$ for each alternative coupling, where $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right) = 1$ for the nominal case.
+The \MADAN framework~\cite{Conte2013222} is used to perform the analysis. Using Eq.~\ref{eqn:phenoWeights} one can obtain the fraction of events which pass the selection and hence the signal efficiency for each sgluon ($m_{S},\alpha_{t}$) point. The number of sgluon events, $n^{S}_{events}$, which would be found in the same-sign analysis are obtained using Eq.~\ref{eqn:equivEvents}, where $\varepsilon\left(m_{S},\alpha_{t}\right)$ is the signal efficiency, $\sigma\left(m_{S},\alpha_{t}\right)$ is the cross section and $F^{SGK}\left(m_{S},\alpha_{t}\right)$ is the \fxnote*{define}{GSK} factor for that mass and coupling point. The luminosity, $\mathcal{L}$, is taken from the analysis to be 19.6~\fbinv. Rather than running the analysis in \MADAN for every coupling point, a nominal coupling can be provided and the program will produce weights, $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right)$ for each alternative coupling, where $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right) = 1$ for the nominal case.
 
 \begin{equation}
 n^{S}_{events}\left(m_{S},\alpha_{t}\right) = \varepsilon\left(m_{S},\alpha_{t}\right)\times \sigma\left(m_{S},\alpha_{t}\right) \times F^{SGK}\left(m_{S},\alpha_{t}\right) \times \mathcal{L}\times F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right)
@@ -92,7 +94,7 @@ n^{S}_{events}\left(m_{S},\alpha_{t}\right) = \varepsilon\left(m_{S},\alpha_{t}\
 This gives the number of sgluon events for each mass and coupling point in the chosen range, which then needs to be compared to the CMS analysis. CMS obtained 2 (2.21) event observed (expected) in SR28. This is converted to an $95\%$ C.L. upper limit of 4.68 (4.89) events observed (expected) by using the asymptotic \CLS method implemented in the \ROOSTAT package where the uncertainty of $30\%$ on the signal yield was assumed. Hence regions of the $\left(m_{S},\alpha_{t}\right)$ plane where $n^{S}_{events}$ is expected to be larger than 4.68 events can be excluded.
 
 
-\section{Results}
+\section{Results \label{sec:sgluonResults}}
 
 % Figure~\ref{fig:dilep2D} shows the number of events depending on the mass of the sgluon and it's coupling to the top quark. A contour is shown in red where the number of events is equal to 4.68 and hence any phase space point which has more events than this can be excluded.
 
@@ -111,11 +113,10 @@ This gives the number of sgluon events for each mass and coupling point in the c
 % The dilepton analysis is more constraining as it does not depend on event kinematics. It constrains up to $ m_{S} = 750$~GeV.
 
 
-Figure~\ref{fig:sgluonExclusion} shows the exclusion boundary for the dilepton analysis where the number of events exceeds the CMS 95$\%$ C.L. limit in the exclusion zone. The CMS single lepton analysis from~\cite{Chatrchyan:2013fea,Beck201548} is also included in the plot. The solid lines show the exclusion boundary for a fixed value of $a_{g}/\Lambda = 1.5 \times 10^{-6}$~GeV$^{-1}$ and the dashed lines show a variation of $a_{g}$ by $\pm 10\%$. 
+Figure~\ref{fig:sgluonExclusion} shows the exclusion boundary for the dilepton analysis where the number of events exceeds the CMS 95$\%$ C.L. limit in the exclusion zone. The CMS \fxnote*{explain in one sentence}{single lepton} analysis from~\cite{Chatrchyan:2013fea,Beck201548} is also included in the plot. The solid lines show the exclusion boundary for a fixed value of $a_{g}/\Lambda = 1.5 \times 10^{-6}$~GeV$^{-1}$ and the dashed lines show the change in the limit due to a variation of $a_{g}$ by $\pm 10\%$. 
 In the mass region from 400 to 500~GeV sgluon models with couplings down to $6\times10^{-4}$ where the cross section of $\sigma( pp \rightarrow SS \rightarrow \tttt)$ is 
-maximal. The sensitivity worsens at low mass values due to the decreasing branching ratio, $\mathcal{B}\left(S\rightarrow~\ttbar \right)$, and at higher 
-mass values due to the decreasing cross section $\sigma( pp \rightarrow SS)$.
-The dilepton analysis is more constraining as it does not depend on event kinematics. It constrains up to $ m_{S} = 750$~GeV at $a_t=5\times10^{-3}$ compared to around $ m_{S} = 750$~GeV for the single lepton channel.
+maximal. The sensitivity worsens at low mass values due to the decreasing branching ratio, $\mathcal{B}\left(S\rightarrow~\ttbar \right)$, and at higher mass values due to the decreasing cross section $\sigma( pp \rightarrow SS)$.
+The dilepton analysis is more constraining as it does not depend on event kinematics. It constrains up to $ m_{S} = 750$~GeV at $a_t=5\times10^{-3}$ compared to around $ m_{S} = 750$~GeV for the single lepton channel. \fxnote{say more}
 
 \begin{figure}[h!]
 \centering
@@ -124,6 +125,6 @@ The dilepton analysis is more constraining as it does not depend on event kinema
     \label{fig:sgluonExclusion}
 \end{figure}
 
-\section{Conclusion}
+\section{Conclusion \label{sec:sgluonConc}}
 
 A simplified model approach has been used to described the dynamics of top-philic sgluons where the parameter space of $(m_{S}, a_{t}, a_{g}/\Lambda)$ has been explored. Two analyses, which set limits on the four-top-quark cross section, are used to place constraints on the phase space regions where sgluons may exist. The dilepton analysis is more powerful at excluding $m_{S}$ up to 700~GeV for the benchmark scenario of $a_{t}=1.5\times10^{-3}$, which is a typical value in the NMSSM for superpartners that have masses around 1-2~TeV. For $a_{t}<0.75\times10^{-3}$ the sgluon mass range of $400<m_{S}<580$~GeV is excluded. Varying $a_{g}$ by $10\%$ from it's benchmark value of $a_{g}/\Lambda = 1.5 \times 10^{-6}$~GeV$^{-1}$ does not have a significant impact on the result.
