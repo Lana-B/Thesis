@@ -5,13 +5,58 @@ The 95\% CL upper limit placed on the production of four top quarks at $\sqrt{s}
 The chapter is organised as follows: in Section~\ref{sec:simpModel} the simplified model which is considered for study is discussed while in Section~\ref{sec:reinterp} the methodology of reinterpreting the CMS same-sign dilepton search is discussed. The simulation of sgluon events is discussed in Section~\ref{sec:sgluonSim} and the analysis of the simulation in the reinterpretation is discussed in Section~\ref{sec:sgluonAna}. The results are given in Section~\ref{sec:sgluonResults} and conclusions in Section~\ref{sec:sgluonConc}.
 
 \section{A simplified model for describing top-philic sgluons \label{sec:simpModel} }
-$<$\emph{to be completed after theory section is written}$>$
+In this section the simplified model of sgluon production and decay, which is a minimal extension of the SM, is described. The SM is supplemented by the Lagrangian in Eq.~\ref{eqn:sgluonLag} by adding a single real colour-octet field for the sgluon, $S^{a}$. The gauge interacions of a sgluon pair to gluons is represented by the QCD covariant derivative, $D_{\mu}S^a= \partial_{\mu} S^a + g_s f_{bc}{}^a G_\mu^b S^c$
+
+\begin{equation}
+ {\cal L}= \frac{1}{2}D_{\mu}S^aD^{\mu} S_a
+          -\frac{1}{2}\ourmS^2 S^a S_a
+          \label{eqn:sgluonLag}
+\end{equation}
+
+
+
+% \begin{equation}
+%  D_{\mu}S^a= \partial_{\mu} S^a + g_s f_{bc}{}^a G_\mu^b S^c \ .
+% \end{equation}
+The strong coupling constant is represented by $g_s$, $f_{bc}{}^a$ are the structure
+constants of the SU(3) gauge group and $G_\mu^a$ denotes the gluon field.
+The effective Lagrangian in Eq.~\ref{eq:SingleSgluLag} represents the sgluon coupling to the SM degrees of freedom, where the first term represents the dimension-four coupling of the sgluon to a top-anti-top pair and the second term represents the sgluon's interaction with gluons.
+
+\begin{equation}
+ {\cal L}_{\rm eff}= \bar t\, T_a (\ourat^L P_L + \ourat^R P_R)\, t\, S^a
+ +\frac{a_g}{\Lambda} d_a{}^{bc} S^a F_{\mu\nu, b} F^{\mu\nu, c}
+ + {\rm h.c.} 
+\label{eq:SingleSgluLag}\end{equation}
+
+The dimensionless coupling of the sgluons to gluons is represented by ${a_g}$, which is a suppressed by the theory cutoff scale $\Lambda$. The coupling of the sgluon to the top quark is denoted by $\ourat^L$ and  $\ourat^R$ for the left-handed and right-handed couplings. In the fundamental representation, $d_a{}^{bc}$ is the symmetric structure constant and $P_{L}~(P_{R})$ is the left (right) parity projection operator. The generators of SU(3) are $T_a$.
+Although sgluons can, in theory, couple via flavour-changing-neutral currents to different quark flavours, we only consider the interactions with top quarks which conserve flavour. This is motivated by R-symmetric supersymmetry with minimal flavour violation where only interactions of sgluons with top quarks and gluons are non-negligible.
+
+In this model sgluons are top-philic, ie. they are only allowed to decay to \ttbar or to two gluons. The benchmark values for the couplings and theory cut-off scale are:
+% \begin{equation}
+\begin{align}
+ &\ourat^L = \ourat^R = \ourat = 1.5\times 10^{-3}\ , \quad
+ a_g = 1.5\times 10^{-3},\nonumber \quad\text{and}\quad&\Lambda = 1~{\rm TeV}
+ \label{eq:benchmark}
+\end{align}
+% \end{equation}
+
+The $a_t$ coupling is varied in the range $[0.5,5]\times 10^{-3}$ and $a_g$ is varied in the range $[1.35, 1.65] \times 10^{-3}$. The mass of sgluons studied is in the range $[350,900]$~GeV. These values are consistent with ultraviolet-complete theories of supersymmetry which have coloured superpartners with mass in the range $[1,2]$~TeV.
+
+The simplified model discussed is consistent with an enhancement in the production of \tttt final states in proton-proton collisions.
+
+[talk about plot] 
+
+~\cite{GoncalvesNetto:2012nt,Degrande:2014sta}. 
+
+
 \begin{figure}[h!]
 \centering
     \includegraphics[width=0.7\textwidth]{images/Pheno/xsec.pdf}\\
     \caption{caption}
     \label{fig:sgluonxsec}
 \end{figure}
+
+
 \section{Reinterpretation of same-sign dilepton channel \label{sec:reinterp}}
 
 The analysis by CMS of the same-sign dilepton channel at $\sqrt{s}=8$~TeV~\cite{Chatrchyan:2013fea} utilises the entire 2012 dataset of proton-proton collision of 19.6~\fbinv. The analysis is a collection of counting experiments that contain at least two same sign leptons and a number of jets. There are 28 signal regions which are categorised according to \njets, \nbtags, \HT, \MET and require the leptons to satisfy $\pt>20$~GeV and$|\eta|<2.4$.
