@@ -1,7 +1,7 @@
 \chapter{Analysis techniques}
 \section{Strategy for searching for four top quarks \label{sec:Strategy}}
 
-The LHC has been said to be a ``top factory'' due to the large cross sections for \ttbar production at 8 TeV and 13 TeV, \fxnote*{ref}{253~pb and 831~pb} respectively. Hence most analyses within the CMS collaboration which work on top quark physics study \ttbar production. In the SM, each of the top quarks will decay to a W boson and a b quark almost 100$\%$ of the time. The final state of the \ttbar process in the detector is defined by whether the W boson decays leptonically into a lepton and neutrino or hadronically into two quark jets. The standard strategy is to require two b-jets to be present in the event and 0, 1 or 2 leptons depending on the final state defined as \emph{all-hadronic}, \emph{semi-leptonic} and \emph{dileptonic} respectively where 6, 4 or 2 total number of jets are required. 
+The LHC has been said to be a ``top factory'' due to the large cross sections for \ttbar production at 8 TeV and 13 TeV, 253~pb and 831~pb~\cite{PhysRevLett.110.252004,Czakon20142930} respectively. Hence most analyses within the CMS collaboration which work on top quark physics study \ttbar production. In the SM, each of the top quarks will decay to a W boson and a b quark almost 100$\%$ of the time. The final state of the \ttbar process in the detector is defined by whether the W boson decays leptonically into a lepton and neutrino or hadronically into two quark jets. The standard strategy is to require two b-jets to be present in the event and 0, 1 or 2 leptons depending on the final state defined as \emph{all-hadronic}, \emph{semi-leptonic} and \emph{dileptonic} respectively where 6, 4 or 2 total number of jets are required. 
 
 \begin{figure}[ht!]
 \centering
@@ -13,7 +13,7 @@ The LHC has been said to be a ``top factory'' due to the large cross sections fo
 
 Not all \ttbar events will be captured within the selection due to inefficiences in tagging b-jets, identifying leptons and reconstructing jets. As the rate of \ttbar production is so high at the LHC, this selection still provides a large enough sample of events to have statistically significant studies.\\
 
-The strategy for selecting \tttt events while suppressing background processes is similar to the \ttbar selection but with the requirement of additional two jets. The small cross section for \tttt production in the SM, \fxnote*{ref}{1.3~fb at 8~TeV and 9.2~fb at 13~TeV} dictates the selection. It would be preferential to require 4 b-jets in the selection to obtain the highest signal to background ratio, however this would have a detrimental effect on the overall amount of \tttt found in the selection due to some b-jets not being identified correctly or being within the acceptance of the detector. Similarly, it is not possible to require a jet per quark hadronising in the detector in a \tttt final state as some of the jets may be merged or may not be within the acceptance of the detector. However, it will be discussed in section~\ref{sec:Cats} how a looser selection can be used to an advantage to constrain the main background process.
+The strategy for selecting \tttt events while suppressing background processes is similar to the \ttbar selection but with the requirement of additional two jets. The small cross section for \tttt production in the SM, 1.3~fb at 8~TeV and 9.2~fb at 13~TeV~\cite{Alwall2014,Bevilacqua2012} dictates the selection. It would be preferential to require 4 b-jets in the selection to obtain the highest signal to background ratio, however this would have a detrimental effect on the overall amount of \tttt found in the selection due to some b-jets not being identified correctly or being within the acceptance of the detector. Similarly, it is not possible to require a jet per quark hadronising in the detector in a \tttt final state as some of the jets may be merged or may not be within the acceptance of the detector. However, it will be discussed in section~\ref{sec:Cats} how a looser selection can be used to an advantage to constrain the main background process.
 
 This thesis will focus on the single lepton channel where only single muon and single electron final states are considered. As can be seen from~\ref{fig:ttttDecay}, the single lepton channel represents the largest branching ratio of the four top quark decay channels. The dilepton channel, which has the second largest branching ratio will also briefly be discussed in chapter~\ref{c:Run2} as it was combined with the single lepton channel to achieve an increased sensitivity on the analysis. In the dilepton channel also only final states with muons and electrons were considered. The criteria which each channel are required to pass are called the \emph{Baseline Event Selection}.
 
@@ -26,9 +26,89 @@ This thesis will focus on the single lepton channel where only single muon and s
 
 \section{Signal and background processes}
 \label{sec:sigback}
-\fxnote{Discuss four top signal process and what that would look like in the detector}
-\fxnote{Discuss background process which could mimic 4tops}
-\fxnote{Add feynman diagram}
+
+\subsection{Four top quark production signal process}
+It can be seen from Fig.~\ref{fig:BRtttt} that the single lepton final state has the largest branching ratio which makes it a favourable place to look to study the largest number of events produced in the CMS detector. This is the final state considered most in this thesis. The dilepton final state also has a large branching ratio and has particularly low backgrounds when same-sign lepton final states are considered. The combination of studies on the dilepton final state will be discussed in Chapter~\ref{c:Run2}.
+
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/Theory/FourTopBR.pdf}
+    \caption{Branching ratios for final states as defined by leptonic decays.}
+    \label{fig:BRtttt}
+\end{center}
+\end{figure}
+Figure~\ref{fig:tttt100tev} shows the cross section for \tttt production versus centre of mass energy, $\sqrt{s}$, in the proton-proton collision. It can be seen that the cross section rises with energy and indeed it increases faster than the main background of \ttbar production which means that the signal to background ratio increases with $\sqrt{s}$. Table~\ref{table:Txsec} shows the cross sections for \tttt production and \ttbar production where it can be seen that the \tttt cross section increases by a factor of $\approx~7$ from $\sqrt{s} = 8$~TeV to $\sqrt{s} = 13$~TeV whereas the \ttbar production increase by a factor of $\approx~3.5$.
+
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.95\textwidth]{images/Theory/100TeV.png}
+    \caption{The \ttbar (2t), four top quark (4t) and six top quark (6t) production cross sections at a range of $\sqrt{s}$ energies~\cite{Deandrea:2014raa}}
+    \label{fig:tttt100tev}
+\end{center}
+\end{figure}
+
+\begin{table}[ht!]
+\centering
+% \caption{My caption}
+\label{table:Txsec}
+\begin{tabular}{|l|l|l|}
+\hline
+Cross section & 8~TeV (\pb) & 13~TeV (\pb) \\ \hline
+\tttt         & 0.0013           & 0.0092            \\ \hline
+\ttbar        & 245              & 831               \\ \hline
+\end{tabular}
+\caption{The cross sections for \tttt and \ttbar production in~\pb~at 8~TeV and 13~TeV~\cite{PhysRevLett.110.252004,Czakon20142930,Alwall2014,Bevilacqua2012}}
+
+\end{table}
+
+\subsection{\ttbar background}
+
+The main background to \tttt production is \ttbar. In the case of the single lepton channel, semi-leptonic \ttbar, where one of the top quarks decays hadronically and the other top quark decays leptonically, is the main final state which contributes to the background. Figure~\ref{fig:ttbarback} shows semi-leptonic \ttbar production with initial and final state radiation. Initial state radiation (ISR) refers to any particle which is radiated off of an incoming particle to the collision whereas final state radiation (FSR) refers to a particle radiated off the final state outgoing products of a collision.
+
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.95\textwidth]{images/Theory/ttbarISRFSR.jpg}
+    \caption{Semi-leptonic \ttbar production with demonstration of extra jets arising from initial and final state radiation}
+    \label{fig:ttbarback}
+\end{center}
+\end{figure}
+
+The semi-leptonic \ttbar process can produce final states which look very much like a \tttt final state in the detector. There are two top quarks which will produce hard jets including two b-quark jets and one lepton. There are also the additional jets from ISR and FSR which increase the jet multiplicity in the event. As in all collisions, final state jets may arise that do not exceed the \pt threshold of the trigger, which is described in Section~\ref{det:trigger}. Jets may also fall outside of the acceptance of the detector or jets may merge together both of which can lower the \tttt multiplity to look more like \ttbar. 
+The spectrum of `additional jets' which are not associated with coming from the decay of a top quark are shown in Fig.~\ref{fig:ttbarAdd} for a CMS analysis at $\sqrt{s}=13$~TeV. Event which lie in the tail of the additional jets distribution are more likely to fall within the requirements for a \tttt event. However, in general, jets which come from ISR or FSR tend to be \emph{softer}, ie. lower in \pt.
+
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.85\textwidth]{images/Theory/ttbarAdd.pdf}
+    \caption{Number of jets which are not associated with a top quark decay in the \ttbar lepton + jets channel~\cite{CMS-PAS-TOP-16-008}}
+    \label{fig:ttbarAdd}
+\end{center}
+\end{figure}
+
+\subsection{Electroweak backgrounds}
+The electroweak backgrounds include W and Z boson production, which in their leptonic decays provide one and two leptons, respectively, and no jets. Additional jets come from ISR or FSR. The electroweak events will have a large number of additional jets a small fraction of times, however because their cross section is so large, as can be seen by Fig.~\ref{fig:CMSstairway}, there will be small number of event which may pass the requirements for selecting \tttt events.
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.99\textwidth]{images/Theory/stairway.pdf}
+    \caption{CMS standard model production cross sections~\cite{stairwaytwiki}}
+    \label{fig:CMSstairway}
+\end{center}
+\end{figure}
+
+The W and Z boson may also decay hadronically where each will provide two jets. Along with the additional jets from ISR/FSR, one jet may be misidentified as a lepton in the detector and hence may also pass the selection requirements for \tttt events.
+
+\subsection{Rarer backgrounds}
+Single top production both has a smaller cross section than W and Z boson production and is less similar to \tttt production than \ttbar production by virtue of having one less top. However the cross section is still many times larger than \tttt production so particularly in the tW-channel, as shown in Fig.~\ref{fig:singleT}, there can be enough additional jets (including two b-jets) such that it may mimic \tttt in the detector.
+
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/Theory/singleTop_tW.png}
+    \includegraphics[width=0.43\textwidth]{images/Theory/singleTop_tW_2.png}
+    \caption{Single top quark production in the tW-channel}
+    \label{fig:singleT}
+\end{center}
+\end{figure}
+
+Other rarer backgrounds include \ttH, \ttZ, \ttW which resemble \tttt production much more closely than \ttbar by having extra bosons produced in the process which can decay to higher \pt jets and leptons than can occur from ISR/FSR. However, they are much more rare than \ttbar production and do not produce a significant background. Diboson production (WW, WZ, ZZ) can also possibly mimic \tttt production but it is usually too rare to be considered.
 
 
 \section{Corrections to the simulation}
@@ -225,7 +305,7 @@ Values of $y_{BDT}$ which are closer to +1 (-1) are considered to be more signal
 
 Variable importance is a measure how often a variable is chosen as the variable to split on at a node in all trees. This allows variables to be ranked in terms of how often they are used to make decisions.
 
-\subsection{Reconstruction of hadronic top quarks \label{sec:topreco}}
+\section{Reconstruction of hadronic top quarks \label{sec:topreco}}
 
 In \tttt single lepton channel there are three hadronically decaying top quarks while there is only one hadronically decaying top quark in the semi-leptonic \ttbar final state. Equivalently in the dilepton channel there are two (zero) hadronically decaying top quarks in \tttt (\ttbar). Therefore reconstructing top quarks from their hadronic decay products should be a powerful way to separate the signal and background processes. The jets which are in addition to the hard process in \ttbar are likely to come from initial or final state radiation (ISR or FSR) or from pileup, hence it should be unlikely to reconstruct a hadronic top quark from these additional jets. Due to the large number of jets within the selection, it is difficult challenge to find the right combination of jets which originated from a top quark. This motivates using multivariate analysis in order to rank each combination of three jets (tri-jet) according to which is most likely to be the combination that originated from a real hadronically decaying top quark.
 A training sample from \ttbar events is provided to the BDT where the Monte Carlo truth information is used to classify whether a tri-jet combination was a \emph{good} combination which originated from a top quark or a \emph{bad} combination which is formed from random jets. The following variables were selected for use within the BDT:\\
@@ -238,13 +318,13 @@ Bad tri-jet combinations will have a much broader distribution. \\
 \textbf{\CSVj} - For the jet not used in the di-jet system, the CSV b-tagging discriminator value is used. If the di-jet system correctly identifies the quark jets coming from a W boson decay then the remaining jet in a good tri-jet combination should be a b-jet and hence will have a higher CSV b-tagging discriminator than a typical randomly selected jet.\\
 The BDT algorithm is trained on the six variables above. It produces a discriminator value for each tri-jet combination. Higher BDT discriminator values are associated with the jets being more likely to have come from a top quark. Each tri-jet combination is ranked according to the BDT discriminator value. In the dilepton channel the value for the highest ranked tri-jet, known as BDT$_{tri-jet1}$, can be used as a discriminating variable between \tttt and \ttbar. In the single lepton channel the three jets which make up the highest ranked tri-jet combination are removed from the collection of jets and the process is repeated. The discriminator value of the next highest ranked tri-jet, BDT$_{tri-jet2}$, in this reduced jet collection can be used to distinguish between \tttt and \ttbar.
 
-\subsubsection{Reduced Variables}
+\subsection{Reduced Variables}
 As mentioned above, BDT$_{tri-jet2}$ is calculated from a reduced jet collection where the three jets from the highest-ranked tri-jet are removed from the jet collection. In \ttbar events, the removal of the jets most likely to form a true top quark leave softer jets remaining in the reduced jet collection, usually from ISR, FSR or PU rather than the hard process of \ttbar production. In \tttt events the removal of the leading hadronic top quark candidate potentially leaves behind two additional hadronic top quarks, where some of the jets may not be reconstructed but there should still be harder jets from the hard process than what remains in \ttbar events. Therefore some discriminating variables can be formed from the reduced jet collection, as follows:
 
 \textbf{HT$_{X}$} - This is the \HT of the reduced event which should be higher for signal \tttt events.\\
 \textbf{\sumjetmassX} - Invariant mass of all jets contained in the reduced event which should be higher for signal \tttt events..
 
-\subsection{Event-level BDT}
+\section{Event-level BDT}
 
 A second BDT is employed to increase the separation between the \ttbar background and \tttt signal beyond what can be achieved with a simpler variable. Several discriminating variables have already been formed from the hadronic top reconstruction; BDT$_{tri-jet1}$, BDT$_{tri-jet2}$, HT$_{X}$, \sumjetmassX. More discriminating variables can be formed from the event information, as follows:
 
@@ -270,7 +350,7 @@ N_j^W = \frac{\int_{30}^{125}{N_j\left(p_T > p_T^{th}\right)\cdot p_T^{th}\,dp_T
 
 
 \textbf{Training}\\
-Each analysis from the single-lepton channel at 8~TeV, the single-lepton channel at 13~TeV and the dilepton channel at 13~TeV, uses different subsets of the variables described above. The variables which are only used in the dilepton channel have not been described here and can be found in \fxnote*{make appendix}{Appendix} The optimised set of variables for each training are provided to the TMVA package where the AdaBoost boosting algorithm is employed. The \tttt signal is trained against the main \ttbar background only as the other backgrounds are comparatively small. The \emph{event-level} BDT will return a discriminator value which will be closer to +1 (-1) for signal-like (background-like) events.
+Each analysis from the single-lepton channel at 8~TeV, the single-lepton channel at 13~TeV and the dilepton channel at 13~TeV, uses different subsets of the variables described above. The variables which are only used in the dilepton channel have not been described here and can be found in Ref~\ref{CMS-PAS-TOP-16-016}. The optimised set of variables for each training are provided to the TMVA package where the AdaBoost boosting algorithm is employed. The \tttt signal is trained against the main \ttbar background only as the other backgrounds are comparatively small. The \emph{event-level} BDT will return a discriminator value which will be closer to +1 (-1) for signal-like (background-like) events.
 
 \section{Systematic uncertainties}
 \label{sec:uncertainties}

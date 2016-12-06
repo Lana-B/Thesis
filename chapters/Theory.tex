@@ -3,8 +3,11 @@
 
 \section{Standard Model}
 
-The standard model (SM) is a theory which describes the fundamental particles and their interactions. Matter consists of six quarks and six leptons, each of which has an anti-particle with opposite sign quantum numbers. They are organised into three generations each of which contains heavier particles than the last, as seen in Table~\ref{table:SMmatter}. All of the stable matter in the universe is made up of particles from the first generation, ie. quarks make up protons and combined with electrons they form atoms. The leptonic sector consists of charged leptons, which can interact via the electromagnetic and weak forces, and neutrinos, which interact via the weak force only. The neutrinos are assumed to be massless in the standard model however observations of neutrino oscillations revealed that neutrinos have mass.
+The standard model (SM)~\cite{Glashow:1961tr,Salam:1968rm,PhysRevLett.19.1264,DGriff} is a theory which describes the fundamental particles and their interactions. Matter consists of six quarks and six leptons, each of which has an anti-particle with the same mass and opposite-sign charge. They are organised into three generations each of which contains heavier particles than the last, as seen in Table~\ref{table:SMmatter}. All of the normal matter in the universe is made up of particles from the first generation, ie.~up and down quarks make up protons and neutrons, and combined with electrons they form atoms. 
 
+The leptonic sector consists of charged leptons, which can interact via the electromagnetic and weak forces, and neutrinos, which interact via the weak force only. The neutrinos are assumed to be massless in the standard model however observations of neutrino oscillations revealed that neutrinos have mass~\cite{PhysRevC.88.025501}.
+
+\vspace{0.8cm}
 \begin{table}[ht!]
 \centering
 \caption{Quarks and leptons}
@@ -25,10 +28,10 @@ The standard model (SM) is a theory which describes the fundamental particles an
 \end{tabular}
 \end{table}
 
-Quarks interact via the electromagnetic or strong force. Each quarks has an electric charge, as seen in Table~\ref{table:SMmatter}, and carries a colour charge of red, green or blue, where all three colours combined form a colour-singlet state. A combination of quarks with a colour and it's anti-colour can also form a colour-singlet state. The theory of colour confinement means that quarks can only be found in colour-singlet states such as in bound states of baryons or mesons. 
-The top quarks is the heaviest quark with a mass approximately equivalent to a lead nuclei. The top quark is the only quark which predominantly decays before it hadronises due to it's short lifetime of $5\times10^{-25}$~seconds. The main decay mode for top quarks is to a bottom quark and a W boson which occurs $95.6\pm3.4\%$ of the time.
+Quarks interact via the electromagnetic, weak force or strong force. Each quark has an electric charge, as seen in Table~\ref{table:SMmatter}, and carries a colour charge of red, green or blue, where all three colours combined form a colour-singlet state. A combination of quarks with a colour and its anti-colour can also form a colour-singlet state. The theory of colour confinement means that quarks can only be found in colour-singlet states such as in baryons or mesons. 
+
 Finally, the force carriers consist of gauge bosons of integer spin, as seen in table~\ref{table:SMbosons}. Photons and Z bosons can mediate neutral electroweak interactions whereas W bosons can mediate charged electroweak interactions. The gluons mediate the strong interaction and occur with 8 different types of colour charge which will be described in section~\ref{subsec:QCD}. 
-The Graviton is hypothesised to carry the gravitational force but there is as yet no evidence to support this hypothesis.
+% The Graviton is hypothesised to carry the gravitational force but there is as yet no evidence to support this hypothesis.
 \begin{table}[ht!]
 \centering
 \caption{Gauge bosons}
@@ -41,18 +44,22 @@ Photon ($\gamma$)                 & electromagnetic & 0      & 0          & 1   
 W$^{\pm}$                         & weak            & $\pm1$ & $80.385\pm0.015$           & 1    & $10^{-18}$ \\ \hline
 Z                                 & weak            & 0      & $91.1876\pm0.0021$           & 1    & $10^{-18}$ \\ \hline
 gluon                             & strong          & 0      & 0          & 1    & $10^{-15}$ \\ \hline
-Graviton\footnote{hypothesised} & gravitational   & 0      & 0          & 2    & $\infty$   \\ \hline
+% Graviton\footnote{hypothesised} & gravitational   & 0      & 0          & 2    & $\infty$   \\ \hline
 \end{tabular}
 \end{table}
 
-The discovery of the Higgs boson in 2012 completed the standard model with an explanation of how the fundamental particles have mass via the electroweak symmetry breaking mechanism.
+The discovery of the Higgs boson in 2012~\cite{Higgs2012observation} completed the standard model with an explanation of how the fundamental particles have mass via the electroweak symmetry breaking mechanism.\\
+
+The SM is a gauge theory based on the symmetry group SU(3)~x~SU(2)~x~U(1), which is a combination of the electroweak interactions based on the SU(2)~x~U(1) symmetry group and the strong interaction which is based on the SU(3) group.
+
+The SM will now be described in more detail.
 
 \subsection{Electroweak theory}
 
 \subsubsection{QED}
 \label{subsec:QED}
 
-Figure~\ref{fig:QEDvertex} shows the fundamental QED vertex where a charged particle (charged lepton or quark) and charged anti-particle interact with a photon. The convention in this thesis is that time flows from left to right. However, these diagrams may be rotated as long as they conserve energy. Hence, this diagram includes electron-positron annihilation into a photon, a photon pair-producing an electron-positron pair, an electron emitting a photon or a positron emitting a photon depending on the orientation of the diagram (if we assume that the charged particles are first generation charged leptons). 
+Figure~\ref{fig:QEDvertex} shows the fundamental QED vertex where a charged particle (charged lepton or quark) and charged anti-particle interact with a photon. The convention in this thesis is that time flows from left to right. However, these diagrams may be rotated as long as they conserve energy. Hence, this vertex can describe electron-positron annihilation into a photon, a photon pair-producing an electron-positron pair, an electron emitting a photon or a positron emitting a photon depending on the orientation of the diagram (if we assume that the charged particles are first generation charged leptons). 
 
 \begin{figure}[ht!]
 \begin{center}
@@ -62,23 +69,31 @@ Figure~\ref{fig:QEDvertex} shows the fundamental QED vertex where a charged part
 \end{center}
 \end{figure}
 
-This diagram alone cannot occur as it violates conservation of energy but it can be used to build a full Feynman diagram for a particle physics process. QED interactions conserve lepton or quark flavour. 
-The QED Lagrangian can be found in Eq.~\ref{eqn:QEDL} with $D_{\mu}$ representing the covariant derivative which is defined as $D_{\mu} = \partial_{\mu} + iqA^{\mu}$, where $A^{\mu}$ is the four-potential of the electron and $q$ is the charge. The mass of the particle is represented by $m$ and $F_{\mu\nu}$ is the electromagnetic field tensor.
+This diagram alone cannot occur as it violates conservation of energy but it can be used to build a full Feynman diagram for a particle physics process. QED interactions conserve lepton or quark flavour. \\
+The QED Lagrangian can be found in Eq.~\ref{eqn:QEDL} with $D_{\mu}$ representing the covariant derivative which is defined as $D_{\mu} = \partial_{\mu} + iqA^{\mu}$. Here $q$ represents the charge of the particle and $A^{\mu}$ is the massless field of the electromagnetic four-potential. The supplementation by $iqA^{\mu}$ is required to make the Lagrangian invariant to local phase transformations $\psi \rightarrow e^{i\theta(x)} \psi$ where $A^{\mu}$ transforms as $A^{\mu} \rightarrow A^{\mu} + \partial^{\mu}\theta(x)$. The Dirac Lagrangian is manifestly invariant to global phase transformations $\psi \rightarrow e^{i\theta} \psi$. Hence, the QED Lagrangian is gauge invariant under U(1) phase transformations, where U(1) is the unitary group of complex numbers. 
+
 
 \begin{equation}
-\mathcal{L} = \overline{\phi}\left(i\gamma^{\mu}D_{\mu}-m\right)\phi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+\mathcal{L} = \overline{\psi}\left(i\gamma^{\mu}D_{\mu}-m\right)\psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
 \label{eqn:QEDL}
 \end{equation}
-This Lagrangian is gauge invariant, ie. it is invariant under U(1) phase transformations, where U(1) is the unitary group of complex numbers. Application of the Euler-Lagrange equations leads to the derivation of the Dirac Equation shown in Eq.~\ref{Eqn:Dirac}.
+ The mass of the particle is represented by $m$ and $F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}$ is the electromagnetic field tensor.
+
+Application of the Euler-Lagrange equations leads to the derivation of the Dirac Equation shown in Eq.~\ref{Eqn:Dirac}, where $J_{\mu} = \overline{\psi}\gamma_{\mu}\psi$.
 
 \begin{equation}
-i\hbar \gamma ^{\mu }\partial _{\mu }\psi -mc\psi =0
+i\gamma ^{\mu }\partial _{\mu }\psi -m\psi - J_{\mu}A^{\mu} = 0
 \label{Eqn:Dirac}
 \end{equation}
 
+The Dirac equation describes the motion for spin-1/2 particles with mass, ie. quarks and charged leptons. From this equation the Feynman rules for QED can be derived. These rules allow the computation of a number, known as the \emph{amplitude}, for each Feynman diagram. The sum total of the amplitudes for all diagrams which represent a particular process can be summed to produce the probability or \emph{cross section} for that process to occur.
+
+
+% \textbf{Effective coupling}
+
 \subsubsection{Weak interactions}
 
-The charged weak interaction is the only interaction where a flavour changing process can occur. The diagram of weak nuclear decay in Fig.~\ref{fig:QEDvertex} illustrates the W boson's interaction with different flavour quarks and leptons.
+The charged weak interaction is the only interaction where a flavour changing process can occur. The diagram of weak nuclear decay in Fig.~\ref{fig:QEDvertex} illustrates the W boson's interaction with different flavour quarks and leptons. The are two W bosons, one of positive and one of negative charge, W$^{\pm}$.
 
 
 \begin{figure}[ht!]
@@ -89,12 +104,32 @@ The charged weak interaction is the only interaction where a flavour changing pr
 \end{center}
 \end{figure}
 
-Z bosons partake in neutral weak interaction where they can interact with any quark or lepton as long as the flavour is conserved at the vertex.
+The neutral weak interaction is mediated by Z bosons which can interact with any quark or lepton as long as the flavour is conserved at the vertex.
+
+As the weak force bosons are massive, this means that weak decays are much slower than decays via electromagnetism for instance. This means that particles that can only decay via the weak force have longer lifetimes. 
+
+The weak force only interacts with left-handed (right-handed) particles (anti-particles), ie. particles where the spin is (anti-)aligned with the momentum direction. This is quantified in the term \emph{weak isospin} ($I_{3}$) which is zero for non-interacting particles and $\pm1/2$ otherwise.
+
+Weak interactions are the only interactions that violate parity conservation, which was hypothesised by Yang and Lee~\cite{PhysRev.104.254} and experimental validated by Wu in 1957~\cite{PhysRev.105.1413}. It was later discovered that weak interactions also violate the combined charge-parity (CP) symmetry~\cite{Cronin2012,PhysRevLett.13.138}.
+
 
 \subsubsection{Electroweak Unification}
 
-Glashow, Weinberg and Salam formulated the unification of the weak and electromagnetic forces combined in the SU(2)~x~U(1) gauge group. They are hypothesised to merge into one electroweak force above the unification energy of $\approx 100$~GeV. The theory contains four gauge bosons, three W bosons W$_{a}~(a=1,~2,~3)$ and one B boson. The spontaneous symmetry breaking mechanism proposed by Higgs, Brout and Englert results in the linear combination of these 4 bosons into the four more familiar gauge bosons, W$^{\pm}$, Z and the photon ($\gamma$) as shown in Eqs.~\ref{eqn:Zgamma} \&~\ref{eqn:Wpm}, where $\theta_{W}$ is the weak mixing angle.
+Glashow, Weinberg and Salam formulated the unification of the weak and electromagnetic forces combined in the SU(2)~x~U(1) gauge group. They are hypothesised to merge into one electroweak force above the unification energy of $\approx 100$~GeV. The theory contains four gauge bosons, three W bosons W$_{a}~(a=1,~2,~3)$ and one B boson. Weak hypercharge is defined as $Y_{W} = 2(Q-I_{3})$ and it is $Y_W$ which is the generator of the U(1) component of the electroweak gauge group. Equation~\ref{eq:EWK_L} shows the Lagrangian for electroweak interactions where it can be seen that the left-handed fields couple to the W and B bosons and the right-handed fields couple to the B boson only. The generators of SU(2) component are ${\bf T} = \boldsymbol{\sigma}/2$ where $\boldsymbol{\sigma}$ are the Pauli matrices.
+\begin{equation}
+\label{eq:EWK_L}
+\begin{split}
+\calL_\textrm{EWK} & = \bar{\psi}_L \gamma^\mu ( i\partial_\mu  - g \mathbf{T} \cdot \mathbf{W}_\mu - \frac{g'}{2} Y_{W}
+B_\mu) \psi_L + \\ & + \bar{\psi}_R \gamma^\mu (i \partial_\mu - \frac{g'}{2} Y_{W} B_\mu) \psi_R -
+\frac{1}{4}\mathbf{W}_{\mu\nu} \mathbf{W}^{\mu\nu} -\frac{1}{4}B_{\mu\nu} B^{\mu\nu},
+\end{split}
+\end{equation}
 
+\begin{equation*}
+\psi_L = \twovector{\psi^u_L}{\psi^d_L},~\psi_R^u,~\psi_R^d
+\end{equation*}
+
+The spontaneous symmetry breaking mechanism proposed by Brout, Englert~\cite{PhysRevLett.13.321} and Higgs~\cite{PhysRevLett.13.508} results in the linear combination of these 4 bosons into the four more familiar gauge bosons, W$^{\pm}$, Z and the photon ($\gamma$) as shown in Eqs.~\ref{eqn:Zgamma} \&~\ref{eqn:Wpm}, where $\theta_{W}$ is the weak mixing angle.
 \begin{equation}
 \label{eqn:Zgamma}
 \left( \begin{array}{c}
@@ -114,22 +149,47 @@ W_{3}\end{array} \right)
 W^{\pm}=\frac{1}{\sqrt{2}}\left(W_{1}\mp iW_{2}\right)
 \end{equation}
 
-Equation~\ref{eqn:EWL} shows the electroweak Lagrangian where $\mathcal{L}_{K}$ gives the kinetic term, $\mathcal{L}_{N}$ gives the neutral interactions and $\mathcal{L}_{C}$ the charged interactions. $\mathcal{L}_{H}$ gives the Higgs three and four point self-interactions and  $\mathcal{L}_{HV}$ gives the Higgs interactions for vector bosons.  $\mathcal{L}_{WWV}$ ($\mathcal{L}_{WWVV}$) gives the three (four) point interactions of the vector bosons and $\mathcal{L}_{Y}$ gives the Yukawa couplings between the Higgs field and the fermions.
+% Equation~\ref{eqn:EWL} shows the electroweak Lagrangian where $\mathcal{L}_{K}$ gives the kinetic term, $\mathcal{L}_{N}$ gives the neutral interactions and $\mathcal{L}_{C}$ the charged interactions. $\mathcal{L}_{H}$ gives the Higgs three and four point self-interactions and  $\mathcal{L}_{HV}$ gives the Higgs interactions for vector bosons.  $\mathcal{L}_{WWV}$ ($\mathcal{L}_{WWVV}$) gives the three (four) point interactions of the vector bosons and $\mathcal{L}_{Y}$ gives the Yukawa couplings between the Higgs field and the fermions.
 
+% \begin{equation}
+% \label{eqn:EWL}
+% \mathcal{L}_{EW} = \mathcal{L}_{K} + \mathcal{L}_{N} + \mathcal{L}_{C} + \mathcal{L}_{H} + \mathcal{L}_{HV} + \mathcal{L}_{WWV} + \mathcal{L}_{WWVV} + \mathcal{L}_{Y}
+% \end{equation}
+
+% and $\psi_L$ and $\psi_R$ are summed over all possibilities shown in Equations~\ref{eq:lepton_EWK_fields} and
+% \ref{eq:quark_EWK_fields}.
+
+% The Yukawa couplings, which describe the couplings between dirac fields and a scalar field, 
+
+
+The CKM matrix, also known as the \emph{quark mixing matrix}, is a unitary matrix which describes the strength of the couplings for weak decays and is shown in Eq.~\ref{eqn:CKM1}. 
 \begin{equation}
-\label{eqn:EWL}
-\mathcal{L}_{EW} = \mathcal{L}_{K} + \mathcal{L}_{N} + \mathcal{L}_{C} + \mathcal{L}_{H} + \mathcal{L}_{HV} + \mathcal{L}_{WWV} + \mathcal{L}_{WWVV} + \mathcal{L}_{Y}
-\end{equation}
-
-The Yukawa couplings, which describe the couplings between dirac fields and a scalar field, are shown in the CKM matrix in Eq.~\ref{eqn:CKM} which gives the probability for the up-type quarks to couple to down type quarks.
-
-\begin{equation}
-\label{eqn:CKM}
-{\begin{bmatrix}
-|V_{ud}|&|V_{us}|&|V_{ub}|\\|V_{cd}|&|V_{cs}|&|V_{cb}|\\|V_{td}|&|V_{ts}|&|V_{tb}|
-\end{bmatrix}}
+\label{eqn:CKM1}
+{\begin{pmatrix}
+d^{\prime }\\
+s^{\prime }\\
+b^{\prime }
+\end{pmatrix}}
 =
-{\begin{bmatrix}0.97427\pm 0.00015&0.22534\pm 0.00065&0.00351_{-0.00014}^{+0.00015}\\0.22520\pm 0.00065&0.97344\pm 0.00016&0.0412_{-0.0005}^{+0.0011}\\0.00867_{-0.00031}^{+0.00029}&0.0404_{-0.0005}^{+0.0011}&0.999146_{-0.000046}^{+0.000021}\end{bmatrix}}
+{\begin{pmatrix}
+V_{ud}&V_{us}&V_{ub}\\
+V_{cd}&V_{cs}&V_{cb}\\
+V_{td}&V_{ts}&V_{tb}
+\end{pmatrix}}
+{\begin{pmatrix}d\\s\\b
+\end{pmatrix}}
+\end{equation}
+The probabilities for the up-type quarks to couple to down-type quarks are given in Eq.~\ref{eqn:CKM2}.
+\begin{equation}
+\label{eqn:CKM2}
+{\begin{pmatrix}
+|V_{ud}|&|V_{us}|&|V_{ub}|\\|V_{cd}|&|V_{cs}|&|V_{cb}|\\|V_{td}|&|V_{ts}|&|V_{tb}|
+\end{pmatrix}}
+=
+{\begin{pmatrix}0.97417\pm 0.00021 & 0.2248\pm 0.0006 & 0.00409\pm{0.00039}\\
+0.220\pm 0.005 & 0.995\pm 0.016 & 0.0405\pm{0.0015}\\
+0.0082\pm{0.0006} & 0.040\pm{0.0027}&1.009\pm0.031
+\end{pmatrix}}
 \end{equation}
 
 
@@ -154,18 +214,18 @@ Equation~\ref{eqn:QCDL} gives the QCD lagrangian where $G_{\mu \nu }^{a}=\partia
 \end{equation}
 
 \textbf{Asymptotic freedom and colour confinement}\\
-Quark-antiquark loops lead to screening of the quark colour charge, however gluon loops contribute the opposite by `anti-screening'. The global effect is captured in Eq.~\ref{eqn:alphaSQCD} where it can be seen that in any theory with $11n>2f$, the coupling constant, $\alpha_{S}\left( |q^{2}| \right)$, will decrease with increasing energy, q$^{2}$. This is known as \emph{asymptotic freedom} and so the quarks inside hadrons effectively act like free particles.
+Quark-antiquark loops lead to screening of the quark colour charge, however gluon loops contribute the opposite by `anti-screening'. The global effect is captured in Eq.~\ref{eqn:alphaSQCD} where it can be seen that in any theory with $11n>2f$, the coupling constant, $\alpha_{S}\left( |q^{2}| \right)$, will decrease with increasing energy, q$^{2}$. This is known as \emph{asymptotic freedom} and so the quarks inside hadrons effectively act like free particles. This is in contrast to QED where the vacuum acts like a dielectric medium which produces electron-positron pairs where the virtual electron is attracted to positive charges and the virtual positron is repelled (and vice versa for negative charges). This vacuum polarisation partially screens the charged particle and effectively reduces it's field. However at short distances, the effective charge increases as the screening effective disappears.
 
 \begin{equation}
 \label{eqn:alphaSQCD}
 \alpha_{S}\left( |q^{2}| \right) = \frac{\alpha_{S}\left( \mu^{2} \right)} {1 + \left[ \alpha_{S}\left( \mu^{2} \right)/12\pi \right]\left( 11n -2f \right) \ln \left(|q^{2}|/\mu^{2}\right)}
 \end{equation}
 
-At larger distances the strong force increases, hence energy which has gone into separating two quarks reaches a critical point where it is transferred into producing more quarks which accompany the separated quarks to form hadrons. This is the principle of \emph{confinement} and it ensures that colour doubles or octets are never found in nature, only colour singlet states such as mesons and baryons. The showering of separated quarks into hadrons is called \emph{hadronisation}.
+At larger distances the strong force increases, hence energy which has gone into separating two quarks reaches a critical point where it is transferred into producing more quarks which accompany the separated quarks to form hadrons. This is the principle of \emph{confinement} and it ensures that colour doublets or octets are never found in nature, only colour singlet states such as mesons and baryons. The showering of separated quarks into hadrons is called \emph{hadronisation}. This is in contrast, again, to QED where particles can carry electric charge.
 
 
 \section{Proton-proton collisions}
-At a lepton collider, one can assume that the initial particles involved in a collision are fundamental particles which means precise details of the initial state are known. However at the Large Hadron Collider (LHC) the particles involved in the collisions are protons, which are much more complex composite particles consisting of three valence quarks (two up quarks and one down quark) and gluons which exchange the strong force, as well as `sea quarks' which are quark-anti-quark pairs which come into and out existence rapidly and continuously within the proton.
+At a lepton collider, one can assume that the initial particles involved in a collision are fundamental particles which means precise details of the initial state are known. However at the Large Hadron Collider (LHC) the particles involved in the collisions are protons, which are much more complex composite particles consisting of three valence quarks (two up quarks and one down quark) and gluons which exchange the strong force, as well as `sea quarks' which are quark-anti-quark pairs that come into and out existence rapidly and continuously within the proton.
 
 Figure~\ref{fig:protonPDF} shows the parton distribution functions for the proton. These are interpreted as the probability for a quark to be carrying a fraction, $x$, of the proton's momentum in the longitudinal direction.
 
@@ -177,117 +237,59 @@ Figure~\ref{fig:protonPDF} shows the parton distribution functions for the proto
 \end{center}
 \end{figure}
 
-The protons may a) not interact at all and continue to be accelerated around the LHC, b) interact via a soft scatter where the products mostly travel along the direction of the beam, c) participate in a hard interaction where two partons within the protons have a high energy collision with products which travel transverse to the beam. In the latter case, the remaining partons which have not participated in the hard interaction hadronise and form what is known as the \emph{underlying event} (UE)
+The protons may a) not interact at all and continue to be accelerated around the LHC ring, b) interact via a soft scatter where the products mostly travel along the direction of the beam, c) participate in a hard interaction where two partons within the protons have a high energy collision in which the products travel transverse to the beam. In the latter case, the remaining partons which have not participated in the hard interaction hadronise and form what is known as the \emph{underlying event} (UE)
 
-[Pile up]
+\section{Top physics}
+The top quark was discovered in 1995 at the Tevatron by the CDF~\cite{PhysRevLett.74.2626} and D$\varnothing$~\cite{Abachi:1995iq} collaborations. It had been hypothesised that there must be a partner to the bottom quark which exists with it in a weak-isospin doublet. It is the heaviest quark with a mass approximately equivalent to a lead nucleus. The top quark is the only quark which predominantly decays before it can form any bound states due to its short lifetime of $5\times10^{-25}$~seconds and hence it is the only quark which can be studied for its spin and polarisation properties. The main decay mode for top quarks is to a bottom quark and a W boson which occurs $99.8\pm3.8\textrm{ (exp.)}\pm1.6\textrm {(theo.)} \%$~\cite{2014arXiv1403.7366C} of the time as shown in Fig.~\ref{fig:tdecay}.
+
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.49\textwidth]{images/Theory/topdecay.png}
+    \caption{Top quark decay to a W boson and b-quark with subsequent decay of the W boson either leptonically or hadronically.}
+    \label{fig:tdecay}
+\end{center}
+\end{figure}
+
+The top quark has the largest Yukawa coupling to the Higgs boson which is of the order of unity. The value of the top quark Yukawa coupling is important in calculations of the stability of the universe and of the energy scales where new physics may arise~\cite{Bezrukov:2014ina}
+
+\section{Top pair production}
+\fxnote{include ttbar}
+
+\section{Single top quark production}
+\fxnote{include single top}
 
 
 \section{Four top quark production}
 
-The production of four top quarks occurs predominantly via gluon fusion, as seen at leading order in Fig.~\ref{fig:ttttAtLO}~(left), with a $10\%$ contribution from quark-anti-quark annihilation. The production mechanism occurs via QCD whereas the decay of top quarks via W bosons is a weak interaction. 
+The production of four top quarks occurs predominantly via gluon fusion, as seen at leading order in Fig.~\ref{fig:ttttAtLO}, with a $10\%$ contribution from quark-anti-quark annihilation. The production mechanism occurs via QCD whereas the decay of top quarks via W bosons is a weak interaction. 
 
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.49\textwidth]{images/Theory/tttt_t_LO.pdf}
-    \includegraphics[width=0.49\textwidth]{images/Theory/topdecay.png}
-    \caption{Dominant production mechanism for four top quarks in the standard model (left) an top quark decay to a W boson and b-quark with subsequent decay of the W boson either leptonically or hadronically (right).}
+    \caption{Dominant production mechanism for four top quarks in the standard model.}
     \label{fig:ttttAtLO}
 \end{center}
 \end{figure}
 
-Final states are determined by the decay of the W boson which can occur either leptonically or hadronically as seen in Fig.~\ref{fig:ttttAtLO}~(right). It can be seen from Fig.~\ref{fig:BRtttt} that the single lepton final state has the largest branching ratio which makes it a favourable place to look to study the largest number of events produced in the CMS detector. This is the final state considered most in this thesis. The dilepton final state also has a large branching ratio and has particularly low backgrounds when same-sign lepton final states are considered. The combination of studies on the dilepton final state will be discussed in the Chapter~\ref{c:Run2}.
+Final states are determined by the decay of the W boson which can occur either leptonically or hadronically as seen in Fig.~\ref{fig:tdecay}. 
 
-\begin{figure}[ht!]
-\begin{center}
-    \includegraphics[width=0.4\textwidth]{images/Theory/FourTopBR.pdf}
-    \caption{Branching ratios for final states as defined by leptonic decays.}
-    \label{fig:BRtttt}
-\end{center}
-\end{figure}
-
-Figure~\ref{fig:tttt100tev} shows the cross section for \tttt production versus centre of mass energy, $\sqrt{s}$, in the proton-proton collision. It can be seen that the cross section rises with energy and indeed it increases faster than the main background of \ttbar production which means that the signal to background ratio increases with $\sqrt{s}$. Table~\ref{tab:xsec} shows the cross sections for \tttt production and \ttbar production where it can be seen that the \tttt cross section increases by a factor of $\approx~7$ from $\sqrt{s} = 8$~TeV to $\sqrt{s} = 13$~TeV whereas the \ttbar production increase by a factor of $\approx~3.5$.
-
-\begin{figure}[ht!]
-\begin{center}
-    \includegraphics[width=0.95\textwidth]{images/Theory/100TeV.png}
-    \caption{The \ttbar (2t), four top quark (4t) and six top quark (6t) production cross sections at a range of $\sqrt{s}$ energies}
-    \label{fig:tttt100tev}
-\end{center}
-\end{figure}
-
-\begin{table}[]
-\centering
-% \caption{My caption}
-\label{tab:xsec}
-\begin{tabular}{|l|l|l|}
-\hline
-Cross section & 8~TeV (\pb) & 13~TeV (\pb) \\ \hline
-\tttt         & 0.0013           & 0.0092            \\ \hline
-\ttbar        & 245              & 831               \\ \hline
-\end{tabular}
-\end{table}
-
-\subsection{\ttbar background}
-
-The main background to \tttt production is \ttbar. In the case of the single lepton channel, semi-leptonic \ttbar, where one of the top quarks decays hadronically and the other top quark decays leptonically, is the main final state which contributes to the background. Figure~\ref{fig:ttbarback} shows semi-leptonic \ttbar production with initial and final state radiation. Initial state radiation (ISR) refers to any particle which is radiated off of an incoming particle to the collision whereas final state radiation (FSR) refers to a particle radiated off the final state outgoing products of a collision.
-
-\begin{figure}[ht!]
-\begin{center}
-    \includegraphics[width=0.95\textwidth]{images/Theory/ttbarISRFSR.jpg}
-    \caption{Semi-leptonic \ttbar production with demonstration of extra jets arising from initial and final state radiation}
-    \label{fig:ttbarback}
-\end{center}
-\end{figure}
-
-The semi-leptonic \ttbar process can produce final states which look very much like a \tttt final state in the detector. There are two top quarks which will produce hard jets including two b-quark jets and one lepton. There are also the additional jets from ISR and FSR which increase the jet multiplicity in the event. As in all collisions, final state jets may arise that do not exceed the \pt threshold of the trigger, which is described in Section~\ref{det:trigger}. Jets may also fall outside of the acceptance of the detector or jets may merge together both of which can lower the \tttt multiplity to look more like \ttbar. 
-The spectrum of `additional jets' which are not associated with coming from the decay of a top quark are shown in Fig.~\ref{fig:ttbarAdd} for a CMS analysis at $\sqrt{s}=13$~TeV. Event which lie in the tail of the additional jets distribution are more likely to fall within the requirements for a \tttt event. However, in general, jets which come from ISR or FSR tend to be \emph{softer}, ie. lower in \pt.
-
-\begin{figure}[ht!]
-\begin{center}
-    \includegraphics[width=0.85\textwidth]{images/Theory/ttbarAdd.pdf}
-    \caption{Jet multiplicity }
-    \label{fig:ttbarAdd}
-\end{center}
-\end{figure}
-
-\subsection{Electroweak backgrounds}
-The electroweak backgrounds include W and Z boson production, which in their leptonic decays provide one and two leptons, respectively, and no jets. Additional jets come from ISR or FSR. The electroweak events will have a large number of additional jets a small fraction of times, however because their cross section is so large, as can be seen by Fig.~\ref{fig:ttbarAdd}, there will be small number of event which may pass the requirements for selecting \tttt events.
-\begin{figure}[ht!]
-\begin{center}
-    \includegraphics[width=0.99\textwidth]{images/Theory/stairway.pdf}
-    \caption{CMS standard model production cross sections}
-    \label{fig:ttbarAdd}
-\end{center}
-\end{figure}
-
-The W and Z boson may also decay hadronically where each will provide two jets. Along with the additional jets from ISR/FSR, one jet may be misidentified as a lepton in the detector and hence may also pass the selection requirements for \tttt events.
-
-\subsection{Rarer backgrounds}
-Single top production both has a smaller cross section than W and Z boson production and is less similar to \tttt production than \ttbar production by virtue of having one less top. However the cross section is still many times larger than \tttt production so particularly in the tW-channel, as shown in Fig.~\ref{fig:ttbarAdd}, there can be enough additional jets (including two b-jets) such that it may mimic \tttt in the detector.
-
-\begin{figure}[ht!]
-\begin{center}
-    \includegraphics[width=0.45\textwidth]{images/Theory/singleTop_tW.png}
-    \includegraphics[width=0.43\textwidth]{images/Theory/singleTop_tW_2.png}
-    \caption{Single top quark production in the tW-channel}
-    \label{fig:ttbarAdd}
-\end{center}
-\end{figure}
-
-Other rarer backgrounds include \ttH, \ttZ, \ttW which resemble \tttt production much more closely than \ttbar by having extra bosons produced in the process which can decay to higher \pt jets and leptons than can occur from ISR/FSR. However, they are much more rare than \ttbar production and do not produce a significant background. Diboson production (WW, WZ, ZZ) can also possibly mimic \tttt production but it is usually too rare to be considered.
 
 \section{Shortcomings in the standard model}
 The standard model has been resilient to many tests at the LHC, however there are many questions about the universe which the SM cannot answer. For instance:\\
-{\bf Gravity :} How can gravity be integrated into the SM and is there an associated boson for the gravitational force? \\
-{\bf Matter-anti-matter asymmetry :} How did the matter-anti-matter asymmetry in the universe arise when it is predicted that the number of particle and anti-particles should be conserved in standard model interactions?\\
-{\bf Dark matter :} Observations of the universe show there is non-baryonic, non-luminous matter which is not accounted for within the SM. Studies of galaxy rotation curves show that the angular velocity is relatively constant with radius when it should decrease meaning that there is additional dark matter providing a contribution to the mass of the galaxy. The presence of dark matter can be inferred by gravitational lensing. The light from distant stars in the background is curved around the strong gravitational presence of a dark matter cloud, which itself cannot be seen. \begin{figure}[ht!]
+{\bf Gravity :} How can gravity be integrated into the SM and is there an associated boson for the gravitational force~\cite{PhysRevLett.107.171101,PhysRevD.82.122001}? \\
+{\bf Matter-anti-matter asymmetry :} How did the matter-anti-matter asymmetry in the universe arise when it is predicted that the number of particle and anti-particles should be conserved in standard model interactions~\cite{RevModPhys.76.1}?\\
+\begin{figure}[ht!]
 \centering
     \includegraphics[width=0.65\textwidth]{images/Theory/lensing2.jpg}
-    \caption{Gravitational lensing}
-    \label{fig:ttbarAdd}
+    \caption{Gravitational lensing around MACS 1206 as captured by the Hubble Space Telescope~\cite{Glens}}
+    \label{fig:Glens}
 \end{figure}
+
+{\bf Dark matter :} Observations of the universe show there is non-baryonic, non-luminous matter which is not accounted for within the SM. Studies of galaxy rotation curves show that the angular velocity is relatively constant with radius when it should decrease meaning that there is additional dark matter providing a contribution to the mass of the galaxy~\cite{Volders,
+Jog:2002dg,
+Persic:1995ru}. The presence of dark matter can be inferred by gravitational lensing. The light from distant stars in the background is curved around the strong gravitational presence of a dark matter cloud, which itself cannot be seen~\cite{Einstein,Ellis2010}. 
 This can cause arcs of light and repeated patterns of the same galaxy as seen in Fig~\ref{fig:ttbarAdd}.\\
-{\bf Hierarchy problem :} The SM does not provide a solution as to why the Higgs mass is so much smaller than the planck mass.\\
+{\bf Hierarchy problem :} The SM does not provide a solution as to why the Higgs mass is so much smaller than the planck mass. It also does not describe why the quarks and lepton masses have values which span many orders of magnitude.\\
 {\bf Neutrino mass :}
 The Sudbury neutrino observatory (SNO) observed that the flux of electron neutrinos was $\approx 1/3$ what it was expected to be~\cite{PhysRevC.88.025501}. This can be explained by neutrino oscillations. This means that their mass basis is rotated from their flavour basis and hence neutrinos must have mass, which is not possible in the SM.
 
@@ -295,7 +297,16 @@ The Sudbury neutrino observatory (SNO) observed that the flux of electron neutri
 
 \section{BSM models with four top quark signatures}
 
+\textbf{Top quark Compositeness}
+
+\textbf{\ttbar+~X}
+
+\textbf{Heavy resonances}
+
+
+
 \subsection{Simplified models}
 
+Simplified models work by building a TeV-scale effective Lagrangian which describes a minimal number of new particles and their interactions. Hence, variables which can be directly observed by the detector can be studied, for example, particle masses, cross sections and branching ratios for different decay modes. Simplified models can sometimes be considered to be a subset of more general physics models where only a few of the particles are considered. Therefore, simplified model cannot be considered to be model independent but they can help to identify the bounds of sensitivity for searches~\cite{0954-3899-39-10-105005}.
 
 
