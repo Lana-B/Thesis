@@ -241,7 +241,7 @@ The protons may a) not interact at all and continue to be accelerated around the
 
 \section{Top physics}
 The top quark was discovered in 1995 at the Tevatron by the CDF~\cite{PhysRevLett.74.2626} and D$\varnothing$~\cite{Abachi:1995iq} collaborations. It had been hypothesised that there must be a partner to the bottom quark which exists with it in a weak-isospin doublet. It is the heaviest quark with a mass approximately equivalent to a lead nucleus. The top quark is the only quark which predominantly decays before it can form any bound states due to its short lifetime of $5\times10^{-25}$~seconds and hence it is the only quark which can be studied for its spin and polarisation properties. The main decay mode for top quarks is to a bottom quark and a W boson which occurs $99.8\pm3.8\textrm{ (exp.)}\pm1.6\textrm {(theo.)} \%$~\cite{2014arXiv1403.7366C} of the time as shown in Fig.~\ref{fig:tdecay}.
-
+ % charged lepton tends to point along the direction of top spin
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.49\textwidth]{images/Theory/topdecay.png}
@@ -253,15 +253,36 @@ The top quark was discovered in 1995 at the Tevatron by the CDF~\cite{PhysRevLet
 The top quark has the largest Yukawa coupling to the Higgs boson which is of the order of unity. The value of the top quark Yukawa coupling is important in calculations of the stability of the universe and of the energy scales where new physics may arise~\cite{Bezrukov:2014ina}
 
 \section{Top pair production}
-\fxnote{include ttbar}
+
+The first observations of top quarks were made on top pair production (\ttbar) as this is the dominant mechanism for producing top quarks. Figure~\ref{fig:ttproduction} shows the leading order tree-level production mechanisms via gluon fusion and quark-anti-quark annihilation. The Feynman rules can be used to calculate the amplitude for each diagram and the summation of the amplitudes gives the theoretical cross section at leading order. 
+
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.95\textwidth]{images/Theory/ttbarfeynman.png}
+    \caption{Top quark pair production in the SM by quark-anti-quark annihilation (top) and via gluon fusion (bottom)~\cite{Kohn:2012ksa}}
+    \label{fig:ttproduction}
+\end{center}
+\end{figure}
+
+There are three possible decay modes: \emph{hadronic} where both W boson from the top decays decay to a quark and anti-quark, \emph{semi-leptonic} where one W boson decays to \qqbar and one W boson decays to a lepton and a neutrino, and \emph{dileptonic} where both W bosons decay to a lepton and a neutrino each.
+
 
 \section{Single top quark production}
-\fxnote{include single top}
 
+Single top quark production is much rarer than \ttbar production in the SM. It can occur via \qqbar annihilation, \cPq~g fusion or gluon fusion as shown in Fig.~\ref{fig:stFeyn}. In this figure the s-channel (left), t-channel and associated production with a W boson (tW-channel) are shown.
 
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=\textwidth]{images/Theory/stFeyn.png}
+    \caption{Single top leading order diagrams in the a) s-channel , b) t-channel and c) tW-channel~\cite{Lannon:2012fp}}
+    \label{fig:stFeyn}
+\end{center}
+\end{figure}
+
+The coupling $|V_{tb}|$ can be extracted from single top quark decays and the spin of the top quark can be ascertained by studying the leptonic decay of the single top as the charged lepton will point along the direction of the top spin~\cite{Boos:2012hi}.
 \section{Four top quark production}
 
-The production of four top quarks occurs predominantly via gluon fusion, as seen at leading order in Fig.~\ref{fig:ttttAtLO}, with a $10\%$ contribution from quark-anti-quark annihilation. The production mechanism occurs via QCD whereas the decay of top quarks via W bosons is a weak interaction. 
+The production of four top quarks (\tttt) occurs predominantly via gluon fusion, as seen at leading order in Fig.~\ref{fig:ttttAtLO}, with a $10\%$ contribution from quark-anti-quark annihilation. The production mechanism occurs via QCD whereas the decay of top quarks via W bosons is a weak interaction. 
 
 \begin{figure}[ht!]
 \begin{center}
@@ -278,6 +299,13 @@ Final states are determined by the decay of the W boson which can occur either l
 The standard model has been resilient to many tests at the LHC, however there are many questions about the universe which the SM cannot answer. For instance:\\
 {\bf Gravity :} How can gravity be integrated into the SM and is there an associated boson for the gravitational force~\cite{PhysRevLett.107.171101,PhysRevD.82.122001}? \\
 {\bf Matter-anti-matter asymmetry :} How did the matter-anti-matter asymmetry in the universe arise when it is predicted that the number of particle and anti-particles should be conserved in standard model interactions~\cite{RevModPhys.76.1}?\\
+{\bf Hierarchy problem :} The SM does not provide a solution as to why the Higgs mass is so much smaller than the planck mass. It also does not describe why the quarks and lepton masses have values which span many orders of magnitude.\\
+{\bf Neutrino mass :}
+The Sudbury neutrino observatory (SNO) observed that the flux of electron neutrinos was $\approx 1/3$ what it was expected to be~\cite{PhysRevC.88.025501}. This can be explained by neutrino oscillations. This means that their mass basis is rotated from their flavour basis and hence neutrinos must have mass, which is not possible in the SM.\\
+{\bf Dark matter :} Observations of the universe show there is non-baryonic, non-luminous matter which is not accounted for within the SM. Studies of galaxy rotation curves show that the angular velocity is relatively constant with radius when it should decrease meaning that there is additional dark matter providing a contribution to the mass of the galaxy~\cite{Volders,
+Jog:2002dg,
+Persic:1995ru}. The presence of dark matter can be inferred by gravitational lensing. The light from distant stars in the background is curved around the strong gravitational presence of a dark matter cloud, which itself cannot be seen~\cite{Einstein,Ellis2010}. 
+This can cause arcs of light and repeated patterns of the same galaxy as seen in Fig~\ref{fig:ttbarAdd}.
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.65\textwidth]{images/Theory/lensing2.jpg}
@@ -285,23 +313,42 @@ The standard model has been resilient to many tests at the LHC, however there ar
     \label{fig:Glens}
 \end{figure}
 
-{\bf Dark matter :} Observations of the universe show there is non-baryonic, non-luminous matter which is not accounted for within the SM. Studies of galaxy rotation curves show that the angular velocity is relatively constant with radius when it should decrease meaning that there is additional dark matter providing a contribution to the mass of the galaxy~\cite{Volders,
-Jog:2002dg,
-Persic:1995ru}. The presence of dark matter can be inferred by gravitational lensing. The light from distant stars in the background is curved around the strong gravitational presence of a dark matter cloud, which itself cannot be seen~\cite{Einstein,Ellis2010}. 
-This can cause arcs of light and repeated patterns of the same galaxy as seen in Fig~\ref{fig:ttbarAdd}.\\
-{\bf Hierarchy problem :} The SM does not provide a solution as to why the Higgs mass is so much smaller than the planck mass. It also does not describe why the quarks and lepton masses have values which span many orders of magnitude.\\
-{\bf Neutrino mass :}
-The Sudbury neutrino observatory (SNO) observed that the flux of electron neutrinos was $\approx 1/3$ what it was expected to be~\cite{PhysRevC.88.025501}. This can be explained by neutrino oscillations. This means that their mass basis is rotated from their flavour basis and hence neutrinos must have mass, which is not possible in the SM.
-
 
 
 \section{BSM models with four top quark signatures}
 
-\textbf{Top quark Compositeness}
+There are many theories which try to solve some or all of the problems listed above. Some of beyond the standard model (BSM) theories which have final states containing four top quarks are discussed here. 
 
-\textbf{\ttbar+~X}
+\textbf{Top quark Compositeness}\\
+It has been hypothesised that the top quark could be a composite particle made up of subparticles named preons which are bound by a new confining force. Phenomenological studies have been performed where an effective field theory (EFT) is proposed where only the right-handed top quark is considered to be composite. It is argued that if only $t_{R}$ is composite and no other SM component is then the four top operator will be the most significant component of the EFT lagrangian, which can lead to an enhancement of $\approx 10^3$ to the production of \tttt compared to the SM rate~\cite{Tait2topcomp,Tait1topcomp}.
 
-\textbf{Heavy resonances}
+$\boldsymbol{\ttbar+\textrm{X}, ~\textrm{X}}\rightarrow\boldsymbol{\ttbar}$\\
+There are several models which contain \ttbar plus an extra scalar particle which then decays to \ttbar as seen in Fig.~\ref{fig:ttXtt}.
+The mediator could be a dark matter mediator~\cite{Arina2016}, a heavy Higgs boson~\cite{Bernreuther:2015fts}, or a scalar colour sextet~\cite{Cacciapaglia2015}, for instance. 
+
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.45\textwidth]{images/Theory/ttDMtt.pdf}
+    \caption{Four top production with an intermediate scalar~\cite{Arina2016}}
+    \label{fig:ttXtt}
+\end{figure}
+
+% \textbf{Heavy resonances}
+
+
+\textbf{Scalar pair production to }$\boldsymbol{\tttt}$\\
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.99\textwidth]{images/Theory/sgluonFeyn.pdf}
+    \caption{Sgluon pair production~\cite{Calvet:2012rk}}
+    \label{fig:sgluonpair}
+\end{figure}
+
+The scalar gluon (\emph{sgluon}) has been theorised in several models of physics beyond the standard model. In N=1/N=2 hybrid and R-symmetric versions of non-minimal supersymmetric models (NMSSM) the minimal supersymmetric model (MSSM) is supplemented by an additional chiral multiplet which lies in the adjoint representation of the QCD gauge group. This supermultiplet contains a two-component fermionic part which mixes with the Dirac gluino and a colour-octet complex scalar particle which is the sgluon field. This is particularly interesting because coloured particles will couple directly to gluons and hence should be produced in proton-proton collisions. Figure~\cite{fig:sgluonpair} shows the possible tree level production modes for sgluon pair production.~\cite{Calvet:2012rk}
+
+Sgluons also arise in vector-like confining theories and extra-dimensional models, therefore it is viable to use a simplified model approach (as discussed below) because the final state signatures are reasonably model-independent.
+
+Colour octets and sextets can also be pair produced in theories where the Higgs boson is a composite particle~\cite{Cacciapaglia2015}.
 
 
 
