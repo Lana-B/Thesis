@@ -43,7 +43,7 @@ N_{\textrm{events}} = \lumiint \times \sigma
 
 The LHC was designed to have a centre of mass collision energy of $\sqrt{s} = 14~\TeV$. The intention was to start the machine with a lower energy in September 2008 and to obtain $\sqrt{s} = 10~\TeV$ by the end of 2008. However, an electrical fault 10 days into operation in October 2008 caused damage to over 50 of the superconducting magnets. The LHC was shut down for repairs until November 2009 when LHC achieved the record breaking 1.18 TeV per beam. The centre of mass energy was then ramped up to $\sqrt{s} = 7~\TeV$ in 2011. In 2012 this was increased to $\sqrt{s} = 8~\TeV$ and a dataset with an integrated luminosity of $\approx 20~\fbinv$ was recorded. This dataset from the run phase known as \emph{\runone} was used for the analysis in Chapter~\ref{c:Run1}. In 2013 after \runone, Long~Shutdown~1 (LS1) commenced to make upgrades to the LHC and the detectors to allow the machine to run at $\sqrt{s} = 13~\TeV$ for \emph{\runtwo}. \runtwo began in March 2015 and results from \runtwo are the focus of the analysis in Chapter~\ref{c:Run2}.
 
-\runone saw the great success of the discovery of the Higgs boson, one of the main objectives of the LHC~\cite{Aad20121}~\cite{Chatrchyan201230}. In \runtwo, the search for new physics continues where precision measurements, such as the search for the production of four top quarks, will test the predictions of the Standard Model. CMS and ATLAS are considered to be general-purpose detectors which can be used to test many areas of physics within and beyond the standard model. This includes searches for dark matter, supersymmetric particles, vector-like-quarks, lepton-flavour-violating processes, light Higgs and charged Higgs bosons, and studies of the properties of the Higgs boson such as the couplings are rare decay modes.
+\runone saw the great success of the discovery of the Higgs boson, one of the main objectives of the LHC~\cite{Aad20121}~\cite{Chatrchyan201230}. In \runtwo, the search for new physics continues where precision measurements, such as the search for the production of four top quarks, will test the predictions of the Standard Model. CMS and ATLAS are considered to be general-purpose detectors which can be used to test many areas of physics within and beyond the standard model. This includes searches for dark matter, supersymmetric particles, vector-like-quarks, lepton-flavour-violating processes, light Higgs and charged Higgs bosons, and studies of the properties of the Higgs boson such as the couplings and rare decay modes.
 
 \section{CMS detector \label{sec:CMSdet}}
 
@@ -148,6 +148,8 @@ These upgrades have allowed CMS to operate at $\sqrt{s} = 13~\TeV$ in 2015 with 
 
 \subsection{Data collections}
 
+The data quality monitoring (DQM) group monitor incoming data online by reconstructing a small subset of the data immediately to ascertain whether all sub-detector in CMS are operational. Offline they go through several stages of DQM as the data are reprocessed and reconstructed. Data which has been collected where all sub-detectors were working and the magnet is at full field is certified by the DQM group for use in physics analyses, hence the amount of data used for analyses is less than that collected in Fig.~\ref{fig:Lumi}. Different run ranges are usually separated by short shutdowns for maintenance or they may have different run conditions such as different instantaneous luminosity~\cite{1742-6596-219-7-072020}.\\
+The proton-proton collision datasets recorded by CMS and used in this thesis are given in Table~\ref{tab:run1Data} for the \runone data that is used in Chapter~\ref{c:Run1} and in Table~\ref{tab:run2Data} for the \runtwo data that is used in Chapter~\ref{c:Run2}. 
 \begin{table}[ht!]
 \centering
 \caption{\runone datasets at 8~TeV, when they were recorded and how much data was recorded.}
@@ -155,20 +157,19 @@ These upgrades have allowed CMS to operate at $\sqrt{s} = 13~\TeV$ in 2015 with 
 \begin{tabular}{|l|l|l|}
 \hline
 Dataset                    & Recorded & $\mathcal{L}$ \pbinv \\ \hline
-Single Muon Run 2012 A     & 2012     & 888                  \\ 
-Single Muon Run 2012 B     & 2012     & 4436                 \\ 
-Single Muon Run 2012 C     & 2012     & 7125                 \\ 
-Single Muon Run 2012 D     & 2012     & 7426                 \\ \hline
+Single Muon Run A     & 2012     & 888                  \\ 
+Single Muon Run B     & 2012     & 4436                 \\ 
+Single Muon Run C     & 2012     & 7125                 \\ 
+Single Muon Run D     & 2012     & 7426                 \\ \hline
 Total                      &          & 19695                \\ \hline\hline
-Single Electron Run 2012 A & 2012     & 876                  \\ 
-Single Electron Run 2012 B & 2012     & 4420                 \\ 
-Single Electron Run 2012 C & 2012     & 7132                 \\ 
-Single Electron Run 2012 D & 2012     & 7294                 \\ \hline
+Single Electron Run A & 2012     & 876                  \\ 
+Single Electron Run B & 2012     & 4420                 \\ 
+Single Electron Run C & 2012     & 7132                 \\ 
+Single Electron Run D & 2012     & 7294                 \\ \hline
 Total                      &          & 19721                \\ \hline
 \end{tabular}
 \end{table}
 
-The proton-proton collision datasets recorded by CMS and used in this thesis are given in Table~\ref{tab:run1Data} for the \runone data that is used in Chapter~\ref{c:Run1} and in Table~\ref{tab:run2Data} for the \runtwo data that is used in Chapter~\ref{c:Run2}.
 
 \begin{table}[ht!]
 \centering
@@ -177,11 +178,11 @@ The proton-proton collision datasets recorded by CMS and used in this thesis are
 \begin{tabular}{|l|l|l|}
 \hline
 Dataset                    & Recorded & $\mathcal{L}$ \pbinv \\ \hline
-Single Muon Run 2015 C     & 2015     & 17.2                 \\ 
-Single Muon Run 2015 D     & 2015     & 2611.5               \\ \hline
+Single Muon Run C     & 2015     & 17.2                 \\ 
+Single Muon Run D     & 2015     & 2611.5               \\ \hline
 Total                      &          & 2628.7               \\ \hline \hline
-Single Electron Run 2015 C & 2015     & 17.2                 \\ 
-Single Electron Run 2015 D & 2015     & 2611.5               \\ \hline
+Single Electron Run C & 2015     & 17.2                 \\ 
+Single Electron Run D & 2015     & 2611.5               \\ \hline
 Total                      &          & 2628.7               \\ \hline
 \end{tabular}
 \end{table}
