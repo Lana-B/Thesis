@@ -3,7 +3,7 @@
 
 \section{Standard Model}
 
-The standard model (SM)~\cite{Glashow:1961tr,Salam:1968rm,PhysRevLett.19.1264,DGriff} is a theory which describes the elementary particles and their interactions. Matter consists of six quarks and six leptons, each of which has an anti-particle with the same mass and opposite-sign charge. They are organised into three generations each of which contains heavier particles than the last, as seen in Table~\ref{table:SMmatter}. All of the normal matter in the universe is made up of particles from the first generation, ie.~up and down quarks make up protons and neutrons, and combined with electrons they form atoms. 
+The standard model (SM)~\cite{Glashow:1961tr,PhysRevLett.19.1264,Salam:1968rm,DGriff} is a theory which describes the elementary particles and their interactions. Matter consists of six quarks and six leptons, each of which has an anti-particle with the same mass and opposite-sign charge. They are organised into three generations each of which contains heavier particles than the last, as seen in Table~\ref{table:SMmatter}. All of the normal matter in the universe is made up of particles from the first generation, ie.~up and down quarks make up protons and neutrons, and combined with electrons they form atoms. 
 
 The leptonic sector consists of charged leptons, which can interact via the electromagnetic and weak forces, and neutrinos, which interact via the weak force only. The neutrinos are assumed to be massless in the standard model however observations of neutrino oscillations have revealed that neutrinos have mass~\cite{PhysRevC.88.025501}.
 
@@ -71,25 +71,26 @@ Quantum Electroydynamics is an Abelian gauge theory based on the U(1) symmetry g
 \end{figure}
 
 % This diagram alone cannot occur as it violates conservation of energy but it can be used to build a full Feynman diagram for a particle physics process.
-The QED Lagrangian can be found in Eq.~\ref{eqn:QEDL} with $D_{\mu}$ representing the covariant derivative which is defined as $D_{\mu} = \partial_{\mu} + iqA^{\mu}$. 
+The QED Lagrangian can be found in Eq.~\ref{eqn:QEDL} with $D_{\mu}$ representing the covariant derivative which is defined as $D_{\mu} = \partial_{\mu} + iqA_{\mu}$. 
 \begin{equation}
 \mathcal{L} = \overline{\psi}\left(i\gamma^{\mu}D_{\mu}-m\right)\psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
 \label{eqn:QEDL}
 \end{equation}
-Here $q$ represents the charge of the particle and $A^{\mu}$ is the massless field of the electromagnetic four-potential. Dirac Lagrangian is manifestly invariant to global phase transformations $\psi \rightarrow e^{i\theta} \psi$. The supplementation by $iqA^{\mu}$ is required to make the Lagrangian invariant to local phase transformations $\psi \rightarrow e^{i\theta(x)} \psi$ where $A^{\mu}$ transforms as $A^{\mu} \rightarrow A^{\mu} + \partial^{\mu}\theta(x)$. The  Hence, the QED Lagrangian is gauge invariant under U(1) phase transformations, where U(1) is the unitary group of complex numbers. 
+Here $q$ represents the charge of the particle and $A^{\mu}$ is the massless field of the electromagnetic four-potential. Dirac Lagrangian is manifestly invariant to global phase transformations $\psi \rightarrow e^{i\theta} \psi$. The supplementation by $iqA_{\mu}$ is required to make the Lagrangian invariant to local phase transformations $\psi \rightarrow e^{i\theta(x)} \psi$ where $A_{\mu}$ transforms as $A_{\mu} \rightarrow A_{\mu} + \partial_{\mu}\theta(x)$. Hence, the QED Lagrangian is gauge invariant under U(1) phase transformations, where U(1) is the unitary group of complex numbers. 
 
 The mass of the particle is represented by $m$ and $F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}$ is the electromagnetic field tensor.
 
-Application of the Euler-Lagrange equations leads to the derivation of the Dirac Equation shown in Eq.~\ref{Eqn:Dirac}, where $J_{\mu} = \overline{\psi}\gamma_{\mu}\psi$.
+Application of the Euler-Lagrange equations leads to the derivation of the Dirac Equation shown in Eq.~\ref{Eqn:Dirac}.
+% , where $J_{\mu} = \overline{\psi}\gamma_{\mu}\psi$.
 
 \begin{equation}
-i\gamma ^{\mu }\partial _{\mu }\psi -m\psi - J_{\mu}A^{\mu} = 0
+i\gamma^{\mu }\partial _{\mu }\psi -m\psi - iq\gamma^{\mu }A_{\mu} = 0
 \label{Eqn:Dirac}
 \end{equation}
 
 The Dirac equation describes the motion for spin-1/2 particles with mass, ie. quarks and charged leptons. From this equation the Feynman rules for QED can be derived. These rules allow the computation of a number, known as the \emph{amplitude}, for each Feynman diagram. The sum total of the amplitudes for all diagrams which represent a particular process can be summed to produce the probability or \emph{cross section} for that process to occur.
 
-
+In QED the vacuum acts like a dielectric medium which produces electron-positron pairs where the virtual electron is attracted to positive charges and the virtual positron is repelled (and vice versa for negative charges). This vacuum polarisation partially screens the charged particle and effectively reduces its field. However at short distances, the effective charge increases as the screening reduces.
 % \textbf{Effective coupling}
 
 \subsubsection{Weak interactions}
@@ -109,7 +110,7 @@ The neutral weak interaction is mediated by Z bosons which can interact with any
 
 As the weak force bosons are massive, this means that weak decays are much slower than decays via electromagnetism for instance. This means that particles that can only decay via the weak force have longer lifetimes. 
 
-The weak force only interacts with chirality left-handed (right-handed) particles (anti-particles), ie. particles where the spin is (anti-)aligned with the momentum direction. The charge for weak interaction is \emph{weak isospin} ($I_{3}$) which is zero for non-interacting particles and $\pm1/2$ otherwise.
+The weak force only interacts with chirality left-handed (right-handed) particles (anti-particles), ie. particles where the spin is (anti-)aligned with the momentum direction. The charge for weak interaction is \emph{weak isospin} ($I_{3}$) which is $\pm1/2$ for left-handed fermion, $\pm1$ for W$^{\pm}$ and zero otherwise.
 
 Weak interactions are the only interactions known to violate parity conservation, which was hypothesised by Yang and Lee~\cite{PhysRev.104.254} and experimental validated by Wu in 1957~\cite{PhysRev.105.1413}. It was later discovered that weak interactions also violate the combined charge-parity (CP) symmetry~\cite{Cronin2012,PhysRevLett.13.138}.
 
@@ -164,6 +165,25 @@ The spontaneous symmetry breaking mechanism proposed by Brout, Englert~\cite{Phy
 
 % The Yukawa couplings, which describe the couplings between dirac fields and a scalar field, 
 
+After electroweak symmetry breaking where the Higgs boson gets a vacuum expectation value, the electroweak Lagrangian changes into the form in Eq.~\ref{eqn:EWL2} which is described in Ref~\cite{Pich:2005mk}. Here $\mathcal{L}_{K}$ gives the kinetic term, $\mathcal{L}_{N}$ gives the neutral interactions and $\mathcal{L}_{C}$ the charged interactions. $\mathcal{L}_{H}$ gives the Higgs three and four point self-interactions and $\mathcal{L}_{HV}$ gives the Higgs interactions for vector bosons. The term $\mathcal{L}_{WWV}$ ($\mathcal{L}_{WWVV}$) gives the three (four) point interactions of the vector bosons and $\mathcal{L}_{Y}$ gives the Yukawa couplings between the Higgs field and the fermions.
+
+\begin{equation}
+\label{eqn:EWL2}
+\mathcal{L}_{EW} = \mathcal{L}_{K} + \mathcal{L}_{N} + \mathcal{L}_{C} + \mathcal{L}_{H} + \mathcal{L}_{HV} + \mathcal{L}_{WWV} + \mathcal{L}_{WWVV} + \mathcal{L}_{Y}
+\end{equation}
+
+The charged current interaction is particularly interesting for the W decays from top quarks. It is described by the term in Eq.~\ref{eqn:CCint}. 
+
+\begin{equation}
+\label{eqn:CCint}
+\mathcal{L}_{C} = \frac{g}{\sqrt{2}} i\bar{\psi_{L}} \gamma^{\mu} \partial_{\mu} \psi_{L}
+\end{equation}
+\begin{equation*}
+\psi_L = \twovector{u_L}{{d'}_L}, \twovector{\nu_L}{l_L}
+\end{equation*}
+
+Here ${d'}_L = V_{CKM}~d_L$.
+
 
 The CKM matrix, also known as the \emph{quark mixing matrix}, is a unitary matrix which describes the strength of the couplings for weak decays and is shown in Eq.~\ref{eqn:CKM1}. 
 \begin{equation}
@@ -217,12 +237,12 @@ Equation~\ref{eqn:QCDL} gives the QCD lagrangian, $\mathcal{L}_{\textrm {QCD}}$ 
 \end{equation}
 
 \textbf{Asymptotic freedom and colour confinement}\\
-Quark-antiquark loops lead to screening of the quark colour charge, however gluon loops contribute the opposite by `anti-screening'. The global effect is captured in Eq.~\ref{eqn:alphaSQCD} where it can be seen that in any theory with $11n>2f$, where $n$ is the number of colours and $f$ is the number of quark flavours, the coupling constant, $\alpha_{S}\left( |q^{2}| \right)$, will decrease with increasing energy, q$^{2}$. This is known as \emph{asymptotic freedom} as the quarks inside hadrons effectively act like free particles. This is in contrast to QED where the vacuum acts like a dielectric medium which produces electron-positron pairs where the virtual electron is attracted to positive charges and the virtual positron is repelled (and vice versa for negative charges). This vacuum polarisation partially screens the charged particle and effectively reduces its field. However at short distances, the effective charge increases as the screening reduces.
+Quark-anti-quark loops lead to screening of the quark colour charge, however gluon loops contribute the opposite by `anti-screening'. It was found that in any theory with $11n>2f$, where $n$ is the number of colours and $f$ is the number of quark flavours, the coupling constant, $\alpha_{S}\left( |q^{2}| \right)$, will decrease with increasing energy, q$^{2}$~\cite{PhysRevLett.30.1343,PhysRevLett.30.1346}. This is known as \emph{asymptotic freedom} as the quarks inside hadrons effectively act like free particles. This is in contrast to QED where there is no `anti-screening' effect.
 
-\begin{equation}
-\label{eqn:alphaSQCD}
-\alpha_{S}\left( |q^{2}| \right) = \frac{\alpha_{S}\left( \mu^{2} \right)} {1 + \left[ \alpha_{S}\left( \mu^{2} \right)/12\pi \right]\left( 11n -2f \right) \ln \left(|q^{2}|/\mu^{2}\right)}
-\end{equation}
+% \begin{equation}
+% \label{eqn:alphaSQCD}
+% \alpha_{S}\left( |q^{2}| \right) = \frac{\alpha_{S}\left( \mu^{2} \right)} {1 + \left[ \alpha_{S}\left( \mu^{2} \right)/12\pi \right]\left( 11n -2f \right) \ln \left(|q^{2}|/\mu^{2}\right)}
+% \end{equation}
 
 At larger distances the strong force increases, hence energy which has gone into separating two quarks reaches a critical point where it is transferred into producing more quarks which accompany the separated quarks to form hadrons. This is the principle of \emph{confinement} and it ensures that colour doublets or octets are never found in nature, only colour singlet states such as mesons and baryons. The showering of separated quarks into hadrons is called \emph{hadronisation}. This is in contrast, again, to QED where particles can carry electric charge.
 
@@ -236,7 +256,7 @@ Figure~\ref{fig:protonPDF} shows the parton distribution functions for the proto
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.65\textwidth]{images/Theory/pdfnob.png}
-    \caption{Proton parton distribution functions $f(x)$ $(f = u_{v},~ d_{v},~ \overline{u},~ \overline{d},~ s\approx\overline{s},~ c\approx\overline{c},~ b\approx\overline{b},~ g$ ) for a given momentum fraction, $x$. Obtained from NNLO NNPDF3.0~\cite{Ball2015}}
+    \caption{Proton parton distribution functions $xf(x)$ $(f = u_{v},~ d_{v},~ \overline{u},~ \overline{d},~ s\approx\overline{s},~ c\approx\overline{c},~ b\approx\overline{b},~ g$ ) for a given momentum fraction, $x$. Obtained from NNLO NNPDF3.0~\cite{Ball2015}}
     \label{fig:protonPDF}
 \end{center}
 \end{figure}
