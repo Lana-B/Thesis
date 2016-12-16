@@ -84,7 +84,7 @@ Application of the Euler-Lagrange equations leads to the derivation of the Dirac
 % , where $J_{\mu} = \overline{\psi}\gamma_{\mu}\psi$.
 
 \begin{equation}
-i\gamma^{\mu }\partial _{\mu }\psi -m\psi - iq\gamma^{\mu }A_{\mu} = 0
+i\gamma^{\mu }\partial _{\mu }\psi -m\psi - iq\gamma^{\mu }A_{\mu}\psi = 0
 \label{Eqn:Dirac}
 \end{equation}
 
@@ -116,7 +116,7 @@ Weak interactions are the only interactions known to violate parity conservation
 
 \subsubsection{Electroweak Unification}
 
-Glashow~\cite{Glashow:1961tr}, Weinberg~\cite{PhysRevLett.19.1264} and Salam~\cite{Salam:1968rm} formulated the unification of the weak and electromagnetic forces combined in the SU(2)~x~U(1) gauge group. They are hypothesised to merge into one electroweak force above the unification energy of $\approx 100$~GeV. The theory contains four gauge bosons: three W bosons W$_{a}~(a=1,~2,~3)$ and one B boson. Weak hypercharge is defined as $Y_{W} = 2(Q-I_{3})$ and it is $Y_W$ which is the generator of the U(1) component of the electroweak gauge group, which is mediated by the B boson. Equation~\ref{eq:EWK_L} shows the Lagrangian for electroweak interactions where it can be seen that the left-handed fermion fields, contained in the doublet $\psi_{L}$, couple to the W and B bosons and the right-handed fermion fields, $\psi_{R}$, couple to the B boson only. The generators of SU(2) component are ${\bf T} = \boldsymbol{\sigma}/2$ where $\boldsymbol{\sigma}$ are the Pauli matrices.
+Glashow~\cite{Glashow:1961tr}, Weinberg~\cite{PhysRevLett.19.1264} and Salam~\cite{Salam:1968rm} formulated the unification of the weak and electromagnetic forces combined in the SU(2)~x~U(1) gauge group. They are hypothesised to merge into one electroweak force above the unification energy of $\approx 100$~GeV. The theory contains four gauge bosons: three W bosons W$_{a}~(a=1,~2,~3)$ and one B boson. Weak hypercharge is defined as $Y_{W} = 2(Q-I_{3})$ and it is $Y_W$ which is the generator of the U(1) component of the electroweak gauge group, which is mediated by the B boson. Equation~\ref{eq:EWK_L} shows the Lagrangian for electroweak interactions where it can be seen that the left-handed fermion fields, represented in the doublet $\psi_{L}$, couple to the W and B bosons and the right-handed fermion fields, $\psi_{R}$, couple to the B boson only. The generators of SU(2) component are ${\bf T} = \boldsymbol{\sigma}/2$ where $\boldsymbol{\sigma}$ are the Pauli matrices.
 
 \begin{equation}
 \label{eq:EWK_L}
@@ -128,10 +128,10 @@ B_\mu) \psi_L + \\ & + \bar{\psi}_R \gamma^\mu (i \partial_\mu - \frac{g'}{2} Y_
 \end{equation}
 
 \begin{equation*}
-\psi_L = \twovector{\psi^u_L}{\psi^d_L}, \twovector{\psi^\nu_L}{\psi^l_L},~~\psi_R=~\psi_R^u,~\psi_R^d,~\psi_R^l
+\psi_L = \twovector{u_L}{d_L}, \twovector{\nu_L}{\ell_L},~~\psi_R=~u_R,~d_R,~\ell_R
 \end{equation*}
 
-The spontaneous symmetry breaking mechanism proposed by Brout, Englert~\cite{PhysRevLett.13.321} and Higgs~\cite{PhysRevLett.13.508} results in the linear combination of these 4 bosons into the four more familiar gauge bosons from Table~\ref{table:SMbosons}, W$^{\pm}$, Z and the photon ($\gamma$) as shown in Eqs.~\ref{eqn:Zgamma} \&~\ref{eqn:Wpm}, where $\theta_{W}$ is the weak mixing angle.
+The spontaneous symmetry breaking mechanism proposed by Brout, Englert~\cite{PhysRevLett.13.321} and Higgs~\cite{PhysRevLett.13.508} results in the linear combination of these 4 bosons into the four more familiar gauge bosons from Table~\ref{table:SMbosons}, W$^{\pm}$, Z and the photon ($\gamma$) as shown in Eqs.~\ref{eqn:Zgamma} \&~\ref{eqn:Wpm}, where $\theta_{W}$ is the weak mixing angle. It is through this mechanism that the W$^{\pm}$, Z bosons gain mass.
 \begin{equation}
 \label{eqn:Zgamma}
 {\begin{pmatrix}
@@ -166,14 +166,18 @@ The spontaneous symmetry breaking mechanism proposed by Brout, Englert~\cite{Phy
 
 % The Yukawa couplings, which describe the couplings between dirac fields and a scalar field, 
 
-After electroweak symmetry breaking, where the Higgs boson gets a vacuum expectation value, the electroweak Lagrangian changes form as described in Ref~\cite{Pich:2005mk}. It now has a kinetic term, a term for the neutral interactions and one for the charged interactions. One terms for the Higgs three and four point self-interactions and another term for the Higgs interactions with vector bosons. There is a term for both the three and four point interactions of the vector bosons and another term for the Yukawa couplings between the Higgs field and the fermions.
+After electroweak symmetry breaking, where the Higgs boson gets a vacuum expectation value, the electroweak Lagrangian changes form as described in Ref~\cite{Pich:2005mk}. It now has a kinetic term, a term for the neutral interactions and one for the charged interactions. One terms for the Higgs three and four point self-interactions and another term for the Higgs interactions with vector bosons. There is a term for both the three and four point interactions of the vector bosons and another term for the Yukawa couplings between the Higgs field and the fermions. It is through the spontaneous symmetry breaking mechanism that the Yukawa term gains mass terms for fermions as shown in Eq.~\ref{eqn:yukawaMass}, where $M_f$ is the mass of the fermion, $Y_f$ is the Yukawa coupling and $v$ is the vacuum expectation value.
 
+\begin{equation}
+M_f = Y_f \frac{v}{\sqrt{2}}
+\label{eqn:yukawaMass}
+\end{equation}
 % \begin{equation}
 % \label{eqn:EWL2}
 % \mathcal{L}_{EW} = \mathcal{L}_{K} + \mathcal{L}_{N} + \mathcal{L}_{C} + \mathcal{L}_{H} + \mathcal{L}_{HV} + \mathcal{L}_{WWV} + \mathcal{L}_{WWVV} + \mathcal{L}_{Y}
 % \end{equation}
 
-The charged current interaction is particularly interesting for the W decays from top quarks. It is described by the term in Eq.~\ref{eqn:CCint}. 
+The charged current interaction is particularly interesting for the W decays from top quarks. It is described by the term in Eq.~\ref{eqn:CCint}, where $\psi_L$ is now rotated from flavour eigenstate to the weak eigenstate,.
 
 \begin{equation}
 \label{eqn:CCint}
@@ -183,10 +187,7 @@ The charged current interaction is particularly interesting for the W decays fro
 \psi_L = \twovector{u_L}{{d'}_L}, \twovector{\nu_L}{l_L}
 \end{equation*}
 
-Here ${d'}_L = V_{CKM}~d_L$.
-
-
-The CKM matrix, also known as the \emph{quark mixing matrix}, is a unitary matrix which describes the strength of the couplings for weak decays and is shown in Eq.~\ref{eqn:CKM1}. 
+The weak eigenstates are related to the flavour eigenstates through the CKM matrix, $V_{CKM}$, via ${d^{\prime}}_L = V_{CKM}~d_L$. The CKM matrix, also known as the \emph{quark mixing matrix}, is a unitary matrix which describes the strength of the couplings for weak decays and it is shown in Eq.~\ref{eqn:CKM1}. 
 \begin{equation}
 \label{eqn:CKM1}
 {\begin{pmatrix}
