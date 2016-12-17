@@ -511,6 +511,28 @@ The output BDT plots are shown in \njets and \nMtags categories in Figs.~\ref{fi
 
 The BDT was seen to be very stable with respect to changes in the number of trees used and to the minimum number of events required at a node for further splitting to occur. The impact on the final expected limit was negligible when changing these BDT hyperparameters. Training was also performed in jet categories of 6-7 jets and $\geq$8 jets separately to study whether a separate training in the $\geq8$ jets category would improve the power of the BDT to separate \ttbar and \tttt events in a signal-rich region. However the expected limit derived from this alternative training was not enhanced with respect to the inclusive training in all jet categories. The most significant improvement in the expected limit comes from optimising the \njets and \nMtags categories. Further categorisation into higher \njets and \nMtags categories improves the expected limit however these categories become very statistically limited with 2.6~\fbinv of data.
 
+\subsection{Correlation matrices for BDT input variables}
+
+% The correlation matrices for signal and background are shown in Fig.~\ref{fig:corrMat}. The largest correlation exists between \njetsw and \redhadmass. This is not surprising as \njetsw takes into account the weight of jets above a pt threshold and \redhadmass is the invariant mass of the reduced event. Many high pt jets in an event will correspond to a larger value of \redhadmass. 
+% Correlated variables are handled well within a BDT and that was one of the reasons for the choice of this type of multivariate algorithm. The correlation matrices were used at an earlier stage in the analysis to assess what variables were very highly correlated and could be removed from the input BDT variables as they would serve little use within the BDT.
+
+Figure~\ref{fig:corrMat} shows the correlation matrices for the input BDT variables for the background \ttbar (left) and signal \tttt (right). It can be seen that the most highly correlated variables are \njetsw and \redhadmass. This correlation arises from the fact that the \njetsw variable weights events by the \pt of jets and more additional higher-\pt jets will lead to a larger value of \redhadmass. BDTs are effective at handling correlated variables and this was one reason for the chosen of using this multivariate algorithm.
+
+
+Correlation matrices were used when choosing which variables to include in the final set which was used to train the BDT for this analysis. Highly correlated variables were removed as they are largely superfluous.
+
+
+\subsection{Overtraining tests}
+
+Figure~\ref{fig:ROC} shows the BDT distribution from training and testing (left) and the associated ROC curve for this training. The training sample is shown as a filled histogram and the testing sample is shown as overlaid data points for the signal \tttt (blue) and background \ttbar for red. It can be seen that there is good agreement between the training and testing samples with Kolmogorov-Smirnov values of 0.159 for background and 0.998 for signal. This suggest that the BDT has not been overtrained.
+
+\begin{figure}
+    \includegraphics[width=0.48\textwidth]{images/Run2/overtrain_BDT.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/rejBvsS.pdf}
+    \caption{The over-training test for the BDT (left) and the rejection of background \ttbar (red) vs signal \tttt (blue) (right).}
+    \label{fig:ROC}
+\end{figure}
+
 \section{Systematic uncertainties}
 \label{sec:uncertainties13}
 All systematic uncertainties are described in Section~\ref{sec:uncertainties} and some further details about them are given below.
@@ -565,71 +587,8 @@ e  &  $26.4$ & $+16.6 -9.3$ & $33.5$ \\
 
 The combined expected limit is $147.2^{+90}_{-51}$~fb and the observed limit is 154.6~fb for the single lepton + jets channel.
 
-\section{Systematics studies and tests on analysis}
+% \section{Systematics studies and tests on analysis}
 
-% \subsection{Ranking of variables in BDT}
-
-% \begin{table}[ht!]
-% \centering
-% \begin{tabular}{| l | l | l | p{5cm} |}
-%   \hline
-% Rank & Variable & Importance \\
-%  \hline
-% 1 & \njets & 1.340e-01\\
-% 2 & third highest CSV &1.180e-01\\
-% 3 & \htrat & 1.133e-01\\
-% 4 & BDT$_{trijet2}$ & 1.091e-01 \\
-% 5 & \njetsw &1.082e-01\\
-% 6 & \redhadmass& 1.026e-01\\
-% 7 & HTX & 9.867e-02\\
-% 8 & \htb & 8.650e-02 \\
-% 9 & fourth highest CSV & 7.630e-02\\
-% 10 & leadleppt & 5.334e-02  \\
-
-% \hline
-% \end{tabular}
-%  \caption{Ranking of variables in order of discrimination power within the BDT.}
-%   \label{tab:BDTrankings}
-%   \end{table}
-
-\subsection{Correlation matrices for BDT input variables}
-
-% The correlation matrices for signal and background are shown in Fig.~\ref{fig:corrMat}. The largest correlation exists between \njetsw and \redhadmass. This is not surprising as \njetsw takes into account the weight of jets above a pt threshold and \redhadmass is the invariant mass of the reduced event. Many high pt jets in an event will correspond to a larger value of \redhadmass. 
-% Correlated variables are handled well within a BDT and that was one of the reasons for the choice of this type of multivariate algorithm. The correlation matrices were used at an earlier stage in the analysis to assess what variables were very highly correlated and could be removed from the input BDT variables as they would serve little use within the BDT.
-
-Figure~\ref{fig:corrMat} shows the correlation matrices for the input BDT variables for the background \ttbar (left) and signal \tttt (right). It can be seen that the most highly correlated variables are \njetsw and \redhadmass. This correlation arises from the fact that the \njetsw variable weights events by the \pt of jets and more additional higher-\pt jets will lead to a larger value of \redhadmass. BDTs are effective at handling correlated variables and this was one reason for the chosen of using this multivariate algorithm.
-
-
-Correlation matrices were used when choosing which variables to include in the final set which was used to train the BDT for this analysis. Highly correlated variables were removed as they are largely superfluous.
-
-\subsection{Correlation matrices for fit nuisance parameters}
-
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixB.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixS.pdf}
-    \caption{The correlation matrices for background (left) and signal (right).}
-    \label{fig:corrMat}
-\end{figure}
-
-The correlation matrix for the fit nuisance parameters in the background only scenario can be see in Fig.~\ref{fig:FitCorr}. There is some correlation between the various b-tagging scale factors and also a correlation between the heavy flavour \heavyflavourone / \heavyflavourtwo modelling and the \ttbar ME scale, where the \heavyflavourone / \heavyflavourtwo is expected to be related to the choice of ME scale.
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.9\textwidth]{images/Run2/FitCorr.pdf}
-    \caption{The correlation matrices for background only for the fit parameters.}
-    \label{fig:FitCorr}
-\end{figure}
-
-\subsection{Overtraining tests}
-
-Figure~\ref{fig:ROC} shows the BDT distribution from training and testing (left) and the associated ROC curve for this training. The training sample is shown as a filled histogram and the testing sample is shown as overlaid data points for the signal \tttt (blue) and background \ttbar for red. It can be seen that there is good agreement between the training and testing samples with Kolmogorov-Smirnov values of 0.159 for background and 0.998 for signal. This suggest that the BDT has not been overtrained.
-
-\begin{figure}
-    \includegraphics[width=0.48\textwidth]{images/Run2/overtrain_BDT.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/rejBvsS.pdf}
-    \caption{The over-training test for the BDT (left) and the rejection of background \ttbar (red) vs signal \tttt (blue) (right).}
-    \label{fig:ROC}
-\end{figure}
 
 \subsection{Nuisance parameters}
 
@@ -749,240 +708,6 @@ e  &  $30.6$ & $+18.8 -10.7$  \\
 
 The results in Table~\ref{tab:HTlimits} correspond to a combined expected limit of $180.3^{+108}_{-62}$ fb using \HT to make the template fit compared to an expected limit of $147.2^{+90}_{-51}$ fb when using the event level BDT to make the template fit. Hence, using the BDT the expected limit is improved by $\approx20\%$.
 
-% \fixme{gradboost studies}
-
-\section{Systematic shape studies}
-
-In this section the alternative BDT distribution shapes are examined for each shape systematic described in Section~\ref{sec:uncertainties13}. The largest systematic uncertainties are the JES, ME scale systematics and the \ttbar generator choice. The JER and PU up/down (red/cyan) shapes deviate very little from the nominal distributions (blue). In \ttbar the several distributions including JER and PU systematics show relatively flat behaviour with respect to the nominal distribution and in future analyses could be considered for incorporation into a normalisation systematic uncertainty.
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr1systt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr1systt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for linear charm flavour systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesCFErrtt1}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr1systttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr1systttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for linear charm flavour systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesCFErrtttt1}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr2systt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr2systt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for quadratic charm flavour systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesCFErrtt2}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr2systttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr2systttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for quadratic charm flavour systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesCFErrtttt2}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats1systt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats1systt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for linear heavy flavour systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesHFStatstt1}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats1systttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats1systttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for linear heavy flavour systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesHFStatstttt1}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats2systt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats2systt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for quadratic heavy flavour systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesHFStatstt2}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats2systttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFStats2systttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for quadratic heavy flavour systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesHFStatstttt2}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats1systt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats1systt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for linear light flavour systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesLStatstt1}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats1systttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats1systttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for linear light flavour systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesLStatstttt1}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats2systt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats2systt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for quadratic light flavour systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesLStatstttt2}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats2systttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFStats2systttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for quadratic light flavour systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesLStatstt2}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFsystt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFsystt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for heavy flavour contamination of light jets in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesHFsystt}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFsystttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVHFsystttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for heavy flavour contamination of light jets in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesHFsystttt}
-% \end{figure}
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFsystt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFsystt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for light flavour contamination of heavy jets in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesLFsystt}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFsystttt.png}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVLFsystttt_e.png}     
-%     \caption{The BDT shapes for b-tag event-weight for light flavour contamination of heavy jets in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesLFsystttt}
-% \end{figure}
-
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystt.pdf}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystt_e.pdf}     
-%     \caption{The BDT shapes for JER systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesJERtt}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystttt.pdf}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystttt_e.pdf}     
-%     \caption{The BDT shapes for JER systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesJERtttt}
-% \end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JESsystt.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JESsystt_e.pdf}     
-    \caption{The BDT shapes for JES systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-    \label{fig:SysShapesJEStt}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JESsystttt.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JESsystttt_e.pdf}     
-    \caption{The BDT shapes for JES systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-    \label{fig:SysShapesJEStttt}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/MEScalesystt.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/MEScalesystt_e.pdf}     
-    \caption{The BDT shapes for ME scale systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-    \label{fig:SysShapesMEtt}
-\end{figure}
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/MEScalesystttt.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/MEScalesystttt_e.pdf}     
-    \caption{The BDT shapes for ME scale systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-    \label{fig:SysShapesMEtttt}
-\end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystt.pdf} 
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystt_e.pdf}     
-%     \caption{The BDT shapes for PU systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesPUtt}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystttt.pdf} 
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystttt_e.pdf}     
-%     \caption{The BDT shapes for PU systematic in \tttt for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesPUtttt}
-% \end{figure}
-
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/ScaleHsystt.pdf}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/ScaleHsystt_e.pdf}     
-%     \caption{The BDT shapes for hadronisation scale systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesScaleHtt}
-% \end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/ttGeneratorsystt.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/ttGeneratorsystt_e.pdf}     
-    \caption{The BDT shapes for ttGenerator choice systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-    \label{fig:SysShapesttGen}
-\end{figure}
-
-\section{Comparison of the Gradient Boost and AdaBoost boosting algorithms within the BDT \label{app:adagrad}}
-
-For this study, the following three BDTs were trained:
-\begin{enumerate}
-\item \emph{GradNeg} - Gradient boosting taking into account negative weighting information in training and testing
-\item \emph{GradBoost} - Gradient boosting ignoring negative weighting information in training and testing
-\item \emph{AdaBoost} - AdaBoost boosting ignoring negative weighting information in training and testing
-\end{enumerate}
-% It was decided that if we were going to ignore the negative weight information then there was no reason to not include these events in the training sample. Additionally, if one was to ignore the negative weight information then there is no reason to not examine using AdaBoost.  
-% Strategy 1 is referred to as \emph{GradNeg}; strategy 2 as \emph{GradBoost}; and strategy 3 as \emph{AdaBoost}. 
-%
-Each BDT was trained with the same set of input features and using the same sample of events to train and test the BDTs. The expected limits and uncertainties are shown for each strategy in Table~\ref{tab:BDTalgos} for the $\mu$ + jets and e + jets final states. Note that this study was performed at an earlier stage in the analysis so the results to do not correspond exactly to the final expected limit given in Section~\ref{sec:limit13}. The BDT output discriminator distribution was only split into \njets categories of of 6, 7, 8, 9+ jets at this stage rather than \njets and \nMtags categories.
- % The response of the signal and background samples as well as the ROC curves for the derived classifiers for each strategy can be seen in Figs. \ref{fig:GradNeg} through \ref{fig:AdaBoost}.
-
-
-
-\begin{table}[ht]
-\centering
-\caption{Expected limits using jet categories of 6, 7, 8, 9+ jets for different BDT boosting algorithms.}
-\label{tab:BDTalgos}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-Algorithm & $\mu$ + jets & uncertainty & e + jets & uncertainty \\ \hline
-GradNeg   & 18.1         & +8.0, -5.3  & 27.6     & +12.9, -8.3 \\ \hline
-GradBoost & 18.7         & +8.3, -5.5  & 28.8     & +12.9, -8.3 \\ \hline
-AdaBoost  & 10.7         & +6.4, -4.0  & 21.6     & +10.9, -7.0 \\ \hline
-\end{tabular}
-\end{table}
-
-It can be seen from Table~\ref{tab:BDTalgos} that the difference between including negative weight information in the GradNeg strategy and not including it in the GradBoost strategy have a negligible effect on the expected limit within the uncertainties. Using negative weights may slightly optimise the modelling for training but not significantly hence the AdaBoost strategy can be used without negative weights as it has a significant benefit in lowering the expected limit.
-
-% \section{Studies of additional MC samples ~\label{app:altsamples}}
-
-
-\section{Comparison of alternative \ttbar generators}
-
-Figure~\ref{fig:MGFXFX} shows that the uncertainty from the \MADGRAPH \aMCATNLO generator is contained within the uncertainty from the \MLM generator, therefore it is conservative to use the \MLM generator as the systematic shape for differences in the BDT distribution due to generator choice.
-
-\begin{figure}[ht]
-\centering
-    \includegraphics[width=0.7\textwidth]{images/Run2/MG_FXFX.pdf}
-    \caption{Inclusive BDT distribution for \ttbar generators \POWHEG+\PYTHIA, \MLM and \MADGRAPH \aMCATNLO FxFx}
-    \label{fig:MGFXFX}
-\end{figure} 
-
-
-\section{TTZ, TTW, TTH MC backgrounds~\label{app:TTX}}
-The contributions from \ttbar + B, where B = W, Z or H, were added to the predicted \ttbar yields to give a prediction for the net \ttbar + B background. The event-level BDT discriminant shapes for these contributions closely follow those of the \ttbar contribution and are very different from those predicted for the \tttt signal as a function of both the number of jets and the number of b-tagged jets. The differences are small and they over covered by the \ttbar scale uncertainties. Therefore, no additional systematic uncertainties were considered necessary to cover these backgrounds.
-
-
-\begin{figure}[ht]
-\centering
-    \includegraphics[width=\textwidth]{images/Run2/ttbarShapesLabels.png}
-    \caption{BDT discriminator shapes for all categories, as indicated along the x axis. The ratio plot shows the difference between each distribution and the nominal \ttbar distribution divided by the \ttbar distribution.}
-    \label{fig:TTB}
-\end{figure}
 
 
 \section{Combination with OS dilepton channel and SS dilepton channel ~\label{sec:combo13}}
@@ -997,7 +722,7 @@ The analysis was then further combined with a search for new physics in events w
 %NOTE: THE VALUES ARE DEFINED IN THE TOP-16-016.tex at the start - modify them there, not here.
     \caption{Expected and observed 95\% CL upper limits on the SM \tttt production as a multiple of \sigmattttSM and in fb. The values quoted on the expected limits are the $1$ standard deviation uncertainties and include all statistical and systematic uncertainties.}    
     \centering
-    \small
+    \footnotesize
     \begin{tabular}{ l | c  |  c | c  | c }
         Channel  & Expected Limit  & Observed Limit & Expected limit  & Observed Limit \T \B\\  
          & (x \sigmattttSM) & (x \sigmattttSM) & (fb) & (fb) \T \Bbig \\ \hline \hline
@@ -1008,7 +733,7 @@ The analysis was then further combined with a search for new physics in events w
                 (opposite sign) & & & &  \\
             \hline 
                  Combined (single lep & $\xsecmucomboexp^{\,+\,\xsecmucomboup}_{\,-\,\xsecmucombodown}$ & $\xsecmucombo$  & $\xsecfbcomboexp^{\,+\,\xsecfbcomboup}_{\,-\,\xsecfbcombodown}$ & $\xsecfbcombo$   \T \B  \\
-                lepton and OS dilepton) & & & &  \\   \hline            
+                -ton and OS dilepton) & & & &  \\   \hline            
                 Dilepton & $11.0^{\,+\,6.2}_{\,-\,3.8}$ & $12.9$ & $101^{\,+\,57}_{\,-\,35}$ & $119$   \T \B  \\
                 (same sign) & & &  & \\ \hline
                 Combined  & $\xsecmucomboallexp^{\,+\,\xsecmucomboallup}_{\,-\,\xsecmucomboalldown}$ & $\xsecmucomboall$  & $\xsecfbcomboallexp^{\,+\,\xsecfbcomboallup}_{\,-\,\xsecfbcomboalldown}$ & $\xsecfbcomboall$  \T \B   \\
@@ -1029,7 +754,7 @@ The SM production of four top quarks at $\sqrt{s} =$~13~TeV has been studied wit
 There are a number of searches for the production of four top quarks at $\sqrt{s}=13$~TeV in the single lepton, opposite-sign dilepton and same-sign dilepton channels, and at both the CMS and ATLAS experiments. A summary of the results is given in Table~\ref{tab:CmsAtlasSum} including three CMS analyses in three different channels using the 2015 CMS dataset and a combination of those results as discussed in Section~\ref{sec:combo13}. The table also includes two different ATLAS searches, ATLAS-CONF-2016-013 and ATLAS-CONF-2016-020, which place limits on four-top-quark production in the single lepton channel using the 2015 ATLAS dataset of 3.2~\fbinv. ATLAS-CONF-2016-104 is a progression from ATLAS-CONF-2016-013 that uses the 2015 and 2016 ATLAS datasets using a total of 13.2~\fbinv. Finally there is a same-sign dilepton search by ATLAS which uses the 2015 ATLAS dataset with 3.2~\fbinv also.
 
 Of all the analyses the same-sign dilepton searches are the most sensitive. 
-ATLAS-CONF-2016-020 is more sensitive than ATLAS-CONF-2016-013 as it categorises into more jet and b-tag categories. There is a significant reduction in the limit between ATLAS-CONF-2016-013 and ATLAS-CONF-2016-140 of $\approx 40\%$ by using four times more data. The results, between searches in the same channels in CMS and ATLAS are compatible with each other within the systematic errors. Overall the CMS combination has the strongest limit on four-top-quark production so far of 66 (69$^{+37}_{-23}$) observed (expected).
+ATLAS-CONF-2016-020 is more sensitive than ATLAS-CONF-2016-013 as it categorises into more jet and b-tag categories. There is a significant reduction in the limit between ATLAS-CONF-2016-013 and ATLAS-CONF-2016-140 of $\approx 40\%$ by using four times more data. The results, between searches in the same channels in CMS and ATLAS are compatible with each other within the systematic errors. Overall the CMS combination has the strongest limit on four-top-quark production so far of 66~fb (69$^{+37}_{-23}$~fb) observed (expected).
 
 \begin{table}[h!]
 \centering
