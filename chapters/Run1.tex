@@ -7,10 +7,10 @@ In this chapter, an analysis of the full 2012 CMS data set of proton-proton coll
 % this equates to approximately 26 events in the 2012 dataset in all decay channels. However, in this analysis, only final states where one of the top quarks decays leptonically into an electron or muon are considered. These are referred to as the single lepton channels and they are the most prevalent decay mode as can be seen in ~\fxnote*{add fig}{figX}. One of the main challenges of this analysis is to distinguish this extremely rare signal process with the overwhelmingly large background process of top-pair production (\ttbar) which is five orders of magnitude greater than the \tttt signal process, the latest measurement putting it at $241.5 \pm 8.5$ \pbinv ~\cite{CMS-PAS-TOP-14-016}. 
 
 
-%This analysis proceeds as follows; Section~\ref{sec:sigback} discuss the \tttt signal processes and the relevant background and Section~\ref{sec:datasimulation} describes the datasets and simulations of the signal and backrgound used. Section~\ref{sec:baseline} details the initial requirements imposed on the signal region while Section~\ref{sec:Calibrations} describes the calibrations made to the correct the simulation. The multi-jet background estimation is described in Section~\ref{sec:QCDbackground} and the multi-variate techniques used to increase the discrimination power between signal and background are contained in~\ref{sec:discriminating}. Discussion of the systematic uncertainties and extraction of the limit on the \tttt cross section are in Sections~\ref{sec:uncertainties} and~\ref{sec:limit}. Validation of the analysis can be found in Section~\ref{sec:signalinjection}. Finally, a summary and discussion of the ATLAS \tttt cross section limit can be found in Sections~\ref{sec:summary} and~\ref{sec:ATLASresult}.
-Sections~\ref{sec:QCDbackground},~\ref{sec:njetcatlimit} and~\ref{studies8} are the authors personal contribution to the analysis.
+%This analysis proceeds as follows; Section~\ref{sec:sigback} discuss the \tttt signal processes and the relevant background and Section~\ref{sec:datasimulation} describes the datasets and simulations of the signal and backrgound used. Section~\ref{sec:baseline} details the initial requirements imposed on the signal region while Section~\ref{sec:Calibrations} describes the calibrations made to the correct the simulation. The multi-jet background estimation is described in Section~\ref{sec:QCDbackground} and the multivariate techniques used to increase the discrimination power between signal and background are contained in~\ref{sec:discriminating}. Discussion of the systematic uncertainties and extraction of the limit on the \tttt cross section are in Sections~\ref{sec:uncertainties} and~\ref{sec:limit}. Validation of the analysis can be found in Section~\ref{sec:signalinjection}. Finally, a summary and discussion of the ATLAS \tttt cross section limit can be found in Sections~\ref{sec:summary} and~\ref{sec:ATLASresult}.
+Sections~\ref{sec:QCDbackground},~\ref{sec:njetcatlimit} and~\ref{studies8} are the author's personal contribution to the analysis.
 
-%An initial baseline selection of requirements on the number of leptons, jets, b-tagged jets, transverse hadronic energy (\HT) and transverse missing energy (\MET) reduces the \ttbar background to three orders of magnitude greater than the \tttt signal. As \ttbar remains a very large background, multi-variate techniques are employed to reconstruct top quarks and then ultimately to find a discriminator value to distinguish between signal and background.
+%An initial baseline selection of requirements on the number of leptons, jets, b-tagged jets, transverse hadronic energy (\HT) and transverse missing energy (\MET) reduces the \ttbar background to three orders of magnitude greater than the \tttt signal. As \ttbar remains a very large background, multivariate techniques are employed to reconstruct top quarks and then ultimately to find a discriminator value to distinguish between signal and background.
 %In the absence of an excess of events over background, the \CLS method is used to obtain an observed limit on the cross section of \tttt production of 32 fb at 95\% confidence level compared to 32$\pm17$ fb expected.
 
 
@@ -30,46 +30,46 @@ The signal SM \tttt Monte Carlo (MC) samples and the background MC samples are g
  \hline 
  Dataset & Events & Generator & Order \\
 \hline
-\tttt & 100K & \MADGRAPH $+$ \TAUOLA& O \\
+\tttt & 100K & \MADGRAPH & LO \\
 \hline
-\ttbar Semi leptonic &25M & \MADGRAPH $+$ \TAUOLA & O \\
+\ttbar Semi leptonic &25M & \MADGRAPH  & LO \\
 \hline
-\ttbar Hadronic &31M & \MADGRAPH  $+$ \TAUOLA& O \\
+\ttbar Hadronic &31M & \MADGRAPH  & LO \\
 \hline
-\ttbar Dileptonic & 12M & \MADGRAPH  $+$ \TAUOLA& O \\
+\ttbar Dileptonic & 12M & \MADGRAPH  & LO \\
 \hline
-W + 4 Jets $\rightarrow$ l$\nu$ & 13M & \MADGRAPH & O \\
+W + 4 Jets $\rightarrow$ l$\nu$ & 13M & \MADGRAPH & LO \\
 \hline
-${\overline{\textrm{t}}}$ tW-channel & 500K & \POWHEG $+$ \TAUOLA & O\\
+${\overline{\textrm{t}}}$ tW-channel & 500K & \POWHEG  & NLO \\
 \hline
-t tW-channel & 500K & \POWHEG $+$ \TAUOLA & O \\
+t tW-channel & 500K & \POWHEG  & NLO \\
 \hline
-t t-channel & 3.8M & \POWHEG $+$ \TAUOLA & O \\
+t t-channel & 3.8M & \POWHEG  & NLO \\
 \hline
-${\overline{\textrm{t}}}$ s-channel & 260K & \POWHEG $+$ \TAUOLA & O \\
+${\overline{\textrm{t}}}$ s-channel & 260K & \POWHEG  & NLO \\
 \hline
-t s-channel & 139K & \POWHEG $+$ \TAUOLA & O \\
+t s-channel & 139K & \POWHEG  & NLO \\
 \hline
-${\overline{\textrm{t}}}$ t-channel & 2M  & \POWHEG $+$ \TAUOLA & O \\
+${\overline{\textrm{t}}}$ t-channel & 2M  & \POWHEG  & NLO \\
 \hline
 % DY4JetsToLL & 6.2M & \MADGRAPH & O  \\
 % \hline
-DYJets $\rightarrow~ll$  & 6.7M & \MADGRAPH & O \\
+DYJets $\rightarrow~ll$  & 6.7M & \MADGRAPH & LO \\
 \hline
-TTZ  & 200K & \MADGRAPH & O \\
+TTZ  & 200K & \MADGRAPH & LO \\
 \hline
-TTW\ & 200K & \MADGRAPH & O \\
+TTW\ & 200K & \MADGRAPH & LO \\
 \hline
-TTH$\rightarrow$ HToBB & 1M & \PYTHIA 6 $+$ \TAUOLA & O \\
+TTH$\rightarrow$ HToBB & 1M & \PYTHIA 6  & LO \\
 \hline
-ZZ & 10M & \PYTHIA 6 $+$ \TAUOLA & O \\
+ZZ & 10M & \PYTHIA 6  & LO \\
 \hline
-WZ &10M & \PYTHIA 6 $+$ \TAUOLA & O \\
+WZ &10M & \PYTHIA 6  & LO \\
 \hline
-WW &10M & \PYTHIA 6 $+$ \TAUOLA & O \\
+WW &10M & \PYTHIA 6  & LO \\
 \hline
 \end{tabular}
- \caption{Dataset name, total number of events, MC generator and order of the simulated samples.}
+ \caption{Dataset name, total number of events, MC generator and order of the simulated samples. \PYTHIA~6 was used to hadronise all samples in this table.}
   \label{tab:datasets_sim_8tev}
   \end{table}
 
@@ -81,16 +81,16 @@ WW &10M & \PYTHIA 6 $+$ \TAUOLA & O \\
  \hline 
  Dataset & Events & Generator & Order \\
 \hline
-\ttbar scale down & 5M  & \MADGRAPH $+$ \TAUOLA & O \\
+\ttbar scale down & 5M  & \MADGRAPH  & LO \\
 \hline
-\ttbar scale up & 5M  & \MADGRAPH $+$ \TAUOLA & O \\
+\ttbar scale up & 5M  & \MADGRAPH  & LO \\
 \hline
-\ttbar matching down & 5M & \MADGRAPH $+$ \TAUOLA & O  \\
+\ttbar matching down & 5M & \MADGRAPH  & LO \\
 \hline
-\ttbar matching up & 5M & \MADGRAPH $+$ \TAUOLA & O \\
+\ttbar matching up & 5M & \MADGRAPH  & LO \\
 \hline
 \end{tabular}
- \caption{Dataset name, total number of events, MC generator and order of the simulated systematic samples.}
+ \caption{Dataset name, total number of events, MC generator and order of the simulated systematic samples. \PYTHIA~6 was used to hadronise all samples in this table.}
   \label{tab:datasets_sys_8tev}
 \end{table}
 \section{Baseline Event Selection}
@@ -355,7 +355,7 @@ The \antikt algorithm can only distinguish separate jets if they are separated b
 For \tttt production at parton level it is possible to reconstruct more than one hadronic top quark $\approx$ 63 $\%$ of the time compared to a negligible number of times in \ttbar, as is evident in the Fig.~\ref{fig:ReconHadTops}. Hence, using the number of hadronic tops to distinguish between \tttt and \ttbar is worth investigating. 
 % One obstacle to this is the large number of ways in which the jets can be combined in events with \njets $\geq 6$.\fxnote{more on combinatorics? -> but James' work} 
 
-% This motivates the use of multi-variate analysis to distinguish between good tri-jet combinations and bad tri-jet combinations, where a tri-jet refers to any given combination of three jets. Figure~\ref{fig:TopBDTinput} shows the minimal number of discriminating variables which are used including:\\
+% This motivates the use of multivariate analysis to distinguish between good tri-jet combinations and bad tri-jet combinations, where a tri-jet refers to any given combination of three jets. Figure~\ref{fig:TopBDTinput} shows the minimal number of discriminating variables which are used including:\\
 % \textbf{Tri-jet invariant mass} - Good tri-jet combinations should have an invariant mass distribution which peaks around the top mass.\\
 % \textbf{Di-jet invariant mass} - The di-jet combination is formed from the two jets with the smallest \DR separation. The invariant mass distribution should peak around the W mass.\\
 % \textbf{\ptrat} - This is the ratio of the vectorial \pt to the scalar sum of the \pt of the jets in the tri-jet combination.\\
@@ -379,7 +379,7 @@ The variables used in the hadronic top quark reconstruction BDT are shown in Fig
     \label{fig:TopBDTinput}
 \end{figure}
 
-% The multi-variate analysis tool chosen to calculate a variable to discriminate between good and bad tri-jet combinations is a BDT. The BDT is described in more detail in Section~\ref{sec:BDT}. 
+% The multivariate analysis tool chosen to calculate a variable to discriminate between good and bad tri-jet combinations is a BDT. The BDT is described in more detail in Section~\ref{sec:BDT}. 
 The distribution of the discriminator values output from the BDT is shown in Fig.~\ref{fig:TopBDToutput}, along with a plot of the tri-jet vs BDT value, where the features in the shape are caused by the large discriminating power of the tri-jet and di-jet invariant mass. It can be seen in the tri-jet vs BDT output value plot that tri-jet candidates with an invariant mass close to the top mass are associated with larger BDT output values and, in particular, there is a minimum in the BDT discriminator value at $\approx -0.5$ which can be understood as the division between the two peaks in the BDT discriminator plot. Tri-jets with an invariant mass $\gtrsim 300$~GeV tend to have BDT discriminator values $< -0.5$.
 
 \begin{figure}[!ht]
@@ -536,8 +536,6 @@ The PU systematic uncertainty is found by varying the MinBias cross section by $
 \item \textbf{\heavyflavourone / \heavyflavourtwo modelling}
 The uncertainty on the measurement of \heavyflavourone / \heavyflavourtwo by CMS~\cite{Khachatryan2015132} is $\pm 0.4 \left( \textrm{stat.} \right) \pm 0.5 \left(\textrm{sys.} \right)$. Alternative event weights are derived for \heavyflavourone / \heavyflavourtwo which are used to provide the alternative systematic up and down templates.
  \end{itemize}
- \fxnote{mistag?}
- 
 % The analysis procedure is repeated with \ttbar samples which have the respective quantity varied by $\pm 1 \sigma$ in order the produce new BDT templates with a deviated shape However, in the case of the matching threshold, the alternative shapes are produced by varying the matching threshold up to 40 GeV and down to 20 GeV.
 
 \section{Template fit and upper limit}
@@ -667,7 +665,7 @@ Matching &  $32.79^{+14.37}_{-10.21}$ & $32.79^{+14.37}_{-10.21}$     \\
 \label{tab:effectLims}
 \end{table}
 
-\subsection{Cross checks with Theta package and the fully-frequentist approach using Combine}
+\subsection{Cross checks with Theta package and the fully-frequentist approach using the Higgs Combine Tool}
 
 A cross-check was performed using the Theta package~\cite{theta} to set a limit using \CLS with the asymptotic approximation. As another cross-check, the fully frequentist \CLS limit setting procedure is performed, using Combine, in place of the asymptotic limit setting used for the final results. Due to the extremely large CPU demands of the fully frequentist technique the range of values for the parameter of interest, $\frac{\sigma_{tttt}}{\sigma_{tttt}^{SM}}$, and the number of points investigated is reduced. The results, shown in Table~\ref{tab:ThetaFreq}, are consistent with the results obtained using the asymptotic approximation in Combine.
 

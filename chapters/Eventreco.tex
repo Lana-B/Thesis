@@ -4,8 +4,8 @@
 % A software framework known as CMSSW has been developed in order to reconstruct the read out from the detector for each event
 
 
-In Chapter~\ref{c:det} each of the sub-detectors in CMS have been described; how particles interact with them and how electrical signals are read-out. The next step is to combine the read-outs from each detector in order to reconstruct the resulting particles from an interesting proton-proton collision. This snapshot of the collision output is known as an \emph{event}. An event will also contain pile up from reconstructed particles from other simultaneous uninteresting collisions from the same bunch crossing. Algorithms are used in order to subtract PU particles from the stored event. 
-As a particle will usually traverse more than one sub-detector, it is advantageous to combine these outputs in order to reconstruct the particle. This is achieved using the \emph{particle-flow} (PF) algorithm described in Section~\ref{sec:PF}. The objects which can be reconstructed using the PF algorithm such as muons, electrons, and jets are discussed in Sections~\ref{sec:muonreco},~\ref{sec:electronreco},~\ref{sec:jetreco} respectively. Further information can be obtained from these reconstructed objects such as how likely a jet is to have originated from a b-quark (Section~\ref{sec:btagreco}) and how the presence of neutrinos can be inferred by the imbalance of energy in the transverse plane of the detector (Section~\ref{sec:METreco}).  
+In Chapter~\ref{c:det}, each of the sub-detectors in CMS have been described; how particles interact with them and how electrical signals are read out. The next step is to combine the readouts from each detector in order to reconstruct the resulting particles from an interesting proton-proton collision. This snapshot of the collision output is known as an \emph{event}. An event will also contain PU from reconstructed particles from other simultaneous uninteresting collisions from the same bunch crossing. Algorithms are used in order to subtract PU particles from the stored event. 
+As a particle will usually traverse more than one sub-detector, it is advantageous to combine these outputs in order to reconstruct and identify the particle. This is achieved using the \emph{particle-flow} (PF) algorithm described in Section~\ref{sec:PF}. The objects which can be reconstructed using the PF algorithm such as muons, electrons, and jets are discussed in Sections~\ref{sec:muonreco},~\ref{sec:electronreco},~\ref{sec:jetreco} respectively. Further information can be obtained from these reconstructed objects such as how likely a jet is to have originated from a b-quark (Section~\ref{sec:btagreco}) and how the presence of neutrinos can be inferred by the imbalance of energy in the transverse plane of the detector (Section~\ref{sec:METreco}).  
 The information from the detector is processed using a distributed computing infrastructure with custom software made by CMS, CMSSW.
 % This chapter will discuss the main software used to reconstruct events from the detector read-out, CMSSW, and how a worldwide computer farm is used to process data.
 
@@ -30,13 +30,13 @@ Primary vertices are the point at which the collision occurred, as opposed to se
 
 The particle-flow (PF) algorithm combines information from all sub-detectors described in Section~\ref{c:det}, in order to improve the reconstruction of `final state' particles such as electrons, muons, photons, neutral hadrons and charged hadrons. From this information more complicated higher-level objects, such as jets, can be reconstructed as described in the subsequent sections. Collections of different sub-detector objects, such as tracks or ECAL/HCAL hits, are created and each object is subsequently removed from each collection as they are identified as belonging to a final state particle within the algorithm.\\
 The particle-flow algorithm reconstructs objects in an order starting from the easiest to reconstruct unambiguously. The hardest objects to reconstruct such as neutral hadrons are one of the last to be reconstructed because their properties can be constrained from the previously reconstructed objects.
-The first objects to be reconstructed are PF muons. Each muon identified from the muon chambers is associated to compatible hits in the tracker. This associated track is then removed from its collection. Next, a Gaussian-Sum-filter refit is used to extrapolate electron candidate trajectories to the ECAL. Electrons have shorter trajectories than muons due to losing much of their energy through interactions with the tracker material. Tracker and ECAL variables are combined for the final identification of a PF electron after which the track and ECAL clusters are removed from there respective collections.\\
+The first objects to be reconstructed are PF muons. Each muon identified from the muon chambers is associated to compatible hits in the tracker. This associated track is then removed from its collection. Next, a Gaussian-Sum-filter refit is used to extrapolate electron candidate trajectories to the ECAL. On average, electrons have shorter trajectories than muons due to losing much of their energy through interactions with the tracker material. Tracker and ECAL variables are combined for the final identification of a PF electron after which the track and ECAL clusters are removed from their respective collections.\\
 Charged hadrons are reconstructed from the remaining tracker, ECAL and HCAL deposits where the calorimeter hits are compatible with the tracker hits. Again, these hits are removed from the respective collections. Neutral hadrons leave no tracks in the tracker but have deposits in the ECAL and HCAL. Photons leave deposits in the ECAL but not the HCAL.\\
 
 
 \section{Isolation \label{sec:isolation}}
 
-Relative isolation (\emph{RelIso}), is a measure of how isolated the muons or electrons are from surrounding hits in the detector from charged hadrons, neutral hadrons and photon energy which could contribute to a mis-measurement of their momentum. Only charged hadrons which are consistent with the signal primary vertex are considered in the calculation. As it is not possible to determine whether neutral hadrons are consistent with the signal primary vertex we can use the fact that the ratio of neutral to charged energy has been measured to be $\approx 0.5$. Hence the neutral hadronic energy coming from the primary vertex, $E_{T,PV}^{NH}$, can be calculated as seen in Eqn.~\ref{eqn:neutralE}, where $E_{T,sub}^{CH}$ is the transverse energy from charged hadrons which are associated to a sub-leading primary vertex and $E_{T,Tot}^{NH}$ is the total neutral hadronic energy. This is called the \emph{delta Beta correction}. The max() function ensures that the corrected neutral hadronic energy is never defined as negative.
+Relative isolation (\emph{RelIso}), is a measure of how isolated the muons or electrons are from surrounding hits in the detector from charged hadrons, neutral hadrons and photon energy which could contribute to a mis-measurement of their momentum. Only charged hadrons which are consistent with the signal primary vertex are considered in the calculation. As it is not possible to determine whether neutral hadrons are consistent with the signal primary vertex we can use the fact that the ratio of neutral to charged energy has been measured to be $\approx 0.5$. Hence the neutral hadronic energy in the transverse plane of the detector coming from the primary vertex, $E_{T,PV}^{NH}$, can be calculated as seen in Eq.~\ref{eqn:neutralE}, where $E_{T,sub}^{CH}$ is the transverse energy from charged hadrons which are associated to a sub-leading primary vertex and $E_{T,Tot}^{NH}$ is the total transverse neutral hadronic energy. This is called the \emph{delta Beta correction}. The max() function ensures that the corrected neutral hadronic energy is never defined as negative.
 
 
 \begin{centering}
@@ -48,7 +48,7 @@ Relative isolation (\emph{RelIso}), is a measure of how isolated the muons or el
 
 
 
-The RelIso formula with delta Beta correction included can be found in Eq.~\ref{eqn:dBRelIso}. It is defined in a cone of radius $\textrm{R}=0.4$ and scaled by $1\; / \;\pt^{\mu}$ so that lower momentum muons are required to have less energy from hadrons and photons in the cone to be considered isolated.
+The RelIso formula with delta Beta correction included can be found in Eq.~\ref{eqn:dBRelIso}. It is defined in a cone of radius $\textrm{R}=0.4$ and scaled by $1\; / \;\pt^{\mu}$ (where \pt is the momentum in the transverse plane of the detector) so that lower momentum muons are required to have less energy from hadrons and photons in the cone to be considered isolated.
 
 \begin{centering}
 \begin{equation}
@@ -58,7 +58,7 @@ RelIso = \left( \Sigma E_{T}^{CH} + \Sigma E_{T,PV}^{NH} +  \Sigma E_{T}^{\gamma
 \end{centering}
 
 
-Formula~\ref{eqn:dBRelIso} is used to define relative isolation for muons; for electrons it is defined however the delta Beta correction is replaced by a rho correction $C^{\rho}$, defined in Eq.~\ref{eqn:rhoCorr} where EA denotes Effective Area. The EA is calculated from the average PU energy density per unit area in the $(\rho=)\phi-\eta$ plane and the effective area based on shower shapes that has been measured by CMS (which depends on the $\eta$ value in the supercluster) for each event.
+Equation~\ref{eqn:dBRelIso} is used to define relative isolation for muons; for electrons it is similarly defined however the delta Beta correction is replaced by a rho correction $C^{\rho}$, which is defined in Eq.~\ref{eqn:rhoCorr} where EA denotes Effective Area. The EA is calculated from the average PU energy density per unit area in the $(\rho=)\phi-\eta$ plane and the effective area based on shower shapes that has been measured by CMS (which depends on the $\eta$ value in the supercluster) for each event.
 
 \begin{centering}
 \begin{equation}
@@ -67,6 +67,7 @@ C^{\rho} = \left( \Sigma E_{T}^{NH} + \Sigma E_{T}^{\gamma} - \rho\times\textrm{
 \end{equation}
 \end{centering}
 
+Equation~\ref{eqn:eRelIso} gives the RelIso formula for electrons with rho correction.
 
 \begin{centering}
 \begin{equation}
@@ -77,9 +78,9 @@ RelIso = \left( \Sigma E_{T}^{CH} + C^{\rho} \right) \; / \;   \pt^{e}
 
 \section{Muons \label{sec:muonreco}}
 
-It is important to be able to identify isolated muons coming from the signal process rather than further decays from within jets or mismatched tracks. Applying the identification criteria in Table~\ref{tab:muon_tight_cuts} can help to ensure a high purity of real muons are selected from the PF candidates described in Section~\ref{sec:PF}. Two working points (WP) are defined, tight and loose. Tight muons have tighter requires on various quantities including \pt, as lower momentum muons are harder to distinguish from other particles. Tight muons are used when selecting how many muons are in the event from the signal process. Loose muons are used to veto additional objects which are still likely to be muons but could be misidentified object such as pions. The loose criteria will capture more real muons in its selection but with a lower purity
+It is important to be able to identify isolated muons coming from the signal process rather than from further decays from within jets or from mismatched tracks. Applying the identification criteria in Table~\ref{tab:muon_tight_cuts} can help to ensure a high purity of real muons are selected from the PF candidates described in Section~\ref{sec:PF}. Two working points (WP) are defined, tight and loose. Tight muons have tighter requirements on various quantities including \pt, as lower momentum muons are harder to distinguish from other particles. Tight muons are used when making selection requirements on how many muons should be in the event from the signal process. Loose muons are used to veto additional objects which are still likely to be muons but could be misidentified object such as pions. The loose criteria will capture more real muons in its selection but with a lower purity.
 % but this is necessary when requiring a maximum number of muons in the event. 
-The cut values for each working point are given in Table~\ref{tab:muon_tight_cuts} for the 8 TeV analysis which is in Section~\ref{c:Run1} and the 13 TeV analysis which is in Section~\ref{c:Run2}.
+The cut values for each working point are given in Table~\ref{tab:muon_tight_cuts} for the 8 TeV analysis, which is in Section~\ref{c:Run1}, and the 13 TeV analysis, which is in Section~\ref{c:Run2}.
 
 The transverse impact parameter in the $\phi$-plane with respect to the leading primary vertex is denoted as d0 in the table. The distance between the leading primary vertex and the muon track in the z-direction is denoted dz. These two variable can be used to establish how consistent the muon track is with the leading primary vertex.
 A \emph{Global Muon} is a muon which has been identified from both hits in the muon chamber and hits in the tracker whereas a \emph{Tracker Muon} has only been identified from tracker hits.
@@ -113,13 +114,13 @@ Number of matched muon stations                             &  $>$1             
 
 \section{Electrons \label{sec:electronreco}}
 
-Electrons lose a lot of energy in the tracker material via Bremsstrahlung. This is one of the biggest challenges in reconstructing electrons as this radiation needs to be taken into account to accurately measure their momentum and to have a good momentum resolution. These Bremsstrahlung photons can also convert into electron-positron pairs in the tracker material creating secondary electrons which must be distinguished from the signal electrons coming from the hard process. In this thesis the word electron is mostly used to include both charges, electron and positron. 
+Electrons lose a lot of energy in the tracker material via Bremsstrahlung. This is one of the biggest challenges in reconstructing electrons as this radiation needs to be taken into account to accurately measure their momentum. These Bremsstrahlung photons can also convert into electron-positron pairs in the tracker material creating secondary electrons which must be distinguished from the signal electrons coming from the hard process. In this thesis the word electron is mostly used to include both charges, electron and positron. 
 
-As with Section~\ref{sec:muonreco} for muon reconstruction, two working points are defined for electrons from the PF candidates. Tight electrons are used when requiring electrons as part of the signal process and a looser set of criteria are used in order to veto on extra electrons in the event to have a strict selection. The loose selection will of course contain more electrons but with a lower efficiency. 
+As with Section~\ref{sec:muonreco} for muon reconstruction, two working points are defined for electrons from the PF candidates. Tight electrons are used when requiring electrons as part of the signal process and a looser set of criteria are used in order to veto on extra electrons in the event to have a strict selection. The loose selection will of course contain more electrons but with a lower purity. 
 
 There are multiple ways to identify electrons, two of which are used in this thesis. At 8 TeV a multivariate technique to identify electrons was used. At 13 TeV a \emph{cuts based identification} was used as the electron tools from CMS were not as advanced by the time the analysis was performed.
 
-The tight and veto working points at 8 TeV can be found in Table~\ref{tab:electron_tight_cuts8}. The multivariate algorithm used for electron identification assigns a discriminator value which is closer to one for candidate particle which are more consistent with being a real electron and closer to zero if not. A conversion veto is applied for tight electrons which mitigates against identifying electrons which have come from photons converting into an electron-positron pair in the detector~\cite{Khachatryan:2015hwa}.
+The tight and veto working points at $\sqrt{s}=8$ TeV can be found in Table~\ref{tab:electron_tight_cuts8}. The multivariate algorithm used for electron identification assigns a discriminator value which is closer to one for candidate particles which are more consistent with being a real electron and closer to zero if not. A conversion veto is applied for tight electrons which mitigates against identifying electrons which have come from photons converting into an electron-positron pair in the detector~\cite{Khachatryan:2015hwa}.
 
 
 \begin{table}[htpb!]
@@ -135,12 +136,12 @@ ConversionVeto & yes   & -    \\
 MVA ID & $>$  0.9   &$>$   0    \\
 RelIso   & $<$0.1   & $<$0.2  \\ \hline
 \end{tabular}
-\caption{The cuts used for the tight and veto electron identification at 8 TeV~\cite{electronIDeight}}
+\caption{The cuts used for the tight and veto electron identification at $\sqrt{s}=8$~TeV~\cite{electronIDeight}}
 \label{tab:electron_tight_cuts8}
 \end{center}
 \end{table}
 
-The tight and veto working points are given for the barrel and endcap in Table~\ref{tab:electron_tight_cuts13} for the 13 TeV analysis. 
+The tight and veto working points are given for the barrel and endcap in Table~\ref{tab:electron_tight_cuts13} for the $\sqrt{s}=13$~TeV analysis. 
 
 \begin{table}[htpb!]
 \footnotesize
@@ -165,7 +166,7 @@ expected missing inner hits  & $\leq$2 & $\leq$1 & $\leq$2 & $\leq$3  \\
 pass conversion veto & yes & yes& yes & yes  \\
 \hline
 \end{tabular}
-\caption{The cuts used for the tight and veto electron identification at 13 TeV~\cite{electronID} where barrel is $|\eta_{SuCluster}|< 1.4442$ and endcap is  ($1.5660<|\eta_{SuCluster}|<2.5$)}
+\caption{The cuts used for the tight and veto electron identification at $\sqrt{s}=13$~TeV~\cite{electronID} where barrel is $|\eta_{SuCluster}|< 1.4442$ and endcap is  ($1.5660<|\eta_{SuCluster}|<2.5$)}
 \label{tab:electron_tight_cuts13}
 \end{center}
 \end{table}
@@ -186,15 +187,15 @@ d_{iB}=p_{\textrm{T}i}^{2}
 \label{eqn:antikt2}
 \end{equation}
 
-Corrections are applied to the jet energy to account for the non-uniform response of the detector in \pt and $\eta$. The first correction is the \emph{L1FastJet} correction which is applied to both data and MC to remove the energy coming from PU events. The \emph{L2Relative} and \emph{L3Absolute} corrections respectively correct for non-uniform response in $\eta$ and \pt for both data and MC. The \emph{L2L3Residual} corrections are applied to MC only and correct the remaining small differences in jet response between data and MC such as correcting the jet absolute scale (JES). The jet energy resolution (JER) is also smeared by 10$\%$ as the resolution is worse in data than in simulation. Together these corrections are called the \emph{jet energy corrections}~(JEC)~\cite{Khachatryan:2016kdb}.
+Corrections are applied to the jet energy to account for the non-uniform response of the detector in \pt and $\eta$. The first correction is the \emph{L1FastJet} correction which is applied to both data and MC to remove the energy coming from PU events. The \emph{L2Relative} and \emph{L3Absolute} corrections respectively correct for the non-uniform response in $\eta$ and \pt for both data and MC. The \emph{L2L3Residual} corrections are applied to MC only and correct the remaining small differences in jet response between data and MC such as correcting the jet absolute scale (JES). The jet energy resolution (JER) is also smeared by 10$\%$ as the resolution is worse in data than in simulation. Together these corrections are called the \emph{jet energy corrections}~(JEC)~\cite{Khachatryan:2016kdb}.
 Jet identification critera are applied to suppress fake jets arising from electrons showering in the ECAL due to Bremsstrahlung. This includes requiring $|\eta|<2.5$, \pt$<30$~GeV and a separation from the nearest loose muon or electron of $\Delta R>0.4$.
 
-The biggest gains in using the PF algorithm come from performing the jet reconstruction on PF particles. The jet-matching efficiency, jet energy resolution and the reconstruction of the jet \pt are improved compared to using calorimeter information only~\cite{CMS-PAS-PFT-10-001}. 
+The biggest gains in using the PF algorithm come from performing the jet reconstruction on PF particles. The jet-matching efficiency, jet energy resolution and the reconstruction of the jet \pt are improved compared to using calorimeter information alone~\cite{CMS-PAS-PFT-10-001}. 
 
 \section{b-tagging ~\label{sec:btagreco}}
 Reconstructing jets gives us the knowledge that the particles emerging from the collision include quarks and gluons. Being able to identify which flavour of quark hadronised in the detector is extremely useful for a wide range of analyses. Particularly for searches for final states containing four top quarks, the ability to identify b-quarks originating from the decay of top quarks is incredibly beneficial in allowing us to discriminate between the signal and backgrounds. 
 
-The particle shower coming from the hadronisation of b-quarks will contain B mesons and $\Lambda_{B}$ baryons which travel further in the detector due to having longer decay times than light flavour mesons (u,d,s,g) resulting in a typical flight distance of up to a few centimetres~\cite{Collaboration2015BS0}. The \emph{impact parameter} (IP), defined as the distance between the primary vertex and the extrapolated point of closest approach of a track, will be larger for tracks coming from the decay of a hadron containing a b-quark. The tracks emerging from this decay can form a secondary vertex. This information is exploited in the Combined Secondary Vertex (CSV) algorithm. The CSV algorithm is used to identify or \emph{tag} jets which originate from b-quarks by assigning a discriminator value between 0 and 1, where larger values are more consistent with b-quark jets. Loose (CSVL), medium (CSVM) and tight (CSVT) working points are defined at values of the discriminator for a given mis-identification rate. For analyses at $\sqrt{s} = 13$~TeV the algorithm was improved and is called Combined Secondary Vertex version 2 algorithm (CSVv2). Working points, selection efficiencies for b-quarks and mis-identification rates are given in Table~\ref{tab:btag} 
+The particle shower coming from the hadronisation of b-quarks will contain B mesons and $\Lambda_{B}$ baryons which travel further in the detector due to having longer decay times than light flavour (u, d, s) mesons resulting in a typical flight distance of up to a few centimetres~\cite{Collaboration2015BS0}. The \emph{impact parameter} (IP), defined as the distance between the primary vertex and the extrapolated point of closest approach of a track, will be larger for tracks coming from the decay of a hadron containing a b-quark. The tracks emerging from this decay can form a secondary vertex. This information is exploited in the Combined Secondary Vertex (CSV) algorithm. The CSV algorithm is used to identify or \emph{tag} jets which originate from b-quarks by assigning a discriminator value between 0 and 1, where larger values are more consistent with b-quark jets. Loose (CSVL), medium (CSVM) and tight (CSVT) working points are defined at values of the discriminator for a given mis-identification rate. For analyses at $\sqrt{s} = 13$~TeV the algorithm was improved and is called Combined Secondary Vertex version 2 algorithm (CSVv2). Working points, selection efficiencies for b-quarks and mis-identification rates are given in Table~\ref{tab:btag} 
 
 % \footnote{This efficiency was measured using the TTJets MLM sample for the medium working point at $\sqrt{13}$ TeV. The CSVv2L and CSVv2T efficiences have been taken from here~\cite{btageff} }.
 
@@ -215,7 +216,6 @@ $\sqrt{s}$ (TeV)    & Name   & \multicolumn{1}{l|}{WorkingPoint} & \multicolumn{
 \end{center}
 \end{table}
 
-% Algorithms are currently in development to tag c-quark jets and to be able to identify the charge of b-quark jets ~\fxnote{ref}.
 
 \section{Missing transverse energy ~\label{sec:METreco}}
 As it is not possible to detect neutrinos and potentially some BSM particles because they interact so weakly with matter, we can infer their existence by examining the sum of the momentum of particles in the transverse plane of the detector, where the transverse plane is defined to be transverse to the beamline. We start with the assumption that the total momentum in the transverse plane is zero. An imbalance in the sum of the momentum of detectable particles is considered to be missing transverse energy (\ETmiss), as defined in Eq.~\ref{eqn:MET}, where the \pt of jets is used after the JEC have been applied~\cite{CMS:2016ljj}.
@@ -225,18 +225,18 @@ As it is not possible to detect neutrinos and potentially some BSM particles bec
 \end{equation}
 
 \section{Simulation}
-Particle physics events are simulated using Monte Carlo (MC) simulation so that they can be compared to the data. There are four main stages; generation (GEN), simulation (SIM), digitisation (DIGI) and reconstruction (RECO). The GEN stage consists of producing the hard scattering between the partons from the protons and the outgoing particles. The SIM stage continues from the GEN stage simulating the paths of the outgoing particles through the detector then the response of the detector is generated in the DIGI step. The RECO stage then uses the algorithms discussed in this chapter to produce collections of high-level objects that are the same as what would be reconstructed in the detector from real data events.
+Particle physics events are simulated using Monte Carlo (MC) simulation so that they can be compared to the data. There are four main stages; generation (GEN), simulation (SIM), digitisation (DIGI) and reconstruction (RECO). The GEN stage consists of producing the hard scattering between the partons from the protons and the outgoing particles. The SIM stage continues from the GEN stage simulating the paths of the outgoing particles through the detector after which the response of the detector is generated in the DIGI step. The RECO stage then uses the algorithms discussed in this chapter to produce collections of high-level physics objects that are the same as what would be reconstructed in the detector from real data events.
 
 \section{MC Event Generators}
 
-Event generators are used to simulate the signal and background processes. Using calculations of the Matrix Element (ME) associated to the Feynman diagrams for a particular process, a proton-proton collision can be replicated in simulation so that theory can be compared to experimental results. The main event generators used in the thesis are as follows:
+Event generators are used to simulate the signal and background processes at GEN-level. Using calculations of the Matrix Element (ME) associated to the Feynman diagrams for a particular process, a proton-proton collision can be replicated in simulation so that theory can be compared to experimental results. The main event generators used in the thesis are as follows:
 
 \subsection{\MADGRAPH}
 \MADGRAPH is a leading-order (LO) event generator~\cite{Alwall2011} which calculates the ME at tree-level with up to three additional partons. It takes as input PDF sets, for example NNPDF3.0 as shown in Fig.~\ref{fig:protonPDF}, which describes the kinematics of the incoming partons from the proton. The number and type of partons and the kinematics of the event are generated.
 \subsection{\aMCATNLO}
 The \aMCATNLO package~\cite{Degrande:2014sta} can simulate events at next-to-leading order (NLO) as it uses both tree-level and one-loop perturbations. These additional corrections from higher-order Feynman diagrams make the simulation more accurate than it's LO counterparts. This package include initial and final state radiation. Initial state radiation (ISR) refers to any particle which is radiated off of an incoming particle to the collision whereas final state radiation (FSR) refers to a particle radiated off the final state outgoing products of a collision.\\
 \subsubsection{Negative event weights}
-By including higher order perturbations to the cross section calculated in \aMCATNLO, it is necessary to consider terms which cancel out other terms. This is achieved by assigning negative weights to some events within the generated so that the differential cross section is simulated correctly. The effective number of events, $N_{eff}$, produced by the generator corresponds to $events^{pos} - events^{neg}$ (this equates to the number of events that would be produced for the given cross section) whereas the total number of events produced correspond to $events^{pos} + events^{neg}$. Therefore these samples can be scaled using the negative event weight, $W_{events}^{neg}$, according to Eq. (\ref{eqn:negativeScaling}).
+By including higher order perturbations to the cross section calculated in \aMCATNLO, it is necessary to consider terms which cancel out other terms. This is achieved by assigning negative weights to some events within the generator so that the differential cross section is simulated correctly. The effective number of events, $N_{eff}$, produced by the generator corresponds to $events^{pos} - events^{neg}$ (this equates to the number of events that would be produced for the given cross section) whereas the total number of events produced correspond to $events^{pos} + events^{neg}$. Therefore these samples can be scaled using the negative event weight, $W_{events}^{neg}$, according to Eq. (\ref{eqn:negativeScaling}).
 
 \begin{equation}
 \label{eqn:negativeScaling}
@@ -245,7 +245,7 @@ W_{events}^{neg} = \frac{events^{pos} + events^{neg}}{events^{pos} - events^{neg
 
 
 \subsection{\POWHEG}
-The `Positive Weight Hardest Emission Generator', known as \POWHEG~\cite{POWHEG}, has the advantage that it only produces positive weight events due to the fact that it generates the hardest process in the event first which means the double counting of the low-\pt radiation emitted can be avoided.  
+The `Positive Weight Hardest Emission Generator', known as \POWHEG~\cite{POWHEG}, has the advantage that it is a NLO generator which only produces positive weight events due to the fact that it generates the hardest process in the event first. This means the double counting of the low-\pt radiation emitted, which happens in the \aMCATNLO generator, can be avoided.  
 \subsection{\PYTHIA}
 The \PYTHIA program~\cite{pythia} can take the parton-level event generated by another generator and perform the fragmentation and hadronisation of quarks to produce the parton shower (PS). It also simulates the fragmentation of the proton in the UE. It is known to be good a simulating multi-particle events.\\
 

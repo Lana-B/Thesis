@@ -2,7 +2,7 @@
 \section{Introduction}
 In this chapter, an analysis of the 2015 CMS data set with 2.6~\fbinv of data is presented where the SM production of four top quarks (\tttt) is sought in pp collisions at $\sqrt{s} =$~13~TeV. SM \tttt production has a cross section of $\sigmattttSM \approx 9.2$ fb at NLO with NNLO corrections~\cite{Alwall2014,Bevilacqua2012}. The focus of this chapter is on the single lepton channel where only the $\mu$ + jets and e + jets final states are considered. The combination of this analysis with an opposite-sign dilepton analysis and a same-sign dilepton analysis is discussed in Section~\ref{sec:combo13}.
 
-All sections apart from the training of the hadronic top quark reconstruction in Section~\ref{sec:topContent13} are the authors personal contribution to the analysis.
+All sections apart from the training of the hadronic top quark reconstruction in Section~\ref{sec:topContent13} are the author's personal contribution to the analysis.
 
 \section{Data and Simulation}
 \label{sec:datasimulation13}
@@ -43,7 +43,7 @@ TTH\_HToBB & 4M & \POWHEG & NLO \\
 % WW &10M & \PYTHIA 6 & O \\
 \hline
 \end{tabular}
- \caption{Dataset name, total number of events, MC generator and order of the simulated samples. \PYTHIA~8 is used to hadronise all samples in this table.}
+ \caption{Dataset name, total number of events, MC generator and order of the simulated samples. \PYTHIA~8 was used to hadronise all samples in this table.}
   \label{tab:datasets_sim_13tev}
   \end{table}
 
@@ -64,7 +64,7 @@ TTJets & 5M & \MLM & LO  \\
 TTJets & 5M & \MADGRAPH\aMCATNLO~FxFx & NLO \\
 \hline
 \end{tabular}
- \caption{Dataset name, total number of events, MC generator and order of the simulated systematic samples. \PYTHIA~8 is used to hadronise all samples in this table.}
+ \caption{Dataset name, total number of events, MC generator and order of the simulated systematic samples. \PYTHIA~8 was used to hadronise all samples in this table.}
   \label{tab:datasets_sys_13tev}
 \end{table}
 
@@ -507,22 +507,27 @@ The output BDT plots are shown in \njets and \nMtags categories in Figs.~\ref{fi
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94}
 \end{figure}
 
-\subsection{Stability of the event-level BDT}
+\subsubsection{Stability of the event-level BDT}
 
 The BDT was seen to be very stable with respect to changes in the number of trees used and to the minimum number of events required at a node for further splitting to occur. The impact on the final expected limit was negligible when changing these BDT hyperparameters. Training was also performed in jet categories of 6-7 jets and $\geq$8 jets separately to study whether a separate training in the $\geq8$ jets category would improve the power of the BDT to separate \ttbar and \tttt events in a signal-rich region. However the expected limit derived from this alternative training was not enhanced with respect to the inclusive training in all jet categories. The most significant improvement in the expected limit comes from optimising the \njets and \nMtags categories. Further categorisation into higher \njets and \nMtags categories improves the expected limit however these categories become very statistically limited with 2.6~\fbinv of data.
 
-\subsection{Correlation matrices for BDT input variables}
+\subsubsection{Correlation matrices for BDT input variables}
 
 % The correlation matrices for signal and background are shown in Fig.~\ref{fig:corrMat}. The largest correlation exists between \njetsw and \redhadmass. This is not surprising as \njetsw takes into account the weight of jets above a pt threshold and \redhadmass is the invariant mass of the reduced event. Many high pt jets in an event will correspond to a larger value of \redhadmass. 
 % Correlated variables are handled well within a BDT and that was one of the reasons for the choice of this type of multivariate algorithm. The correlation matrices were used at an earlier stage in the analysis to assess what variables were very highly correlated and could be removed from the input BDT variables as they would serve little use within the BDT.
 
 Figure~\ref{fig:corrMat} shows the correlation matrices for the input BDT variables for the background \ttbar (left) and signal \tttt (right). It can be seen that the most highly correlated variables are \njetsw and \redhadmass. This correlation arises from the fact that the \njetsw variable weights events by the \pt of jets and more additional higher-\pt jets will lead to a larger value of \redhadmass. BDTs are effective at handling correlated variables and this was one reason for the chosen of using this multivariate algorithm.
 
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixB.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixS.pdf}
+    \caption{The correlation matrices for background (left) and signal (right).}
+    \label{fig:corrMat}
+\end{figure}
 
 Correlation matrices were used when choosing which variables to include in the final set which was used to train the BDT for this analysis. Highly correlated variables were removed as they are largely superfluous.
 
-
-\subsection{Overtraining tests}
+\subsubsection{Overtraining tests}
 
 Figure~\ref{fig:ROC} shows the BDT distribution from training and testing (left) and the associated ROC curve for this training. The training sample is shown as a filled histogram and the testing sample is shown as overlaid data points for the signal \tttt (blue) and background \ttbar for red. It can be seen that there is good agreement between the training and testing samples with Kolmogorov-Smirnov values of 0.159 for background and 0.998 for signal. This suggest that the BDT has not been overtrained.
 
@@ -532,6 +537,7 @@ Figure~\ref{fig:ROC} shows the BDT distribution from training and testing (left)
     \caption{The over-training test for the BDT (left) and the rejection of background \ttbar (red) vs signal \tttt (blue) (right).}
     \label{fig:ROC}
 \end{figure}
+
 
 \section{Systematic uncertainties}
 \label{sec:uncertainties13}
@@ -587,10 +593,7 @@ e  &  $26.4$ & $+16.6 -9.3$ & $33.5$ \\
 
 The combined expected limit is $147.2^{+90}_{-51}$~fb and the observed limit is 154.6~fb for the single lepton + jets channel.
 
-% \section{Systematics studies and tests on analysis}
-
-
-\subsection{Nuisance parameters}
+\subsubsection{Nuisance parameters}
 
 Figure~\ref{fig:datanuis} shows the variation of the post-fit nuisance parameters, $\theta$, with respect to their pre-fit values. As all of the parameters have not shifted outside of the pre-fit uncertainty, the number of uncertainties and their modelling is deduced to be appropriate for modelling the data. It can be seen that both the \ttbar ME scale uncertainty and the PS scale, denoted \emph{ttMEScale} and \emph{scaleH} respectively on the plot, have much smaller post-fit uncertainties with respect to their pre-fit uncertainties which suggests that they were larger than necessary.
 
@@ -604,49 +607,92 @@ Figure~\ref{fig:datanuis} shows the variation of the post-fit nuisance parameter
 \label{fig:datanuis}
 \end{figure} 
 
-\subsection{Studies of impact of systematic uncertainties}
+% \section{Systematics studies and tests on analysis}
 
-The impact of each systematic uncertainty on the expected limit is shown in Table~\ref{tab:sysRemoved} by removing each systematic from the fit and recalculating the expected limit. The systematic uncertainties which have the largest impact are the \ttbar ME scale, \ttbar PS scale and the JES scale, which is applied to both \ttbar and \tttt. The \ttbar ME scale has a large impact on the modelling of the signal process whereas the \ttbar PS scale has a big effect on the modelling of the additional jets produced in high jet multiplicity \ttbar events which pass the baseline event selection.
+% \subsection{Ranking of variables in BDT}
 
-\begin{table}[ht]
-\centering
-\caption{Expected limits on \tttt production which each systematic removed in turn}
-\label{tab:sysRemoved}
-\begin{tabular}{|l|l|}
-\hline
-% \rule{0pt}{4ex}    
-% \rule[-1.2ex]{0pt}{0pt}
-Systematic uncertainty removed & Expected limit ($\times$\sigmattttsm) \T \B\\ 
-% \rule{0pt}{4ex}    
+% \begin{table}[ht!]
+% \centering
+% \begin{tabular}{| l | l | l | p{5cm} |}
+%   \hline
+% Rank & Variable & Importance \\
+%  \hline
+% 1 & \njets & 1.340e-01\\
+% 2 & third highest CSV &1.180e-01\\
+% 3 & \htrat & 1.133e-01\\
+% 4 & BDT$_{trijet2}$ & 1.091e-01 \\
+% 5 & \njetsw &1.082e-01\\
+% 6 & \redhadmass& 1.026e-01\\
+% 7 & HTX & 9.867e-02\\
+% 8 & \htb & 8.650e-02 \\
+% 9 & fourth highest CSV & 7.630e-02\\
+% 10 & leadleppt & 5.334e-02  \\
 
-\hline
-None                           & 16.0000                                                         \\ \hline
-\ttbar ME scale                & 16.0625                                                         \\ \hline
-\tttt ME scale                 & 14.4375                                                         \\ \hline
-JER                            & 15.9375                                                         \\ \hline
-JES                            & 15.3125                                                         \\ \hline
-PS scale                       & 15.0625                                                         \\ \hline
-PU                             & 16.0625                                                         \\ \hline
-Generator uncertainty          & 15.9531                                                         \\ \hline
-\ttbar heavy flav              & 15.5625                                                         \\ \hline
-Luminosity                     & 16.0625                                                         \\ \hline
-Lepton SF Mu                   & 16.0625                                                         \\ \hline
-Lepton SF El                   & 15.9062                                                         \\ \hline
-\ttbar norm                    & 16.0000                                                         \\ \hline
-\tttt norm                     & 15.9062                                                         \\ \hline
-EW norm                        & 16.0000                                                         \\ \hline
-Single top norm                & 16.0000                                                         \\ \hline
-% b-tag light SF                 & 12.5625                                                         \\ \hline
-btagWeightCSVCFErr1            & 16.0625                                                         \\ \hline
-btagWeightCSVCFErr2            & 16.0625                                                         \\ \hline
-btagWeightCSVHF                & 15.5625                                                         \\ \hline
-btagWeightCSVHFStats1          & 15.9375                                                         \\ \hline
-btagWeightCSVHFStats2          & 15.9531                                                         \\ \hline
-btagWeightCSVLF                & 15.9375                                                         \\ \hline
-btagWeightCSVLFStats1          & 16.0625                                                         \\ \hline
-btagWeightCSVLFStats2          & 15.9062                                                         \\ \hline
-\end{tabular}
-\end{table}
+% \hline
+% \end{tabular}
+%  \caption{Ranking of variables in order of discrimination power within the BDT.}
+%   \label{tab:BDTrankings}
+%   \end{table}
+
+
+
+% \subsection{Correlation matrices for fit nuisance parameters}
+
+
+% The correlation matrix for the fit nuisance parameters in the background only scenario can be see in Fig.~\ref{fig:FitCorr}. There is some correlation between the various b-tagging scale factors and also a correlation between the heavy flavour \heavyflavourone / \heavyflavourtwo modelling and the \ttbar ME scale, where the \heavyflavourone / \heavyflavourtwo is expected to be related to the choice of ME scale.
+
+% \begin{figure}[ht!]
+%     \includegraphics[width=0.9\textwidth]{images/Run2/FitCorr.pdf}
+%     \caption{The correlation matrices for background only for the fit parameters.}
+%     \label{fig:FitCorr}
+% \end{figure}
+
+
+
+
+% \subsection{Studies of impact of systematic uncertainties}
+
+% The impact of each systematic uncertainty on the expected limit is shown in Table~\ref{tab:sysRemoved} by removing each systematic from the fit and recalculating the expected limit. The systematic uncertainties which have the largest impact are the \ttbar ME scale, \ttbar PS scale and the JES scale, which is applied to both \ttbar and \tttt. The \ttbar ME scale has a large impact on the modelling of the signal process whereas the \ttbar PS scale has a big effect on the modelling of the additional jets produced in high jet multiplicity \ttbar events which pass the baseline event selection.
+
+% \begin{table}[ht]
+% \centering
+% \caption{Expected limits on \tttt production which each systematic removed in turn}
+% \label{tab:sysRemoved}
+% \begin{tabular}{|l|l|}
+% \hline
+% % \rule{0pt}{4ex}    
+% % \rule[-1.2ex]{0pt}{0pt}
+% Systematic uncertainty removed & Expected limit ($\times$\sigmattttsm) \T \B\\ 
+% % \rule{0pt}{4ex}    
+
+% \hline
+% None                           & 16.0000                                                         \\ \hline
+% \ttbar ME scale                & 16.0625                                                         \\ \hline
+% \tttt ME scale                 & 14.4375                                                         \\ \hline
+% JER                            & 15.9375                                                         \\ \hline
+% JES                            & 15.3125                                                         \\ \hline
+% PS scale                       & 15.0625                                                         \\ \hline
+% PU                             & 16.0625                                                         \\ \hline
+% Generator uncertainty          & 15.9531                                                         \\ \hline
+% \ttbar heavy flav              & 15.5625                                                         \\ \hline
+% Luminosity                     & 16.0625                                                         \\ \hline
+% Lepton SF Mu                   & 16.0625                                                         \\ \hline
+% Lepton SF El                   & 15.9062                                                         \\ \hline
+% \ttbar norm                    & 16.0000                                                         \\ \hline
+% \tttt norm                     & 15.9062                                                         \\ \hline
+% EW norm                        & 16.0000                                                         \\ \hline
+% Single top norm                & 16.0000                                                         \\ \hline
+% % b-tag light SF                 & 12.5625                                                         \\ \hline
+% btagWeightCSVCFErr1            & 16.0625                                                         \\ \hline
+% btagWeightCSVCFErr2            & 16.0625                                                         \\ \hline
+% btagWeightCSVHF                & 15.5625                                                         \\ \hline
+% btagWeightCSVHFStats1          & 15.9375                                                         \\ \hline
+% btagWeightCSVHFStats2          & 15.9531                                                         \\ \hline
+% btagWeightCSVLF                & 15.9375                                                         \\ \hline
+% btagWeightCSVLFStats1          & 16.0625                                                         \\ \hline
+% btagWeightCSVLFStats2          & 15.9062                                                         \\ \hline
+% \end{tabular}
+% \end{table}
 
 % The impact of each systematic uncertainty on the expected and observed limit is shown in Table~\ref{tab:sysRemoved} but removing each systematic from the fit.
 
@@ -749,7 +795,6 @@ The SM production of four top quarks at $\sqrt{s} =$~13~TeV has been studied wit
 
 \section{Discussion of other searches for \tttt production studies at $\sqrt{s} =$~13~TeV}
 \label{sec:ATLASresult13}
-% \fxnote{Possible comparison with atlas requirements put into our framework}
 
 There are a number of searches for the production of four top quarks at $\sqrt{s}=13$~TeV in the single lepton, opposite-sign dilepton and same-sign dilepton channels, and at both the CMS and ATLAS experiments. A summary of the results is given in Table~\ref{tab:CmsAtlasSum} including three CMS analyses in three different channels using the 2015 CMS dataset and a combination of those results as discussed in Section~\ref{sec:combo13}. The table also includes two different ATLAS searches, ATLAS-CONF-2016-013 and ATLAS-CONF-2016-020, which place limits on four-top-quark production in the single lepton channel using the 2015 ATLAS dataset of 3.2~\fbinv. ATLAS-CONF-2016-104 is a progression from ATLAS-CONF-2016-013 that uses the 2015 and 2016 ATLAS datasets using a total of 13.2~\fbinv. Finally there is a same-sign dilepton search by ATLAS which uses the 2015 ATLAS dataset with 3.2~\fbinv also.
 

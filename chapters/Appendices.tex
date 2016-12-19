@@ -1,13 +1,28 @@
 \appendix
-\chapter{Correlation matrices for fit nuisance parameters}
+
+\chapter{Cross checks on \runtwo $\boldsymbol{\tttt}$ analysis at $\boldsymbol{\sqrt{s}=13}$~TeV}
+
+% \section{Correlation matrices for fit nuisance parameters}
 
 
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixB.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixS.pdf}
-    \caption{The correlation matrices for background (left) and signal (right).}
-    \label{fig:corrMat}
-\end{figure}
+% \begin{figure}[ht!]
+%     \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixB.pdf}
+%     \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixS.pdf}
+%     \caption{The correlation matrices for background (left) and signal (right).}
+%     \label{fig:corrMat}
+% \end{figure}
+
+% The correlation matrix for the fit nuisance parameters in the background only scenario can be see in Fig.~\ref{fig:FitCorr}. There is some correlation between the various b-tagging scale factors and also a correlation between the heavy flavour \heavyflavourone / \heavyflavourtwo modelling and the \ttbar ME scale, where the \heavyflavourone / \heavyflavourtwo is expected to be related to the choice of ME scale.
+
+% \begin{figure}[ht!]
+%     \includegraphics[width=0.9\textwidth]{images/Run2/FitCorr.pdf}
+%     \caption{The correlation matrices for background only for the fit parameters.}
+%     \label{fig:FitCorr}
+% \end{figure}
+
+
+\subsection{Correlation matrices for fit nuisance parameters}
+
 
 The correlation matrix for the fit nuisance parameters in the background only scenario can be see in Fig.~\ref{fig:FitCorr}. There is some correlation between the various b-tagging scale factors and also a correlation between the heavy flavour \heavyflavourone / \heavyflavourtwo modelling and the \ttbar ME scale, where the \heavyflavourone / \heavyflavourtwo is expected to be related to the choice of ME scale.
 
@@ -16,7 +31,6 @@ The correlation matrix for the fit nuisance parameters in the background only sc
     \caption{The correlation matrices for background only for the fit parameters.}
     \label{fig:FitCorr}
 \end{figure}
-
 \section{Systematic shape studies}
 
 In this section the alternative BDT distribution shapes are examined for each shape systematic described in Section~\ref{sec:uncertainties13}. The largest systematic uncertainties are the JES, ME scale systematics and the \ttbar generator choice. The JER and PU up/down (red/cyan) shapes deviate very little from the nominal distributions (blue). In \ttbar the several distributions including JER and PU systematics show relatively flat behaviour with respect to the nominal distribution and in future analyses could be considered for incorporation into a normalisation systematic uncertainty.
@@ -222,6 +236,51 @@ AdaBoost  & 10.7         & +6.4, -4.0  & 21.6     & +10.9, -7.0 \\ \hline
 \end{table}
 
 It can be seen from Table~\ref{tab:BDTalgos} that the difference between including negative weight information in the GradNeg strategy and not including it in the GradBoost strategy have a negligible effect on the expected limit within the uncertainties. Using negative weights may slightly optimise the modelling for training but not significantly hence the AdaBoost strategy can be used without negative weights as it has a significant benefit in lowering the expected limit.
+
+
+\subsection{Studies of impact of systematic uncertainties}
+
+The impact of each systematic uncertainty on the expected limit is shown in Table~\ref{tab:sysRemoved} by removing each systematic from the fit and recalculating the expected limit. The systematic uncertainties which have the largest impact are the \ttbar ME scale, \ttbar PS scale and the JES scale, which is applied to both \ttbar and \tttt. The \ttbar ME scale has a large impact on the modelling of the signal process whereas the \ttbar PS scale has a big effect on the modelling of the additional jets produced in high jet multiplicity \ttbar events which pass the baseline event selection.
+
+\begin{table}[ht]
+\centering
+\caption{Expected limits on \tttt production which each systematic removed in turn}
+\label{tab:sysRemoved}
+\begin{tabular}{|l|l|}
+\hline
+% \rule{0pt}{4ex}    
+% \rule[-1.2ex]{0pt}{0pt}
+Systematic uncertainty removed & Expected limit ($\times$\sigmattttsm) \T \B\\ 
+% \rule{0pt}{4ex}    
+
+\hline
+None                           & 16.0000                                                         \\ \hline
+\ttbar ME scale                & 16.0625                                                         \\ \hline
+\tttt ME scale                 & 14.4375                                                         \\ \hline
+JER                            & 15.9375                                                         \\ \hline
+JES                            & 15.3125                                                         \\ \hline
+PS scale                       & 15.0625                                                         \\ \hline
+PU                             & 16.0625                                                         \\ \hline
+Generator uncertainty          & 15.9531                                                         \\ \hline
+\ttbar heavy flav              & 15.5625                                                         \\ \hline
+Luminosity                     & 16.0625                                                         \\ \hline
+Lepton SF Mu                   & 16.0625                                                         \\ \hline
+Lepton SF El                   & 15.9062                                                         \\ \hline
+\ttbar norm                    & 16.0000                                                         \\ \hline
+\tttt norm                     & 15.9062                                                         \\ \hline
+EW norm                        & 16.0000                                                         \\ \hline
+Single top norm                & 16.0000                                                         \\ \hline
+% b-tag light SF                 & 12.5625                                                         \\ \hline
+btagWeightCSVCFErr1            & 16.0625                                                         \\ \hline
+btagWeightCSVCFErr2            & 16.0625                                                         \\ \hline
+btagWeightCSVHF                & 15.5625                                                         \\ \hline
+btagWeightCSVHFStats1          & 15.9375                                                         \\ \hline
+btagWeightCSVHFStats2          & 15.9531                                                         \\ \hline
+btagWeightCSVLF                & 15.9375                                                         \\ \hline
+btagWeightCSVLFStats1          & 16.0625                                                         \\ \hline
+btagWeightCSVLFStats2          & 15.9062                                                         \\ \hline
+\end{tabular}
+\end{table}
 
 \section{Comparison of alternative \ttbar generators}
 
