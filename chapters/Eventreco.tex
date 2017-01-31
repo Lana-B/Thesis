@@ -36,7 +36,9 @@ Charged hadrons are reconstructed from the remaining tracker, ECAL and HCAL depo
 
 \section{Isolation \label{sec:isolation}}
 
-Relative isolation (\emph{RelIso}), is a measure of how isolated the muons or electrons are from surrounding hits in the detector from charged hadrons, neutral hadrons and photon energy which could contribute to a mis-measurement of their momentum. Only charged hadrons which are consistent with the signal primary vertex are considered in the calculation. As it is not possible to determine whether neutral hadrons are consistent with the signal primary vertex we can use the fact that the ratio of neutral to charged energy has been measured to be $\approx 0.5$. Hence the neutral hadronic energy in the transverse plane of the detector coming from the primary vertex, $E_{T,PV}^{NH}$, can be calculated as seen in Eq.~\ref{eqn:neutralE}, where $E_{T,sub}^{CH}$ is the transverse energy from charged hadrons which are associated to a sub-leading primary vertex and $E_{T,Tot}^{NH}$ is the total transverse neutral hadronic energy. This is called the \emph{delta Beta correction}. The max() function ensures that the corrected neutral hadronic energy is never defined as negative.
+Relative isolation (RelIso), is a measure of how isolated the muons or electrons are from surrounding hits in the detector from charged hadrons, neutral hadrons and photon energy which could contribute to a mis-measurement of their momentum. Only charged hadrons which are consistent with the signal primary vertex are considered in the calculation. As it is not possible to determine whether neutral hadrons are consistent with the signal primary vertex we can use the fact that the ratio of neutral to charged energy has been measured to be $\approx 0.5$. Hence the neutral hadronic energy in the transverse plane of the detector coming from the primary vertex, $E_{T,PV}^{NH}$, can be calculated as seen in Eq.~\ref{eqn:neutralE}, where $E_{T,sub}^{CH}$ is the transverse energy from charged hadrons which are associated to a sub-leading primary vertex and $E_{T,Tot}^{NH}$ is the total transverse neutral hadronic energy. 
+% This is called the \emph{delta Beta correction}.
+ The max() function ensures that the corrected neutral hadronic energy is never defined as negative.
 
 
 \begin{centering}
@@ -48,7 +50,7 @@ Relative isolation (\emph{RelIso}), is a measure of how isolated the muons or el
 
 
 
-The RelIso formula with delta Beta correction included can be found in Eq.~\ref{eqn:dBRelIso}. It is defined in a cone of radius $\textrm{R}=0.4$ and scaled by $1\; / \;\pt^{\mu}$ (where \pt is the momentum in the transverse plane of the detector) so that lower momentum muons are required to have less energy from hadrons and photons in the cone to be considered isolated.
+The RelIso formula, with the correction to neutral hadronic energy, can be found in Eq.~\ref{eqn:dBRelIso}. It is defined in a cone of radius $\textrm{R}=0.4$ and scaled by $1\; / \;\pt^{\mu}$ (where \pt is the momentum in the transverse plane of the detector) so that lower momentum muons are required to have less energy from hadrons and photons in the cone to be considered isolated.
 
 \begin{centering}
 \begin{equation}
@@ -58,23 +60,30 @@ RelIso = \left( \Sigma E_{T}^{CH} + \Sigma E_{T,PV}^{NH} +  \Sigma E_{T}^{\gamma
 \end{centering}
 
 
-Equation~\ref{eqn:dBRelIso} is used to define relative isolation for muons; for electrons it is similarly defined however the delta Beta correction is replaced by a rho correction $C^{\rho}$, which is defined in Eq.~\ref{eqn:rhoCorr} where EA denotes Effective Area. The EA is calculated from the average PU energy density per unit area in the $(\rho=)\phi-\eta$ plane and the effective area based on shower shapes that has been measured by CMS (which depends on the $\eta$ value in the supercluster) for each event.
+Equation~\ref{eqn:dBRelIso} is used to define relative isolation for muons; for electrons it is similarly defined, however, the neutral hadronic energy is estimated using a different method. The relative isolation for electrons is defined in Eq.~\ref{eqn:rhoCorr} where EA denotes Effective Area. The EA is calculated from the average PU energy density per unit area in the $\rho$ ($\rho=\phi-\eta$) plane and the effective area based on shower shapes that has been measured by CMS (which depends on the $\eta$ value in the supercluster) for each event.
+
+% \begin{centering}
+% \begin{equation}
+% C^{\rho} = \left( \Sigma E_{T}^{NH} + \Sigma E_{T}^{\gamma} - \rho\times\textrm{EA} \right) 
+% \label{eqn:rhoCorr}
+% \end{equation}
+% \end{centering}
+
+Equation~\ref{eqn:eRelIso} gives the RelIso formula for electrons with neutral hadronic energy correction where $\rho$ stands for the median density of pile-up contamination.
 
 \begin{centering}
 \begin{equation}
-C^{\rho} = \left( \Sigma E_{T}^{NH} + \Sigma E_{T}^{\gamma} - \rho\times\textrm{EA} \right) 
-\label{eqn:rhoCorr}
-\end{equation}
-\end{centering}
-
-Equation~\ref{eqn:eRelIso} gives the RelIso formula for electrons with rho correction.
-
-\begin{centering}
-\begin{equation}
-RelIso = \left( \Sigma E_{T}^{CH} + C^{\rho} \right) \; / \;   \pt^{e}
+RelIso = \left( \Sigma E_{T}^{CH} + \Sigma E_{T}^{NH} + \Sigma E_{T}^{\gamma} - (\rho\times\textrm{EA}) \right) \; / \;   \pt^{e}
 \label{eqn:eRelIso}
 \end{equation}
 \end{centering}
+
+% \begin{centering}
+% \begin{equation}
+% RelIso = \left( \Sigma E_{T}^{CH} + C^{\rho} \right) \; / \;   \pt^{e}
+% \label{eqn:eRelIso}
+% \end{equation}
+% \end{centering}
 
 \section{Muons \label{sec:muonreco}}
 
@@ -174,7 +183,7 @@ pass conversion veto & yes & yes& yes & yes  \\
 Electron reconstruction can not be performed accurately in the transition region ($TR$) between the ECAL barrel and endcap, $1.4442<TR<1.5660$ and hence they are excluded from physics analyses.
 
 \section{Jets \label{sec:jetreco}}
-When partons such as quarks and gluons fragment and hadronise, into charged and neutral hadrons, they form showers of particles in approximately the same direction of travel as the original parton. These final state particles can be clustered into what is known as a \emph{jet} using the anti-$\kappa_{\textrm{T}}$ reconstruction algorithm~\cite{Cacciari:2008gp}. This is an infrared and collinear safe algorithm which starts with a high \pt `seed' hit in the calorimeter and uses the distance measure in Eq.~\ref{eqn:antikt1} to find the nearest hit to merge with. If the distance from the beam, $d_{iB}$ in Eq.~\ref{eqn:antikt2}, is smaller than the distance to another hit, $d_{ij}$, the particle is merged with the beam~\cite{Salam2010}. In this thesis, a distance parameter of $R = 0.5~\left(0.4\right)$ is used to reconstruct jets in the \runone (\runtwo) analysis in Chapter~\ref{c:Run1}~(\ref{c:Run2}). 
+When partons such as quarks and gluons fragment and hadronise, into charged and neutral hadrons, they form showers of particles in approximately the same direction of travel as the original parton. These final state particles can be clustered into what is known as a \emph{jet} using the anti-$\kappa_{\textrm{T}}$ reconstruction algorithm~\cite{Cacciari:2008gp}. This is an infrared and collinear safe algorithm which starts with a high \pt `seed' hit in the calorimeter and uses the distance measure in Eq.~\ref{eqn:antikt1} to find the nearest hit to merge with. If the distance from the beam, $d_{iB}$ in Eq.~\ref{eqn:antikt2}, is smaller than the distance to another hit, $d_{ij}$, the particle is merged with the beam~\cite{Salam2010}. In this thesis, a distance parameter of $R = 0.5~\left(0.4\right)$ is used to reconstruct jets in the \runone (\runtwo) analysis in Chapter~\ref{c:Run1}~(\ref{c:Run2}). The distance parameter was changed for \runtwo to be consistent with the ATLAS experiment and to mitigate against PU contamination. 
 
 
 \begin{equation}
@@ -195,8 +204,15 @@ The biggest gains in using the PF algorithm come from performing the jet reconst
 \section{b-tagging ~\label{sec:btagreco}}
 Reconstructing jets gives us the knowledge that the particles emerging from the collision include quarks and gluons. Being able to identify which flavour of quark hadronised in the detector is extremely useful for a wide range of analyses. Particularly for searches for final states containing four top quarks, the ability to identify b-quarks originating from the decay of top quarks is incredibly beneficial in allowing us to discriminate between the signal and backgrounds. 
 
-The particle shower coming from the hadronisation of b-quarks will contain B mesons and $\Lambda_{B}$ baryons which travel further in the detector due to having longer decay times than light flavour (u, d, s) mesons resulting in a typical flight distance of up to a few centimetres~\cite{Collaboration2015BS0}. The \emph{impact parameter} (IP), defined as the distance between the primary vertex and the extrapolated point of closest approach of a track, will be larger for tracks coming from the decay of a hadron containing a b-quark. The tracks emerging from this decay can form a secondary vertex. This information is exploited in the Combined Secondary Vertex (CSV) algorithm. The CSV algorithm is used to identify or \emph{tag} jets which originate from b-quarks by assigning a discriminator value between 0 and 1, where larger values are more consistent with b-quark jets. Loose (CSVL), medium (CSVM) and tight (CSVT) working points are defined at values of the discriminator for a given mis-identification rate. For analyses at $\sqrt{s} = 13$~TeV the algorithm was improved and is called Combined Secondary Vertex version 2 algorithm (CSVv2). Working points, selection efficiencies for b-quarks and mis-identification rates are given in Table~\ref{tab:btag} 
+The particle shower coming from the hadronisation of b-quarks will contain B mesons and $\Lambda_{B}$ baryons which travel further in the detector due to having longer decay times than light flavour (u, d, s) mesons resulting in a typical flight distance of up to a few centimetres~\cite{Collaboration2015BS0}. The \emph{impact parameter} (IP), defined as the distance between the primary vertex and the extrapolated point of closest approach of a track, will be larger for tracks coming from the decay of a hadron containing a b-quark. The tracks emerging from this decay can form a secondary vertex. This information is exploited in the Combined Secondary Vertex (CSV) algorithm~\cite{Chatrchyan:2012jua}. The CSV algorithm is used to identify or \emph{tag} jets which originate from b-quarks by assigning a discriminator value between 0 and 1, where larger values are more consistent with b-quark jets. Loose (CSVL), medium (CSVM) and tight (CSVT) working points are defined at values of the discriminator for a given mis-identification rate. For analyses at $\sqrt{s} = 13$~TeV the algorithm was improved and is called Combined Secondary Vertex version 2 algorithm (CSVv2)~\cite{CMS-PAS-BTV-15-001}. Working points, selection efficiencies for b-quarks and mis-identification rates are given in Table~\ref{tab:btag} 
 
+\begin{figure}[ht!]
+\begin{center}
+    \includegraphics[width=0.99\textwidth]{images/btagCSV.pdf}
+    \caption{CSVv2 discriminator distribution at $\sqrt{s}=13$~TeV using a multi-jets sample. Jets are reconstructed using the \antikt algorithm with $R=0.4$~\cite{CMS-PAS-BTV-15-001}.}
+    \label{fig:CMSstairway}
+\end{center}
+\end{figure}
 % \footnote{This efficiency was measured using the TTJets MLM sample for the medium working point at $\sqrt{13}$ TeV. The CSVv2L and CSVv2T efficiences have been taken from here~\cite{btageff} }.
 
 \begin{table}[htpb!]
@@ -224,7 +240,7 @@ As it is not possible to detect neutrinos and potentially some BSM particles bec
 \label{eqn:MET}
 \end{equation}
 
-\section{Simulation}
+\chapter{Simulation}
 Particle physics events are simulated using Monte Carlo (MC) simulation so that they can be compared to the data. There are four main stages; generation (GEN), simulation (SIM), digitisation (DIGI) and reconstruction (RECO). The GEN stage consists of producing the hard scattering between the partons from the protons and the outgoing particles. The SIM stage continues from the GEN stage simulating the paths of the outgoing particles through the detector after which the response of the detector is generated in the DIGI step. The RECO stage then uses the algorithms discussed in this chapter to produce collections of high-level physics objects that are the same as what would be reconstructed in the detector from real data events.
 
 \section{MC simulation Event Generators}
