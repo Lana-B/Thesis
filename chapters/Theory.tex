@@ -7,7 +7,7 @@ In this chapter the standard model (SM) of particle physics is introduced, inclu
 
 The SM~\cite{Glashow:1961tr,PhysRevLett.19.1264,Salam:1968rm,DGriff} is a theory which describes the elementary particles and their interactions. Matter consists of six quarks and six leptons, each of which has an anti-particle with the same mass and opposite-sign charge. They are organised into three generations, each of which contains heavier particles than the last, as seen in Table~\ref{table:SMmatter}. All of the normal matter on earth is made up of particles from the first generation, i.e.~up and down quarks make up protons and neutrons, and combined with electrons they form atoms. 
 
-The leptonic sector consists of charged leptons, which can interact via the electromagnetic and weak forces, and neutrinos, which interact via the weak force only. The neutrinos are assumed to be massless in the SM however observations of neutrino oscillations have revealed that neutrinos have mass~\cite{PhysRevC.88.025501}.
+The leptonic sector consists of charged leptons, which can interact via the electromagnetic and weak forces, and neutrinos, which interact via the weak force only. The neutrinos are assumed to be massless in the SM, however, observations of neutrino oscillations have revealed that neutrinos have mass~\cite{PhysRevC.88.025501}.
 
 \vspace{0.8cm}
 \begin{table}[ht!]
@@ -16,7 +16,9 @@ The leptonic sector consists of charged leptons, which can interact via the elec
 \begin{tabular}{|c|l|l|l|l|l|l|}
 \hline
 \multirow{2}{*}{Generation} & \multicolumn{3}{c|}{Quarks}                             & \multicolumn{3}{c|}{Leptons}              \\ \cline{2-7} 
-                            & Flavour & Charge & Mass (MeV)                           & Flavour      & Charge & Mass (MeV)        \\ \hline
+                            & Flavour & Electric & Mass (MeV)                           & Flavour      & Electric & Mass (MeV)        \\
+                            & & Charge &                            &       & Charge &         \\ \hline
+
 \hline
 
 \multirow{2}{*}{I}          & u       & 2/3    & $2.2^{+0.6}_{-0.4}$                  & e            & -1     & 0.511             \\
@@ -39,7 +41,7 @@ Finally, the force carriers consist of gauge bosons of integer spin, as seen in 
 \footnotesize
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
-Gauge boson                       & Force           & Charge & Mass (GeV) & Spin & Range (m)  \\ \hline \hline
+Gauge boson                       & Force           & Electric Charge & Mass (GeV) & Spin & Range (m)  \\ \hline \hline
 Photon ($\gamma$)                 & electromagnetic & 0      & 0          & 1    & $\infty$   \\ \hline
 W$^{\pm}$                         & weak            & $\pm1$ & $80.385\pm0.015$           & 1    & $10^{-18}$ \\ \hline
 Z                                 & weak            & 0      & $91.1876\pm0.0021$           & 1    & $10^{-18}$ \\ \hline
@@ -55,14 +57,17 @@ The discovery of the Higgs boson in 2012~\cite{Higgs2012observation,Aad:2012tfa,
 
 The SM is a gauge theory based on the symmetry group SU(3)~x~SU(2)~x~U(1), which is a combination of the electroweak interactions based on the SU(2)~x~U(1) symmetry group and the strong interaction which is based on the SU(3) group.
 
-The SM will now be described in more detail.
+In the following the SM will be described in more detail.
+
+\section{The gauge principle}
+Emmy Noether showed that conservation laws result from underlying continuous symmetries of a Lagrangian~\cite{Emmy}. This principle had a profound impact in the development of quantum field theories. A quantum field possesses gauge symmetries, where the gauge regulates the degrees of freedom of the Lagrangian. For the action of a system to be conserved, a Lagrangian should be invariant under continuous local gauge transformations (i.e. transformations that depend on the space-time point). Each group of transformations has a corresponding generator which has an associated gauge (vector) field. Gauge bosons are quantisations of these gauge fields. Global transformations are a subset of local transformations where the transformation is not dependent on the space-time point.
 
 \subsection{Electroweak theory}
 
 \subsubsection{Quantum Electrodynamics}
 \label{subsec:QED}
 
-Quantum Electrodynamics is an Abelian gauge theory based on the U(1) symmetry group. Figure~\ref{fig:QEDvertex} shows the elementary QED vertex where a charged particle (charged lepton or quark) and charged anti-particle interact with a photon, where the convention used in this thesis is that time flows from left to right. However, these diagrams may be rotated as long as they conserve energy. Hence, this vertex can describe particle-anti-particle annihilation into a photon, a photon pair-producing an particle-anti-particle pair, an particle emitting a photon or a anti-particle emitting a photon depending on the orientation of the diagram. QED interactions conserve lepton or quark flavour.
+Quantum Electrodynamics is an Abelian gauge theory based on the U(1) symmetry group. Figure~\ref{fig:QEDvertex} shows the elementary QED vertex where a charged particle (charged lepton or quark) and charged anti-particle interact with a photon. The convention used in this thesis is that time flows from left to right. However, these diagrams may be rotated as long as they conserve energy. Hence, this vertex can describe particle-anti-particle annihilation into a photon, a photon pair-producing a particle-anti-particle pair, a particle emitting a photon or an anti-particle emitting a photon, depending on the orientation of the diagram. QED interactions conserve lepton or quark flavour.
 
 
 \begin{figure}[ht!]
@@ -72,6 +77,8 @@ Quantum Electrodynamics is an Abelian gauge theory based on the U(1) symmetry gr
     \label{fig:QEDvertex}
 \end{center}
 \end{figure}
+
+Feynman diagrams are visual representations of the terms in a perturbative series expansion in terms of the interaction strength around the non-interacting Lagrangian. Incoming particles are considered to be free particles, the interaction term then turns on and the outgoing particle are again considered to be free particles. Vertex factors are the elements of the Lagrangian of order three or higher which represent the interactions between fields. The propagators can be described from the free particle Lagrangian and they represent intermediate states which connect vertices.\\
 
 % This diagram alone cannot occur as it violates conservation of energy but it can be used to build a full Feynman diagram for a particle physics process.
 The QED Lagrangian can be found in Eq.~\ref{eqn:QEDL} with $D_{\mu}$ representing the covariant derivative which is defined as $D_{\mu} = \partial_{\mu} + iqA_{\mu}$ and $\psi$ representing a relativistic spin-1/2 field. 
@@ -91,19 +98,22 @@ Application of the Euler-Lagrange equations to Eq.~\ref{eqn:QEDL} leads to the d
 \label{Eqn:Dirac}
 \end{equation}
 
-The Dirac equation describes the motion for spin-1/2 particles with mass, ie. quarks and charged leptons. From this equation the Feynman rules for QED can be derived. These rules allow the computation of a number, known as the \emph{amplitude}, for each Feynman diagram. The sum total of the amplitudes for all diagrams which represent a particular process can be summed to produce the probability or \emph{cross section} for that process to occur.
+The Dirac equation describes the motion for spin-1/2 particles with mass, ie. quarks and charged leptons.
+
+
+ % From this equation the Feynman rules for QED can be derived. These rules allow the computation of a number, known as the \emph{amplitude}, for each Feynman diagram. The sum total of the amplitudes for all diagrams which represent a particular process can be summed to produce the probability or \emph{cross section} for that process to occur.
 
 In QED the vacuum acts like a dielectric medium which produces electron-positron pairs where the virtual electron is attracted to positive charges and the virtual positron is repelled (and vice versa for negative charges). This vacuum polarisation partially screens the charged particle and effectively reduces its field. However at short distances, the effective charge increases as the screening reduces.
 % \textbf{Effective coupling}
 
 \subsubsection{Weak interactions}
 
-The charged weak interaction is the only interaction where a flavour changing process can occur. The diagram of weak nuclear decay in Fig.~\ref{fig:QEDvertex} illustrates the W boson's interaction with different flavour quarks and leptons. The are two W bosons, one of positive charge and one of negative charge, W$^{\pm}$.
+The charged weak interaction is the only interaction where a flavour changing process can occur. The diagram of weak nuclear decay in Fig.~\ref{fig:QEDvertex} illustrates the W boson's interaction with different flavour quarks and leptons. There are two W bosons, one of positive charge and one of negative charge, W$^{\pm}$.
 
 
 \begin{figure}[ht!]
 \begin{center}
-    \includegraphics[width=0.65\textwidth]{images/Theory/weakDecay.png}
+    \includegraphics[width=0.65\textwidth]{images/Theory/weakDecay2.eps}
     \caption{Weak nuclear decay of neutron to proton}
     \label{fig:QEDvertex}
 \end{center}
@@ -114,9 +124,9 @@ The neutral weak interaction is mediated by Z bosons which can interact with any
 % As the weak force bosons are massive, this means that weak decays are much slower than decays via electromagnetism for instance. This means that particles that can only decay via the weak force have longer lifetimes. 
 The weak force only interacts with chirality left-handed (right-handed) particles (anti-particles).
 % , ie. particles where the spin is (anti-)aligned with the momentum direction. 
-The charge for weak interaction is \emph{weak isospin} ($I_{3}$) which is $\pm1/2$ for left-handed fermion, $\pm1$ for W$^{\pm}$ and zero otherwise.
+The charge for weak interaction is \emph{weak isospin} ($I_{3}$) which is $\pm1/2$ for left-handed fermions, $\pm1$ for W$^{\pm}$ and zero otherwise.
 
-Weak interactions are the only interactions known to violate parity conservation, which was hypothesised by Yang and Lee~\cite{PhysRev.104.254} and experimental validated by Wu in 1957~\cite{PhysRev.105.1413}. It was later discovered that weak interactions also violate the combined charge-parity (CP) symmetry~\cite{Cronin2012,PhysRevLett.13.138}.
+Weak interactions are the only interactions known to violate parity conservation, which was hypothesised by Yang and Lee~\cite{PhysRev.104.254} and experimentally validated by Wu in 1957~\cite{PhysRev.105.1413}. It was later discovered that weak interactions also violate the combined charge-parity (CP) symmetry~\cite{Cronin2012,PhysRevLett.13.138}.
 
 \subsubsection{Electroweak Unification}
 
@@ -127,7 +137,7 @@ Glashow~\cite{Glashow:1961tr}, Weinberg~\cite{PhysRevLett.19.1264} and Salam~\ci
 \begin{split}
 \calL_\textrm{EWK} & = \bar{\psi}_L \gamma^\mu ( i\partial_\mu  - g \mathbf{T} \cdot \mathbf{W}_\mu - \frac{g'}{2} Y_{W}
 B_\mu) \psi_L + \\ & + \bar{\psi}_R \gamma^\mu (i \partial_\mu - \frac{g'}{2} Y_{W} B_\mu) \psi_R -
-\frac{1}{4}\mathbf{W}_{\mu\nu} \mathbf{W}^{\mu\nu} -\frac{1}{4}B_{\mu\nu} B^{\mu\nu},
+\frac{1}{4}\mathbf{W}_{\mu\nu} \mathbf{W}^{\mu\nu} -\frac{1}{4}B_{\mu\nu} B^{\mu\nu}
 \end{split}
 \end{equation}
 
@@ -193,7 +203,7 @@ The charged current interaction is particularly interesting for the W decays fro
 \psi_L = \twovector{u_L}{{d'}_L}, \twovector{\nu_L}{l_L}
 \end{equation*}
 
-The weak eigenstates are related to the flavour eigenstates through the CKM matrix, $V_{CKM}$, via ${d^{\prime}}_L = V_{CKM}~d_L$, where ${d^{\prime}}_L$ is a superposition of the flavour eigenstates. The CKM matrix, also known as the \emph{quark mixing matrix}, is a unitary matrix which describes the strength of the couplings for weak decays and it is shown in Eq.~\ref{eqn:CKM1}. 
+The weak eigenstates are related to the flavour eigenstates through the CKM matrix, $V_{CKM}$, via ${d^{\prime}}_L = V_{CKM}~d_L$, where ${d^{\prime}}_L$ is a superposition of the flavour eigenstates. The CKM matrix, also known as the \emph{quark mixing matrix}, is a unitary matrix which describes the strength of the couplings for weak decays, as shown in Eq.~\ref{eqn:CKM1}. 
 \begin{equation}
 \label{eqn:CKM1}
 {\begin{pmatrix}
@@ -210,7 +220,7 @@ V_{td}&V_{ts}&V_{tb}
 {\begin{pmatrix}d\\s\\b
 \end{pmatrix}}
 \end{equation}
-The probabilities for the up-type quarks to transition to down-type quarks are given in Eq.~\ref{eqn:CKM2}.
+The probabilities for the up-type quarks to transition to down-type quarks are given in Eq.~\ref{eqn:CKM2}~\cite{PDG2016}.
 \begin{equation}
 \label{eqn:CKM2}
 {\begin{pmatrix}
@@ -252,7 +262,7 @@ Quark-anti-quark loops lead to screening of the quark colour charge, however glu
 % \alpha_{S}\left( |q^{2}| \right) = \frac{\alpha_{S}\left( \mu^{2} \right)} {1 + \left[ \alpha_{S}\left( \mu^{2} \right)/12\pi \right]\left( 11n -2f \right) \ln \left(|q^{2}|/\mu^{2}\right)}
 % \end{equation}
 
-At larger distances the strong force increases, hence energy which has gone into separating two quarks reaches a critical point where it is transferred into producing more quarks which accompany the separated quarks to form hadrons. This is the principle of \emph{confinement} and it ensures that colour doublets or octets are never found in nature, only colour singlet states such as mesons and baryons. The showering of separated quarks into hadrons is called \emph{hadronisation}. This is in contrast, again, to QED where particles can carry electric charge.
+At larger distances the strong force increases, hence energy which has gone into separating two quarks reaches a critical point where it is transferred into producing more quarks which accompany the separated quarks to form hadrons. This is the principle of \emph{confinement} and it ensures that colour doublets or octets are never found in nature, only colour singlet states such as mesons and baryons. The showering of separated quarks into hadrons is called \emph{hadronisation}. This is in contrast, again, to QED where free particles can carry electric charge.
 
 
 \section{Proton-proton collisions}
@@ -264,15 +274,15 @@ Figure~\ref{fig:protonPDF} shows the parton distribution functions for the proto
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.65\textwidth]{images/Theory/pdfnob.png}
-    \caption{Proton parton distribution functions $xf(x)$ $(f = u_{v},~ d_{v},~ \overline{u},~ \overline{d},~ s\approx\overline{s},~ c\approx\overline{c},~ b\approx\overline{b},~ g$ ) for a given momentum fraction, $x$. Obtained from NNLO NNPDF3.0~\cite{Ball2015}}
+    \caption{Proton parton distribution functions $xf(x)$ $(f = u_{v},~ d_{v},~ \overline{u},~ \overline{d},~ s\approx\overline{s},~ c\approx\overline{c},~ b\approx\overline{b},~ g$ ) for a given momentum fraction, $x$. Obtained from NNLO NNPDF3.0~\cite{Ball2015}.}
     \label{fig:protonPDF}
 \end{center}
 \end{figure}
 
-Protons in the LHC may a) not interact at all and continue to be accelerated around the ring, b) interact via a soft scatter where the products mostly travel along the direction of the beam, c) participate in a hard interaction where two partons within the protons have a high energy collision in which the products travel transverse to the beam. In the latter case, the remaining partons which have not participated in the hard interaction hadronise and form what is known as the \emph{underlying event} (UE)
+Protons in the LHC may a) not interact at all and continue to be accelerated around the ring, b) interact via a soft scatter where the products mostly travel along the direction of the beam, c) participate in a hard interaction where two partons within the protons have a high energy collision in which the products travel transverse to the beam. In the latter case, the remaining partons which have not participated in the hard interaction hadronise and form what is known as the \emph{underlying event} (UE).
 
 \section{Top physics}
-The top quark was discovered in 1995 at the Tevatron by the CDF~\cite{PhysRevLett.74.2626} and D0~\cite{Abachi:1995iq} collaborations. It had been hypothesised that there must be a partner to the bottom quark which exists with it in a weak-isospin doublet~\cite{Kobayashi:1973fv}. It is the heaviest quark with a mass of $173.21\pm0.51\pm0.71$~GeV, approximately equivalent to the mass of a rhenium atom\footnote{Atomic number, $Z = 75$}. The top quark is the only quark which predominantly decays before it can form any bound states, due to its short lifetime of $5\times10^{-25}$~seconds~\cite{PDG2016} and hence it is the only quark which can be studied for its spin and polarisation properties. The main decay mode for top quarks is to a bottom quark and a W boson, as shown in Fig.~\ref{fig:tdecay}, which occurs $99.8\pm3.8\textrm{ (exp.)}\pm1.6\textrm {(theo.)} \%$~\cite{2014arXiv1403.7366C} of the time.
+The top quark was discovered in 1995 at the Tevatron by the CDF~\cite{PhysRevLett.74.2626} and D0~\cite{Abachi:1995iq} collaborations. It had been hypothesised that there must be a partner to the bottom quark which exists with it in a weak-isospin doublet~\cite{Kobayashi:1973fv}. It is the heaviest quark with a mass of $173.21\pm0.51\pm0.71$~GeV~\cite{PDG2016}, approximately equivalent to the mass of a rhenium atom\footnote{Atomic number, $Z = 75$}. The top quark is the only quark which predominantly decays before it can form any bound states, due to its short lifetime of $5\times10^{-25}$~seconds~\cite{PDG2016} and hence it is the only quark which can be studied for its spin and polarisation properties. The main decay mode for top quarks is to a bottom quark and a W boson, as shown in Fig.~\ref{fig:tdecay}, which occurs $99.8\pm3.8\textrm{ (exp.)}\pm1.6\textrm {(theo.)} \%$~\cite{2014arXiv1403.7366C} of the time.
  % charged lepton tends to point along the direction of top spin
 \begin{figure}[ht!]
 \begin{center}
@@ -292,17 +302,17 @@ The first observations of top quarks were made on analyses of top pair productio
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.95\textwidth]{images/Theory/ttbarfeynman.png}
-    \caption{Top quark pair production in the SM by quark-anti-quark annihilation (top) and via gluon fusion (bottom)~\cite{Kohn:2012ksa}}
+    \caption{Top quark pair production in the SM by quark-anti-quark annihilation (top) and via gluon fusion (bottom)~\cite{Kohn:2012ksa}.}
     \label{fig:ttproduction}
 \end{center}
 \end{figure}
 
-There are three possible decay modes depending how each top quark decays, as shown in Fig.~\ref{fig:tdecay}: \emph{hadronic} where both W bosons from the top decays decay to a quark and anti-quark, \emph{semi-leptonic} where one W boson decays to \qqbar and one W boson decays to a lepton and a neutrino, and \emph{dileptonic} where both W bosons decay to a lepton and a neutrino each.
+There are three possible decay modes depending on how each top quark decays, as shown in Fig.~\ref{fig:tdecay}: \emph{hadronic} where both W bosons from the top decay to a quark and anti-quark, \emph{semi-leptonic} where one W boson decays to \qqbar' and one W boson decays to a lepton and a neutrino, and \emph{dileptonic} where both W bosons decay to a lepton and a neutrino each.
 
 
 \subsection{Single top quark production}
 
-Single top quark production is much rarer than \ttbar production in the SM. It can occur via \qqbar annihilation, g\cPq~fusion or gluon fusion as shown in Fig.~\ref{fig:stFeyn}. In this figure the s-channel (left), t-channel (middle) and associated production with a W boson (tW-channel) are shown.
+Single top quark production is much rarer than \ttbar production in the SM. It can occur via \qqbar annihilation, g\cPq~fusion or gluon fusion as shown in Fig.~\ref{fig:stFeyn}. In this figure the s-channel (left), t-channel (middle) and associated production with a W boson, tW-channel, (right) are shown.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -321,7 +331,7 @@ The production of four top quarks (\tttt) occurs predominantly via gluon fusion,
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.49\textwidth]{images/Theory/tttt_t_LO.pdf}
-    \caption{Dominant production mechanism of \tttt in the SM.}
+    \caption{Representative diagram of the production mechanism of \tttt in the SM at LO.}
     \label{fig:ttttAtLO}
 \end{center}
 \end{figure}
@@ -342,7 +352,7 @@ This can cause arcs of light and repeated patterns of the same galaxy as seen in
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.65\textwidth]{images/Theory/lensing2.jpg}
-    \caption{Gravitational lensing around MACS 1206 as captured by the Hubble Space Telescope~\cite{Glens}}
+    \caption{Gravitational lensing around MACS 1206 as captured by the Hubble Space Telescope~\cite{Glens}.}
     \label{fig:Glens}
 \end{figure}
 
@@ -352,12 +362,12 @@ This can cause arcs of light and repeated patterns of the same galaxy as seen in
 There are many theories which try to solve some or all of the problems listed in Section~\ref{sec:SMprobs}. Some BSM theories which have final states containing four top quarks are discussed here. 
 
 \textbf{Top quark Compositeness}\\
-It has been hypothesised that the top quark could be a composite particle made up of subparticles named preons, which are bound by a new confining force. Phenomenological studies have been performed in which an effective field theory (EFT) is proposed where only the right-handed top quark is considered to be composite. It is argued that if only $t_{R}$ is composite and no other SM component is then the four top operator (shown in Fig~\ref{fig:eft}) will be the most significant component of the EFT lagrangian, which can lead to an enhancement of $\approx 10^3$ to the production of \tttt compared to the SM rate~\cite{Tait2topcomp,Tait1topcomp}.
+It has been hypothesised that the top quark could be a composite particle made up of subparticles named preons, which are bound by a new confining force. Phenomenological studies have been performed in which an effective field theory (EFT) is proposed where only the right-handed top quark is considered to be composite. It is argued that if only $t_{R}$ is composite and no other SM component is, then the four top operator (shown in Fig~\ref{fig:eft}) will be the most significant component of the EFT lagrangian. This can lead to an enhancement of $\approx 10^3$ to the production of \tttt compared to the SM rate~\cite{Tait2topcomp,Tait1topcomp}.
 
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.45\textwidth]{images/Theory/EFTTopComp.pdf}
-    \caption{Four top interaction in an EFT~\cite{Tait2topcomp}}
+    \caption{Four top interaction in an EFT~\cite{Tait2topcomp}.}
     \label{fig:eft}
 \end{figure}
 
@@ -368,7 +378,7 @@ The mediator could be a dark matter mediator~\cite{Arina2016}, a heavy Higgs bos
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.45\textwidth]{images/Theory/ttDMtt.pdf}
-    \caption{Four top production with an intermediate scalar~\cite{Arina2016}}
+    \caption{Four top production with an intermediate scalar~\cite{Arina2016}.}
     \label{fig:ttXtt}
 \end{figure}
 
@@ -380,11 +390,11 @@ The mediator could be a dark matter mediator~\cite{Arina2016}, a heavy Higgs bos
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.99\textwidth]{images/Theory/sgluonFeyn.pdf}
-    \caption{Sgluon pair production~\cite{Calvet:2012rk}}
+    \caption{Sgluon pair production~\cite{Calvet:2012rk}.}
     \label{fig:sgluonpair}
 \end{figure}
 
-An additional scalar gluon (\emph{sgluon}) has been theorised in several models of physics beyond the SM. In N=1/N=2 hybrid and R-symmetric versions of non-minimal supersymmetric models (NMSSM), the minimal supersymmetric model (MSSM) is supplemented by an additional chiral multiplet which lies in the adjoint representation of the QCD gauge group. This supermultiplet contains a two-component fermionic part which mixes with the Dirac gluino and a colour-octet complex scalar particle which is the sgluon field. This is particularly interesting because coloured particles will couple directly to gluons and hence should be produced in proton-proton collisions. Figure~\ref{fig:sgluonpair} shows the possible tree level production modes for sgluon pair production.~\cite{Calvet:2012rk}, whilst Fig.~\ref{fig:sgluontttt} shows the each sgluon coupling to a \ttbar resulting in a final state with four top quarks.
+An additional scalar gluon (\emph{sgluon}) has been theorised in several models of physics beyond the SM. In N=1/N=2 hybrid and R-symmetric versions of non-minimal supersymmetric models (NMSSM), the minimal supersymmetric model (MSSM) is supplemented by an additional chiral multiplet which lies in the adjoint representation of the QCD gauge group. This supermultiplet contains a two-component fermionic part which mixes with the Dirac gluino and a colour-octet complex scalar particle which is the sgluon field. This is particularly interesting because coloured particles will couple directly to gluons and hence should be produced in proton-proton collisions. Figure~\ref{fig:sgluonpair} shows the possible tree level production modes for sgluon pair production~\cite{Calvet:2012rk}, whilst Fig.~\ref{fig:sgluontttt} shows each sgluon coupling to a \ttbar resulting in a final state with four top quarks.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -394,14 +404,12 @@ An additional scalar gluon (\emph{sgluon}) has been theorised in several models 
 \end{center}
 \end{figure}
 
-Sgluons also arise in vector-like confining theories and extra-dimensional models, therefore it is viable to use a simplified model approach (as discussed below) because the final state signatures are reasonably model-independent.
-
-Colour octets and sextets can also be pair produced in theories where the Higgs boson is a composite particle~\cite{Cacciapaglia2015}.
+Sgluons also arise in vector-like confining theories and extra-dimensional models. Therefore it is viable to use a simplified model approach (as discussed below) because the final state signatures are reasonably model-independent. Colour octets and sextets can also be pair produced in theories where the Higgs boson is a composite particle~\cite{Cacciapaglia2015}.
 
 
 
 \section{Simplified models}
 
-Simplified models work by building a TeV-scale effective Lagrangian which describes a minimal number of new particles and their interactions. Hence, variables which can be directly observed by the detector can be studied, for example, particle masses, cross sections and branching ratios for different decay modes. Simplified models can sometimes be considered to be a subset of more general physics models where only a few of the particles are considered. Therefore, simplified model cannot be considered to be model independent but they can help to identify the bounds of sensitivity for searches~\cite{0954-3899-39-10-105005}. An example of where a simplified model can be used is in the case of $\ttbar+\textrm{X}$, in Section~\ref{sec:BSMmodels}, where the phenomenology of the resulting particles in the detector can be studied without knowledge of which underlying theory the new scalar particle, X, is coming from.
+Simplified models work by building a TeV-scale effective Lagrangian which describes a minimal number of new particles and their interactions. Hence, variables which can be directly observed by the detector can be studied, for example, particle masses, cross sections and branching ratios for different decay modes. Simplified models can sometimes be considered to be a subset of more general physics models where only a few of the particles are considered. Therefore, a simplified model cannot be considered to be model independent but they can help to identify the bounds of sensitivity for searches~\cite{0954-3899-39-10-105005}. An example of where a simplified model can be used is in the case of $\ttbar+\textrm{X}$, in Section~\ref{sec:BSMmodels}, where the phenomenology of the resulting particles in the detector can be studied without knowledge of which underlying theory the new scalar particle, X, is coming from.
 
 

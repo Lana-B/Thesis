@@ -20,20 +20,132 @@
 %     \label{fig:FitCorr}
 % \end{figure}
 
+\section{Comparison of alternative \ttbar generators \label{app:ttbargen}}
 
-\subsection{Correlation matrices for fit nuisance parameters}
+Figure~\ref{fig:MGFXFX} shows that the uncertainty from the \MADGRAPH \aMCATNLO generator is contained within the uncertainty from the \MLM generator, therefore it is conservative to use the \MLM generator as the systematic shape for differences in the BDT distribution due to generator choice.
+
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=0.7\textwidth]{images/Run2/MG_FXFX.pdf}
+    \caption{Inclusive BDT distribution for \ttbar generators \POWHEG+\PYTHIA, \MLM and \MADGRAPH \aMCATNLO FxFx}
+    \label{fig:MGFXFX}
+\end{figure} 
 
 
-The correlation matrix for the fit nuisance parameters in the background only scenario can be see in Fig.~\ref{fig:FitCorr}. There is some correlation between the various b-tagging scale factors and also a correlation between the heavy flavour \heavyflavourone / \heavyflavourtwo modelling and the \ttbar ME scale, where the \heavyflavourone / \heavyflavourtwo is expected to be related to the choice of ME scale.
+\section{TTZ, TTW, TTH MC backgrounds~\label{app:TTX}}
+The contributions from \ttbar + B, where B = W, Z or H, were added to the predicted \ttbar yields to give a prediction for the net \ttbar + B background. The event-level BDT discriminant shapes for these contributions closely follow those of the \ttbar contribution and are very different from those predicted for the \tttt signal as a function of both the number of jets and the number of b-tagged jets. The differences are small and they over covered by the \ttbar scale uncertainties. Therefore, no additional systematic uncertainties were considered necessary to cover these backgrounds.
+
+
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=\textwidth]{images/Run2/ttbarShapesLabels.png}
+    \caption{BDT discriminator shapes for all categories, as indicated along the x axis. The ratio plot shows the difference between each distribution and the nominal \ttbar distribution divided by the \ttbar distribution.}
+    \label{fig:TTB}
+\end{figure}
+
+\section{Comparison of the Gradient Boost and AdaBoost boosting algorithms within the BDT \label{app:gradBoost}}
+
+For this study, the following three BDTs were trained:
+\begin{enumerate}
+\item \emph{GradNeg} - Gradient boosting taking into account negative weighting information in training and testing
+\item \emph{GradBoost} - Gradient boosting ignoring negative weighting information in training and testing
+\item \emph{AdaBoost} - AdaBoost boosting ignoring negative weighting information in training and testing
+\end{enumerate}
+% It was decided that if we were going to ignore the negative weight information then there was no reason to not include these events in the training sample. Additionally, if one was to ignore the negative weight information then there is no reason to not examine using AdaBoost.  
+% Strategy 1 is referred to as \emph{GradNeg}; strategy 2 as \emph{GradBoost}; and strategy 3 as \emph{AdaBoost}. 
+%
+Each BDT was trained with the same set of input features and using the same sample of events to train and test the BDTs. The expected limits and uncertainties are shown for each strategy in Table~\ref{tab:BDTalgos} for the $\mu$ + jets and e + jets final states. Note that this study was performed at an earlier stage in the analysis so the results to do not correspond exactly to the final expected limit given in Section~\ref{sec:limit13}. The BDT output discriminator distribution was only split into \njets categories of of 6, 7, 8, 9+ jets at this stage rather than \njets and \nMtags categories.
+ % The response of the signal and background samples as well as the ROC curves for the derived classifiers for each strategy can be seen in Figs. \ref{fig:GradNeg} through \ref{fig:AdaBoost}.
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Expected limits using jet categories of 6, 7, 8, 9+ jets for different BDT boosting algorithms.}
+\label{tab:BDTalgos}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Algorithm & $\mu$ + jets & uncertainty & e + jets & uncertainty \\ \hline
+GradNeg   & 18.1         & +8.0, -5.3  & 27.6     & +12.9, -8.3 \\ \hline
+GradBoost & 18.7         & +8.3, -5.5  & 28.8     & +12.9, -8.3 \\ \hline
+AdaBoost  & 10.7         & +6.4, -4.0  & 21.6     & +10.9, -7.0 \\ \hline
+\end{tabular}
+\end{table}
+
+It can be seen from Table~\ref{tab:BDTalgos} that the difference between including negative weight information in the GradNeg strategy and not including it in the GradBoost strategy have a negligible effect on the expected limit within the uncertainties. Using negative weights may slightly optimise the modelling for training but not significantly hence the AdaBoost strategy can be used without negative weights as it has a significant benefit in lowering the expected limit.
+
+
+\section{Event-level BDT templates \label{app:BDTtemp}}
+
 
 \begin{figure}[ht!]
-    \includegraphics[width=0.9\textwidth]{images/Run2/FitCorr.pdf}
-    \caption{The correlation matrices for background only for the fit parameters.}
-    \label{fig:FitCorr}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets3nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets3nMtags_StackLogY.pdf} 
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 6 \njets and 3\nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents63}
 \end{figure}
-\section{Systematic shape studies}
 
-In this section the alternative BDT distribution shapes are examined for each shape systematic described in Section~\ref{sec:uncertainties13}. The largest systematic uncertainties are the JES, ME scale systematics and the \ttbar generator choice. The JER and PU up/down (red/cyan) shapes deviate very little from the nominal distributions (blue). In \ttbar the several distributions including JER and PU systematics show relatively flat behaviour with respect to the nominal distribution and in future analyses could be considered for incorporation into a normalisation systematic uncertainty.
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets4nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets4nMtags_StackLogY.pdf}
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 6 \njets and $\geq4$ \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents64}
+\end{figure}
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets2nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets2nMtags_StackLogY.pdf} 
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 2 \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents72}
+ \end{figure}
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets3nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets3nMtags_StackLogY.pdf}
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 3 \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents73}
+ \end{figure}
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets4nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets4nMtags_StackLogY.pdf}
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 7 \njets and $\geq4$ \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents74}
+\end{figure}
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets2nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets2nMtags_StackLogY.pdf} 
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets and 2 \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents82}
+\end{figure}
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets3nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets3nMtags_StackLogY.pdf} 
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets category and 3 \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents83}
+\end{figure}
+
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets4nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets4nMtags_StackLogY.pdf}
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right) are shown for the 8 \njets and $\geq4$ \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents84}
+\end{figure}
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets2nMtags_StackLogY.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets2nMtags_StackLogY.pdf} 
+    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the $\geq9$ \njets  and 2 \nMtags category.}
+    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents92}
+\end{figure}
+
+
+\section{Systematic shape studies \label{app:sysshapes}}
+
+In this section the alternative BDT distribution shapes are examined for a few of the shape systematic described in Section~\ref{sec:uncertainties13}. The largest systematic uncertainties are the JES, ME scale systematics and the \ttbar generator choice. The JER and PU up/down (red/cyan) shapes deviate very little from the nominal distributions (blue). In \ttbar there are several distributions including JER and PU systematics show relatively flat behaviour with respect to the nominal distribution and in future analyses could be considered for incorporation into a normalisation systematic uncertainty.
 
 % \begin{figure}[ht!]
 %     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/btag_CSVCFErr1systt.png}
@@ -138,12 +250,12 @@ In this section the alternative BDT distribution shapes are examined for each sh
 % \end{figure}
 
 
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystt.pdf}
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystt_e.pdf}     
-%     \caption{The BDT shapes for JER systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesJERtt}
-% \end{figure}
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystt.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystt_e.pdf}     
+    \caption{The BDT shapes for JER systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
+    \label{fig:SysShapesJERtt}
+\end{figure}
 
 % \begin{figure}[ht!]
 %     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/JERsystttt.pdf}
@@ -179,12 +291,12 @@ In this section the alternative BDT distribution shapes are examined for each sh
     \label{fig:SysShapesMEtttt}
 \end{figure}
 
-% \begin{figure}[ht!]
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystt.pdf} 
-%     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystt_e.pdf}     
-%     \caption{The BDT shapes for PU systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
-%     \label{fig:SysShapesPUtt}
-% \end{figure}
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystt.pdf} 
+    \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystt_e.pdf}     
+    \caption{The BDT shapes for PU systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
+    \label{fig:SysShapesPUtt}
+\end{figure}
 
 % \begin{figure}[ht!]
 %     \includegraphics[width=0.48\textwidth]{images/Run2/Sys/PUsystttt.pdf} 
@@ -206,39 +318,9 @@ In this section the alternative BDT distribution shapes are examined for each sh
     \caption{The BDT shapes for ttGenerator choice systematic in \ttbar for the $\mu$ + jets channel (left) and e + jets channel (right).}
     \label{fig:SysShapesttGen}
 \end{figure}
-\section{Comparison of the Gradient Boost and AdaBoost boosting algorithms within the BDT \label{app:adagrad}}
-
-For this study, the following three BDTs were trained:
-\begin{enumerate}
-\item \emph{GradNeg} - Gradient boosting taking into account negative weighting information in training and testing
-\item \emph{GradBoost} - Gradient boosting ignoring negative weighting information in training and testing
-\item \emph{AdaBoost} - AdaBoost boosting ignoring negative weighting information in training and testing
-\end{enumerate}
-% It was decided that if we were going to ignore the negative weight information then there was no reason to not include these events in the training sample. Additionally, if one was to ignore the negative weight information then there is no reason to not examine using AdaBoost.  
-% Strategy 1 is referred to as \emph{GradNeg}; strategy 2 as \emph{GradBoost}; and strategy 3 as \emph{AdaBoost}. 
-%
-Each BDT was trained with the same set of input features and using the same sample of events to train and test the BDTs. The expected limits and uncertainties are shown for each strategy in Table~\ref{tab:BDTalgos} for the $\mu$ + jets and e + jets final states. Note that this study was performed at an earlier stage in the analysis so the results to do not correspond exactly to the final expected limit given in Section~\ref{sec:limit13}. The BDT output discriminator distribution was only split into \njets categories of of 6, 7, 8, 9+ jets at this stage rather than \njets and \nMtags categories.
- % The response of the signal and background samples as well as the ROC curves for the derived classifiers for each strategy can be seen in Figs. \ref{fig:GradNeg} through \ref{fig:AdaBoost}.
 
 
-
-\begin{table}[ht]
-\centering
-\caption{Expected limits using jet categories of 6, 7, 8, 9+ jets for different BDT boosting algorithms.}
-\label{tab:BDTalgos}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-Algorithm & $\mu$ + jets & uncertainty & e + jets & uncertainty \\ \hline
-GradNeg   & 18.1         & +8.0, -5.3  & 27.6     & +12.9, -8.3 \\ \hline
-GradBoost & 18.7         & +8.3, -5.5  & 28.8     & +12.9, -8.3 \\ \hline
-AdaBoost  & 10.7         & +6.4, -4.0  & 21.6     & +10.9, -7.0 \\ \hline
-\end{tabular}
-\end{table}
-
-It can be seen from Table~\ref{tab:BDTalgos} that the difference between including negative weight information in the GradNeg strategy and not including it in the GradBoost strategy have a negligible effect on the expected limit within the uncertainties. Using negative weights may slightly optimise the modelling for training but not significantly hence the AdaBoost strategy can be used without negative weights as it has a significant benefit in lowering the expected limit.
-
-
-\subsection{Studies of impact of systematic uncertainties}
+\subsection{Studies of impact of systematic uncertainties \label{app:sysminusone}}
 
 The impact of each systematic uncertainty on the expected limit is shown in Table~\ref{tab:sysRemoved} by removing each systematic from the fit and recalculating the expected limit. The systematic uncertainties which have the largest impact are the \ttbar ME scale, \ttbar PS scale and the JES scale, which is applied to both \ttbar and \tttt. The \ttbar ME scale has a large impact on the modelling of the signal process whereas the \ttbar PS scale has a big effect on the modelling of the additional jets produced in high jet multiplicity \ttbar events which pass the baseline event selection.
 
@@ -282,25 +364,14 @@ btagWeightCSVLFStats2          & 15.9062                                        
 \end{tabular}
 \end{table}
 
-\section{Comparison of alternative \ttbar generators}
 
-Figure~\ref{fig:MGFXFX} shows that the uncertainty from the \MADGRAPH \aMCATNLO generator is contained within the uncertainty from the \MLM generator, therefore it is conservative to use the \MLM generator as the systematic shape for differences in the BDT distribution due to generator choice.
-
-\begin{figure}[ht]
-\centering
-    \includegraphics[width=0.7\textwidth]{images/Run2/MG_FXFX.pdf}
-    \caption{Inclusive BDT distribution for \ttbar generators \POWHEG+\PYTHIA, \MLM and \MADGRAPH \aMCATNLO FxFx}
-    \label{fig:MGFXFX}
-\end{figure} 
+\section{Correlation matrices for fit nuisance parameters \label{app:corrFit}}
 
 
-\section{TTZ, TTW, TTH MC backgrounds~\label{app:TTX}}
-The contributions from \ttbar + B, where B = W, Z or H, were added to the predicted \ttbar yields to give a prediction for the net \ttbar + B background. The event-level BDT discriminant shapes for these contributions closely follow those of the \ttbar contribution and are very different from those predicted for the \tttt signal as a function of both the number of jets and the number of b-tagged jets. The differences are small and they over covered by the \ttbar scale uncertainties. Therefore, no additional systematic uncertainties were considered necessary to cover these backgrounds.
+The correlation matrix for the fit nuisance parameters in the background only scenario can be see in Fig.~\ref{fig:FitCorr}. There is some correlation between the various b-tagging scale factors and also a correlation between the heavy flavour \heavyflavourone / \heavyflavourtwo modelling and the \ttbar ME scale, where the \heavyflavourone / \heavyflavourtwo is expected to be related to the choice of ME scale.
 
-
-\begin{figure}[ht]
-\centering
-    \includegraphics[width=\textwidth]{images/Run2/ttbarShapesLabels.png}
-    \caption{BDT discriminator shapes for all categories, as indicated along the x axis. The ratio plot shows the difference between each distribution and the nominal \ttbar distribution divided by the \ttbar distribution.}
-    \label{fig:TTB}
+\begin{figure}[ht!]
+    \includegraphics[width=0.9\textwidth]{images/Run2/FitCorr.pdf}
+    \caption{The correlation matrices for background only for the fit parameters.}
+    \label{fig:FitCorr}
 \end{figure}

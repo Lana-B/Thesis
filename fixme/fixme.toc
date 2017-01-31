@@ -1,0 +1,191 @@
+\contentsline {section}{\numberline {1}Installation}{4}
+\contentsline {subsection}{\numberline {1.1}Extraction}{4}
+\contentsline {subsection}{\numberline {1.2}TDS-compliant layout}{5}
+\contentsline {subsection}{\numberline {1.3}AUC-T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m \xspace support}{5}
+\contentsline {section}{\numberline {2}Features summary}{5}
+\contentsline {subparagraph}{Annotation levels}{5}
+\contentsline {subparagraph}{Layouts and themes}{5}
+\contentsline {subparagraph}{Annotation targets}{5}
+\contentsline {subparagraph}{Listing and indexing}{5}
+\contentsline {subparagraph}{Logging}{5}
+\contentsline {subparagraph}{Modes}{6}
+\contentsline {subparagraph}{Authoring}{6}
+\contentsline {subparagraph}{Internationalization}{6}
+\contentsline {section}{\numberline {3}Using \textsf {FiXme}\xspace }{6}
+\contentsline {subsection}{\numberline {3.1}Initialization}{6}
+\contentsline {subsubsection}{\numberline {3.1.1}Requirements}{6}
+\contentsline {subsubsection}{\numberline {3.1.2}Loading the package}{6}
+\contentsline {subsubsection}{\numberline {3.1.3}Global setup modification}{6}
+\contentsline {subsubsection}{\numberline {3.1.4}Local setup modification}{6}
+\contentsline {subsection}{\numberline {3.2}Inserting \textsf {FiXme}\xspace notes}{7}
+\contentsline {subsubsection}{\numberline {3.2.1}Commands}{7}
+\contentsline {subsubsection}{\numberline {3.2.2}Targeted commands}{7}
+\contentsline {subsubsection}{\numberline {3.2.3}Environments}{7}
+\contentsline {subsubsection}{\numberline {3.2.4}Targeted environments}{7}
+\contentsline {subsection}{\numberline {3.3}List of \textsf {FiXme}\xspace 's}{7}
+\contentsline {subsection}{\numberline {3.4}Controlling the behavior of \textsf {FiXme}\xspace }{8}
+\contentsline {subsection}{\numberline {3.5}Controlling the layout of annotations}{8}
+\contentsline {subsubsection}{\numberline {3.5.1}Selecting a layout}{8}
+\contentsline {paragraph}{\numberline {3.5.1.1}Individual control}{8}
+\contentsline {paragraph}{\numberline {3.5.1.2}Global control}{9}
+\contentsline {subsubsection}{\numberline {3.5.2}Built-in \textit {vs.}\xspace external layouts}{9}
+\contentsline {subsubsection}{\numberline {3.5.3}Available layouts}{10}
+\contentsline {paragraph}{\numberline {3.5.3.1}\texttt {marginclue}}{10}
+\contentsline {paragraph}{\numberline {3.5.3.2}\texttt {marginnote}}{10}
+\contentsline {paragraph}{\numberline {3.5.3.3}PDF comments}{11}
+\contentsline {subsubsection}{\numberline {3.5.4}Inner layout}{11}
+\contentsline {subsubsection}{\numberline {3.5.5}Other common layout problems}{12}
+\contentsline {subparagraph}{Footnotes and margin paragraphs in floats}{12}
+\contentsline {subparagraph}{Marginal paragraphs showing up on the wrong margin}{12}
+\contentsline {subparagraph}{ACM classes compatibility}{12}
+\contentsline {subparagraph}{Annotation indexing}{12}
+\contentsline {subsection}{\numberline {3.6}Corollary: floating annotations}{13}
+\contentsline {subsection}{\numberline {3.7}Controlling the layout of environments}{13}
+\contentsline {subsubsection}{\numberline {3.7.1}Selecting a layout}{13}
+\contentsline {subsubsection}{\numberline {3.7.2}Built-in \textit {vs.}\xspace external layouts}{14}
+\contentsline {subsubsection}{\numberline {3.7.3}Available layouts}{14}
+\contentsline {subsection}{\numberline {3.8}Controlling the layout of targets}{14}
+\contentsline {subsubsection}{\numberline {3.8.1}Selecting a layout}{15}
+\contentsline {subsubsection}{\numberline {3.8.2}Built-in \textit {vs.}\xspace external layouts}{15}
+\contentsline {subsubsection}{\numberline {3.8.3}Available layouts}{15}
+\contentsline {subsection}{\numberline {3.9}Faces}{16}
+\contentsline {subsubsection}{\numberline {3.9.1}Setting face values}{16}
+\contentsline {subsubsection}{\numberline {3.9.2}Available faces}{17}
+\contentsline {subparagraph}{The \texttt {inline} face}{17}
+\contentsline {subparagraph}{The \texttt {margin} face}{17}
+\contentsline {subparagraph}{The \texttt {env} face}{17}
+\contentsline {subparagraph}{The \texttt {signature} face}{17}
+\contentsline {subparagraph}{The \texttt {target} face}{17}
+\contentsline {subsection}{\numberline {3.10}Controlling the logging of annotations}{17}
+\contentsline {subsection}{\numberline {3.11}Controlling the language of \textsf {FiXme}\xspace }{17}
+\contentsline {subsubsection}{\numberline {3.11.1}Available languages}{17}
+\contentsline {subsubsection}{\numberline {3.11.2}Language tracking}{18}
+\contentsline {subsubsection}{\numberline {3.11.3}Indexing in different languages}{18}
+\contentsline {subsection}{\numberline {3.12}Standalone or collaborative mode}{18}
+\contentsline {subsubsection}{\numberline {3.12.1}Standalone mode}{18}
+\contentsline {subsubsection}{\numberline {3.12.2}Collaborative mode}{19}
+\contentsline {paragraph}{\numberline {3.12.2.1}Registering new authors}{19}
+\contentsline {paragraph}{\numberline {3.12.2.2}Fun with the \texttt {author} option}{20}
+\contentsline {paragraph}{\numberline {3.12.2.3}Globally switching to collaborative mode}{20}
+\contentsline {subsection}{\numberline {3.13}Themes}{20}
+\contentsline {subsubsection}{\numberline {3.13.1}Using themes}{21}
+\contentsline {subsubsection}{\numberline {3.13.2}Available themes}{21}
+\contentsline {paragraph}{\numberline {3.13.2.1}The \texttt {signature} theme}{21}
+\contentsline {paragraph}{\numberline {3.13.2.2}The \texttt {color} theme}{21}
+\contentsline {paragraph}{\numberline {3.13.2.3}The \texttt {colorsig} theme}{21}
+\contentsline {section}{\numberline {4}Extending \textsf {FiXme}\xspace }{21}
+\contentsline {subsection}{\numberline {4.1}Modifying existing layouts}{21}
+\contentsline {subsubsection}{\numberline {4.1.1}Modifying existing annotation layouts}{22}
+\contentsline {subsubsection}{\numberline {4.1.2}Modifying existing environment layouts}{22}
+\contentsline {subsubsection}{\numberline {4.1.3}Modifying existing target layouts}{22}
+\contentsline {subsection}{\numberline {4.2}Creating new layouts}{22}
+\contentsline {subsubsection}{\numberline {4.2.1}Registering a new annotation layout}{22}
+\contentsline {paragraph}{\numberline {4.2.1.1}Early \textit {vs.}\xspace late layouts}{22}
+\contentsline {paragraph}{\numberline {4.2.1.2}Registering late layouts}{23}
+\contentsline {paragraph}{\numberline {4.2.1.3}Registering early layouts}{23}
+\contentsline {paragraph}{\numberline {4.2.1.4}Providing a layout}{23}
+\contentsline {subsubsection}{\numberline {4.2.2}Registering a new environment layout}{23}
+\contentsline {subsubsection}{\numberline {4.2.3}Registering a new target layout}{24}
+\contentsline {subsection}{\numberline {4.3}Creating a new theme}{24}
+\contentsline {subsection}{\numberline {4.4}Internationalization}{24}
+\contentsline {section}{\numberline {5}History}{24}
+\contentsline {section}{\numberline {6}Implementation}{26}
+\contentsline {subsection}{\numberline {6.1}Preamble}{26}
+\contentsline {subsection}{\numberline {6.2}Utilities}{26}
+\contentsline {subsubsection}{\numberline {6.2.1}Miscellaneous}{26}
+\contentsline {subsubsection}{\numberline {6.2.2}\texttt {xkeyval} related}{27}
+\contentsline {subsection}{\numberline {6.3}List macros}{28}
+\contentsline {subsubsection}{\numberline {6.3.1}Contents lines}{28}
+\contentsline {subsubsection}{\numberline {6.3.2}List headers}{29}
+\contentsline {paragraph}{\numberline {6.3.2.1}\texttt {article} version}{29}
+\contentsline {paragraph}{\numberline {6.3.2.2}\texttt {report} version}{29}
+\contentsline {paragraph}{\numberline {6.3.2.3}\texttt {book} version}{29}
+\contentsline {paragraph}{\numberline {6.3.2.4}\texttt {scrartcl} version}{30}
+\contentsline {paragraph}{\numberline {6.3.2.5}\texttt {scrreprt} version}{30}
+\contentsline {paragraph}{\numberline {6.3.2.6}\texttt {scrbook} version}{30}
+\contentsline {subsubsection}{\numberline {6.3.3}Status/class-dependent implementation}{31}
+\contentsline {subsection}{\numberline {6.4}Faces}{31}
+\contentsline {subsection}{\numberline {6.5}Annotation layouts}{31}
+\contentsline {subsubsection}{\numberline {6.5.1}Layout creation}{32}
+\contentsline {subsubsection}{\numberline {6.5.2}Built-in layouts}{33}
+\contentsline {paragraph}{\numberline {6.5.2.1}Margin}{33}
+\contentsline {paragraph}{\numberline {6.5.2.2}Margin clue}{33}
+\contentsline {paragraph}{\numberline {6.5.2.3}Footnote}{34}
+\contentsline {paragraph}{\numberline {6.5.2.4}Inline}{34}
+\contentsline {paragraph}{\numberline {6.5.2.5}Index}{34}
+\contentsline {paragraph}{\numberline {6.5.2.6}Contents line}{35}
+\contentsline {subsubsection}{\numberline {6.5.3}Layout loading}{35}
+\contentsline {subsubsection}{\numberline {6.5.4}Layout control}{35}
+\contentsline {subsection}{\numberline {6.6}Environment Layouts}{36}
+\contentsline {subsubsection}{\numberline {6.6.1}Layout creation}{36}
+\contentsline {subsubsection}{\numberline {6.6.2}Built-in layouts}{37}
+\contentsline {paragraph}{\numberline {6.6.2.1}Plain}{37}
+\contentsline {paragraph}{\numberline {6.6.2.2}Signature}{37}
+\contentsline {subsubsection}{\numberline {6.6.3}Layout selection}{37}
+\contentsline {subsubsection}{\numberline {6.6.4}Layout loading}{38}
+\contentsline {subsubsection}{\numberline {6.6.5}Layout control}{38}
+\contentsline {subsection}{\numberline {6.7}Target Layouts}{38}
+\contentsline {subsubsection}{\numberline {6.7.1}Layout creation}{38}
+\contentsline {subsubsection}{\numberline {6.7.2}Built-in layouts}{38}
+\contentsline {paragraph}{\numberline {6.7.2.1}Plain}{38}
+\contentsline {subsubsection}{\numberline {6.7.3}Layout selection}{39}
+\contentsline {subsubsection}{\numberline {6.7.4}Target layout loading}{39}
+\contentsline {subsubsection}{\numberline {6.7.5}Target layout control}{39}
+\contentsline {subsubsection}{\numberline {6.7.6}Status-dependant versions}{39}
+\contentsline {subsection}{\numberline {6.8}Logging}{40}
+\contentsline {subsubsection}{\numberline {6.8.1}Logging macros}{40}
+\contentsline {subsubsection}{\numberline {6.8.2}Logging control}{40}
+\contentsline {subsection}{\numberline {6.9}\textsf {FiXme}\xspace notes}{40}
+\contentsline {subsubsection}{\numberline {6.9.1}Note parameters}{40}
+\contentsline {subsubsection}{\numberline {6.9.2}Layout dispatch}{41}
+\contentsline {subsubsection}{\numberline {6.9.3}Status-dependent implementation}{42}
+\contentsline {subsubsection}{\numberline {6.9.4}Standard version}{42}
+\contentsline {subsubsection}{\numberline {6.9.5}Starred version}{43}
+\contentsline {subsubsection}{\numberline {6.9.6}User-level interface generation}{44}
+\contentsline {subsection}{\numberline {6.10}\textsf {FiXme}\xspace environments}{44}
+\contentsline {subsubsection}{\numberline {6.10.1}Status-dependent implementation}{44}
+\contentsline {subsubsection}{\numberline {6.10.2}Standard versions}{44}
+\contentsline {subsubsection}{\numberline {6.10.3}Starred versions}{45}
+\contentsline {subsubsection}{\numberline {6.10.4}User-level interface generation}{45}
+\contentsline {subsection}{\numberline {6.11}\textsf {FiXme}\xspace authors}{46}
+\contentsline {subsection}{\numberline {6.12}Internationalization}{46}
+\contentsline {subsubsection}{\numberline {6.12.1}Language definitions}{47}
+\contentsline {paragraph}{\numberline {6.12.1.1}English}{47}
+\contentsline {paragraph}{\numberline {6.12.1.2}French}{47}
+\contentsline {paragraph}{\numberline {6.12.1.3}Spanish}{47}
+\contentsline {paragraph}{\numberline {6.12.1.4}Italian}{47}
+\contentsline {paragraph}{\numberline {6.12.1.5}German}{48}
+\contentsline {paragraph}{\numberline {6.12.1.6}Danish}{48}
+\contentsline {paragraph}{\numberline {6.12.1.7}Croatian}{48}
+\contentsline {subsubsection}{\numberline {6.12.2}Language tracking}{48}
+\contentsline {subsubsection}{\numberline {6.12.3}Language options}{49}
+\contentsline {subsubsection}{\numberline {6.12.4}Language abstraction layer}{49}
+\contentsline {subsection}{\numberline {6.13}Document status processing}{49}
+\contentsline {subsection}{\numberline {6.14}Theme support}{50}
+\contentsline {subsection}{\numberline {6.15}Finale}{50}
+\contentsline {subsubsection}{\numberline {6.15.1}Class-dependent settings}{50}
+\contentsline {subsubsection}{\numberline {6.15.2}Options Processing}{51}
+\contentsline {subsubsection}{\numberline {6.15.3}The \cs {fxsetup} macro}{51}
+\contentsline {subsubsection}{\numberline {6.15.4}\textsf {FiXme}\xspace summary}{51}
+\contentsline {section}{\numberline {A}External Layouts}{52}
+\contentsline {subsection}{\numberline {A.1}Annotation layouts}{52}
+\contentsline {subsubsection}{\numberline {A.1.1}The \texttt {marginnote} layout}{52}
+\contentsline {subsubsection}{\numberline {A.1.2}The \texttt {pdfnote} layout}{52}
+\contentsline {subsubsection}{\numberline {A.1.3}The \texttt {pdfmargin} layout}{53}
+\contentsline {subsubsection}{\numberline {A.1.4}The \texttt {pdfsignote} layout}{53}
+\contentsline {subsubsection}{\numberline {A.1.5}The \texttt {pdfsigmargin} layout}{53}
+\contentsline {subsubsection}{\numberline {A.1.6}The \texttt {pdfcnote} layout}{54}
+\contentsline {subsubsection}{\numberline {A.1.7}The \texttt {pdfcmargin} layout}{55}
+\contentsline {subsubsection}{\numberline {A.1.8}The \texttt {pdfcsignote} layout}{55}
+\contentsline {subsubsection}{\numberline {A.1.9}The \texttt {pdfcsigmargin} layout}{56}
+\contentsline {subsection}{\numberline {A.2}Environment layouts}{57}
+\contentsline {subsubsection}{\numberline {A.2.1}The \texttt {color} layout}{57}
+\contentsline {subsubsection}{\numberline {A.2.2}The \texttt {colorsig} layout}{57}
+\contentsline {subsection}{\numberline {A.3}Target Layouts}{58}
+\contentsline {subsubsection}{\numberline {A.3.1}The \texttt {changebar} layout}{58}
+\contentsline {subsubsection}{\numberline {A.3.2}The \texttt {color} layout}{59}
+\contentsline {subsubsection}{\numberline {A.3.3}The \texttt {colorcb} layout}{59}
+\contentsline {section}{\numberline {B}Themes}{60}
+\contentsline {subsection}{\numberline {B.1}The \texttt {signature} theme}{60}
+\contentsline {subsection}{\numberline {B.2}The \texttt {color} theme}{61}
+\contentsline {subsection}{\numberline {B.3}The \texttt {colorsig} theme}{62}

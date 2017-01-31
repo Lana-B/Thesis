@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{iopdetector}
+The~CMS Collaboration.
+\newblock The cms experiment at the cern lhc.
+\newblock {\em Journal of Instrumentation}, 3(08):S08004, 2008.
+
+\bibitem{Marcastel:1621583}
+Fabienne Marcastel.
+\newblock {CERN's Accelerator Complex. La chaîne des accélérateurs du CERN}.
+\newblock Oct 2013.
+\newblock General Photo.
+
+\bibitem{lumiplotref}
+Cms luminosity - public results.
+
+\bibitem{Aad20121}
+G.~Aad et~al.
+\newblock Observation of a new particle in the search for the standard model
+  higgs boson with the \{ATLAS\} detector at the \{LHC\}.
+\newblock {\em Physics Letters B}, 716(1):1 -- 29, 2012.
+
+\bibitem{Chatrchyan201230}
+S.~Chatrchyan et~al.
+\newblock Observation of a new boson at a mass of 125 gev with the cms
+  experiment at the lhc.
+\newblock {\em Physics Letters B}, 716(1):30 -- 61, 2012.
+
+\bibitem{1742-6596-513-2-022032}
+Tai Sakuma and Thomas McCauley.
+\newblock Detector and event visualization with sketchup at the cms experiment.
+\newblock {\em Journal of Physics: Conference Series}, 513(2):022032, 2014.
+
+\bibitem{Khachatryan2010}
+V.~Khachatryan, A.~M. Sirunyan, A.~Tumasyan, W.~Adam, T.~Bergauer,
+  M.~Dragicevic, J.~Er{\"o}, and {etal}.
+\newblock Cms tracking performance results from early lhc operation.
+\newblock {\em The European Physical Journal C}, 70(4):1165--1192, 2010.
+
+\bibitem{1748-0221-3-08-S08004}
+The~CMS Collaboration.
+\newblock The cms experiment at the cern lhc.
+\newblock {\em Journal of Instrumentation}, 3(08):S08004, 2008.
+
+\bibitem{1748-0221-2-04-P04004}
+P~Adzic.
+\newblock Energy resolution of the barrel of the cms electromagnetic
+  calorimeter.
+\newblock {\em Journal of Instrumentation}, 2(04):P04004, 2007.
+
+\bibitem{Isildak:2013kfa}
+Bora Isildak.
+\newblock {\em {Measurement of the differential dijet production cross section
+  in proton-proton collisions at $\sqrt{s} = 7$ tev}}.
+\newblock PhD thesis, Bogazici U., 2011.
+
+\bibitem{Beaudette:2014cea}
+Florian Beaudette.
+\newblock {The CMS Particle Flow Algorithm}.
+\newblock In {\em {Proceedings, International Conference on Calorimetry for the
+  High Energy Frontier (CHEF 2013): Paris, France, April 22-25, 2013}}, pages
+  295--304, 2013.
+
+\bibitem{Kim:2012ix}
+Min~Suk Kim et~al.
+\newblock {CMS reconstruction improvement for the muon tracking by the RPC
+  chambers}.
+\newblock {\em PoS}, RPC2012:045, 2012.
+\newblock [JINST8,T03001(2013)].
+
+\bibitem{1742-6596-219-7-072020}
+L~Tuura, A~Meyer, I~Segoni, and G~Della Ricca.
+\newblock Cms data quality monitoring: Systems and experiences.
+\newblock {\em Journal of Physics: Conference Series}, 219(7):072020, 2010.
+
+\end{thebibliography}

@@ -6,10 +6,10 @@ All sections apart from the training of the hadronic top quark reconstruction in
 
 \section{Data and Simulation}
 \label{sec:datasimulation13}
-This analysis uses data from proton-proton collision at the CMS experiment in 2015 at $\sqrt{s}=13$~TeV.
+This analysis uses data from proton-proton collisions at the CMS experiment in 2015 at $\sqrt{s}=13$~TeV.
 Data were collected using a trigger based on the presence of at least one muon (electron) candidate with $\pt > $~18~(23)~GeV for the muon (electron) channel and correspond to an integrated luminosity of 2.6~\fbinv .
 % The full 2012 SingleElectron dataset is used for the electron channel, which requires an electron candidate with $\pt > $ 27 GeV and corresponds to an integrated luminosity of 19.7 \fbinv.
-The signal SM \tttt MC samples and the background MC samples are given in table~\ref{tab:datasets_sim_13tev}, along with the MC generator used to produce these samples, the order at which they were produced and the number of events produced. MC samples were produced for the some systematic uncertainties which can be found in Table~\ref{tab:datasets_sys_13tev}. In this analysis the ME scale and PS scale are treated as separate uncertainties.
+The signal SM \tttt MC samples and the background MC samples are given in Table~\ref{tab:datasets_sim_13tev}, along with the MC generator used to produce these samples, the order at which they were produced and the number of events produced. MC samples were produced for the some systematic uncertainties, which can be found in Table~\ref{tab:datasets_sys_13tev}. In this analysis the ME scale and PS scale are treated as separate uncertainties.
 
 \begin{table}[ht!]
 % \tiny
@@ -68,9 +68,11 @@ TTJets & 5M & \MADGRAPH\aMCATNLO~FxFx & NLO \\
   \label{tab:datasets_sys_13tev}
 \end{table}
 
+Comparisons of the alternative \ttbar samples used for the \ttbar generator systematics can be found in Appendix~\ref{app:ttbargen}. Studies of the \ttW, \ttZ and \ttH backgrounds can be found in Appendix~\ref{app:TTX}, where merging these backgrounds into the main \ttbar sample is motivated (indicated on the plots as \ttbar+X).
+
 \section{Baseline Event Selection}
 \label{sec:baseline13}
-The set of criteria applied to the reconstructed objects in events to preferentially select \tttt events and suppress background events is detailed below. The exact definition of these objects are described in Chapter~\ref{c:recon}.
+The set of criteria applied to the reconstructed objects in events, to preferentially select \tttt events and suppress background events, is detailed below. The exact definition of these objects are described in Chapter~\ref{c:recon}.
 
 For the muon channel these are:
 \begin{itemize}
@@ -107,19 +109,26 @@ The method in Section~\ref{subsec:method2btag} was used to derive the b tagging 
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/csvJet3_StackLogY_noSF.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/csvJet3_StackLogY.pdf}
-    \caption{ The third-highest ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel before (left) and after b-tagging corrections (right).}
+    \includegraphics[width=0.48\textwidth]{images/Run2/csvJet4_StackLogY_noSF.pdf}
+    \caption{ The third-highest and fourth-highest ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel before b-tagging corrections, left and right respectively.}
     \label{fig:csvJet3SF}
 \end{figure}
 \begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/csvJet4_StackLogY_noSF.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/csvJet3_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/csvJet4_StackLogY.pdf}
-    \caption{ The fourth-highest ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel before (left) and after b-tagging corrections (right).}
+    \caption{The third-highest and fourth-highest ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel after b-tagging corrections, left and right respectively.}
     \label{fig:csvJet4SF}
 \end{figure}
  
 
 The jet multiplicity modelling from Section~\ref{subsec:alphaS}, which corrects the MC to correspond to the best tune of $\alpha_S$ in simulation, was applied. It can be seen from Figs.~\ref{fig:withAlpha} and~\ref{fig:withoutAlpha} that the jet multiplicity modelling is greatly improved by applying this correction.
+
+\begin{figure}[ht!]
+    \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY_woAlphaS.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY_e_woAlphaS.pdf}
+    \caption{The \njets distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) without jet multiplicity modelling scale factors applied.}
+    \label{fig:withoutAlpha}
+\end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY.pdf}
@@ -128,12 +137,6 @@ The jet multiplicity modelling from Section~\ref{subsec:alphaS}, which corrects 
     \label{fig:withAlpha}
 \end{figure}
 
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY_woAlphaS.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY_e_woAlphaS.pdf}
-    \caption{The \njets distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) without jet multiplicity modelling scale factors applied.}
-    \label{fig:withoutAlpha}
-\end{figure}
 
 The scale factors applied for the heavy flavour modelling are described in Section~\ref{ttbbmod}. The distributions for the \nMtags are shown with and without the heavy flavour modelling scale factors applied. It is not obvious that there is a significant improvement in the \nMtags after the scale factors have been applied but the heavy flavour fraction is allowed to float as a shape nuisance parameter in the template fit.
 
@@ -151,7 +154,7 @@ The scale factors applied for the heavy flavour modelling are described in Secti
 The event counts, weighted by each correction factor in MC, are given after each selection requirement for $\mu$ + jets in Table~\ref{tab:museltable} and e + jets in Table~\ref{tab:eseltable}.
 % In tables~\ref{tab:museltable} and~\ref{tab:eseltable}, the numbers of data events selected and the weighted number of simulated events expected after each step of the $\mu$ + jets and e + jets baseline selections are detailed respectively. 
 Small discrepancies between the initial simulated events in each table are due to different lepton scale factors being applied in each case.
-After the baseline selection has been applied the \ttbar component represents $\approx 97\%$ of the background samples combined. The ttbb and ttll/ttcc components of the main \ttbar sample are also given in the tables. TTZ and TTW have been merged into TTV for the tables.
+After the baseline selection has been applied the \ttbar component represents $\approx 97\%$ of the background samples combined. The ttbb and ttll/ttcc components of the main \ttbar sample are also given in the tables. \ttZ and \ttW have been merged into TTV for the tables.
 Note that these studies were performed when method 1 from Section~\ref{subsec:method1btag} was used for b-tagging before the analysis was updated to using method 2 from Section~\ref{subsec:method2btag}.
 
 \begin{table}[ht!]
@@ -163,7 +166,7 @@ Note that these studies were performed when method 1 from Section~\ref{subsec:me
 
 \hline
 
-& \tiny Data & \tiny  \tttt     & \tiny Single top      & \tiny DY   & \tiny W   & \tiny TTH   & \tiny TTV  & \tiny \ttbar & \tiny ttbb & \tiny ttll\&ttcc \\
+& \tiny Data & \tiny  \tttt     & \tiny Single top      & \tiny DY   & \tiny W   & \tiny \ttH   & \tiny TTV  & \tiny \ttbar & \tiny ttbb & \tiny ttll\&ttcc \\
 
 \hline
 \tiny initial&       \tiny 85493692     & \tiny 24.83  & \tiny 90650       & \tiny 16047092   & \tiny 164877974  & \tiny 751.39 & \tiny 1310 & \tiny 2129712 &      \tiny    104490.21       & \tiny 2025221.86     \\
@@ -195,7 +198,7 @@ Note that these studies were performed when method 1 from Section~\ref{subsec:me
 \centering
 \begin{tabular}{c|cccccccc|cc}
 \hline
-& \tiny Data & \tiny  \tttt     & \tiny Single top      & \tiny DY   & \tiny W   & \tiny TTH   & \tiny TTV  & \tiny \ttbar & \tiny ttbb & \tiny ttll\&ttcc \\
+& \tiny Data & \tiny  \tttt     & \tiny Single top      & \tiny DY   & \tiny W   & \tiny \ttH   & \tiny TTV  & \tiny \ttbar & \tiny ttbb & \tiny ttll\&ttcc \\
 
 \hline
 \tiny initial& \tiny         124817372    & \tiny 24.85  & \tiny 90654.24       & \tiny 16064098    & \tiny 165066697   & \tiny 751.61 & \tiny 1311 & \tiny 2130186  &    \tiny    104478.04       & \tiny 2025708.35   \\
@@ -285,7 +288,7 @@ Distributions are shown for HTb, \HTrat, $p_{\textrm{T trijet1}}$, \nLtags, \nTt
 \begin{figure}
     \includegraphics[width=0.48\textwidth]{images/Run2/leptonIso_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/leptonIso_StackLogY_e.pdf}
-    \caption{The lepton isolation distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) where the selection requirement on lepton isolation are evident.}
+    \caption{The lepton isolation distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) where the selection requirements on lepton isolation are evident.}
     \label{fig:lepiso}
 \end{figure}
 \pagebreak
@@ -386,7 +389,7 @@ The following variables were chosen for their discrimination power within the ev
 \end{multicols}
 
 \subsection{Event-level BDT}
-A \ttbar sample and a \tttt sample are provided to the TMVA package to train and test the performance of the event-level BDT using the AdaBoost boosting algorithm~\cite{FREUND1997119}. The \MADGRAPH\aMCATNLO \tttt sample was used with all negative weights set to one in the training. The gradient boosting algorithm~\cite{mason1999boosting} can be used with negative weights, hence it was used to verify that the inclusion of negative weights had negligible impact on the final limit compared to set all weights to unity. Ultimately the AdaBoost algorithm produced a stronger expected limit on the \tttt cross section than the gradient boosting algorithm with the negative weights set to one so it was the algorithm of choice for this analysis. The jet modelling scale factor weight from Section~\ref{subsec:alphaS} is supplied to the BDT as it is important to correct the mismodelling of the most powerful variable input into the BDT.\\
+A \ttbar sample and a \tttt sample are provided to the TMVA package to train and test the performance of the event-level BDT using the AdaBoost boosting algorithm~\cite{FREUND1997119}. The \MADGRAPH\aMCATNLO \tttt sample was used with all negative weights set to one in the training. The gradient boosting algorithm~\cite{mason1999boosting} can be used with negative weights, hence it was used to verify that the inclusion of negative weights had negligible impact on the final limit compared to set all weights to unity (See Appendix~\ref{app:gradBoost}). Ultimately the AdaBoost algorithm produced a stronger expected limit on the \tttt cross section than the gradient boosting algorithm with the negative weights set to one so it was the algorithm of choice for this analysis. The jet modelling scale factor weight from Section~\ref{subsec:alphaS} is supplied to the BDT as it is important to correct the mismodelling of the most powerful variable input into the BDT.\\
 The separation of the input variables, before any boost weights are applied, is shown in Fig.~\ref{fig:BDTInputVars} and the ranking of the variables in terms of variable importance are shown for the muon channel in Table~\ref{tab:BDTrankings}. The variables \njets, third-highest CSV and \htrat are the highest ranked variables and their discriminating power is evident in their initial separation power. The lowest ranked variable is \leadleppt, which is also seen in Fig.~\ref{fig:BDTInputVars} to have poor separation power initially. However it still enhances the discrimination power of the BDT to include the \leadleppt variable and it is preferable to have at least one leptonic variable in the list of input variables rather than all hadronic variables.
 
 \begin{figure}[h!]
@@ -419,78 +422,15 @@ Rank & Variable & Importance \\
   \end{table}
 
 The output discriminator value for the event level BDT is split into \njets categories of 6, 7, 8 and $\geq$9 jets . Further to the \runone analysis in Chapter~\ref{c:Run1}, the distributions are also split into \nMtags categories of 2, 3 and $\geq$4 b-tags which further categorises the distributions into regions which are more sensitive to the signal and regions which are better for constraining the background.
-The output BDT plots are shown in \njets and \nMtags categories in Figs.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}~-~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94}. It can be seen that the signal becomes more separated from the background in the higher \njets and \nMtags categories as it moves towards higher BDT discriminator values. The lower \njets and \nMtags categories are still included as they can be used to help to constrain the \ttbar background. These categories act like control regions due to the very large background to signal ratio.
+The output BDT plots are shown for the $\njets=6$ and $\nMtags=2$ category in Fig.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}, which has a large background to signal ratio. Comparatively in the $\njets=6$ and $\nMtags=3$ category and $\njets=6$ and $\nMtags\geq4$ category, in Figs.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents93} and~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94} respectively, it can be seen that the background contribution is a lot smaller and there is better separation between signal and background. The other BDT categories can be found in Appendix~\ref{app:BDTtemp}.
+ % in Figs.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}~-~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94}. It can be seen that the signal becomes more separated from the background in the higher \njets and \nMtags categories as it moves towards higher BDT discriminator values.
+The lower \njets and \nMtags categories are still included as they can be used to help to constrain the \ttbar background. These categories act like control regions due to the very large background to signal ratio. 
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets2nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets2nMtags_StackLogY.pdf} 
     \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 6 \njets and 2\nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets3nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets3nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 6 \njets and 3\nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents63}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets4nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets4nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 6 \njets and $\geq4$ \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents64}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets2nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets2nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 2 \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents72}
- \end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets3nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets3nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 3 \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents73}
- \end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets4nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets4nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 7 \njets and $\geq4$ \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents74}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets2nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets2nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets and 2 \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents82}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets3nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets3nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets category and 3 \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents83}
-\end{figure}
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets4nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets4nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right) are shown for the 8 \njets and $\geq4$ \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents84}
-\end{figure}
-
-\newpage
-
-\begin{figure}[ht!]
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets2nMtags_StackLogY.pdf}
-    \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets2nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the $\geq9$ \njets  and 2 \nMtags category.}
-    \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents92}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -541,7 +481,7 @@ Figure~\ref{fig:ROC} shows the BDT distribution from training and testing (left)
 
 \section{Systematic uncertainties}
 \label{sec:uncertainties13}
-All systematic uncertainties are described in Section~\ref{sec:uncertainties} and some further details about them are given below.
+All systematic uncertainties are described in Section~\ref{sec:uncertainties} and some further details about them are given below. The systematic shape templates can be found in Appendix~\ref{app:sysshapes}.
 
 \begin{itemize}
 \item \textbf{Luminosity}\\
@@ -567,6 +507,8 @@ The PU systematic uncertainty is found by varying the MinBias cross section by $
 \item \textbf{\heavyflavourone / \heavyflavourtwo modelling}
 The uncertainty on the measurement of \heavyflavourone / \heavyflavourtwo by CMS~\cite{Khachatryan2015132} is $\pm 0.3 \left( \textrm{stat.} \right) \pm 0.6 \left(\textrm{sys.} \right)$. Alternative event weights are derived for \heavyflavourone / \heavyflavourtwo which are used to provide the alternative systematic up and down histograms.
 \end{itemize}
+
+
 
 \section{Template fit and upper limit}
 \label{sec:limit13}
@@ -753,6 +695,8 @@ e  &  $30.6$ & $+18.8 -10.7$  \\
   \end{table}
 
 The results in Table~\ref{tab:HTlimits} correspond to a combined expected limit of $180.3^{+108}_{-62}$ fb using \HT to make the template fit compared to an expected limit of $147.2^{+90}_{-51}$ fb when using the event level BDT to make the template fit. Hence, using the BDT the expected limit is improved by $\approx20\%$.
+
+Further studies of the expected limit with each systematic removed can be found in Appendix~\ref{app:sysminusone}. The correlation matrix for the fit nuisance parameters can be found in Appendix~\ref{app:corrFit}.
 
 
 

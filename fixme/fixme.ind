@@ -1,0 +1,672 @@
+
+ \begin{theindex} 
+ \makeatletter\scan@allowedfalse
+{\bfseries\hfil Symbols\hfil}\nopagebreak
+
+  \item \verb*+\@@@@fxbeginenv+\pfill \main{655}
+  \item \verb*+\@@@@fxbeginenv@draft+\pfill \main{485}
+  \item \verb*+\@@@@fxbeginenv@final+\pfill \main{485}
+  \item \verb*+\@@@fxbeginenv+\pfill \main{490}
+  \item \verb*+\@@@fxbeginsenv+\pfill \main{501}
+  \item \verb*+\@@@fxnote@early+\pfill \main{655}
+  \item \verb*+\@@@fxnote@early@draft+\pfill \main{425}
+  \item \verb*+\@@@fxnote@early@final+\pfill \main{425}
+  \item \verb*+\@@@fxnote@late+\pfill \main{655}
+  \item \verb*+\@@@fxnote@late@draft+\pfill \main{425}
+  \item \verb*+\@@@fxnote@late@final+\pfill \main{425}
+  \item \verb*+\@@fxbeginenv+\pfill \main{490}
+  \item \verb*+\@@fxbeginsenv+\pfill \main{501}
+  \item \verb*+\@@fxnote+\pfill \main{460}
+  \item \verb*+\@@fxnote@early+\pfill \main{452}
+  \item \verb*+\@@fxnote@late+\pfill \main{457}
+  \item \verb*+\@@fxsnote+\pfill \main{467}
+  \item \verb*+\@@fxtargetlayout+\pfill \main{347}
+  \item \verb*+\@FXRegisterLayout+\pfill \main{189}
+  \item \verb*+\@fxaddtolist+\pfill \main{21}
+  \item \verb*+\@fxbeginenv+\pfill \main{497}, \main{508}
+  \item \verb*+\@fxdefineboolkey+\pfill \main{45}
+  \item \verb*+\@fxdefinechoicekey+\pfill \main{51}
+  \item \verb*+\@fxdefinecmdkey+\pfill \main{49}
+  \item \verb*+\@fxdefinekey+\pfill \main{33}
+  \item \verb*+\@fxdefinevoidkey+\pfill \main{39}
+  \item \verb*+\@fxdocolon+\pfill \main{813}, \main{833}, \main{892}
+  \item \verb*+\@fxdosig+\pfill \main{307}, \main{776}, \main{791}, 
+		\main{854}, \main{875}, \main{915}
+  \item \verb*+\@fxdottedtocline+\pfill \main{57}
+  \item \verb*+\@fxearlylayouts+\pfill \main{170}
+  \item \verb*+\@fxendenv+\pfill \main{655}
+  \item \verb*+\@fxendenv@draft+\pfill \main{485}
+  \item \verb*+\@fxendenv@final+\pfill \main{485}
+  \item \verb*+\@fxendgroup+\pfill \main{451}
+  \item \verb*+\@fxenvlayout@begin+\pfill \main{316}
+  \item \verb*+\@fxenvlayout@color@begin+\pfill \main{906}
+  \item \verb*+\@fxenvlayout@color@end+\pfill \main{906}
+  \item \verb*+\@fxenvlayout@colorsig@begin+\pfill \main{928}
+  \item \verb*+\@fxenvlayout@colorsig@end+\pfill \main{928}
+  \item \verb*+\@fxenvlayout@end+\pfill \main{316}
+  \item \verb*+\@fxenvlayout@plain@begin+\pfill \main{304}
+  \item \verb*+\@fxenvlayout@plain@end+\pfill \main{304}
+  \item \verb*+\@fxenvlayout@signature@begin+\pfill \main{313}
+  \item \verb*+\@fxenvlayout@signature@end+\pfill \main{313}
+  \item \verb*+\@fxerrorkey+\pfill \main{233}
+  \item \verb*+\@fxfatalkey+\pfill \main{233}
+  \item \verb*+\@fxhandleinnermode+\pfill \main{397}
+  \item \verb*+\@fxhandlelayoutmutex+\pfill \main{178}
+  \item \verb*+\@fxissuecommonlayouts+\pfill \main{421}
+  \item \verb*+\@fxissueearlydraftlayouts+\pfill \main{410}
+  \item \verb*+\@fxissuelatedraftlayouts+\pfill \main{410}
+  \item \verb*+\@fxkeyifundefined+\pfill \main{32}
+  \item \verb*+\@fxlang+\pfill \main{640}
+  \item \verb*+\@fxlanguages+\pfill \main{563}
+  \item \verb*+\@fxlatelayouts+\pfill \main{170}
+  \item \verb*+\@fxlayout@footnote+\pfill \main{221}
+  \item \verb*+\@fxlayout@index+\pfill \main{250}
+  \item \verb*+\@fxlayout@inline+\pfill \main{225}
+  \item \verb*+\@fxlayout@margin+\pfill \main{213}
+  \item \verb*+\@fxlayout@marginclue+\pfill \main{218}
+  \item \verb*+\@fxlayout@marginnote+\pfill \main{747}
+  \item \verb*+\@fxlayout@pdfcmargin+\pfill \main{839}
+  \item \verb*+\@fxlayout@pdfcnote+\pfill \main{819}
+  \item \verb*+\@fxlayout@pdfcsigmargin+\pfill \main{882}
+  \item \verb*+\@fxlayout@pdfcsignote+\pfill \main{861}
+  \item \verb*+\@fxlayout@pdfmargin+\pfill \main{767}
+  \item \verb*+\@fxlayout@pdfnote+\pfill \main{757}
+  \item \verb*+\@fxlayout@pdfsigmargin+\pfill \main{798}
+  \item \verb*+\@fxlayout@pdfsignote+\pfill \main{783}
+  \item \verb*+\@fxlistfixmename+\pfill \main{651}
+  \item \verb*+\@fxlog@error+\pfill \main{382}
+  \item \verb*+\@fxlog@fatal+\pfill \main{382}
+  \item \verb*+\@fxlog@note+\pfill \main{382}
+  \item \verb*+\@fxlog@warning+\pfill \main{382}
+  \item \verb*+\@fxnewface+\pfill \main{153}
+  \item \verb*+\@fxnewnoteenvs+\pfill \main{513}
+  \item \verb*+\@fxnewnotemacro+\pfill \main{476}
+  \item \verb*+\@fxnote+\pfill \main{463}
+  \item \verb*+\@fxnotekey+\pfill \main{233}
+  \item \verb*+\@fxparselayout+\pfill \main{263}
+  \item \verb*+\@fxpkgerror+\pfill \main{19}
+  \item \verb*+\@fxpkginfo+\pfill \main{16}
+  \item \verb*+\@fxpkgwarning+\pfill \main{16}
+  \item \verb*+\@fxpostconfigure+\pfill \main{440}
+  \item \verb*+\@fxpreconfigure+\pfill \main{474}
+  \item \verb*+\@fxpresetkeys+\pfill \main{54}
+  \item \verb*+\@fxrecordlayoutmutex+\pfill \main{173}
+  \item \verb*+\@fxselectenvlayout+\pfill \main{316}
+  \item \verb*+\@fxselecttargetlayout+\pfill \main{347}
+  \item \verb*+\@fxsetkeys+\pfill \main{53}
+  \item \verb*+\@fxsetlayoutkeys+\pfill \main{262}
+  \item \verb*+\@fxsignature+\pfill \main{307}, \main{776}, \main{791}, 
+		\main{854}, \main{875}, \main{915}
+  \item \verb*+\@fxsnote+\pfill \main{470}
+  \item \verb*+\@fxtargetlayout+\pfill \main{655}
+  \item \verb*+\@fxtargetlayout@changebar+\pfill \main{940}
+  \item \verb*+\@fxtargetlayout@color+\pfill \main{957}
+  \item \verb*+\@fxtargetlayout@colorcb+\pfill \main{971}
+  \item \verb*+\@fxtargetlayout@draft+\pfill \main{361}
+  \item \verb*+\@fxtargetlayout@final+\pfill \main{361}
+  \item \verb*+\@fxtargetlayout@plain+\pfill \main{345}
+  \item \verb*+\@fxuseface+\pfill \main{156}
+  \item \verb*+\@fxvoidkeyerror+\pfill \main{34}
+  \item \verb*+\@fxwarningkey+\pfill \main{233}
+  \item \verb*+\@lox@draft+\pfill \main{674}
+  \item \verb*+\@lox@prtc+\pfill \main{674}
+  \item \verb*+\@lox@prtc@article+\pfill \main{84}
+  \item \verb*+\@lox@prtc@book+\pfill \main{99}
+  \item \verb*+\@lox@prtc@report+\pfill \main{89}
+  \item \verb*+\@lox@prtc@scrartcl+\pfill \main{111}
+  \item \verb*+\@lox@prtc@scrbook+\pfill \main{130}
+  \item \verb*+\@lox@prtc@scrreprt+\pfill \main{117}
+  \item \verb*+\@lox@psttc+\pfill \main{674}
+  \item \verb*+\@lox@psttc@article+\pfill \main{84}
+  \item \verb*+\@lox@psttc@book+\pfill \main{99}
+  \item \verb*+\@lox@psttc@report+\pfill \main{89}
+  \item \verb*+\@lox@psttc@scrartcl+\pfill \main{111}
+  \item \verb*+\@lox@psttc@scrbook+\pfill \main{130}
+  \item \verb*+\@lox@psttc@scrreprt+\pfill \main{117}
+  \item \verb*+\@wrindex+\pfill \main{227}
+
+  \indexspace
+{\bfseries\hfil A\hfil}\nopagebreak
+
+  \item {\ttfamily afixme} (env.)\pfill \usage{7}
+  \item {\ttfamily afixme} (env.) \pfill \main{558}
+  \item {\ttfamily anfxerror} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxerror} (env.) \pfill \main{553}
+  \item {\ttfamily anfxerror*} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxerror*} (env.) \pfill \main{553}
+  \item {\ttfamily anfxfatal} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxfatal} (env.) \pfill \main{553}
+  \item {\ttfamily anfxfatal*} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxfatal*} (env.) \pfill \main{553}
+  \item {\ttfamily anfxnote} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxnote} (env.) \pfill \main{553}
+  \item {\ttfamily anfxnote*} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxnote*} (env.) \pfill \main{553}
+  \item {\ttfamily anfxwarning} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxwarning} (env.) \pfill \main{553}
+  \item {\ttfamily anfxwarning*} (env.)\pfill \usage{7}
+  \item {\ttfamily anfxwarning*} (env.) \pfill \main{553}
+  \item {\ttfamily author} (opt.)\pfill \usage{19}
+  \item {\ttfamily author} (opt.) \pfill \main{395}
+
+  \indexspace
+{\bfseries\hfil C\hfil}\nopagebreak
+
+  \item {\ttfamily changebar} (target lt.)\pfill \usage{16}
+  \item {\ttfamily changebar} (target lt.) \pfill \main{931}
+  \item {\ttfamily color} (env. lt.)\pfill \usage{14}
+  \item {\ttfamily color} (env. lt.) \pfill \main{886}
+  \item {\ttfamily color} (target lt.)\pfill \usage{16}
+  \item {\ttfamily color} (target lt.) \pfill \main{942}
+  \item {\ttfamily color} (theme)\pfill \usage{21}
+  \item {\ttfamily color} (theme) \pfill \main{1016}
+  \item {\ttfamily colorcb} (target lt.)\pfill \usage{16}
+  \item {\ttfamily colorcb} (target lt.) \pfill \main{959}
+  \item colors:\efill 
+ \subitem {\ttfamily fxerror} \pfill \usage{14}, \usage{16}, 
+		\main{808}, \main{828}, \main{849}, \main{870}, 
+		\main{895}, \main{919}
+    \subitem {\ttfamily fxfatal} \pfill \usage{14}, \usage{16}, 
+		\main{808}, \main{828}, \main{849}, \main{870}, 
+		\main{895}, \main{919}
+    \subitem {\ttfamily fxnote} \pfill \usage{14}, \usage{16}, 
+		\main{808}, \main{828}, \main{849}, \main{870}, 
+		\main{895}, \main{919}
+    \subitem {\ttfamily fxtarget} \pfill \usage{16}, \main{952}
+    \subitem {\ttfamily fxwarning} \pfill \usage{14}, \usage{16}, 
+		\main{808}, \main{828}, \main{849}, \main{870}, 
+		\main{895}, \main{919}
+  \item {\ttfamily colorsig} (env. lt.)\pfill \usage{14}
+  \item {\ttfamily colorsig} (env. lt.) \pfill \main{908}
+  \item {\ttfamily colorsig} (theme)\pfill \usage{21}
+  \item {\ttfamily colorsig} (theme) \pfill \main{1063}
+  \item counters:\efill 
+ \subitem {\ttfamily fixmecount} \pfill \main{389}
+    \subitem {\ttfamily fxerrorcount} \pfill \main{389}
+    \subitem {\ttfamily fxfatalcount} \pfill \main{389}
+    \subitem {\ttfamily fxnotecount} \pfill \main{389}
+    \subitem {\ttfamily fxwarningcount} \pfill \main{389}
+  \item {\ttfamily croatian} (lang.) \pfill \main{626}
+  \item {\ttfamily croatian} (opt.)\pfill \usage{17}
+  \item {\ttfamily croatian} (opt.) \pfill \main{646}
+  \item \verb*+\croatianlistfixmename+\pfill \usage{24}, \main{626}
+
+  \indexspace
+{\bfseries\hfil D\hfil}\nopagebreak
+
+  \item {\ttfamily danish} (lang.) \pfill \main{616}
+  \item {\ttfamily danish} (opt.)\pfill \usage{17}
+  \item {\ttfamily danish} (opt.) \pfill \main{646}
+  \item \verb*+\danishlistfixmename+\pfill \usage{24}, \main{616}
+  \item {\ttfamily defaultlang} (opt.)\pfill \usage{18}
+  \item {\ttfamily defaultlang} (opt.) \pfill \main{637}
+  \item {\ttfamily draft} (opt.)\pfill \usage{8}
+  \item {\ttfamily draft} (opt.) \pfill \main{655}
+
+  \indexspace
+{\bfseries\hfil E\hfil}\nopagebreak
+
+  \item {\ttfamily english} (lang.) \pfill \main{566}
+  \item {\ttfamily english} (opt.)\pfill \usage{17}
+  \item {\ttfamily english} (opt.) \pfill \main{646}
+  \item \verb*+\englishlistfixmename+\pfill \usage{24}, \main{566}
+  \item {\ttfamily env} (face)\pfill \usage{17}
+  \item {\ttfamily env} (face) \pfill \main{300}
+  \item env. layouts:\efill 
+ \subitem {\ttfamily color} \pfill \usage{14}, \main{886}
+    \subitem {\ttfamily colorsig} \pfill \usage{14}, \main{908}
+    \subitem {\ttfamily plain} \pfill \usage{14}, \main{300}
+    \subitem {\ttfamily signature} \pfill \usage{14}, \main{306}
+  \item environments:\efill 
+ \subitem {\ttfamily afixme} \pfill \usage{7}, \main{558}
+    \subitem {\ttfamily anfxerror} \pfill \usage{7}, \main{553}
+    \subitem {\ttfamily anfxerror*} \pfill \usage{7}, \main{553}
+    \subitem {\ttfamily anfxfatal} \pfill \usage{7}, \main{553}
+    \subitem {\ttfamily anfxfatal*} \pfill \usage{7}, \main{553}
+    \subitem {\ttfamily anfxnote} \pfill \usage{7}, \main{553}
+    \subitem {\ttfamily anfxnote*} \pfill \usage{7}, \main{553}
+    \subitem {\ttfamily anfxwarning} \pfill \usage{7}, \main{553}
+    \subitem {\ttfamily anfxwarning*} \pfill \usage{7}, \main{553}
+  \item {\ttfamily envlayout} (opt.)\pfill \usage{13}
+  \item {\ttfamily envlayout} (opt.) \pfill \main{330}
+
+  \indexspace
+{\bfseries\hfil F\hfil}\nopagebreak
+
+  \item faces:\efill 
+ \subitem {\ttfamily env} \pfill \usage{17}, \main{300}
+    \subitem {\ttfamily inline} \pfill \usage{17}, \main{222}
+    \subitem {\ttfamily margin} \pfill \usage{17}, \main{208}
+    \subitem {\ttfamily signature} \pfill \usage{17}, \main{306}, 
+		\main{914}
+    \subitem {\ttfamily target} \pfill \usage{17}, \main{343}
+  \item {\ttfamily final} (opt.)\pfill \usage{8}
+  \item {\ttfamily final} (opt.) \pfill \main{655}
+  \item \verb*+\fixme+\pfill \usage{7}, \main{554}
+  \item {\ttfamily fixmecount} (cnt.) \pfill \main{389}
+  \item \verb*+\fixmeindexname+\pfill \main{226}
+  \item \verb*+\fixmelogo+\pfill \main{12}
+  \item {\ttfamily footnote} (note lt.)\pfill \usage{10}
+  \item {\ttfamily footnote} (note lt.) \pfill \main{219}
+  \item {\ttfamily footnote} (opt.)\pfill \usage{10}
+  \item {\ttfamily footnote} (opt.) \pfill \main{221}
+  \item {\ttfamily francais} (lang.) \pfill \main{576}
+  \item {\ttfamily francais} (opt.)\pfill \usage{17}
+  \item {\ttfamily francais} (opt.) \pfill \main{646}
+  \item {\ttfamily french} (lang.) \pfill \main{576}
+  \item {\ttfamily french} (opt.)\pfill \usage{17}
+  \item {\ttfamily french} (opt.) \pfill \main{646}
+  \item \verb*+\frenchlistfixmename+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxaddcontentsline+\pfill \main{79}
+  \item \verb*+\fxcontentsline+\pfill \main{73}
+  \item \verb*+\fxcroatianerrorname+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxcroatianerrorsname+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxcroatianfatalname+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxcroatianfatalsname+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxcroatiannotename+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxcroatiannotesname+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxcroatianwarningname+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxcroatianwarningsname+\pfill \usage{24}, \main{626}
+  \item \verb*+\fxdanisherrorname+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxdanisherrorsname+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxdanishfatalname+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxdanishfatalsname+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxdanishnotename+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxdanishnotesname+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxdanishwarningname+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxdanishwarningsname+\pfill \usage{24}, \main{616}
+  \item \verb*+\fxenglisherrorname+\pfill \usage{24}, \main{566}
+  \item \verb*+\fxenglisherrorsname+\pfill \usage{24}, \main{566}
+  \item \verb*+\fxenglishfatalname+\pfill \usage{24}, \main{566}
+  \item \verb*+\fxenglishfatalsname+\pfill \usage{24}, \main{566}
+  \item \verb*+\fxenglishnotename+\pfill \usage{24}, \main{566}
+  \item \verb*+\fxenglishnotesname+\pfill \usage{24}, \main{566}
+  \item \verb*+\fxenglishwarningname+\pfill \usage{24}, \main{566}
+  \item \verb*+\fxenglishwarningsname+\pfill \usage{24}, \main{566}
+  \item \verb*+\FXEnvLayoutColorBegin+\pfill \usage{22}, \main{902}
+  \item \verb*+\FXEnvLayoutColorEnd+\pfill \usage{22}, \main{902}
+  \item \verb*+\FXEnvLayoutColorSigBegin+\pfill \usage{22}, \main{926}
+  \item \verb*+\FXEnvLayoutColorSigEnd+\pfill \usage{22}, \main{926}
+  \item \verb*+\FXEnvLayoutPlainBegin+\pfill \usage{22}, \main{301}
+  \item \verb*+\FXEnvLayoutPlainEnd+\pfill \usage{22}, \main{301}
+  \item \verb*+\FXEnvLayoutSignatureBegin+\pfill \usage{22}, \main{310}
+  \item \verb*+\FXEnvLayoutSignatureEnd+\pfill \usage{22}, \main{310}
+  \item \verb*+\fxerror+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxerror} (color)\pfill \usage{14}, \usage{16}
+  \item {\ttfamily fxerror} (color) \pfill \main{808}, \main{828}, 
+		\main{849}, \main{870}, \main{895}, \main{919}
+  \item \verb*+\fxerror*+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxerrorcount} (cnt.) \pfill \main{389}
+  \item \verb*+\fxfatal+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxfatal} (color)\pfill \usage{14}, \usage{16}
+  \item {\ttfamily fxfatal} (color) \pfill \main{808}, \main{828}, 
+		\main{849}, \main{870}, \main{895}, \main{919}
+  \item \verb*+\fxfatal*+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxfatalcount} (cnt.) \pfill \main{389}
+  \item \verb*+\fxfrencherrorname+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxfrencherrorsname+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxfrenchfatalname+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxfrenchfatalsname+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxfrenchnotename+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxfrenchnotesname+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxfrenchwarningname+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxfrenchwarningsname+\pfill \usage{24}, \main{576}
+  \item \verb*+\fxgermanerrorname+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxgermanerrorsname+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxgermanfatalname+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxgermanfatalsname+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxgermannotename+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxgermannotesname+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxgermanwarningname+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxgermanwarningsname+\pfill \usage{24}, \main{606}
+  \item \verb*+\fxitalianerrorname+\pfill \usage{24}, \main{596}
+  \item \verb*+\fxitalianerrorsname+\pfill \usage{24}, \main{596}
+  \item \verb*+\fxitalianfatalname+\pfill \usage{24}, \main{596}
+  \item \verb*+\fxitalianfatalsname+\pfill \usage{24}, \main{596}
+  \item \verb*+\fxitaliannotename+\pfill \usage{24}, \main{596}
+  \item \verb*+\fxitaliannotesname+\pfill \usage{24}, \main{596}
+  \item \verb*+\fxitalianwarningname+\pfill \usage{24}, \main{596}
+  \item \verb*+\fxitalianwarningsname+\pfill \usage{24}, \main{596}
+  \item \verb*+\FXLayoutContentsLine+\pfill \main{251}
+  \item \verb*+\FXLayoutFootnote+\pfill \usage{22}, \main{219}
+  \item \verb*+\FXLayoutIndex+\pfill \usage{22}, \main{237}
+  \item \verb*+\FXLayoutInline+\pfill \usage{22}, \main{223}
+  \item \verb*+\FXLayoutMargin+\pfill \usage{22}, \main{209}
+  \item \verb*+\FXLayoutMarginCLue+\pfill \main{214}
+  \item \verb*+\FXLayoutMarginClue+\pfill \usage{22}
+  \item \verb*+\FXLayoutMarginNote+\pfill \main{743}
+  \item \verb*+\FXLayoutPDFCMargin+\pfill \main{836}
+  \item \verb*+\FXLayoutPDFCNote+\pfill \main{816}
+  \item \verb*+\FXLayoutPDFCSigMargin+\pfill \main{879}
+  \item \verb*+\FXLayoutPDFCSigNote+\pfill \main{858}
+  \item \verb*+\FXLayoutPDFMargin+\pfill \main{765}
+  \item \verb*+\FXLayoutPDFNote+\pfill \main{755}
+  \item \verb*+\FXLayoutPDFSigMargin+\pfill \main{795}
+  \item \verb*+\FXLayoutPDFSigNote+\pfill \main{780}
+  \item \verb*+\fxloadenvlayouts+\pfill \usage{14}, \main{322}
+  \item \verb*+\fxloadlayouts+\pfill \usage{9}, \main{258}
+  \item \verb*+\fxloadtargetlayouts+\pfill \usage{15}, \main{351}
+  \item \verb*+\FXLogerror+\pfill \main{365}
+  \item \verb*+\FXLogFatal+\pfill \main{365}
+  \item \verb*+\FXLogNote+\pfill \main{365}
+  \item \verb*+\FXLogWarning+\pfill \main{365}
+  \item \verb*+\fxnote+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxnote} (color)\pfill \usage{14}, \usage{16}
+  \item {\ttfamily fxnote} (color) \pfill \main{808}, \main{828}, 
+		\main{849}, \main{870}, \main{895}, \main{919}
+  \item \verb*+\fxnote*+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxnotecount} (cnt.) \pfill \main{389}
+  \item \verb*+\fxnotename+\pfill \main{652}
+  \item \verb*+\fxnotesname+\pfill \main{652}
+  \item \verb*+\FXProvidesEnvLayout+\pfill \usage{23}, \main{288}
+  \item \verb*+\FXProvidesLayout+\pfill \usage{23}, \main{172}
+  \item \verb*+\FXProvidesTargetLayout+\pfill \usage{24}, \main{332}
+  \item \verb*+\FXProvidesTheme+\pfill \usage{24}, \main{671}
+  \item \verb*+\FXRegisterAuthor+\pfill \usage{19}, \main{533}
+  \item \verb*+\FXRegisterEnvLayout+\pfill \usage{23}, \main{289}
+  \item \verb*+\FXRegisterLayout+\pfill \usage{23}, \main{201}
+  \item \verb*+\FXRegisterLayout*+\pfill \usage{23}, \main{201}
+  \item \verb*+\FXRegisterTargetLayout+\pfill \usage{24}, \main{333}
+  \item \verb*+\FXRequireEnvLayout+\pfill \usage{24}, \main{326}
+  \item \verb*+\FXRequireLayout+\pfill \usage{24}
+  \item \verb*+\FXRequireTargetLayout+\pfill \usage{24}, \main{355}
+  \item \verb*+\fxsetface+\pfill \usage{16}, \main{152}
+  \item \verb*+\fxsetup+\pfill \usage{6}, \main{721}
+  \item \verb*+\fxspanisherrorname+\pfill \usage{24}, \main{586}
+  \item \verb*+\fxspanisherrorsname+\pfill \usage{24}, \main{586}
+  \item \verb*+\fxspanishfatalname+\pfill \usage{24}, \main{586}
+  \item \verb*+\fxspanishfatalsname+\pfill \usage{24}, \main{586}
+  \item \verb*+\fxspanishnotename+\pfill \usage{24}, \main{586}
+  \item \verb*+\fxspanishnotesname+\pfill \usage{24}, \main{586}
+  \item \verb*+\fxspanishwarningname+\pfill \usage{24}, \main{586}
+  \item \verb*+\fxspanishwarningsname+\pfill \usage{24}, \main{586}
+  \item {\ttfamily fxtarget} (color)\pfill \usage{16}
+  \item {\ttfamily fxtarget} (color) \pfill \main{952}
+  \item \verb*+\FXTargetLayoutChangeBar+\pfill \main{939}
+  \item \verb*+\FXTargetLayoutColor+\pfill \usage{22}, \main{956}
+  \item \verb*+\FXTargetLayoutColorCB+\pfill \main{969}
+  \item \verb*+\FXTargetLayoutPlain+\pfill \usage{22}, \main{344}
+  \item \verb*+\fxuseenvlayout+\pfill \usage{13}, \main{326}
+  \item \verb*+\fxuselayouts+\pfill \usage{9}
+  \item \verb*+\fxusetargetlayout+\pfill \usage{15}, \main{355}
+  \item \verb*+\fxusetheme+\pfill \usage{21}, \main{672}
+  \item \verb*+\fxwarning+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxwarning} (color)\pfill \usage{14}, \usage{16}
+  \item {\ttfamily fxwarning} (color) \pfill \main{808}, \main{828}, 
+		\main{849}, \main{870}, \main{895}, \main{919}
+  \item \verb*+\fxwarning*+\pfill \usage{7}, \main{553}
+  \item {\ttfamily fxwarningcount} (cnt.) \pfill \main{389}
+
+  \indexspace
+{\bfseries\hfil G\hfil}\nopagebreak
+
+  \item {\ttfamily german} (lang.) \pfill \main{606}
+  \item {\ttfamily german} (opt.)\pfill \usage{17}
+  \item {\ttfamily german} (opt.) \pfill \main{646}
+  \item \verb*+\germanlistfixmename+\pfill \usage{24}, \main{606}
+
+  \indexspace
+{\bfseries\hfil I\hfil}\nopagebreak
+
+  \item {\ttfamily index} (note lt.)\pfill \usage{10}
+  \item {\ttfamily index} (note lt.) \pfill \main{226}
+  \item {\ttfamily index} (opt.)\pfill \usage{10}
+  \item {\ttfamily index} (opt.) \pfill \main{250}
+  \item {\ttfamily inline} (face)\pfill \usage{17}
+  \item {\ttfamily inline} (face) \pfill \main{222}
+  \item {\ttfamily inline} (note lt.)\pfill \usage{10}
+  \item {\ttfamily inline} (note lt.) \pfill \main{222}
+  \item {\ttfamily inline} (opt.)\pfill \usage{10}
+  \item {\ttfamily inline} (opt.) \pfill \main{225}
+  \item {\ttfamily innerlayout} (opt.)\pfill \usage{11}
+  \item {\ttfamily innerlayout} (opt.) \pfill \main{280}
+  \item {\ttfamily italian} (lang.) \pfill \main{596}
+  \item {\ttfamily italian} (opt.)\pfill \usage{17}
+  \item {\ttfamily italian} (opt.) \pfill \main{646}
+  \item \verb*+\italianlistfixmename+\pfill \usage{24}, \main{596}
+
+  \indexspace
+{\bfseries\hfil L\hfil}\nopagebreak
+
+  \item \verb*+\l@fixme+\pfill \main{56}
+  \item {\ttfamily lang} (opt.)\pfill \usage{18}
+  \item {\ttfamily lang} (opt.) \pfill \main{640}
+  \item {\ttfamily langtrack} (opt.)\pfill \usage{18}
+  \item {\ttfamily langtrack} (opt.) \pfill \main{636}
+  \item languages:\efill 
+ \subitem {\ttfamily croatian} \pfill \main{626}
+    \subitem {\ttfamily danish} \pfill \main{616}
+    \subitem {\ttfamily english} \pfill \main{566}
+    \subitem {\ttfamily francais} \pfill \main{576}
+    \subitem {\ttfamily french} \pfill \main{576}
+    \subitem {\ttfamily german} \pfill \main{606}
+    \subitem {\ttfamily italian} \pfill \main{596}
+    \subitem {\ttfamily ngerman} \pfill \main{606}
+    \subitem {\ttfamily spanish} \pfill \main{586}
+  \item {\ttfamily layout} (opt.)\pfill \usage{9}
+  \item {\ttfamily layout} (opt.) \pfill \main{282}
+  \item \verb*+\listoffixmes+\pfill \usage{7}, \main{655}
+  \item \verb*+\lox@draft+\pfill \main{143}
+  \item \verb*+\lox@draft@ams+\pfill \main{150}
+  \item \verb*+\lox@final+\pfill \main{143}
+  \item \verb*+\lox@heading+\pfill \main{109}
+
+  \indexspace
+{\bfseries\hfil M\hfil}\nopagebreak
+
+  \item {\ttfamily margin} (face)\pfill \usage{17}
+  \item {\ttfamily margin} (face) \pfill \main{208}
+  \item {\ttfamily margin} (note lt.)\pfill \usage{10}
+  \item {\ttfamily margin} (note lt.) \pfill \main{208}
+  \item {\ttfamily margin} (opt.)\pfill \usage{10}
+  \item {\ttfamily margin} (opt.) \pfill \main{213}
+  \item {\ttfamily marginclue} (note lt.)\pfill \usage{10}
+  \item {\ttfamily marginclue} (note lt.) \pfill \main{214}
+  \item {\ttfamily marginclue} (opt.)\pfill \usage{10}
+  \item {\ttfamily marginclue} (opt.) \pfill \main{218}
+  \item {\ttfamily marginnote} (note lt.)\pfill \usage{10}
+  \item {\ttfamily marginnote} (note lt.) \pfill \main{737}
+  \item {\ttfamily marginnote} (opt.)\pfill \usage{10}
+  \item {\ttfamily marginnote} (opt.) \pfill \main{747}
+  \item {\ttfamily mode} (opt.)\pfill \usage{20}
+  \item {\ttfamily mode} (opt.) \pfill \main{158}
+  \item {\ttfamily morelayout} (opt.)\pfill \usage{9}
+  \item {\ttfamily morelayout} (opt.) \pfill \main{281}
+  \item {\ttfamily multiuser} (opt.)\pfill \usage{20}
+  \item {\ttfamily multiuser} (opt.) \pfill \main{158}
+
+  \indexspace
+{\bfseries\hfil N\hfil}\nopagebreak
+
+  \item {\ttfamily ngerman} (lang.) \pfill \main{606}
+  \item {\ttfamily ngerman} (opt.)\pfill \usage{17}
+  \item {\ttfamily ngerman} (opt.) \pfill \main{646}
+  \item {\ttfamily nofootnote} (opt.)\pfill \usage{10}
+  \item {\ttfamily nofootnote} (opt.) \pfill \main{221}
+  \item {\ttfamily noindex} (opt.)\pfill \usage{10}
+  \item {\ttfamily noindex} (opt.) \pfill \main{250}
+  \item {\ttfamily noinline} (opt.)\pfill \usage{10}
+  \item {\ttfamily noinline} (opt.) \pfill \main{225}
+  \item {\ttfamily nomargin} (opt.)\pfill \usage{10}
+  \item {\ttfamily nomargin} (opt.) \pfill \main{213}
+  \item {\ttfamily nomarginclue} (opt.)\pfill \usage{10}
+  \item {\ttfamily nomarginclue} (opt.) \pfill \main{218}
+  \item {\ttfamily nomarginnote} (opt.)\pfill \usage{10}
+  \item {\ttfamily nomarginnote} (opt.) \pfill \main{747}
+  \item {\ttfamily nopdfcmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfcmargin} (opt.) \pfill \main{839}
+  \item {\ttfamily nopdfcnote} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfcnote} (opt.) \pfill \main{819}
+  \item {\ttfamily nopdfcsigmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfcsigmargin} (opt.) \pfill \main{882}
+  \item {\ttfamily nopdfcsignote} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfcsignote} (opt.) \pfill \main{861}
+  \item {\ttfamily nopdfmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfmargin} (opt.) \pfill \main{767}
+  \item {\ttfamily nopdfnote} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfnote} (opt.) \pfill \main{757}
+  \item {\ttfamily nopdfsigmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfsigmargin} (opt.) \pfill \main{798}
+  \item {\ttfamily nopdfsignote} (opt.)\pfill \usage{11}
+  \item {\ttfamily nopdfsignote} (opt.) \pfill \main{783}
+  \item {\ttfamily nosilent} (opt.)\pfill \usage{17}
+  \item {\ttfamily nosilent} (opt.) \pfill \main{387}
+  \item note layouts:\efill 
+ \subitem {\ttfamily footnote} \pfill \usage{10}, \main{219}
+    \subitem {\ttfamily index} \pfill \usage{10}, \main{226}
+    \subitem {\ttfamily inline} \pfill \usage{10}, \main{222}
+    \subitem {\ttfamily margin} \pfill \usage{10}, \main{208}
+    \subitem {\ttfamily marginclue} \pfill \usage{10}, \main{214}
+    \subitem {\ttfamily marginnote} \pfill \usage{10}, \main{737}
+    \subitem {\ttfamily pdfcmargin} \pfill \usage{11}, \main{821}
+    \subitem {\ttfamily pdfcnote} \pfill \usage{11}, \main{801}
+    \subitem {\ttfamily pdfcsigmargin} \pfill \usage{11}, \main{863}
+    \subitem {\ttfamily pdfcsignote} \pfill \usage{11}, \main{842}
+    \subitem {\ttfamily pdfmargin} \pfill \usage{11}, \main{759}
+    \subitem {\ttfamily pdfnote} \pfill \usage{11}, \main{749}
+    \subitem {\ttfamily pdfsigmargin} \pfill \usage{11}, \main{785}
+    \subitem {\ttfamily pdfsignote} \pfill \usage{11}, \main{770}
+
+  \indexspace
+{\bfseries\hfil O\hfil}\nopagebreak
+
+  \item options:\efill 
+ \subitem {\ttfamily author} \pfill \usage{19}, \main{395}
+    \subitem {\ttfamily croatian} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily danish} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily defaultlang} \pfill \usage{18}, \main{637}
+    \subitem {\ttfamily draft} \pfill \usage{8}, \main{655}
+    \subitem {\ttfamily english} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily envlayout} \pfill \usage{13}, \main{330}
+    \subitem {\ttfamily final} \pfill \usage{8}, \main{655}
+    \subitem {\ttfamily footnote} \pfill \usage{10}, \main{221}
+    \subitem {\ttfamily francais} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily french} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily german} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily index} \pfill \usage{10}, \main{250}
+    \subitem {\ttfamily inline} \pfill \usage{10}, \main{225}
+    \subitem {\ttfamily innerlayout} \pfill \usage{11}, \main{280}
+    \subitem {\ttfamily italian} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily lang} \pfill \usage{18}, \main{640}
+    \subitem {\ttfamily langtrack} \pfill \usage{18}, \main{636}
+    \subitem {\ttfamily layout} \pfill \usage{9}, \main{282}
+    \subitem {\ttfamily margin} \pfill \usage{10}, \main{213}
+    \subitem {\ttfamily marginclue} \pfill \usage{10}, \main{218}
+    \subitem {\ttfamily marginnote} \pfill \usage{10}, \main{747}
+    \subitem {\ttfamily mode} \pfill \usage{20}, \main{158}
+    \subitem {\ttfamily morelayout} \pfill \usage{9}, \main{281}
+    \subitem {\ttfamily multiuser} \pfill \usage{20}, \main{158}
+    \subitem {\ttfamily ngerman} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily nofootnote} \pfill \usage{10}, \main{221}
+    \subitem {\ttfamily noindex} \pfill \usage{10}, \main{250}
+    \subitem {\ttfamily noinline} \pfill \usage{10}, \main{225}
+    \subitem {\ttfamily nomargin} \pfill \usage{10}, \main{213}
+    \subitem {\ttfamily nomarginclue} \pfill \usage{10}, \main{218}
+    \subitem {\ttfamily nomarginnote} \pfill \usage{10}, \main{747}
+    \subitem {\ttfamily nopdfcmargin} \pfill \usage{11}, \main{839}
+    \subitem {\ttfamily nopdfcnote} \pfill \usage{11}, \main{819}
+    \subitem {\ttfamily nopdfcsigmargin} \pfill \usage{11}, \main{882}
+    \subitem {\ttfamily nopdfcsignote} \pfill \usage{11}, \main{861}
+    \subitem {\ttfamily nopdfmargin} \pfill \usage{11}, \main{767}
+    \subitem {\ttfamily nopdfnote} \pfill \usage{11}, \main{757}
+    \subitem {\ttfamily nopdfsigmargin} \pfill \usage{11}, \main{798}
+    \subitem {\ttfamily nopdfsignote} \pfill \usage{11}, \main{783}
+    \subitem {\ttfamily nosilent} \pfill \usage{17}, \main{387}
+    \subitem {\ttfamily pdfcmargin} \pfill \usage{11}, \main{839}
+    \subitem {\ttfamily pdfcnote} \pfill \usage{11}, \main{819}
+    \subitem {\ttfamily pdfcsigmargin} \pfill \usage{11}, \main{882}
+    \subitem {\ttfamily pdfcsignote} \pfill \usage{11}, \main{861}
+    \subitem {\ttfamily pdfmargin} \pfill \usage{11}, \main{767}
+    \subitem {\ttfamily pdfnote} \pfill \usage{11}, \main{757}
+    \subitem {\ttfamily pdfsigmargin} \pfill \usage{11}, \main{798}
+    \subitem {\ttfamily pdfsignote} \pfill \usage{11}, \main{783}
+    \subitem {\ttfamily silent} \pfill \usage{17}, \main{387}
+    \subitem {\ttfamily singleuser} \pfill \usage{20}, \main{158}
+    \subitem {\ttfamily spanish} \pfill \usage{17}, \main{646}
+    \subitem {\ttfamily status} \pfill \usage{8}, \main{655}
+    \subitem {\ttfamily target} \pfill \usage{13}, \main{396}
+    \subitem {\ttfamily targetlayout} \pfill \usage{15}, \main{359}
+    \subitem {\ttfamily theme} \pfill \usage{21}, \main{673}
+
+  \indexspace
+{\bfseries\hfil P\hfil}\nopagebreak
+
+  \item {\ttfamily pdfcmargin} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfcmargin} (note lt.) \pfill \main{821}
+  \item {\ttfamily pdfcmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfcmargin} (opt.) \pfill \main{839}
+  \item {\ttfamily pdfcnote} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfcnote} (note lt.) \pfill \main{801}
+  \item {\ttfamily pdfcnote} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfcnote} (opt.) \pfill \main{819}
+  \item {\ttfamily pdfcsigmargin} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfcsigmargin} (note lt.) \pfill \main{863}
+  \item {\ttfamily pdfcsigmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfcsigmargin} (opt.) \pfill \main{882}
+  \item {\ttfamily pdfcsignote} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfcsignote} (note lt.) \pfill \main{842}
+  \item {\ttfamily pdfcsignote} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfcsignote} (opt.) \pfill \main{861}
+  \item {\ttfamily pdfmargin} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfmargin} (note lt.) \pfill \main{759}
+  \item {\ttfamily pdfmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfmargin} (opt.) \pfill \main{767}
+  \item {\ttfamily pdfnote} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfnote} (note lt.) \pfill \main{749}
+  \item {\ttfamily pdfnote} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfnote} (opt.) \pfill \main{757}
+  \item {\ttfamily pdfsigmargin} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfsigmargin} (note lt.) \pfill \main{785}
+  \item {\ttfamily pdfsigmargin} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfsigmargin} (opt.) \pfill \main{798}
+  \item {\ttfamily pdfsignote} (note lt.)\pfill \usage{11}
+  \item {\ttfamily pdfsignote} (note lt.) \pfill \main{770}
+  \item {\ttfamily pdfsignote} (opt.)\pfill \usage{11}
+  \item {\ttfamily pdfsignote} (opt.) \pfill \main{783}
+  \item {\ttfamily plain} (env. lt.)\pfill \usage{14}
+  \item {\ttfamily plain} (env. lt.) \pfill \main{300}
+  \item {\ttfamily plain} (target lt.)\pfill \usage{15}
+  \item {\ttfamily plain} (target lt.) \pfill \main{343}
+
+  \indexspace
+{\bfseries\hfil S\hfil}\nopagebreak
+
+  \item {\ttfamily signature} (env. lt.)\pfill \usage{14}
+  \item {\ttfamily signature} (env. lt.) \pfill \main{306}
+  \item {\ttfamily signature} (face)\pfill \usage{17}
+  \item {\ttfamily signature} (face) \pfill \main{306}, \main{914}
+  \item {\ttfamily signature} (theme)\pfill \usage{21}
+  \item {\ttfamily signature} (theme) \pfill \main{973}
+  \item {\ttfamily silent} (opt.)\pfill \usage{17}
+  \item {\ttfamily silent} (opt.) \pfill \main{387}
+  \item {\ttfamily singleuser} (opt.)\pfill \usage{20}
+  \item {\ttfamily singleuser} (opt.) \pfill \main{158}
+  \item {\ttfamily spanish} (lang.) \pfill \main{586}
+  \item {\ttfamily spanish} (opt.)\pfill \usage{17}
+  \item {\ttfamily spanish} (opt.) \pfill \main{646}
+  \item \verb*+\spanishlistfixmename+\pfill \usage{24}, \main{586}
+  \item {\ttfamily status} (opt.)\pfill \usage{8}
+  \item {\ttfamily status} (opt.) \pfill \main{655}
+
+  \indexspace
+{\bfseries\hfil T\hfil}\nopagebreak
+
+  \item {\ttfamily target} (face)\pfill \usage{17}
+  \item {\ttfamily target} (face) \pfill \main{343}
+  \item {\ttfamily target} (opt.)\pfill \usage{13}
+  \item {\ttfamily target} (opt.) \pfill \main{396}
+  \item target layouts:\efill 
+ \subitem {\ttfamily changebar} \pfill \usage{16}, \main{931}
+    \subitem {\ttfamily color} \pfill \usage{16}, \main{942}
+    \subitem {\ttfamily colorcb} \pfill \usage{16}, \main{959}
+    \subitem {\ttfamily plain} \pfill \usage{15}, \main{343}
+  \item {\ttfamily targetlayout} (opt.)\pfill \usage{15}
+  \item {\ttfamily targetlayout} (opt.) \pfill \main{359}
+  \item {\ttfamily theme} (opt.)\pfill \usage{21}
+  \item {\ttfamily theme} (opt.) \pfill \main{673}
+  \item themes:\efill 
+ \subitem {\ttfamily color} \pfill \usage{21}, \main{1016}
+    \subitem {\ttfamily colorsig} \pfill \usage{21}, \main{1063}
+    \subitem {\ttfamily signature} \pfill \usage{21}, \main{973}
+
+ \end{theindex}
