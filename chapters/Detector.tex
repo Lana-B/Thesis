@@ -5,12 +5,11 @@ This chapter discusses the Large Hadron Collider (LHC) which is located on the F
 \section{LHC}
 
 The LHC accelerates two beams of protons which circulate in opposite directions.
-This is achieved using a system of superconducting dipole magnets which have an aperture for each beam direction. Quadrapoles are used to squeeze the beam.
-The protons are sourced from a bottle of hydrogen where a strong electric field is used to excite the electrons from the hydrogen atoms leaving protons behind. The protons are then accelerated through the linear accelerator LINAC2, where they reach an energy of 50~MeV. The LINAC2 works by using radio frequency cavities to charge cylindrical conductors and the protons are attracted by negative conductors and repelled by positive conductors, which boost them forward. From LINAC2, the protons are accelerated by the Proton Synchrotron Booster (PSB) to 1.4~GeV, then they are accelerated by the Proton Synchrotron (PS) to 25~GeV. This is followed by a boost to 450~GeV in the Super Proton Synchrotron (SPS), which is the final accelerator before the protons are injected into the LHC ring where their final collision energy can be achieved. 
+This is achieved using a system of superconducting dipole magnets which have an aperture for each beam direction. Quadrapoles are used to squeeze the beam. The protons are sourced from a bottle of hydrogen where a strong electric field is used to excite the electrons from the hydrogen atoms leaving protons behind. The protons are then accelerated through the linear accelerator LINAC2, where they reach an energy of 50~MeV. The LINAC2 uses radio frequency cavities accelerate the protons. From LINAC2, the protons are accelerated by the Proton Synchrotron Booster (PSB) to 1.4~GeV, then they are accelerated by the Proton Synchrotron (PS) to 25~GeV. This is followed by a boost to 450~GeV in the Super Proton Synchrotron (SPS), which is the final accelerator before the protons are injected into the LHC ring where their final collision energy can be achieved. 
 % Each accelerator stage boosts the protons to a higher energy before they can be injected into the LHC where their final collision energy can be achieved.
 
 
-The protons are accelerated in bunches which are collided at the interaction points of each experiment. This results in many collisions per bunch crossing despite the fact that many protons will miss each other and continue to be accelerated around the LHC. The background of particles coming from the frequent less interesting collisions is called \emph{pileup} (PU).
+The protons are accelerated in bunches of O($10^{11}$) protons, which are collided at the interaction points of each experiment. This results in many collisions per bunch crossing despite the fact that many protons will miss each other and continue to be accelerated around the LHC. The background of particles coming from the frequent less interesting collisions is called \emph{pileup} (PU). The multiple interactions per bunch mean that PU can come from the same bunch crossing (in-time PU) or overlap from a previous bunch crossing (out-of-time PU).
 
 \begin{figure}[ht!]
 \centering
@@ -20,7 +19,7 @@ The protons are accelerated in bunches which are collided at the interaction poi
 \end{figure}
 
 
-The \emph{Luminosity} (\lumi) is a measure of the instantaneous collision rate and can be calculated using Eq.~\ref{eqn:lumi1}, where $f$ is the bunch frequency, and $N_1$ and $N_2$ are the numbers of particles in each bunch. The effective collision area is $4\pi\sigma_{x}\sigma_{y}$ where $\sigma_{x}$ and $\sigma_{y}$ are the $x$ and $y$ components of the beam, transverse to the beam direction. It is assumed that each beam has the same cross section.
+The \emph{Luminosity} (\lumi) is a measure of the instantaneous collision rate and can be calculated using Eq.~\ref{eqn:lumi1}, where $f$ is the bunch frequency, and $N_1$ and $N_2$ are the numbers of particles in each bunch. The effective collision area for a gaussian distributed beam is $4\pi\sigma_{x}\sigma_{y}$. The widths $\sigma_{x}$ and $\sigma_{y}$ are for the $x$ and $y$ components of the beam, transverse to the beam direction. It is assumed that each beam has the same cross section.
 
 \begin{equation}
 \lumi = \frac{f{N}_{1}{N}_{2}}{4\pi\sigma_{x}\sigma_{y}}
@@ -41,7 +40,7 @@ N_{\textrm{events}} = \lumiint \times \sigma
     \label{fig:Lumi}
 \end{figure}
 
-The LHC was designed to have a centre of mass collision energy of $\sqrt{s} = 14~\TeV$. The intention was to start the machine with a lower energy in September 2008 and to obtain $\sqrt{s} = 10~\TeV$ by the end of 2008. However, an electrical fault 10 days into operation in October 2008 caused damage to over 50 of the superconducting magnets. The LHC was shut down for repairs until November 2009 when LHC achieved the record breaking 1.18 TeV per beam. The centre of mass energy was then ramped up to $\sqrt{s} = 7~\TeV$ in 2011. In 2012 this was increased to $\sqrt{s} = 8~\TeV$ and a dataset with an integrated luminosity of $\approx 20~\fbinv$ was recorded. This dataset from the run phase known as `\runone' was used for the analysis in Chapter~\ref{c:Run1}. In 2013 after \runone, Long~Shutdown~1 (LS1) commenced to make upgrades to the LHC and the detectors to allow the machine to run at $\sqrt{s} = 13~\TeV$ for `\runtwo'. \runtwo began in March 2015 and results from \runtwo are the focus of the analysis in Chapter~\ref{c:Run2}.
+The LHC was designed to have a centre of mass collision energy ($\sqrt{s}$) of 14~\TeV. The intention was to start the machine with a lower energy in September 2008 and to obtain $\sqrt{s} = 10~\TeV$ by the end of 2008. However, an electrical fault 10 days into operation in October 2008 caused damage to over 50 of the superconducting magnets. The LHC was shut down for repairs until November 2009 when LHC achieved the record breaking 1.18 TeV per beam. The centre of mass energy was then ramped up to $\sqrt{s} = 7~\TeV$ in 2011. In 2012 this was increased to $\sqrt{s} = 8~\TeV$, at which time the bunches of protons were crossed every 50~ns. A dataset with an integrated luminosity of $\approx 20~\fbinv$ was recorded. This dataset from the run phase known as `\runone' was used for the analysis in Chapter~\ref{c:Run1}. In 2013 after \runone, Long~Shutdown~1 (LS1) commenced to make upgrades to the LHC and the detectors to allow the machine to run at $\sqrt{s} = 13~\TeV$ with a bunch crossing time of 25~ns for `\runtwo'. \runtwo began in March 2015 and results from \runtwo are the focus of the analysis in Chapter~\ref{c:Run2}.
 
 \runone saw the great success of the discovery of the Higgs boson, one of the main objectives of the LHC~\cite{Aad20121,Chatrchyan201230}. In \runtwo, the search for new physics continues where precision measurements will test the predictions of the SM. The CMS and ATLAS detectors are considered to be general-purpose detectors which can be used to test many areas of physics within and beyond the standard model. This includes searches for dark matter, supersymmetric particles, vector-like-quarks, lepton-flavour-violating processes, light Higgs and charged Higgs bosons, and studies of the properties of the Higgs boson such as the couplings and rare decay modes.
 
@@ -72,7 +71,7 @@ The superconducting magnetic solenoid at the core of CMS was designed to have a 
 \subsection{Tracker \label{sec:tracker}}
 
 The tracking system of CMS lies inside the superconducting solenoid and surrounds the interaction point. It is 5.8~m long with a diameter of 2.5~m.
-Silicon detectors are used as they can provide the high granularity and fast response required to reliably reconstruct the trajectories of particles coming from the collision vertex before the next collision occurs.
+Silicon detectors are used as they can provide the high granularity and fast response required to reliably reconstruct the trajectories of particles coming from the collision vertex.
 % and from the secondary vertices which originate from decaying particles. 
 Reconstructing secondary vertices is also particularly important for identifying jets originating from heavy flavour quarks such as bottom quarks. This is integral for distinguishing final states involving top quarks.
 
@@ -121,7 +120,7 @@ In the endcap region there is a preshower detector, shown in Fig.~\ref{fig:ecal}
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.95\textwidth]{images/ecal.png}
-    \caption{The ECAL system where modules contain submodules and the 36 supermodules are made up of four modules each. The supercrystals are made up of groups of 5 x 5 crystals in the endcap~\cite{Isildak:2013kfa}.}
+    \caption{The ECAL system contains 61200 PbWO$_{4}$ crystals which are contained within modules. Each of the 36 supermodules shown are made up of four modules. The supercrystals in the endcap are made up of groups of 5 x 5 crystals, with a total of 7324 crystals~\cite{Isildak:2013kfa}.}
     \label{fig:ecal}
 \end{figure}
 
@@ -166,7 +165,8 @@ The muon chamber measurements provide the dominant contribution to the energy re
 
 
 \subsection{Trigger \label{det:trigger}}
-As each of the subdetectors have now been described, the remaining hardware and software which collects the information for analysis can now be discussed. The amount of information which can be stored is much less than the amount produced within the subdetectors. Collisions occur at a rate of 40 MHz (beam crossing interval of 25 ns). The rate reduction capability of the trigger system was designed to reduce the rate by at least a factor of $10^5$. This occurs in two main stages, the Level-1 (L1) trigger and High-Level Trigger (HLT). The L1 trigger is composed of highly programmable custom electronics, mainly FPGAs. ASIC and programmable memory lookup tables are used where higher speed and radiation hardness is required closer to the beam spot. Full high resolution data is held in the front-end electronics whilst the L1 trigger decides whether or not to keep the event based on courser information from the calorimeters and muon chambers. The HLT is a software based filter farm ($\approx$ 1000 processors) which has access to all of the readout data from the subdetectors. The HLT can assesses more complex information in order to filter out less interesting events and categorise the most interesting ones. 
+%  
+The amount of information which can be stored is much less than the amount produced within the subdetectors. Collisions occur at a rate of 40 MHz (beam crossing interval of 25 ns) in \runtwo. The rate reduction capability of the trigger system was designed to reduce the rate by at least a factor of $10^5$. This occurs in two main stages, the Level-1 (L1) trigger and High-Level Trigger (HLT). The L1 trigger is composed of highly programmable custom electronics, mainly FPGAs. ASIC and programmable memory lookup tables are used where higher speed and radiation hardness is required closer to the beam spot. Full high resolution data is held in the front-end electronics whilst the L1 trigger decides whether or not to keep the event based on courser information from the calorimeters and muon chambers. The HLT is a software based filter farm ($\approx$ 1000 processors) which has access to all of the readout data from the subdetectors. The HLT can assesses more complex information in order to filter out less interesting events and categorise the most interesting ones. 
 
 \subsection{Upgrades for \runtwo}
 

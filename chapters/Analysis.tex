@@ -1,21 +1,36 @@
-\chapter{Analysis techniques \label{c:ana}}
-\section{Strategy for searching for four top quarks \label{sec:Strategy}}
+\chapter{Analysis strategy and techniques \label{c:ana}}
 
-The LHC has been said to be a ``top factory'' due to the large cross sections for \ttbar production at $\sqrt{s}=8$~TeV and $\sqrt{s}=13$~TeV, 253~pb and 831~pb~\cite{PhysRevLett.110.252004,Czakon20142930} respectively. Hence most analyses within the CMS collaboration which work on top quark physics study \ttbar production. 
+% \section{Main background - \tt production}
+
+The LHC has been described as a ``top quark factory'' due to the large cross sections for \ttbar production at $\sqrt{s}=8$~TeV and $\sqrt{s}=13$~TeV, which were calculated at NNLO to be 253~pb and 831~pb~\cite{PhysRevLett.110.252004,Czakon20142930}, respectively. Hence most analyses within the CMS collaboration which work on top quark physics study \ttbar production. There are also a number of analyses working on the rarer process of single top quark production. Four-top-quark production is rarer still at O($10{^5}$) smaller than \ttbar production. 
+In this chapter the general strategy for searching for \tttt production is outlined. This includes introducing some of the common ideas and algorithms shared between both CMS \tttt analyses in this thesis. More analysis-specific details are given in Chapters~\ref{c:Run1} and~\ref{c:Run2} for the studies at $\sqrt{s}=8$~TeV and $\sqrt{s}=13$~TeV, respectively. In Section~\ref{sec:sigback}, the signal \tttt process and background processes are each discussed. The various corrections which are made to the simulation to improve the modelling are given in Section~\ref{sec:Calibrations}. Next the multivariate techniques employed in this thesis are introduced in Section~\ref{sec:MVAtechniques}, specifically Boosted Decision Tree (BDT) algorithms. BDTs are used both to reconstruct top quarks and then to separate the signal \tttt process from the main background of \ttbar production. The systematic uncertainties affecting the analyses in this thesis are described in Section~\ref{sec:uncertainties}. Finally, in Section~\ref{sec:limitFit} the statistical procedure used to set a limit on the cross section of \tttt production is discussed.
 % In the SM, each of the top quarks will decay to a W boson and a b quark almost 100$\%$ of the time. 
-The final state of the \ttbar process in the detector is defined by whether each W boson decays leptonically into a lepton and neutrino or hadronically into two quark jets. The standard strategy is to require two b-jets to be present in the event and 0, 1 or 2 leptons depending on whether the final state is all-hadronic, semi-leptonic and dileptonic respectively, where 6, 4 or 2 total number of jets are required. 
+% The final state of the \ttbar process in the detector is defined by whether each W boson decays leptonically into a lepton and neutrino or hadronically into two quark jets. The standard strategy is to require two b-jets to be present in the event and 0, 1 or 2 leptons depending on whether the final state is all-hadronic, semi-leptonic or dileptonic respectively, where 6, 4 or 2 total number of jets are required. 
 
-\begin{figure}[ht!]
-\centering
-    \includegraphics[width=0.7\textwidth]{images/Analysis/Ttbar_decay_channels.png}
-    \caption{The possible decay channels for \ttbar production where the area of each final state is proportional to its branching ratio~\cite{tt_decay_channels:NBartosik }.}
-    \label{fig:ttbarDecay}
-\end{figure}
+% \begin{figure}[ht!]
+% \centering
+%     % \includegraphics[width=0.7\textwidth]{images/Analysis/Ttbar_decay_channels.png}
+%     \includegraphics[width=0.7\textwidth]{images/Analysis/top_pair_decay_channels.pdf}
+
+%     \caption{The possible decay channels for \ttbar production where the area of each final state is proportional to its branching ratio~\cite{tdecaysource}.}
+%     \label{fig:ttbarDecay}
+% \end{figure}
 %picture from wiki By Nazar Bartosik - http://bartosik.pp.ua/hep_sketches/tt_decay_channels, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=49739344
 
-Not all \ttbar events will be captured within the selection due to inefficiencies in tagging b-jets, identifying leptons and reconstructing jets. As the rate of \ttbar production is so high at the LHC, this selection still provides a large enough sample of events to have statistically significant studies on \ttbar production.\\
+% Not all \ttbar events will be captured within the selection due to inefficiencies in tagging b-jets, identifying leptons and reconstructing jets. As the rate of \ttbar production is very high at the LHC, this selection still provides a large enough sample of events to perform studies of \ttbar production that are not limited by the size of the signal sample.
+%have statistically significant studies on \ttbar production.\\
+\section{Strategy for searching for four top quarks \label{sec:Strategy}}
 
-The strategy for selecting \tttt events while suppressing background processes is similar to the \ttbar selection but with the requirement of additional two jets. The small cross section for \tttt production in the SM, 1.3~fb at 8~TeV and 9.2~fb at 13~TeV~\cite{Alwall2014,Bevilacqua2012} dictates the selection. It would be preferential to require 4 b-jets in the selection to obtain the highest signal to background ratio, however this would have a detrimental effect on the overall amount of \tttt found in the selection due to some b-jets not being identified correctly or not being within the acceptance of the detector. Similarly, it is not possible to require a jet per quark hadronising in the detector in a \tttt final state as some of the jets may be merged or may not be within the acceptance of the detector. However, it will be discussed in Section~\ref{sec:Cats} how a looser selection can be used to an advantage to constrain the main background process.
+The strategy for selecting \tttt events while suppressing background processes is similar to the \ttbar selection but with the requirement of additional two jets. The small cross section for \tttt production in the SM, 1.3~fb at $\sqrt{s}=8$~TeV and 9.2~fb at $\sqrt{s}=13$~TeV~\cite{Alwall2014,Bevilacqua2012} dictates the selection. For the single lepton channel, which is the focus of the studies in Chapters ~\ref{c:Run1} and~\ref{c:Run2}, the common selection between both analyses is as follows:
+
+\begin{itemize}
+\item Exactly 1 lepton (muon or electron)
+\item No additional leptons
+\item $\geq$6 jets
+\item $\geq$2 b-tagged jets
+\end{itemize}
+
+It would be preferential to require 4 b-tagged jets in the selection to obtain the highest signal to background ratio, however this would have a detrimental effect on the overall amount of \tttt found in the selection due to some b-jets not being identified correctly or not being within the acceptance of the detector. Similarly, it is not advantageous to require a jet per quark hadronising in the detector in a \tttt final state as some of the jets may be merged or may not be within the acceptance of the detector. However, it will be discussed in Section~\ref{sec:Cats} how a looser selection can be used to an advantage to constrain the main background process.
 This thesis will focus on the single lepton channel where only single muon and single electron final states are considered. 
 % As can be seen from~\ref{fig:ttttDecay}, the single lepton channel represents the largest branching ratio of the four top quark decay channels. The dilepton channel, which has the second largest branching ratio will also briefly be discussed in Chapter~\ref{c:Run2} as it was combined with the single lepton channel to achieve an increased sensitivity on the analysis. In the dilepton channel also only final states with muons and electrons were considered. 
 The criteria that each channel are required to pass are called the \emph{Baseline Event Selection}.
@@ -24,12 +39,12 @@ The criteria that each channel are required to pass are called the \emph{Baselin
 \label{sec:sigback}
 
 \subsection{Four-top-quark production signal process}
-It can be seen from Fig.~\ref{fig:ttttDecay} that the single lepton final state has the largest branching ratio which makes it a favourable place to look to study the largest number of events produced in the CMS detector. This is the final state considered most in this thesis. The dilepton final state also has a large branching ratio and has particularly low backgrounds when same-sign lepton final states are considered. The combination of studies on the dilepton final state will be discussed in Chapter~\ref{c:Run2}.
+It can be seen from Fig.~\ref{fig:ttttDecay} that the single lepton final state has the largest branching ratio which makes it a favourable place to study. This is the final state considered most in this thesis. The dilepton final state also has a large branching ratio and has particularly low backgrounds when same-sign lepton final states are considered. The combination of studies on the dilepton final state will be discussed in Chapter~\ref{c:Run2}.
 
 \begin{figure}[ht!]
 \centering
     \includegraphics[width=0.55\textwidth]{images/Analysis/FourTopBR.pdf}
-    \caption{The possible decay channels for \tttt production}
+    \caption{The possible decay channels for \tttt production.}
     \label{fig:ttttDecay}
 \end{figure}
 
@@ -40,12 +55,12 @@ It can be seen from Fig.~\ref{fig:ttttDecay} that the single lepton final state 
 %     \label{fig:BRtttt}
 % \end{center}
 % \end{figure}
-Figure~\ref{fig:tttt100tev} shows the cross section for \tttt production versus centre of mass energy, $\sqrt{s}$, in the proton-proton collision. It can be seen that the cross section rises with energy and indeed it increases faster than the main background of \ttbar production which means that the signal to background ratio increases with $\sqrt{s}$. Table~\ref{tab:Txsec} shows the cross sections for \tttt production and \ttbar production where it can be seen that the \tttt cross section increases by a factor of $\approx~7$ from $\sqrt{s} = 8$~TeV to $\sqrt{s} = 13$~TeV whereas the \ttbar production increase by a factor of $\approx~3.5$.
+Figure~\ref{fig:tttt100tev} shows the cross section for \tttt production versus centre of mass energy in the proton-proton collision. It can be seen that the cross section rises with energy and indeed it increases faster than the main background of \ttbar production, which means that the signal to background ratio increases with $\sqrt{s}$. Table~\ref{tab:Txsec} shows the cross sections for \tttt production and \ttbar production where it can be seen that the \tttt cross section increases by a factor of $\approx~7$ from $\sqrt{s} = 8$~TeV to $\sqrt{s} = 13$~TeV whereas the \ttbar production increases by a factor of $\approx~3.5$.
 
 \begin{figure}[ht!]
 \begin{center}
-    \includegraphics[width=0.95\textwidth]{images/Theory/100TeV.png}
-    \caption{The \ttbar (2t), four top quark (4t) and six top quark (6t) production cross sections at a range of centre of mass, $\sqrt{s}$, energies~\cite{Deandrea:2014raa}}
+    \includegraphics[width=0.95\textwidth]{images/Analysis/100TeV.pdf}
+    \caption{The \ttbar (2t), four top quark (4t) and six top quark (6t) production cross sections at a range of centre of mass energies, $\sqrt{s}$~\cite{Deandrea:2014raa}.}
     \label{fig:tttt100tev}
 \end{center}
 \end{figure}
@@ -59,39 +74,53 @@ Cross section & 8~TeV (\pb) & 13~TeV (\pb) \\ \hline
 \tttt         & 0.0013           & 0.0092            \\ \hline
 \ttbar        & 245              & 831               \\ \hline
 \end{tabular}
-\caption{The cross sections for \tttt and \ttbar production in~\pb~at 8~TeV and 13~TeV~\cite{PhysRevLett.110.252004,Czakon20142930,Alwall2014,Bevilacqua2012}.}
+\caption{The cross sections for \tttt (computed at NLO) and \ttbar (computed at NNLO) production at 8~TeV and 13~TeV~\cite{PhysRevLett.110.252004,Czakon20142930,Alwall2014,Bevilacqua2012}.}
 \label{tab:Txsec}
 \end{table}
 
 \subsection{\ttbar background}
+% In the SM, each of the top quarks will decay to a W boson and a b quark almost 100$\%$ of the time. 
+% The final state of the \ttbar process in the detector is defined by whether each W boson decays leptonically into a lepton and neutrino or hadronically into two quark jets. The standard strategy is to require two b-jets to be present in the event and 0, 1 or 2 leptons depending on whether the final state is all-hadronic, semi-leptonic or dileptonic respectively, where 6, 4 or 2 total number of jets are required. 
 
+\begin{figure}[ht!]
+\centering
+    % \includegraphics[width=0.7\textwidth]{images/Analysis/Ttbar_decay_channels.png}
+    \includegraphics[width=0.7\textwidth]{images/Analysis/top_pair_decay_channels.pdf}
+
+    \caption{The possible decay channels for \ttbar production where the area of each final state is proportional to its branching ratio~\cite{tdecaysource}.}
+    \label{fig:ttbarDecay}
+\end{figure}
+%picture from wiki By Nazar Bartosik - http://bartosik.pp.ua/hep_sketches/tt_decay_channels, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=49739344
+
+% Not all \ttbar events will be captured within the selection due to inefficiencies in tagging b-jets, identifying leptons and reconstructing jets. As the rate of \ttbar production is very high at the LHC, this selection still provides a large enough sample of events to perform studies of \ttbar production that are not limited by the size of the signal sample.
+%have statistically significant studies on \ttbar production.\\
 The main background to \tttt production is \ttbar. In the case of the single lepton channel, semi-leptonic \ttbar is the main final state which contributes to the background. Figure~\ref{fig:ttbarback} shows semi-leptonic \ttbar production with ISR and FSR.
 
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.55\textwidth]{images/Theory/ttbarISRFSR3.eps}
-    \caption{Semi-leptonic \ttbar production with demonstration of extra jets arising from initial and final state radiation}
+    \caption{Semi-leptonic \ttbar production with demonstration of extra jets arising from initial and final state radiation.}
     \label{fig:ttbarback}
 \end{center}
 \end{figure}
 
-The semi-leptonic \ttbar process can produce final states which look very much like a \tttt final state in the detector. There are two top quarks which will produce hard jets including two b-quark jets and one lepton. There are also the additional jets from ISR and FSR which increase the jet multiplicity in the event. As in all collisions, final state jets may arise that do not exceed the \pt threshold of the trigger, which is described in Section~\ref{det:trigger}. Jets may also fall outside of the acceptance of the detector or jets may merge together, both of which can lower the \tttt multiplity to look more like \ttbar. 
-The spectrum of `additional jets' which are not associated with coming from the decay of a top quark are shown in Fig.~\ref{fig:ttbarAdd} for a CMS analysis at $\sqrt{s}=13$~TeV. Events which lie in the tail of the additional jets distribution are more likely to fall within the requirements for a \tttt event. However, in general, jets which come from ISR or FSR tend to be \emph{softer}, ie. lower in \pt.
+The semi-leptonic \ttbar process can produce final states which look very much like a \tttt final state in the detector. There are two top quarks which will produce hard jets including two b-quark jets and one lepton. There are also the additional jets from ISR and FSR which increase the jet multiplicity in the event. Final state jets may arise that do not exceed the \pt threshold of the trigger, which is described in Section~\ref{det:trigger}. Jets may also fall outside of the acceptance of the detector or jets may merge together, both of which can lower the \tttt multiplity to look more like \ttbar. 
+The spectrum of `additional jets' which are not associated with coming from the decay of a top quark are shown in Fig.~\ref{fig:ttbarAdd} for a CMS analysis at $\sqrt{s}=13$~TeV. Events which lie in the tail of the additional jets distribution are more likely to fall within the requirements for a \tttt event. However, in general, jets which come from ISR or FSR tend to be \emph{softer}, ie. lower in \pt. The mis-modelling of the jet multiplicity spectrum, as observed in the lower panel of Fig.~\ref{fig:ttbarAdd}, is understood to be due to a suboptimal value of $\alpha_S$ being used to produce the \ttbar simulation. The treatment of this mis-modelling is discussed further in Section~\ref{subsec:alphaS}.
 
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.85\textwidth]{images/Theory/ttbarAdd.pdf}
-    \caption{Number of jets which are not associated with a top quark decay in the \ttbar semi-leptonic (lepton + jets) channel~\cite{CMS-PAS-TOP-16-008}}
+    \caption{Number of jets which are not associated with a top quark decay in the \ttbar semi-leptonic (lepton + jets) channel~\cite{CMS-PAS-TOP-16-008}.}
     \label{fig:ttbarAdd}
 \end{center}
 \end{figure}
 
 \subsection{Electroweak backgrounds}
-The electroweak backgrounds include W and Z boson production, which in their leptonic decays provide one and two leptons, respectively, and no jets. Additional jets come from ISR or FSR. The electroweak events will have a large number of additional jets a small fraction of times, however because their cross section is so large, as can be seen in Fig.~\ref{fig:CMSstairway}, there will be a small number of events which may pass the requirements for selecting \tttt events.
+The electroweak backgrounds include W and Z boson production in association with jets, which in their leptonic decays provide one and two leptons, respectively, and no jets. Additional jets come from ISR or FSR. The electroweak events will have a large number of additional jets a small fraction of times. However due to their large cross section, as can be seen in Fig.~\ref{fig:CMSstairway}, there will be a small number of events which may pass the requirements for selecting \tttt events.
 \begin{figure}[ht!]
 \begin{center}
     \includegraphics[width=0.99\textwidth]{images/Theory/stairway.pdf}
-    \caption{CMS standard model production cross sections~\cite{stairwaytwiki}}
+    \caption{CMS standard model production cross sections~\cite{stairwaytwiki}.}
     \label{fig:CMSstairway}
 \end{center}
 \end{figure}
@@ -99,7 +128,7 @@ The electroweak backgrounds include W and Z boson production, which in their lep
 The W and Z boson may also decay hadronically where each will provide two jets. Along with the additional jets from ISR/FSR, one jet may be misidentified as a lepton in the detector and hence may also pass the selection requirements for \tttt events.
 
 \subsection{Rarer backgrounds}
-Single top production both has a smaller cross section than W and Z boson production and is less similar to \tttt production than \ttbar production by virtue of having one less top. However the cross section is still many times larger than \tttt production so particularly in the tW-channel there can be enough additional jets (including two b-jets) such that it may mimic \tttt in the detector.
+Single top production both has a smaller cross section than W and Z boson production and is less similar to \tttt production than \ttbar production by virtue of having one less top. However the cross section is still many times larger than \tttt production. Particularly in the tW-channel there can be enough additional jets (including two b-jets) such that it may mimic \tttt in the detector.
 
 % \begin{figure}[ht!]
 % \begin{center}
@@ -115,12 +144,14 @@ Other rarer backgrounds include \ttH, \ttZ and \ttW which resemble \tttt product
 
 \section{Corrections to the simulation}
 \label{sec:Calibrations}
-Many of the parameters which go into simulating each particle physics process are not precisely known, therefore they are tuned to produce the simulation which best matches the data observed. This simulation will still have residual discrepancies from data that can be measured and accounted for by producing \emph{scale factors} (SF) which are usually \pt and $\eta$ dependent and may be dependent on other factors such as jet flavour. These SFs are used to produce a per-event weight for simulated events such that the overall distributions more closely match data. 
+Many of the parameters which go into simulating each particle physics process are not precisely known, therefore they are tuned to produce the simulation which best matches the observed data. This simulation will still have residual discrepancies from data that can be measured and accounted for by producing \emph{scale factors} (SF). These SFs are usually dependent on the \pt and $\eta$ of the particles produced and may be dependent on other factors such as jet flavour. 
+
+They are used to produce a per-event weight for simulated events such that the overall distributions more closely match data. 
 
 
 \subsection{Pileup modelling}
 \label{sec:pile-up}
-The distribution of the number of primary vertices varies between data and simulation for a given luminosity. This can be taken into account by looking at the number of events for each number of primary vertices in data (${N_{events}^{Data}(i)}$) and simulation (${N_{events}^{sim}(i)}$) and applying the scale factor, $SF_{PU}\left( i \right)$ to simulation, where \emph{i} is the number of vertices.
+The distribution of the number of primary vertices varies between data and simulation for a given luminosity. This can be taken into account by looking at the number of events as a function of the number of primary vertices in data (${N_{events}^{Data}(i)}$) and simulation (${N_{events}^{sim}(i)}$) and applying a scale factor, $SF_{PU}\left( i \right)$ to simulation, where \emph{i} is the number of vertices.
 
 \begin{equation}
 SF_{PU}\left( i \right) = \frac{N_{events}^{Data}(i)}{N_{events}^{sim}(i)} 
@@ -129,11 +160,12 @@ SF_{PU}\left( i \right) = \frac{N_{events}^{Data}(i)}{N_{events}^{sim}(i)}
 
 $SF_{PU}$ is derived using \emph{minimum bias} data and simulation. This means that the data have been collected using a much looser trigger than those used to detect interesting physics events. 
 
-\subsection{b tag modelling ~\label{sec:btagModelling}}
+\subsection{b-tag modelling ~\label{sec:btagModelling}}
+There are residual differences between the b tagging efficiencies measured by CMS in data and the efficiencies as measured in simulation as it is difficult to simulate the fragmentation and hadronisation of b-quarks. There are two methods used for correcting the b-tag modelling in this thesis. In Method 1, scale factors are derived to correct the distributions of the number of b-tags for each working point. In Method 2, it is the CSV(v2) distribution of all jets that is corrected by applying a weight to each jet.
 
 \subsubsection{Method 1 ~\label{subsec:method1btag}}
-There are residual differences between the b tagging efficiencies measured by CMS in data and the efficiencies as measured in simulation as it is difficult to simulate the fragmentation and hadronisation of b-quarks. 
-The b-tagging efficiencies are measured for each of the CSVL, CSVM, and CSVT working points in bins of \pt and $\eta$. Depending on which working point was used in an analysis a scale factor, $SF(\eta, P_{T})_{i}$,  can be applied to the simulation for each jet. This is dependent on the \pt, $\eta$ and flavour, \emph{i}, of the jet, shown in Eq.~\ref{eqn:sfbtagnorm}, where $\epsilon(\eta , \pt)^{data}_{i}$ is the efficiency for a jet to be tagged as a b-jet in data and $\epsilon(\eta , \pt)^{sim}_{i}$ is the efficiency for identifying a jet as a b-jet in simulation.
+
+The b-tagging efficiencies are measured for each of the CSVL, CSVM, and CSVT working points in bins of \pt and $\eta$. Depending on which working point was used in an analysis, a scale factor, $SF(\eta, P_{T})_{i}$,  can be applied to the simulation for each jet. This is dependent on the \pt, $\eta$ and flavour, \emph{i}, of the jet, shown in Eq.~\ref{eqn:sfbtagnorm}, where $\epsilon(\eta , \pt)^{data}_{i}$ is the efficiency for a jet to be tagged as a b-jet in data and $\epsilon(\eta , \pt)^{sim}_{i}$ is the efficiency for identifying a jet as a b-jet in simulation.
 
 \begin{centering}
 \begin{equation}
@@ -145,20 +177,20 @@ Separate scale factors are defined for b and light (u, d, s, g) jets. Scale fact
 
 \begin{centering}
 \begin{equation}
-P(MC) = \prod_{tagged jets}\epsilon^{sim}_{i} \times \prod_{untagged jets}(1- \epsilon^{sim}_{i})
+P(MC) = \prod_{tagged~jets}\epsilon^{sim}_{i} \times \prod_{untagged~jets}(1- \epsilon^{sim}_{i})
 \end{equation}
 \end{centering}
-where $\epsilon_{i}$ is the efficiency of tagging a jet of flavour $i$ with the CSV criterion in simulation. While the probability of an event in data producing a given number of tagged and untagged jets, P(DATA), is defined as follows:
+where $\epsilon^{sim}_{i}$ is the efficiency of tagging a jet of flavour $i$ with the CSV criterion in simulation. While the probability of an event in data producing a given number of tagged and untagged jets, P(DATA), is defined as follows:
 
 
 \begin{centering}
 \begin{equation}
-P(DATA) = \prod_{tagged jets}SF_{i}\cdot\epsilon^{sim}_{i} \times \prod_{untagged jets}(1- SF_{i}\cdot\epsilon^{sim}_{i})
+P(DATA) = \prod_{tagged~jets}SF_{i}\cdot\epsilon^{sim}_{i} \times \prod_{untagged~jets}(1- SF_{i}\cdot\epsilon^{sim}_{i})
 \end{equation}
 \end{centering}
-where SF is the appropriate scale factor for a jet of flavour $i$. 
+where $SF_{i}$ is the appropriate scale factor for a jet of flavour $i$. 
 
-An overall weight to be applied to each event depending on the jet content can be derived from these scale factors using Eqn.~\ref{eqn:weightbtagnorm}. This weight, $\omega_{btag}$, must be applied to the selected simulation events in order to predict the correct event yield in data.
+An overall event weight to be applied depending on the jet content can be derived from these scale factors using Eqn.~\ref{eqn:weightbtagnorm}. This weight, $\omega_{btag}$, must be applied to the events in simulation in order to predict the correct event yield.
 
 \begin{centering}
 \begin{equation}
@@ -169,23 +201,31 @@ An overall weight to be applied to each event depending on the jet content can b
 
 \subsubsection{Method 2 ~\label{subsec:method2btag}}
 
-Alternatively, the measurements at each working point can be used to fit the shape of the CSV distribution and provide scale factors in bins of \pt and $\eta$ for each jet flavour. Therefore the scale factors for each jet can be derived from the \pt and $\eta$, CSV discriminator value and for each jet flavour as seen in Eq.~\ref{eqn:btagcsv}. For this method, the jet flavours are defined as heavy for bottom quarks and light for u, s, d, g whilst c-quarks are given $\textrm{SF} = 1$. Further details of the CSV reshaping can be found in Ref.~\cite{CMS-NOTE-2013-130}.
+Alternatively, the measurements at each working point can be used to fit the shape of the CSV distribution and provide scale factors in bins of \pt and $\eta$ for each jet flavour. Therefore the scale factors for each jet can be derived from the \pt, $\eta$, and CSV discriminator value and for each jet flavour as seen in Eq.~\ref{eqn:btagcsv}. For this method, the jet flavours are defined as heavy for bottom quarks and light for u, s, d, g whilst c-quarks are given ${SFjet} = 1$. The scale factor for a heavy (light) flavour jet is defined as ${SF}^{H}$ (${SF}^{L}$), the number of jets in data are defined as $\njets^{Data}$, whilst the number of heavy (light) flavour jets in simulation are defined as $N^{H}_{sim}$ ($N^{L}_{sim}$). ${SF}^{H}$ and ${SF}^{L}$ are derived in bins of \pt, $\eta$ and CSV value.
 
 \begin{equation}
-% \textrm{SFjet}_{\textrm{B}} \left(\textrm{CSV},\pt,\eta \right) = \frac{\textrm{Data} - \textrm{MC}_{\textrm{A}}}{\textrm{MC}_{\textrm{B}}} ~~;~~ \textrm{A, B = heavy flavour, light flavour or vice versa}
-\textrm{SFjet}_{\textrm{i}} \left(\textrm{CSV},\pt,\eta \right) = \frac{\njets^{Data} - {\njets^{MC}}_{,j}}{{\njets^{MC}}_{,i}} ~~;~~ \textrm{i, j = heavy flavour, light flavour or vice versa}\label{eqn:btagcsv}
+\label{eqn:btagcsv}
+\begin{split}
+{SF}^{H} \left(\textrm{CSV},\pt,\eta \right) = \frac{\njets^{Data} - N^{L}_{sim}}{N^{H}_{sim}}\\ \\
+{SF}^{L} \left(\textrm{CSV},\pt,\eta \right) = \frac{\njets^{Data} - N^{H}_{sim}}{N^{L}_{sim}}
+\end{split}
 \end{equation}
-
-An event weight can be derived by taking the product of the per-jet scale factors as seen in Eq.~\ref{eqn:btagcsvtot}.
+% \begin{equation}
+% % \textrm{SFjet}_{\textrm{B}} \left(\textrm{CSV},\pt,\eta \right) = \frac{\textrm{Data} - \textrm{MC}_{\textrm{A}}}{\textrm{MC}_{\textrm{B}}} ~~;~~ \textrm{A, B = heavy flavour, light flavour or vice versa}
+% {SFjet}_{{i}} \left(\textrm{CSV},\pt,\eta \right) = \frac{\njets^{Data} - {\njets^{MC}}_{,j}}{{\njets^{MC}}_{,i}} ~~;~~ \textrm{i, j = heavy flavour, light flavour or vice versa}\label{eqn:btagcsv}
+% \end{equation}
+An event weight can be derived by taking the product of the per-jet scale factors for all heavy and light flavour jets in the event, as seen in Eq.~\ref{eqn:btagcsvtot}.
 
 \begin{equation}
-\textrm{SF}_{\textrm{total}} = \prod_{i}^{\njets}\textrm{SFjet}_{i}
+{SF}_{\textrm{total}} = \prod_{i}^{N_{L}}{SF}^{L}_{i}\prod_{j}^{N^{H}}{SF}^{H}_{j}
 \label{eqn:btagcsvtot}
 \end{equation}
 
+Further details of the CSV distribution reshaping can be found in Ref.~\cite{CMS-NOTE-2013-130}.
+
 \subsection{Heavy flavour jet modelling ~\label{ttbbmod}}
 % There is a discrepancy between data and simulation in the distribution of the number of b-tagged jets (\nbtags) at higher numbers of b-tags which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated.
-The extra jets in \ttbar events can come from processes such as gluon splitting pair-producing \bbbar. These \ttbb events are most likely to resemble the features of the \tttt signal events and so it is essential that the proportion of them in simulation is correctly modelled. Table~\ref{tab:heavyflavR} shows the heavy flavour ratio $R=\heavyflavourone~/~\heavyflavourtwo$ as measured by CMS at $\sqrt{s}8$~TeV and $\sqrt{s}13$~TeV in data and in simulation. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets (MC) sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg).  A scale factor SF = R(Data)~/~R(Sim) is derived from the information in Table~\ref{tab:heavyflavR} which is applied to the \ttbb events. Another SF is applied to \ttll to preserve the total number of \ttbar events.
+The extra jets in \ttbar events can come from processes such as gluon splitting which pair produces \bbbar. These \ttbb events are most likely to resemble the features of the \tttt signal events and so it is essential that the proportion of them in simulation is correctly modelled. Table~\ref{tab:heavyflavR} shows the heavy flavour ratio $R=\heavyflavourone~/~\heavyflavourtwo$ as measured by CMS at $\sqrt{s}=8$~TeV and $\sqrt{s}=13$~TeV in data and in simulation. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets (MC) sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg).  A scale factor SF = R(Data)~/~R(Sim) is derived from the information in Table~\ref{tab:heavyflavR} which is applied to the \ttbb events. Another SF is applied to \ttll to preserve the total number of \ttbar events.
 
 
 \begin{table}[htpb!]
@@ -199,13 +239,13 @@ $\sqrt{s}$ (TeV)                         & R(Data)  (\%)                        
 13 & $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.6 \left(\textrm{sys.} \right)$ & 1.2 $\pm$ 0.1 & 1.83 \\
 \hline
 \end{tabular}
-\caption{Ratio of $R=\heavyflavourone~/~\heavyflavourtwo$ for Data and Simulation at $\sqrt{s}8$~TeV~\cite{Khachatryan2015132} and $\sqrt{s}13$~TeV~\cite{CMS-PAS-TOP-16-010} alongside the scale factor derived for R(Data)~/~R(Sim)}
+\caption{Ratio of $R=\heavyflavourone~/~\heavyflavourtwo$ for Data and Simulation at $\sqrt{s}=8$~TeV~\cite{Khachatryan2015132} and $\sqrt{s}=13$~TeV~\cite{CMS-PAS-TOP-16-010} alongside the scale factor derived for R(Data)~/~R(Sim).}
 \label{tab:heavyflavR}
 \end{center}
 \end{table}
 
 \subsection{Lepton modelling}
-A weight is applied to events which is dependent on the selected leptons $\eta$, $\pt$ and lepton flavour. The scale factors for each source of efficiency (isolation, identification, reconstruction and trigger) are designed to be multiplicative and the final event weight can be found in Eq.~\ref{eqn:leptonW}
+A weight is applied to events which is dependent on the selected leptons $\eta$, $\pt$ and lepton flavour. The scale factors for each source of efficiency (isolation, identification, reconstruction and trigger) are designed to be multiplicative. The final event weight is:
 
 \begin{equation}
 \omega_{lepton} = SF_{iso}\times SF_{id}\times SF_{reco}\times SF_{trig}
@@ -222,12 +262,12 @@ The top quarks which are reconstructed in \ttbar enriched regions of data tend t
 \end{equation}
 
 \subsection{Jet multiplicity modelling \label{subsec:alphaS}}
-Good modelling of the jet multiplicity distribution up to a large number of jets in the main \ttbar background is highly important for this analysis because as the number of jets increases, the signal to background ratio increases. Hence, the higher jet multiplicities have the highest sensitivity in separating the signal \tttt process and the background \ttbar process. It is essential that \ttbar is well modelled in this high jet multiplicity region. 
-Particularly at $\sqrt{s}13$~TeV the simulation was larger than data in the higher \njets bins. The value of $\alpha_S$ in the \ttbar \POWHEG+\PYTHIA~8 sample used in the analysis in Chapter~\ref{c:Run2} is 0.137, however the best tune was observed to have a value of $\alpha_S=0.113^{+0.012}_{0.010}$. A scale factor was therefore calculated by CMS in order to improve the modelling of the \njets distribution~\cite{Khachatryan:2015mva}. 
+Good modelling of the jet multiplicity distribution up to a large number of jets in the main \ttbar background is very important for this analysis due to the fact that as the number of jets increases, the signal to background ratio increases. Hence, the higher jet multiplicities have the highest sensitivity in separating the signal \tttt process and the background \ttbar process. It is essential that \ttbar is well modelled in this high jet multiplicity region. 
+Particularly at $\sqrt{s}=13$~TeV the simulation was larger than data in the higher \njets bins. The value of $\alpha_S$ in the \ttbar sample produced with \POWHEG+\PYTHIA~8 used in the analysis in Chapter~\ref{c:Run2} is 0.137, however the best tune was observed to have a value of $\alpha_S=0.113^{+0.012}_{-0.010}$. A scale factor was therefore calculated by CMS in order to improve the modelling of the \njets distribution~\cite{Khachatryan:2015mva}. 
 
 \section{Multi-jet background estimation}
 \label{sec:QCDbackground}
-The presence of multi-jet events within the signal region defined by the baseline selection is investigated in this section. It is rare for multi-jet events to have a highly energetic undetectable particles as QCD processes do not produce neutrinos. Therefore, the $\MET$ distributions for multi-jet events typically peak at low values, not necessarily at zero as some jets may be outside of the acceptance of the detector or mismeasured. Due to the small number of events which pass the baseline event selection and the difficulty in simulating QCD events, it is not possible to use multi-jet simulation to estimate this background. In this case, a data-driven method known as the ``ABCD method'' may be used. This method proceeds by selecting two uncorrelated variables from the object or baseline selection and defining three control regions (A,B,C) and one signal region, D, in the 2-dimensional phase space of these variables, as shown in Fig.~\ref{fig:ABCDdiagram}. A selection is made in each variable which defines one quadrant of the phase space as the signal region.  The event variable \MET and the lepton variable RelIso were selected as they are uncorrelated where the signal is defined in a low RelIso and higher \MET region.\\
+The presence of multi-jet events within the signal region defined by the baseline selection is investigated in this section. It is rare for multi-jet events to have a highly energetic undetectable particle as QCD processes do not produce neutrinos in the hard process. Therefore, the $\MET$ distributions for multi-jet events typically peak at low values. The peak can be above zero as some jets may be outside of the acceptance of the detector or mismeasured. Due to the small number of events which pass the baseline event selection and the difficulty in simulating QCD events, it is not possible to use multi-jet simulation to estimate this background. In this case, a data-driven method known as the ``ABCD method'' may be used. This method proceeds by selecting two uncorrelated variables from the object or baseline selection and defining three control regions (A,B,C) and one signal region, D, in the 2-dimensional phase space of these variables, as shown in Fig.~\ref{fig:ABCDdiagram}. A selection is made in each variable which defines one quadrant of the phase space as the signal region.  The event variable \MET and the lepton variable RelIso were selected as they are uncorrelated, as shown in Fig~\ref{fig:MetReliso} in Appendix~\ref{app:MetReliso}. The signal region is defined in a low RelIso and higher \MET region.\\
 
 \begin{figure}[ht!]
 \begin{center}
@@ -237,7 +277,7 @@ The presence of multi-jet events within the signal region defined by the baselin
 }
 \hspace{0.2cm}
 \end{center}
-\caption{Illustration of ABCD method}
+\caption{Illustration of the ABCD method.}
 \label{fig:ABCDdiagram}
 \end{figure}
 
@@ -245,18 +285,18 @@ The presence of multi-jet events within the signal region defined by the baselin
 % \frac{\textrm{N}^{\textrm{B}}_{\textrm{multi-jet}}}{\textrm{N}^{\textrm{A}}_{\textrm{multi-jet}}} = \frac{\textrm{N}^{\textrm{C}}_{\textrm{multi-jet}}}{\textrm{N}^{\textrm{D}}_{\textrm{multi-jet}}}
 % \label{N-multi-jet}
 % \end{equation}
-For the background processes that are much more well modelled in simulation than QCD events, their yields in each region are subtracted from the data. This should in theory leave only QCD multijet events remaining and so the number of events in the signal region can be estimated from the equation in Fig.~\ref{fig:ABCDdiagram}. This method does have some dependence on the simulation and assumes that the other backgrounds are well modelled. The uncertainty on this assumption can be taken into account by varying the main \ttbar background by its main source of uncertainty. 
+For the background processes that are well modelled using simulation, their yields in each region are subtracted from the data. This should in theory leave only QCD multijet events remaining and so the number of events in the signal region can be estimated from the equation in Fig.~\ref{fig:ABCDdiagram}. This method does have some dependence on the simulation and assumes that the other backgrounds are well modelled. The uncertainty on this assumption can be taken into account by repeating the procedure with different versions of the \ttbar simulation in which the ME and PS scale uncertainties (the main uncertainties on \ttbar) are varied up and down.
 
 
 \section{Multivariate analysis techniques ~\label{sec:MVAtechniques}}
 
-Four top quark production events are very rare at the energies of $\sqrt{s} = 8$~TeV and $\sqrt{s} = 13$~TeV studied in this thesis. Typically, within the selection defined in Section~\ref{sec:Strategy} the main background is \ttbar production which is several orders of magnitude larger than the \tttt signal. In this type of analysis where the background and signal can be similar in many distributions and the signal is so rare, it can be advantageous to use multivariate analysis (MVA) methods to increase the signal to background separation. The main MVA method used in this thesis is \emph{Boosted Decision Trees} (BDT) where more details of this algorithm and its specific use in this analysis are given in the subsequent sections.
+Four top quark production events are very rare at the energies of $\sqrt{s} = 8$~TeV and $\sqrt{s} = 13$~TeV studied in this thesis. Typically, within the selection defined in Section~\ref{sec:Strategy} the main background is \ttbar production which is several orders of magnitude larger than the \tttt signal. In this type of analysis, where the background and signal can be similar in many distributions and the signal is so rare in comparison to the backgrond, it can be advantageous to use multivariate analysis (MVA) methods to increase the signal to background separation. The main MVA method used in this thesis is \emph{Boosted Decision Trees} (BDT). More details of this algorithm and its specific use in the analysis are given in the subsequent sections.
 
 
 \subsection{Boosted Decision Trees}
 \label{sec:BDT}
 
-To start with, the simpler concept of a single Decision Tree will be considered. Decision trees are used to maximise the separation between a signal ($S$) sample and a background ($B$) sample by looking at a set of distributions in which there is some initial separation between the two; a training sample for each is provided to the algorithm. A simple decision tree is shown in Fig.~\ref{fig:DecisionTree} where each decision is defined at a \emph{node} and splits the dataset in two by placing a requirement in the most discriminating variable in order to separate as many background event down one side and signal events down the other side.
+To start with, the simpler concept of a single Decision Tree will be considered. Decision trees are used to maximise the separation between a signal ($S$) sample and a background ($B$) sample by looking at a set of distributions in which there is some initial separation between the two; a training sample for each is provided to the algorithm. A simple decision tree is shown in Fig.~\ref{fig:DecisionTree} where each decision is defined at a \emph{node} and splits the dataset in two by placing a requirement in the most discriminating variable in order to separate as many background events down one side and signal events down the other side.
 One can define the purity at each node as $P=\frac{S}{S+B}$. Another useful measure is the \emph{gain} at each node which gives a more symmetric measure of the node having high purity of either signal or background. The particular metric of gain used in this analysis is the commonly used \emph{Gini Index} which is defined as $Gini = P\cdot\left(1-P\right)$. A high Gini Index suggests the node contains a relatively equal amount of signal and background whereas a low Gini index shows that the node contains more of either signal or background. 
 The goal is to scan across each distribution and find the requirement in the associated variable which maximises the \emph{separation gain} ($S_{G}$) as defined in Eq.~\ref{eqn:SepGain}. This process is iterated upon until a predefined end condition such as the maximum depth of the tree or the minimum number of events in a node.
 
@@ -286,7 +326,7 @@ S_{G} = Gini(\textrm{parent}) - Gini(\textrm{child 1}) - Gini(\textrm{child 2})
 \label{fig:DecisionTree}
 \end{figure} 
 
-It has been found that using an ensemble (usually several hundred) of smaller decision trees of depth = 2 or depth = 3 is preferable to using one large decision tree as it can minimise \emph{overtraining}, ie. the propensity to train to the specific features of the training sample rather than the general trend. 
+It has been found that using an ensemble (usually several hundred) of smaller decision trees of depth = 2 or depth = 3 is preferable to using one large decision tree as it can create a much stronger ``learner'' and minimise \emph{overtraining}, ie. the propensity to train to the specific features of the training sample rather than the general trend. 
 
 The first tree begins as a normal decision tree as described above and it terminates when it reaches the maximum depth defined. The error rate, $R_{err}$, of the tree is defined as the number of events incorrectly classified divided by the total number of events. The events which were incorrectly categorised are weighted according to Eq.~\ref{eqn:ErrorWeight} where $\alpha$ is the \emph{boost weight} which is dependent on $R_{err}$. The idea is that in the next iteration of a tree the incorrectly classified events are considered with higher importance. The degree of boosting can be adjusted by raising $\alpha$ to the power of $\beta$, the learning rate.
 
@@ -295,9 +335,8 @@ The first tree begins as a normal decision tree as described above and it termin
 \label{eqn:ErrorWeight}
 \end{equation}
 
-This process is repeated until the predefined maximum number of trees has been reached. 
-
-A discriminator value, $y_{BDT}$, is defined by summing the response from each tree, \emph{t}, and weighting each response by $\ln \left(\alpha_{t}\right)$ such that the trees with low error rates are considered more than trees with high error rates. The response from each individual tree is defined as $h\left(\textbf{x}\right)$ where $h\left(\textbf{x}\right) = +1 \textrm{ for signal and} -1 \textrm{ for background}$ and $\textbf{x}$ is the set of input variables. 
+This process is repeated until the predefined maximum number of trees has been reached. This is known as the ``Adaptive Boost'' or ``AdaBoost'' algorithm
+A discriminator value, $y_{BDT}$, is defined by summing the response from each tree, \emph{t}, where the boost weight for each tree is $\alpha_{t}$. Each response is weighted by $\ln \left(\alpha_{t}\right)$ such that the trees with low error rates are considered more than trees with high error rates. The response from each individual tree is defined as $h\left(\textbf{x}\right)$ where $\textbf{x}$ is the set of input variables. Events categorised in signal nodes are assigned $h\left(\textbf{x}\right) = +1 $ and events categorised in background nodes are assigned $h\left(\textbf{x}\right) = -1 $. 
 
 \begin{equation}
 y_{BDT} = \frac{1}{Ntrees} \cdot \sum_{t}^{Ntrees} \ln \left(\alpha_{t}\right) \cdot h_{t}\left(\textbf{x}\right)
@@ -309,19 +348,19 @@ Variable importance is a measure how often a variable is chosen as the variable 
 
 \section{Reconstruction of hadronic top quarks \label{sec:topreco}}
 
-In \tttt single lepton channel there are three hadronically decaying top quarks while there is only one hadronically decaying top quark in the semi-leptonic \ttbar final state. Equivalently in the dilepton channel there are two (zero) hadronically decaying top quarks in \tttt (\ttbar). Therefore reconstructing top quarks from their hadronic decay products should be a powerful way to separate the signal and background processes. The jets which are in addition to the hard process in \ttbar are likely to come from initial or final state radiation (ISR or FSR) or from pileup, hence it should be unlikely to reconstruct a hadronic top quark from these additional jets. Due to the large number of jets within the selection, it is difficult challenge to find the right combination of jets which originated from a top quark. This motivates using multivariate analysis in order to rank each combination of three jets (tri-jet) according to which is most likely to be the combination that originated from a real hadronically decaying top quark.
+In the \tttt single lepton channel there are three hadronically decaying top quarks while there is only one hadronically decaying top quark in the semi-leptonic \ttbar final state. Equivalently in the dilepton channel there are two (zero) hadronically decaying top quarks in \tttt (\ttbar). Therefore reconstructing top quarks from their hadronic decay products should be a powerful way to separate the signal and background processes. The jets which are in addition to the hard process in \ttbar are likely to come from initial or final state radiation (ISR or FSR) or from pileup, hence it should be unlikely that a hadronic top quark could be reconstructed from these additional jets. Due to the large number of jets within the selection, it is a challenge to find the right combination of jets which originated from a top quark. This motivates using multivariate analysis in order to rank each combination of three jets (tri-jet) according to which is most likely to be the combination that originated from a real hadronically decaying top quark.
 A training sample from \ttbar events is provided to the BDT where the Monte Carlo truth information is used to classify whether a tri-jet combination was a \emph{good} combination which originated from a top quark or a \emph{bad} combination which is formed from random jets. The following variables were selected for use within the BDT:\\
 \textbf{Tri-jet invariant mass} - Good tri-jet combinations should have an invariant mass distribution which peaks around the top mass.
 Bad tri-jet combinations will have a much broader distribution. \\
 \textbf{Di-jet invariant mass} - The di-jet combination is formed from the two jets with the smallest \DR separation. The invariant mass distribution should peak around the W mass for good tri-jet combinations.\\
-\textbf{\ptrat} - This is the ratio of the vectorial \pt to the scalar sum of the \pt of the jets in the tri-jet combination. This is likely to be smaller in a random combination of jets where the vectorial \pt of each jet will cancel out more than in a good tri-jet combination.\\
-\textbf{\DPTW} - This is the \Dphi between the tri-jet and di-jet system which should be smaller in good tri-jet combinations.\\
-\textbf{\DPTb} - This is the \Dphi between the tri-jet and remaining jet not included in the di-jet system which should be smaller for good tri-jet combinations.\\
-\textbf{\CSVj} - For the jet not used in the di-jet system, the CSV b-tagging discriminator value is used. If the di-jet system correctly identifies the quark jets coming from a W boson decay then the remaining jet in a good tri-jet combination should be a b-jet and hence will have a higher CSV b-tagging discriminator than a typical randomly selected jet.\\
-The BDT algorithm is trained on the six variables above. It produces a discriminator value for each tri-jet combination. Higher BDT discriminator values are associated with the jets being more likely to have come from a top quark. Each tri-jet combination is ranked according to the BDT discriminator value. In the dilepton channel the value for the highest ranked tri-jet, known as BDT$_{tri-jet1}$, can be used as a discriminating variable between \tttt and \ttbar. In the single lepton channel the three jets which make up the highest ranked tri-jet combination are removed from the collection of jets and the process is repeated. The discriminator value of the next highest ranked tri-jet, BDT$_{tri-jet2}$, in this reduced jet collection can be used to distinguish between \tttt and \ttbar.
+$\mathbf{\ptrat}$ - This is the ratio of the modulus of the vectorial sum of the \pt to the scalar sum of the \pt of the jets in the tri-jet combination. This is likely to be smaller in a random combination of jets where the vectorial \pt of each jet will cancel out more than in a good tri-jet combination.\\
+$\mathbf{\DPTW}$ - This is the \Dphi between the tri-jet and di-jet system which should be smaller in good tri-jet combinations.\\
+$\mathbf{\DPTb}$ - This is the \Dphi between the tri-jet and remaining jet not included in the di-jet system which should be smaller for good tri-jet combinations.\\
+\textbf{CSV}$_{\textrm{j}}$ - For the jet not used in the di-jet system, the CSV b-tagging discriminator value is used. If the di-jet system correctly identifies the quark jets coming from a W boson decay then the remaining jet in a good tri-jet combination should be a b-jet and hence will have a higher CSV b-tagging discriminator than a typical randomly selected jet.\\
+The AdaBoost BDT algorithm is trained on the six variables above. Combinations of tri-jets which come from a top quark in simulation are considered to be the signal and tri-jets which come from random combinations of jets and do not originate from a top quark are considered as the background sample. It produces a discriminator value for each tri-jet combination. Higher BDT discriminator values are associated with the jets being more likely to have come from a top quark. Each tri-jet combination is ranked according to the BDT discriminator value. In the dilepton channel the value for the highest ranked tri-jet, known as BDT$_{tri-jet1}$, can be used as a discriminating variable between \tttt and \ttbar. In the single lepton channel the three jets which make up the highest ranked tri-jet combination are removed from the collection of jets and the process is repeated. The discriminator value of the next highest ranked tri-jet, BDT$_{tri-jet2}$, in this reduced jet collection can be used to distinguish between \tttt and \ttbar.
 
 \subsection{Reduced Variables}
-As mentioned above, BDT$_{tri-jet2}$ is calculated from a reduced jet collection where the three jets from the highest-ranked tri-jet are removed from the jet collection. In \ttbar events, the removal of the jets most likely to form a true top quark leave softer jets remaining in the reduced jet collection, usually from ISR, FSR or PU rather than the hard process of \ttbar production. In \tttt events the removal of the leading hadronic top quark candidate potentially leaves behind two additional hadronic top quarks, where some of the jets may not be reconstructed but there should still be harder jets from the hard process than what remains in \ttbar events. Therefore some discriminating variables can be formed from the reduced jet collection, as follows:
+As mentioned above, BDT$_{tri-jet2}$ is calculated from a reduced jet collection where the three jets from the highest-ranked tri-jet are removed from the jet collection. In \ttbar events, the removal of the jets most likely to form a true top quark leave softer jets remaining in the reduced jet collection, usually from ISR, FSR or PU rather than the hard process of \ttbar production. In \tttt events the removal of the leading hadronic top quark candidate potentially leaves behind two additional hadronic top quarks, where some of the jets may not be reconstructed leaving harder jets from the hard process than what remains in \ttbar events. Therefore some discriminating variables can be formed from the reduced jet collection, as follows:
 
 \textbf{HT$_{X}$} - This is the \HT of the reduced event which should be higher for signal \tttt events.\\
 \textbf{\sumjetmassX} - Invariant mass of all jets contained in the reduced event which should be higher for signal \tttt events..
@@ -336,7 +375,7 @@ At 8~TeV this was exploited by looking at the number of CSVM b-tags in an event,
 Another variable used is the scalar sum of the \HT of all CSVM b-jets in the event which should be higher for \tttt events, \htb.
 
 \textbf{Event-Activity}\\
-One of the most obvious variables to choose to distinguish between \ttbar and \tttt is the number of jets (\njets) as on average \tttt events have a higher number of jets than \ttbar. In semi-leptonic \ttbar events there are up to four hard jets from the hard process compared to up to ten from \tttt, so the fifth and sixth jet \pt can be used to distinguish between the event types. The same idea is used to form the variable \htrat which is the ratio of the scalar sum of the \HT from the four highest \pt jets to the scalar sum of the \HT of the other jets in the events. This variable should be smaller for \tttt events where there are more than four jets coming form the hard process.
+One of the most obvious variables to choose to distinguish between \ttbar and \tttt is the number of jets (\njets) as on average \tttt events have a higher number of jets than \ttbar. In semi-leptonic \ttbar events there are up to four hard jets from the hard process compared to up to ten from \tttt. Therefore, the fifth and sixth jet \pt can be used to distinguish between the event types. The same idea is used to form the variable \htrat which is the ratio of the scalar sum of the \HT from the four highest \pt jets to the scalar sum of the \HT of the other jets in the events. This variable should be smaller for \tttt events where there are more than four jets coming from the hard process.
 The \emph{centrality} of the event is defined as the ratio of the \HT in the event to the H in the event, where H is the scalar sum of the total momentum (P) in the event.
 
 The lepton \pt is used as a training variable as it is slightly larger in \tttt events than in \ttbar events.
@@ -351,13 +390,13 @@ N_j^W = \frac{\int_{30}^{125}{N_j\left(p_T > p_T^{th}\right)\cdot p_T^{th}\,dp_T
 \end{equation} 
 
 
-\textbf{Training}\\
+\subsection{Training}
 Each analysis from the single-lepton channel at 8~TeV, the single-lepton channel at 13~TeV and the dilepton channel at 13~TeV, uses different subsets of the variables described above. The variables which are only used in the dilepton channel have not been described here and can be found in Ref~\cite{CMS-PAS-TOP-16-016}. The optimised set of variables for each training are provided to the TMVA package where the AdaBoost boosting algorithm is employed. The \tttt signal is trained against the main \ttbar background only as the other backgrounds are comparatively small. The \emph{event-level} BDT will return a discriminator value which will be closer to +1 (-1) for signal-like (background-like) events.
 
 \section{Systematic uncertainties}
 \label{sec:uncertainties}
 
-Both the modelling of the simulation and the efficiency of the detector are not perfect and hence they bring some uncertainty to the measurement which needs to be taken into account when fitting the simulation to the data as described in Section~\ref{sec:limitFit}.
+Both the modelling of the simulation and the efficiency and resolution of the detector are not perfect. Hence, they bring some uncertainty to the measurement which needs to be taken into account when fitting the simulation to the data as described in Section~\ref{sec:limitFit}.
 There are two categories of systematic uncertainties; (i) Uncertainties which affect the normalisation of the distributions and (ii) uncertainties which affect the shape of the distributions. The quantity causing the uncertainty in each case can be varied up and down to produce alternative histogram templates.
 
 \subsection{Normalisation uncertainties}
@@ -365,7 +404,7 @@ There are two categories of systematic uncertainties; (i) Uncertainties which af
 Normalisation uncertainties include the following:
 \begin{itemize}
 \item \textbf{Luminosity}\\
-There is some uncertainty on the luminosity as measured by the CMS Luminosity group which affects the normalisation of all simulation samples as they are scaled to the measured luminosity
+There is some uncertainty on the luminosity as measured by the CMS Luminosity group which affects the normalisation of all simulation samples as they are scaled to the measured luminosity.
 
 % The CMS Luminosity Group give a recommendation of 2.6$\%$ uncertainty on the luminosity~\cite{CMS-PAS-LUM-12-001}.
 \item \textbf{Monte Carlo simulation cross sections}\\
@@ -382,7 +421,7 @@ An uncertainty arises from the choice of lepton triggers and identification crit
  Shape uncertainties arise from the following quantities.
 \begin{itemize}
 \item \textbf{Factorisation and renormalisation scales}
-This factorisation and renormalisation scale $\left(\mu_{f},\mu_{s}\right)$ can be shifted up and down at matrix element (ME) level and at parton shower (PS) level within the simulation. A shift in the $Q^{2}$ scale at PS level is equivalent to changing the value of $\alpha_{S}$ so the uncertainty from the jet multiplicity modelling in Section~\ref{subsec:alphaS} can be included by inflating the PS scale systematic.
+This factorisation and renormalisation scale $\left(\mu_{f},\mu_{s}\right)$ can be shifted up and down at matrix element (ME) level and at parton shower (PS) level within the simulation. A shift in the $Q^{2}$ scale at PS level is equivalent to changing the value of $\alpha_{S}$. Therefore the uncertainty from the jet multiplicity modelling in Section~\ref{subsec:alphaS} can be included by inflating the PS scale systematic.
 
 \item \textbf{Matching threshold}\\
 The uncertainty due to the choice of matching threshold between the matrix element calculation and the parton shower is evaluated by producing alternative simulation samples where the matching threshold is varied between 20~GeV and 40~GeV.
@@ -400,7 +439,7 @@ The energies of the jets in simulation are smeared to match the observed discrep
 There is a significant uncertainty on the measurement of b-tagging scale factors which is particularly important as variables derived from b-tagging jets are used in the event-level BDT. The method of accounting for this uncertainty varies depending on the b-tag modelling used from Section~\ref{sec:btagModelling}.
 
 \item \textbf{Pile up}\\
-The minimum bias cross section used in the simulation which is used to derive the pile up scale factors is varied by $\pm 5\%$ to account for uncertainty on the minimum bias cross section. 
+The minimum bias cross section used in the simulation which is used to derive the pile up scale factors is varied by $\pm 5\%$ to account for the uncertainty on the minimum bias cross section. 
 
 \item \textbf{\heavyflavourone~/~\heavyflavourtwo modelling}\\
 The uncertainty on the measurement of the ratio of \heavyflavourone~/~\heavyflavourtwo is translated into an uncertainty on the scale factors applied to heavy flavour jets. An anti-correlated uncertainty is applied to light flavour jets.
@@ -412,25 +451,25 @@ The subsets of this list of uncertainties used for the \runone and \runtwo analy
 % The analysis procedure is repeated with \ttbar samples which have the respective quantity varied by $\pm 1 \sigma$ in order the produce new BDT templates with a deviated shape However, in the case of the matching threshold, the alternative shapes are produced by varying the matching threshold up to 40 GeV and down to 20 GeV.
 
 \section{Limit setting \label{sec:limitFit}}
-So far we have the nominal histogram templates in the BDT output discriminator disctribution for each background and signal, the normalisation systematic uncertainties for each source, and the alternative histograms for the up and down shape systematic uncertainties. All of these quantities are entered in the Higgs Combine Tool based on the Roostats package where a Maximum Likelihood Fit (MLF) is performed. In reality the MLF actually minimises the negative log likelihood ($-\ln\mathcal{L}$) as it is computationally simpler to work with.
+The nominal histogram templates in the BDT output discriminator disctribution for each background and signal, the normalisation systematic uncertainties for each source, and the alternative histograms for the up and down shape systematic uncertainties have now been described. All of these quantities are provided to the Higgs Combine Tool based on the Roostats package where a Maximum Likelihood Fit (MLF) is performed. In reality the MLF actually minimises the negative log likelihood ($-\ln\mathcal{L}$) as it is computationally simpler to work with as it becomes a sum of log likelihoods rather than a product of likelihoods.
 
-The expected number of events in bin $i$, $\mu_{i}$, is given in Eq.~\ref{eqn:expectedmui} where L is the luminosity, $\sigma_{j}$ is the cross section for the source of events from process $j$, and $\epsilon_{ij}$ is the efficiency for source $j$ to be in bin $i$ derived from simulation
+The expected number of events in bin $i$, $\mu_{i}$, is given in Eq.~\ref{eqn:expectedmui} where L is the luminosity, $\sigma_{j}$ is the cross section for the source of events from process $j$, and $\epsilon_{ij}$ is the efficiency for source $j$ to be in bin $i$ derived from simulation.
 
 \begin{equation}
 \mu_{i} = \sum_{j=1}^{n_{source}}L\sigma_{j}\epsilon_{ij}
 \label{eqn:expectedmui}
 \end{equation}
 
-If we assume that the number of events in bin $i$, $n_{i}$, will be gaussian-distributed ($\mathcal{G}$) then the likelihood for the entire histogram is given in Eq.~\ref{eqn:gausslike}.
+It is assumed that the number of events in bin $i$, $n_{i}$, will be poisson-distributed ($\mathcal{P}$) then the likelihood for the entire histogram is given in Eq.~\ref{eqn:gausslike}.
 \begin{equation}
-\mathcal{L} = \prod_{i=1}^{N} \mathcal{G}\left(n_{i}|\mu_{i},\sigma_{i}\right)
+\mathcal{L} = \prod_{i=1}^{N} \mathcal{P}\left(n_{i}|\mu_{i}\right)
 \label{eqn:gausslike}
 \end{equation}
 
-Each systematic uncertainty is modelled as a nuisance parameter in the fit. Normalisation uncertainties are modelled as lognormal nuisance parameters which is generally preferable to using a gaussian nuisance parameter as it is better at modelling multiplicative uncertainties and does not allow the parameter to become negative. The shape uncertainties are modelled using vertical morphing between the three templates; the nominal which has efficiency $\epsilon_{ij}^{0}$, systematic shifted up with efficiency $\epsilon_{ij}^{+}$ and systematic shifted down with efficiency $\epsilon_{ij}^{-}$. Quadratic interpolation is used between the two systematic templates and linear extrapolation beyond that range. The quadratic interpolation is shown in Eq.~\ref{eqn:VerticalMorphing} where morphing parameter $f$ has an Gaussian uncertainty with $\sigma_{f}=1$.
+Each systematic uncertainty is modelled as a nuisance parameter in the fit. Normalisation uncertainties are modelled as lognormal nuisance parameters which is generally preferable to using a gaussian nuisance parameter as lognormal nuisance parameters are better at modelling multiplicative uncertainties and do not allow the parameter to become negative. The shape uncertainties are modelled using vertical morphing between the three templates; the nominal template which has efficiency $\epsilon_{ij}^{0}$, systematic shifted up with efficiency $\epsilon_{ij}^{+}$ and systematic shifted down with efficiency $\epsilon_{ij}^{-}$. Quadratic interpolation is used between the two systematic templates and linear extrapolation beyond that range. The quadratic interpolation is shown in Eq.~\ref{eqn:VerticalMorphing} where morphing parameter $f$ has an Gaussian uncertainty with $\sigma_{f}=1$.
 
 \begin{equation}
-\epsilon_{ij} = \frac{f\left(f-1\right)}{2}\epsilon_{ij}^{-} - \left(f-1\right)\left(f+1\right) \epsilon_{ij}^{0}  \frac{f\left(f+1\right)}{2}\epsilon_{ij}^{+}
+\epsilon_{ij} = \frac{f\left(f-1\right)}{2}\epsilon_{ij}^{-} - \left(f-1\right)\left(f+1\right) + \epsilon_{ij}^{0}  \frac{f\left(f+1\right)}{2}\epsilon_{ij}^{+}
 \label{eqn:VerticalMorphing}
 \end{equation}
 
@@ -439,7 +478,7 @@ From the MLF, the number of background events from each source and the number of
 \subsection{\CLS method}
 
 The procedure used for setting limits on the strength of the signal process is the modified frequentist method known as the \emph{\CLS method}.
-A test statistic, $\tilde{q}$, can be defined to distinguish between the background only (b-only) hypothesis and signal$+$background (s$+$b) hypothesis which includes the \tttt signal in the case of this analysis. The most common test statistic, and the one used by CMS and ATLAS, is the log likelihood ratio defined in Eq.~\ref{eqn:testStat}. The nominal signal strength, $\mu$, can be scaled by some factor and $\hat{\mu}$ is the parameter estimator of the signal strength which maximises the denominator. Equation~\ref{eqn:testStat} has the constraint of $0\geq \hat{\mu}\geq \mu$ to ensure that the signal strength is positive and to guarantee a one-sided confidence interval. $\tilde{q}_{\mu}$ is the test statistic for an underlying model with signal strength $\mu$. $\hat{\mu}$ and $\hat{\theta}$ are the maximum likelihood estimators for the signal strength and for the vector of nuisance parameters.
+A test statistic, $\tilde{q}$, can be defined to distinguish between the background only (b-only) hypothesis and signal$+$background (s$+$b) hypothesis which includes the \tttt signal in the case of this analysis. The most common test statistic, and the one used by CMS and ATLAS, is the log likelihood ratio defined in Eq.~\ref{eqn:testStat}. The nominal signal strength, $\mu$, can be scaled by some factor. $\hat{\mu}$ is the parameter estimator of the signal strength which maximises the denominator. Equation~\ref{eqn:testStat} has the constraint of $0\geq \hat{\mu}\geq \mu$ to ensure that the signal strength is positive and to guarantee a one-sided confidence interval. $\tilde{q}_{\mu}$ is the test statistic for an underlying model with signal strength $\mu$. $\hat{\mu}$ and $\hat{\theta}$ are the maximum likelihood estimators for the signal strength and for the vector of nuisance parameters. The maximum likelihood estimators of $\theta$ for a given signal strength $\mu$ are given by $\hat{\theta}_{\mu}$.
 
 % \begin{equation}
 % \tilde{q}_{\mu} = -2\ln\frac{\mathcal{L}\left(data|s+b\right)}{\mathcal{L}\left(data|s\right)}
@@ -460,21 +499,23 @@ A test statistic, $\tilde{q}$, can be defined to distinguish between the backgro
 
 The value of $p_{s+b}$ denotes the probability of obtaining a value of $\tilde{q}_{\mu}$ which is equal or less likely to happen relative to the $q_{obs}$ given the s+b hypothesis.
 
+Toy Monte Carlo simulation is generated to produce pseudo-data. From this the probability density functions, $f\left(\tilde{q}_{\mu} | \mu, \theta^{obs}_{\mu}   \right)$ and $f\left(\tilde{q}_{\mu} |0, \theta^{obs}_{0}   \right) $ for a signal with strength $\mu$ in the S+B hypothesis and for the background-only hypothesis ($\mu=0$), respectively. The variable $p_{\mu}$ can be defined for S+B hypothesis for a given signal strenght, as shown in Eq.~\ref{eqn:pmu}.
 % \begin{equation}
 % p_{s+b} = \int_{\tilde{q}_{obs}}^{\infty} f\left(\tilde{q} | s+b   \right)_{\mu} d\tilde{q}_{\mu}
 % \end{equation}
 
 \begin{equation}
 p_{\mu} = \int_{\tilde{q}_{\mu}^{obs}}^{\infty} f\left(\tilde{q}_{\mu} | \mu, \theta^{obs}_{\mu}   \right) d\tilde{q}_{\mu}
+\label{eqn:pmu}
 \end{equation}
+
 One can similarly define $p_{b}$, however it is better to look at the definition of $1-p_{b}$ in Eq.~\ref{eqn:minuspb} as this is used in the \CLS definition in Eq.~\ref{eqn:CLS}.
 \begin{equation}
 1-p_{b} = \int_{q_{0}^{obs}}^{\infty} f\left(\tilde{q}_{\mu} |0, \theta^{obs}_{0}   \right) d\tilde{q}_{\mu}
 \label{eqn:minuspb}
 \end{equation}
 
-We can say that our model is excluded with a $\left(1-\alpha \right)$ confidence level (C.L) if $\CLS < \alpha$ for a given signal strength, $\mu$. In this thesis 95\% Confidence Level upper limits are set on four top quark production 
-within the standard model which corresponds to signal strengths which have $\CLS < 0.05$ being excluded.
+It can be said that this model is excluded with a $\left(1-\alpha \right)$ confidence level (C.L) if $\CLS < \alpha$ for a given signal strength, $\mu$. In this thesis 95\% Confidence Level upper limits are set on four top quark production within the standard model which corresponds to signal strengths which have $\CLS < 0.05$ being excluded.
 
 \begin{equation}
 \CLS\left(\mu\right) = \frac{p_{\mu}}{1-p_{b}}
@@ -493,7 +534,8 @@ within the standard model which corresponds to signal strengths which have $\CLS
 % \label{eqn:CLS}
 % \end{equation}
 
-
+\subsubsection{Asymptotic approximation to \CLS method}
+Often the ``Asymptotic \CLS method'' is used instead when there is a large enough number of expected events. In this method, the use of an ensemble of toy MC samples can be avoided and instead replaced by one representative dataset known as the ``Asimov dataset''. In this dataset the expected number of events in each bin exactly matches the observed data. For a Poisson distribution the probability density function is distributed as a $\chi^2$ around the maximum likelihood estimator~\cite{Cowan:2011js}. 
 
 
 
@@ -502,6 +544,9 @@ within the standard model which corresponds to signal strengths which have $\CLS
 \subsection{Categorisation}
 \label{sec:Cats}
 
-Categorising events according to the numbers of jets and b-tags and hence producing more BDT templates to go into the fit allows the main \ttbar background to be constrained in the signal-depleted regions whereas the signal sensitivity will be increased in signal rich and background-depleted regions.
+Categorising events according to the numbers of jets and b-tags allows higher purity categories to be formed in which the signal-to-background ratio is much larger in some bins than it was prior to categorisation The signal sensitivity will be increased in signal rich and background-depleted regions. The main \ttbar background can be constrained in the signal-depleted regions which effectively act as control regions as the background-to-signal ratio is so large. 
+
+
+% Categorising events according to the numbers of jets and b-tags and hence producing more BDT templates to go into the fit allows the main \ttbar background to be constrained in the signal-depleted regions whereas the signal sensitivity will be increased in signal rich and background-depleted regions.
 
 
