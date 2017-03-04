@@ -1,6 +1,27 @@
 \appendix
 
-\chapter{Cross check on Multi-jet background estimation \label{app:MetReliso}}
+\chapter{Additional information on Analysis Chapter~\ref{ref:ana}}
+
+\section{Scale factors ~\label{app:SFs}}
+
+The distributions of the lepton SF, b-tagging CSV SF, PU SF and jet multiplicity modelling scale factor are given for the $\sqrt{s}=13$~TeV analysis in Chapter~\ref{c:Run2}.
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFlepton.png}
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFPU.png}
+    \caption{Lepton SF (left) and PU SF (right).}
+    \label{fig:SFs1}
+\end{figure} 
+
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFbtag.png}
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFalpha.png}
+    \caption{b-tag CSV SF (left) and jet modelling ($\alpha_S$) SF (right).}
+    \label{fig:SFs2}
+\end{figure} 
+
+\section{Cross check on Multi-jet background estimation \label{app:MetReliso}}
 
 % \section{\MET and Reliso}
 
@@ -12,6 +33,120 @@ Figure~\ref{fig:MetReliso} shows that there is no significant correlation betwee
     \label{fig:MetReliso}
 \end{figure} 
 
+\chapter{Cross checks on \runone $\boldsymbol{\tttt}$ analysis at $\boldsymbol{\sqrt{s}=8}$~TeV \label{app:run1}}
+
+\emph{This study was undertaken before the decision was made to split the BDT templates by the \njets categories.}
+
+In the 2012 CMS differential cross-section \ttbar analysis \cite{CMS:TopPt} the \pt spectrum of top quarks tends towards higher values in the \MADGRAPH simulation than it is in data. Scale factors were derived by CMS to compensate for this effect. The analysis was performed with and without the application of the top \pt scale factors and the observed effect was negligible, as seen in Fig.~\ref{fig:studies8}, and hence these scale factors were not applied for the final result and no systematic uncertainty was included.\\
+The uncertainty on the parton distribution functions (PDFs) are a potential source of systematic uncertainty. The method used by CMS to model this effect is given in~\cite{ref:PDFUnc2}. The BDT distributions which correspond to the maximal downward and upward fluctuation due to the uncertainty on the PDFs have a small effect on the shape of the BDT, as seen in Fig.~\ref{fig:studies8}, and are not considered further.\\
+The uncertainty due to the choice of \PYTHIA tune used in the hadronisation of \ttbar events is considered. The nominal tune used is the $Z2^{*}$ tune which is compared to the alternative $P11$ tune~\cite{Khachatryan2011,Field:2011iq}. Again, there is a very small effect on the shape of the BDT, as seen in Fig.~\ref{fig:studies8}, so this uncertainty is not included in the final fit.
+
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.49\textwidth]{images/Run1/ptrw_xcheck.pdf}
+    \includegraphics[width=0.49\textwidth]{images/Run1/NomTune_Mu_Log.pdf}\\
+        \includegraphics[width=0.7\textwidth]{images/Run1/PDF_uncertainty_mu.pdf}
+    \caption{The BDT discriminator distributions of \ttbar simulation with and without the top quark \pt reweighting (top left), \PYTHIA tunes (top right) and PDF uncertainty (bottom).}
+    \label{fig:studies8}
+\end{figure}
+
+\section{Cross-checks on the BDT \label{app:corplotsExc}}
+
+Rankings of the input variables in terms of importance in the BDT are provided in tables \ref{tab:rankingmu} and \ref{tab:rankingel}, respectively.
+
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|c lc |c l p{3cm} |}
+ \hline 
+  Rank &   Variable & Variable Importance \\
+  \hline   
+1 & Jet6Pt   & 1.109e-01  \\
+  \hline  
+2 & HTX          & 1.092e-01 \\ 
+  \hline  
+  3 & MultiTopness          & 1.074e-01  \\
+  \hline  
+  4 & HTRat & 1.058e-01 \\  
+  \hline  
+ 5 & HTb      & 1.003e-01  \\
+  \hline  
+6 & Jet5Pt        & 9.848e-02  \\ 
+  \hline  
+ 7 & HTH  & 9.838e-02   \\
+  \hline  
+ 8 & nJets       & 9.664e-02\\   
+  \hline  
+  9 & SumJetMassX        & 9.266e-02   \\
+  \hline  
+    10 & nTags        & 7.732e-02   \\
+  \hline
+\end{tabular}
+\caption{The rankings of the input variables in terms of importance in the BDT for the $\mu$ + jets channel are provided. }
+\label{tab:rankingmu}
+\end{table}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|c lc |c l p{3cm} |}
+ \hline 
+  Rank &   Variable & Variable Importance \\
+  \hline   
+ 1 & MultiTopness          & 1.201e-01  \\
+  \hline  
+2 & HTRat         & 1.186e-01 \\ 
+  \hline  
+  3 & HTX          & 1.175e-01 \\
+  \hline  
+  4 & HTb        & 1.148e-01 \\  
+  \hline  
+  5 & HTH & 1.142e-01  \\
+  \hline  
+6 & Jet5Pt  & 9.730e-02  \\ 
+  \hline  
+7 & SumJetMassX     & 9.671e-02 \\
+  \hline  
+8 & Jet6Pt       & 8.913e-02\\   
+  \hline  
+  9 & nJets        & 7.319e-02   \\
+  \hline  
+    10 & nTags       & 5.850e-02   \\
+  \hline 
+  
+\end{tabular}
+\caption{The rankings of the input variables in terms of importance in the BDT for the $e$ + jets channel are provided. }
+\label{tab:rankingel}
+\end{table}
+
+
+
+
+\chapter{Further detail on the phenomenological study in Chapter~\ref{c:pheno} \label{app:pheno}}
+
+\section{Signal regions\label{app:pheno1}}
+
+Figure~\ref{fig:SigReg} shows the signal regions defined in Ref.~\cite{Chatrchyan:2013fea}. These search regions are defined for high-\pt (lepton \pt$>$20~GeV) analyses and low-\pt analyses lepton \pt$>$10~GeV), the former of which is used in this thesis for SR28.
+
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=\textwidth]{images/Pheno/SR28.png}
+    \caption{Definition of the signal regions for the high-\pt analysis~\cite{Chatrchyan:2013fea}.}
+    \label{fig:SigReg}
+\end{figure}
+
+Different combinations of these signal regions are used to provide ``broad coverage of strongly produced SUSY particles, including signatures with low hadronic activity as well as signatures involving third-generation squarks''~\cite{Chatrchyan:2013fea}.
+
+\section{Parameterisation of the b-tagging of b-quark jets\label{app:pheno2}}
+
+There is a small bump in the efficiency curve, shown in Fig~\ref{fig:effGraphs} (top-left). This is due to the parameterisation of the curve fitted from data. A polynomial of the form $Ax^3 + Bx^2 + Cx + D$ is used for $\pt<120$~GeV and a linear fit $Ex + F$ is used above that \pt threshold. The matching of these two function is the cause of the small bump in the curve and can also be seen in Ref.~\cite{Chatrchyan:2013fea}.
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.45\textwidth]{images/Pheno/btageffparam.png}
+    \caption{b-tagging efficiency parameters.}
+    \label{fig:btageffparam}
+\end{figure}
+
+The efficiency functions for all efficiencies shown in Fig~\ref{fig:effGraphs} can be found in Ref.~\cite{Chatrchyan:2013fea}.
 
 \chapter{Cross checks on \runtwo $\boldsymbol{\tttt}$ analysis at $\boldsymbol{\sqrt{s}=13}$~TeV}
 
