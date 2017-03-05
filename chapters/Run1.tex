@@ -98,7 +98,7 @@ WW &10M & \PYTHIA 6  & LO \\
 To select \tttt events and suppress background events, a set of criteria are applied to the reconstructed objects in events which are triggered by the single muon or single electron triggers.
 For the muon channel these are:
 \begin{itemize}
-\setlength\itemsep{0em}
+\setlength\itemsep{0em} 
 \item Exactly one tight muon
 \item Exactly zero additional loose muons
 \item Exactly zero loose electrons
@@ -132,7 +132,7 @@ The events for all background and signal samples which pass the baseline event s
 
 % \subsection{Heavy flavour jet modelling}
 
-% There is a discrepancy between data and simulation in the tails of the \fxnote*{show unweighted}{distribution} of the number of b-tagged jets (\nbtags) which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated. The ratio of \heavyflavour was measured by CMS to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.5 \left(\textrm{sys.} \right)\% $ ~\cite{CMS:2014yxa} at $\sqrt{s} =$ 8TeV. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets MC sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg) . Weights are applied to each sub-sample to match the measured ratio whilst preserving the total number of \ttbar events. After this procedure is applied, the agreement between data and simulation in the \nbtags distribution is improved as can be seen in Fig~\ref{fig:datasimnbtags}.
+% There is a discrepancy between data and simulation in the tails of the \fxnote*{show unweighted}{distribution} of the number of b-tagged jets (\nMtags) which suggests that the amount of heavy flavour jets in \ttbar events is incorrectly simulated. The ratio of \heavyflavour was measured by CMS to be $2.2 \pm 0.3 \left( \textrm{stat.} \right) \pm 0.5 \left(\textrm{sys.} \right)\% $ ~\cite{CMS:2014yxa} at $\sqrt{s} =$ 8TeV. To incorporate this ratio into the analysis, the MC truth information of the \ttbar$+$jets MC sample is used to split the sample into \ttbb, \ttcc and \ttll, where l denotes light quarks and gluons (\cPqu, \cPqd, \cPqs, \cPg) . Weights are applied to each sub-sample to match the measured ratio whilst preserving the total number of \ttbar events. After this procedure is applied, the agreement between data and simulation in the \nMtags distribution is improved as can be seen in Fig~\ref{fig:datasimnMtags}.
 
 % \subsection{Lepton modelling}
 % Due to a difference between data and simulation in the efficiency of lepton identification and isolation, a weight is applied to events which is dependent on the selected leptons $\eta$, $\pt$ and lepton flavour.
@@ -237,7 +237,7 @@ HT $\geq$ 400 GeV&  $6278$  &$1.5$  &$35.6$ &$33.2$ &$13.9$ &$134.2$  &$1.0$  &$
 
 % After the baseline event selection, events are weighted using the prescription for pile-up as described in Section~\ref{sec:pile-up}. The weights are applied for b-tagging, the heavy flavour jet modelling and the lepton modelling as described in Section~\ref{sec:run1:baseline}. 
 
-The distributions which show the agreement between data and simulation for \njets, \nbtags, \HT and \MET after these weights are applied are in Figs~\ref{fig:datasimnjets},~\ref{fig:datasimnbtags},~\ref{fig:datasimHT},~\ref{fig:datasimMET}. The scale uncertainty is the largest uncertainty on the background and is shown as a hatched error band on the distributions. The signal (overlaid and multiplied by 100 for visibility) has a different distribution in these variables from the background processes, particularly in the \njets, \nbtags, \HT distributions. This makes them viable candidates to be used in the event-level BDT.
+The distributions which show the agreement between data and simulation for \njets, \nMtags, \HT and \MET after these weights are applied are in Figs~\ref{fig:datasimnjets},~\ref{fig:datasimnMtags},~\ref{fig:datasimHT},~\ref{fig:datasimMET}. The scale uncertainty is the largest uncertainty on the background and is shown as a hatched error band on the distributions. The signal (overlaid and multiplied by 100 for visibility) has a different distribution in these variables from the background processes, particularly in the \njets, \nMtags, \HT distributions. This makes them viable candidates to be used in the event-level BDT.
 
 \begin{figure}[ht!]
 \centering
@@ -249,10 +249,10 @@ The distributions which show the agreement between data and simulation for \njet
 
 \begin{figure}[ht!]
 \centering
-    \includegraphics[width=0.49\textwidth]{images/Run1/figures/NbOfSelectedBJets_mu.pdf}
-     \includegraphics[width=0.49\textwidth]{images/Run1/figures/NbOfSelectedBJets_e.pdf}        
-    \caption{Distribution of \nbtags after selection for $\mu$ + jets (left) and e + jets (right).}
-    \label{fig:datasimnbtags}
+    \includegraphics[width=0.49\textwidth]{images/Run1/btagsmu.pdf}
+     \includegraphics[width=0.49\textwidth]{images/Run1/btagse.pdf}        
+    \caption{Distribution of \nMtags after selection for $\mu$ + jets (left) and e + jets (right).}
+    \label{fig:datasimnMtags}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -457,7 +457,7 @@ The variables chosen for use in the event-level BDT due to their discrimination 
 \item \HTX
 \end{itemize}
 \end{multicols}
-These variables are fully described in section~\ref{sec:MVAtechniques}. All of the variables in Figures~\ref{fig:HTb}-~\ref{fig:6thjetpt} show good agreement between data and simulation and the discriminating power is quite apparent in the distributions of Centrality and \HTrat in Fig.~\ref{fig:centrality} and Fig.~\ref{fig:HTrat}, respectively. Figure~\ref{fig:datasimnbtags} shows the distribution of \nMtags which again shows good agreement between data and simulation and it can be seen that the \tttt signal is more likely to produce events with a higher number of \nMtags than the background due to having four b-quarks in the final state.
+These variables are fully described in section~\ref{sec:MVAtechniques}. All of the variables in Figures~\ref{fig:HTb}-~\ref{fig:6thjetpt} show good agreement between data and simulation and the discriminating power is quite apparent in the distributions of Centrality and \HTrat in Fig.~\ref{fig:centrality} and Fig.~\ref{fig:HTrat}, respectively. Figure~\ref{fig:datasimnMtags} shows the distribution of \nMtags which again shows good agreement between data and simulation and it can be seen that the \tttt signal is more likely to produce events with a higher number of \nMtags than the background due to having four b-quarks in the final state.
 
 
 \begin{figure}[!ht]
@@ -557,11 +557,11 @@ To increase the sensitivity of the analysis, the BDT templates were split into t
 
 \begin{figure}
      \includegraphics[width=\textwidth]{images/Run1/BDTjetsplit8TeV.pdf}          
-    \caption{The BDT discriminator distributions for in exclusive jet bins are shown for the $\mu$ + jets channel (left) and e + jets channel (right).}
+    \caption{The BDT discriminator distributions in exclusive jet bins of \njets$=6$, \njets$=7$ and \njets$\geq8$, are shown for the $\mu$ + jets channel (left) and e + jets channel (right).}
     \label{fig:jetsplitBDT8}
 \end{figure}
 
-\subsection{Results}
+\section{Results}
 
 A simultaneous fit of the three \njets categories is made for the muon channel, the electron channel and a combination of the two. The limits extracted using the \CLS method are shown in Table~\ref{tab:lims}.
 

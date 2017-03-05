@@ -1,26 +1,5 @@
 \appendix
 
-\chapter{Additional information on Analysis Chapter~\ref{ref:ana}}
-
-\section{Scale factors ~\label{app:SFs}}
-
-The distributions of the lepton SF, b-tagging CSV SF, PU SF and jet multiplicity modelling scale factor are given for the $\sqrt{s}=13$~TeV analysis in Chapter~\ref{c:Run2}.
-\begin{figure}[ht]
-\centering
-    \includegraphics[width=0.45\textwidth]{images/Analysis/SFlepton.png}
-    \includegraphics[width=0.45\textwidth]{images/Analysis/SFPU.png}
-    \caption{Lepton SF (left) and PU SF (right).}
-    \label{fig:SFs1}
-\end{figure} 
-
-\begin{figure}[ht]
-\centering
-    \includegraphics[width=0.45\textwidth]{images/Analysis/SFbtag.png}
-    \includegraphics[width=0.45\textwidth]{images/Analysis/SFalpha.png}
-    \caption{b-tag CSV SF (left) and jet modelling ($\alpha_S$) SF (right).}
-    \label{fig:SFs2}
-\end{figure} 
-
 \section{Cross check on Multi-jet background estimation \label{app:MetReliso}}
 
 % \section{\MET and Reliso}
@@ -33,6 +12,8 @@ Figure~\ref{fig:MetReliso} shows that there is no significant correlation betwee
     \label{fig:MetReliso}
 \end{figure} 
 
+
+
 \chapter{Cross checks on \runone $\boldsymbol{\tttt}$ analysis at $\boldsymbol{\sqrt{s}=8}$~TeV \label{app:run1}}
 
 \emph{This study was undertaken before the decision was made to split the BDT templates by the \njets categories.}
@@ -43,9 +24,9 @@ The uncertainty due to the choice of \PYTHIA tune used in the hadronisation of \
 
 \begin{figure}[ht!]
 \centering
-    \includegraphics[width=0.49\textwidth]{images/Run1/ptrw_xcheck.pdf}
-    \includegraphics[width=0.49\textwidth]{images/Run1/NomTune_Mu_Log.pdf}\\
-        \includegraphics[width=0.7\textwidth]{images/Run1/PDF_uncertainty_mu.pdf}
+    \includegraphics[width=0.49\textwidth]{images/Run1/ptrw_xcheck2.pdf}
+    \includegraphics[width=0.49\textwidth]{images/Run1/NomTune_Mu_Log2.pdf}\\
+        \includegraphics[width=0.7\textwidth]{images/Run1/PDF_uncertainty_mu2.pdf}
     \caption{The BDT discriminator distributions of \ttbar simulation with and without the top quark \pt reweighting (top left), \PYTHIA tunes (top right) and PDF uncertainty (bottom).}
     \label{fig:studies8}
 \end{figure}
@@ -135,6 +116,28 @@ Figure~\ref{fig:SigReg} shows the signal regions defined in Ref.~\cite{Chatrchya
 \end{figure}
 
 Different combinations of these signal regions are used to provide ``broad coverage of strongly produced SUSY particles, including signatures with low hadronic activity as well as signatures involving third-generation squarks''~\cite{Chatrchyan:2013fea}.
+
+\chapter{Cross checks on \runtwo $\boldsymbol{\tttt}$ analysis at $\boldsymbol{\sqrt{s}=13}$~TeV \label{app:run1}}
+
+\section{Scale factors ~\label{app:SFs}}
+
+The distributions of the lepton SF, b-tagging CSV SF, PU SF and jet multiplicity modelling scale factor are given for the $\sqrt{s}=13$~TeV analysis in Chapter~\ref{c:Run2}.
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFlepton.png}
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFPU.png}
+    \caption{Lepton SF (left) and PU SF (right).}
+    \label{fig:SFs1}
+\end{figure} 
+
+\begin{figure}[ht]
+\centering
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFbtag.png}
+    \includegraphics[width=0.45\textwidth]{images/Analysis/SFalpha.png}
+    \caption{b-tag CSV SF (left) and jet modelling ($\alpha_S$) SF (right).}
+    \label{fig:SFs2}
+\end{figure} 
+
 
 \section{Parameterisation of the b-tagging of b-quark jets\label{app:pheno2}}
 
@@ -230,49 +233,49 @@ It can be seen from Table~\ref{tab:BDTalgos} that the difference between includi
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets3nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets3nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 6 \njets and 3\nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 6 \njets and 3\nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents63}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets4nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets4nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 6 \njets and $\geq4$ \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 6 \njets and $\geq4$ \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents64}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets2nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets2nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 2 \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 2 \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents72}
  \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets3nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets3nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 3 \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 7 \njets and 3 \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents73}
  \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets4nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents7nJets4nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 7 \njets and $\geq4$ \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (right) are shown for the 7 \njets and $\geq4$ \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents74}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets2nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets2nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets and 2 \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets and 2 \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents82}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets3nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets3nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets category and 3 \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the 8 \njets category and 3 \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents83}
 \end{figure}
 
@@ -280,14 +283,14 @@ It can be seen from Table~\ref{tab:BDTalgos} that the difference between includi
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets4nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents8nJets4nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right) are shown for the 8 \njets and $\geq4$ \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right) are shown for the 8 \njets and $\geq4$ \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents84}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets2nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets2nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the $\geq9$ \njets  and 2 \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the $\geq9$ \njets  and 2 \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents92}
 \end{figure}
 

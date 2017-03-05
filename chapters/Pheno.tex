@@ -28,7 +28,7 @@ The effective Lagrangian in Eq.~\ref{eq:SingleSgluLag} represents the sgluon cou
  + {\rm h.c.} 
 \label{eq:SingleSgluLag}\end{equation}
 
-The dimensionless coupling of the sgluons to gluons is represented by ${a_g}$, which is a suppressed by the theory cutoff scale $\Lambda$. The coupling of the sgluon to the top quark is denoted by $\ourat^L$ and  $\ourat^R$ for the left-handed and right-handed couplings. In the fundamental representation, $d_a{}^{bc}$ is the symmetric structure constant and $P_{L}~(P_{R})$ is the left (right) parity projection operator. The generators of SU(3) are $T_a$.
+The dimensionless coupling of the sgluons to gluons is represented by ${a_g}$, which is suppressed by the theory cutoff scale $\Lambda$. The coupling of the sgluon to the top quark is denoted by $\ourat^L$ and  $\ourat^R$ for the left-handed and right-handed couplings. In the fundamental representation, $d_a{}^{bc}$ is the symmetric structure constant and $P_{L}~(P_{R})$ is the left (right) parity projection operator. The generators of SU(3) are $T_a$.
 Although sgluons can, in theory, couple via flavour-changing-neutral currents to different quark flavours, we only consider the interactions with top quarks which conserve flavour. This is motivated by R-symmetric supersymmetry with minimal flavour violation where only interactions of sgluons with top quarks and gluons are non-negligible.
 
 In this model sgluons are top-philic, ie. they are only allowed to decay to \ttbar or to two gluons. This is consistent with the class II scenarios in Ref.~\cite{Calvet:2012rk}, which gives the following benchmark values for the couplings and theory cut-off scale:
@@ -109,11 +109,11 @@ The efficiency for obtaining one same-sign dilepton pair in an event, $\varepsil
 \label{eqn:al1}
 \end{equation}
 
-From the derived efficiencies for obtaining a specific \HT and \MET per event as well as $\geq2$~b tags and $\geq1$~SS dilepton pair, an overall event weight can be calculated using equation~\ref{eqn:phenoWeights}.
+From the derived efficiencies for obtaining a specific \HT and \MET per event as well as $\geq2$~b tags and $\geq1$~SS dilepton pair, an overall event weight can be calculated using equation~\ref{eqn:phenoWeights}. These parameterisations were designed to be multiplicative.
 
 \begin{equation} \label{eqn:phenoWeights}
   w_{\rm event} = \varepsilon_{H_T} \times  \varepsilon_{\MET} \times
-    \varepsilon_{\geq\text{2b-tags}} \times \varepsilon_{\geq1 \text{SS2L}} \ ,
+    \varepsilon_{\geq\text{2b-tags}} \times \varepsilon_{\geq1 \text{SS2L}} 
 \end{equation}
 
 \section{Simulation of sgluon events \label{sec:sgluonSim}}
@@ -126,7 +126,7 @@ Sgluon events were simulated for a number of sgluon mass points, $m_{S}$, betwee
 \section{Analysis \label{sec:sgluonAna}}
 
 The \MADAN framework~\cite{Conte2013222} is used to perform the analysis, including event selection and the application of the efficiency model using Eq.~\ref{eqn:phenoWeights}. As the efficiency functions are provided in Ref.~\cite{Chatrchyan:2013fea} which map GEN-level quantities, such as \HT and \MET, to RECO-level, it is not necessary to perform a detector simulation.
-Using Eq.~\ref{eqn:phenoWeights} one can obtain the fraction of events which pass the selection and hence the signal efficiency for each sgluon ($m_{S},\alpha_{t}$) point. The number of sgluon events, $n^{S}_{events}$, which would be found in the same-sign analysis are obtained using Eq.~\ref{eqn:equivEvents}, where $\varepsilon\left(m_{S},\alpha_{t}\right)$ is the signal efficiency, $\sigma\left(m_{S},\alpha_{t}\right)$ is the cross section and $K_{NLO}\left(m_{S},\alpha_{t}\right)$ is a factor for the ratio of the NLO to LO cross section for that mass and coupling point. The luminosity, $\mathcal{L}$, is taken from the analysis to be 19.6~\fbinv. Rather than running the analysis in \MADAN for every coupling point, $\alpha_{t}$, a nominal coupling can be provided and the program will produce weights, $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right)$ for each alternative coupling, where $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right) = 1$ for the nominal case. This is possible as the cross section will scale with $\alpha_{t}^{4}$ and reduces computing time.
+Using Eq.~\ref{eqn:phenoWeights} one can obtain the fraction of events which pass the selection and hence the signal efficiency for each sgluon ($m_{S},\alpha_{t}$) point. The number of sgluon events, $n^{S}_{events}$, which would be found in the same-sign analysis are obtained using Eq.~\ref{eqn:equivEvents}, where $\varepsilon\left(m_{S},\alpha_{t}\right)$ is the signal efficiency, $\sigma\left(m_{S},\alpha_{t}\right)$ is the cross section and $K_{NLO}\left(m_{S},\alpha_{t}\right)$ is a factor for the ratio of the NLO to LO cross section for that mass and coupling point. The luminosity, $\mathcal{L}$, is taken from the analysis to be 19.6~\fbinv. Rather than running the analysis in \MADAN for every coupling point, $\alpha_{t}$, a nominal coupling can be provided and the program will produce weights, $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right)$ for each alternative coupling, where $F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right) = 1$ for the nominal case. This is possible as the cross section will scale with $\alpha_{t}^{4}$ and it reduces computing time.
 \begin{equation}
 n^{S}_{events}\left(m_{S},\alpha_{t}\right) = \varepsilon\left(m_{S},\alpha_{t}\right)\times \sigma\left(m_{S},\alpha_{t}\right) \times K_{NLO}\left(m_{S},\alpha_{t}\right) \times \mathcal{L}\times F^{\alpha_{t}}\left(m_{S},\alpha_{t}\right)
 \label{eqn:equivEvents}

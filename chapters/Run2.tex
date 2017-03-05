@@ -1,15 +1,15 @@
 \chapter{Search for standard model~\tttt production in \runtwo at $\sqrt{s} =$~13~TeV \label{c:Run2}}
 \section{Introduction}
-In this chapter, an analysis of the 2015 CMS data set with 2.6~\fbinv of data is presented where the SM production of four top quarks (\tttt) is sought in pp collisions at $\sqrt{s} =$~13~TeV. SM \tttt production has a cross section of $\sigmattttSM \approx 9.2$ fb at NLO with NNLO corrections~\cite{Alwall2014,Bevilacqua2012}. The focus of this chapter is on the single lepton channel where only the $\mu$ + jets and e + jets final states are considered. The combination of this analysis with an opposite-sign dilepton analysis and a same-sign dilepton analysis is discussed in Section~\ref{sec:combo13}.
+In this chapter, an analysis of the 2015 CMS data set with 2.6~\fbinv of data is presented where the SM production of four top quarks (\tttt) is sought in pp collisions at $\sqrt{s} =$~13~TeV. The SM production of \tttt has a cross section at $\sqrt{s} =$~13~TeV of $\sigmattttSM \approx 9.2$ fb at NLO with NNLO corrections~\cite{Alwall2014,Bevilacqua2012}. The focus of this chapter is on the single lepton channel where only the $\mu$ + jets and e + jets final states are considered. The combination of this analysis with an opposite-sign dilepton analysis and a same-sign dilepton analysis is discussed in Section~\ref{sec:combo13}.
 
 All sections apart from the training of the hadronic top quark reconstruction in Section~\ref{sec:topContent13} are the author's personal contribution to the analysis.
 
 \section{Data and Simulation}
 \label{sec:datasimulation13}
 This analysis uses data from proton-proton collisions at the CMS experiment in 2015 at $\sqrt{s}=13$~TeV.
-Data were collected using a trigger based on the presence of at least one muon (electron) candidate with $\pt > $~18~(23)~GeV for the muon (electron) channel and correspond to an integrated luminosity of 2.6~\fbinv .
+Data were collected using a trigger based on the presence of at least one muon (electron) candidate with $\pt > $~18~(23)~GeV for the muon (electron) channel. These data sets have an integrated luminosity of 2.6~\fbinv .
 % The full 2012 SingleElectron dataset is used for the electron channel, which requires an electron candidate with $\pt > $ 27 GeV and corresponds to an integrated luminosity of 19.7 \fbinv.
-The signal SM \tttt MC samples and the background MC samples are given in Table~\ref{tab:datasets_sim_13tev}, along with the MC generator used to produce these samples, the order at which they were produced and the number of events produced. MC samples were produced for the some systematic uncertainties, which can be found in Table~\ref{tab:datasets_sys_13tev}. In this analysis the ME scale and PS scale are treated as separate uncertainties.
+The signal SM \tttt MC samples and the background MC samples are given in Table~\ref{tab:datasets_sim_13tev}, along with the MC generator used to produce these samples, the order at which they were produced and the number of events produced. MC samples were produced for some systematic uncertainties, which can be found in Table~\ref{tab:datasets_sys_13tev}. In this analysis the ME scale and PS scale are treated as separate uncertainties.
 
 \begin{table}[ht!]
 % \tiny
@@ -68,11 +68,11 @@ TTJets & 5M & \MADGRAPH\aMCATNLO~FxFx & NLO \\
   \label{tab:datasets_sys_13tev}
 \end{table}
 
-Comparisons of the alternative \ttbar samples used for the \ttbar generator systematics can be found in Appendix~\ref{app:ttbargen}. Studies of the \ttW, \ttZ and \ttH backgrounds can be found in Appendix~\ref{app:TTX}, where merging these backgrounds into the main \ttbar sample is motivated (indicated on the plots as \ttbar+X).
+Comparisons of the alternative \ttbar samples used for the \ttbar generator systematics can be found in Appendix~\ref{app:ttbargen}. Studies of the \ttW, \ttZ and \ttH backgrounds can be found in Appendix~\ref{app:TTX}, where merging these backgrounds into the main \ttbar sample is motivated (indicated on the figures as \ttbar+X).
 
 \section{Baseline Event Selection}
 \label{sec:baseline13}
-The set of criteria applied to the reconstructed objects in events, to preferentially select \tttt events and suppress background events, is detailed below. The exact definition of these objects are described in Chapter~\ref{c:recon}.
+The set of criteria applied to the reconstructed objects in events to preferentially select \tttt events and suppress background events is detailed below. The exact definition of these objects is given in Chapter~\ref{c:recon}.
 
 For the muon channel these are:
 \begin{itemize}
@@ -99,68 +99,60 @@ All corrections are described in Section~\ref{sec:Calibrations}. The PU correcti
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.67\textwidth]{images/Run2/PU_StackLogY.pdf}
+\includegraphics[width=0.59\textwidth]{images/Run2/PU_StackLogY.pdf}
 \end{center}
 \caption{The number of primary vertices for data and simulation after application of PU corrections for $\mu$ + jets.}
 \label{fig:PUReWeight13}
 \end{figure}
 
-The method in Section~\ref{subsec:method2btag} was used to derive the b tagging scale factors. Figures~\ref{fig:csvJet3SF} and~\ref{fig:csvJet4SF} show the affect of applying the b-tagging scale factor to correct the CSV discriminator distributions and it can be seen that the agreement between data and simulation has been improved.
+The method in Section~\ref{subsec:method2btag} was used to derive the b tagging scale factors on a per-event basis. Figures~\ref{fig:csvJet3SF} and~\ref{fig:csvJet4SF} show the effect of applying the b-tagging scale factor to correct the CSV discriminator distributions. It can be seen that the agreement between data and simulation has been improved.
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/csvJet3_StackLogY_noSF.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/csvJet4_StackLogY_noSF.pdf}
-    \caption{ The third-highest and fourth-highest ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel before b-tagging corrections, left and right respectively.}
+    \caption{ The third-highest (left) and fourth-highest (right) ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel before b-tagging corrections.}
     \label{fig:csvJet3SF}
 \end{figure}
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/csvJet3_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/csvJet4_StackLogY.pdf}
-    \caption{The third-highest and fourth-highest ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel after b-tagging corrections, left and right respectively.}
+    \caption{The third-highest (left) and fourth-highest (right) ranked CSV jet distributions for data and simulation in the $\mu$ + jets channel after b-tagging corrections.}
     \label{fig:csvJet4SF}
 \end{figure}
  
 
 The jet multiplicity modelling from Section~\ref{subsec:alphaS}, which corrects the MC to correspond to the best tune of $\alpha_S$ in simulation, was applied. It can be seen from Figs.~\ref{fig:withAlpha} and~\ref{fig:withoutAlpha} that the jet multiplicity modelling is greatly improved by applying this correction.
 
-\begin{figure}[ht!]
+\begin{figure}[]
     \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY_woAlphaS.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY_e_woAlphaS.pdf}
     \caption{The \njets distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) without jet multiplicity modelling scale factors applied.}
     \label{fig:withoutAlpha}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[]
     \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/nJets_StackLogY_e.pdf}
     \caption{The \njets distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) with jet multiplicity modelling scale factors applied.}
     \label{fig:withAlpha}
 \end{figure}
-
-
-The scale factors applied for the heavy flavour modelling are described in Section~\ref{ttbbmod}. The distributions for the \nMtags are shown with and without the heavy flavour modelling scale factors applied. It is not obvious that there is a significant improvement in the \nMtags after the scale factors have been applied but the heavy flavour fraction is allowed to float as a shape nuisance parameter in the template fit.
-
-\begin{figure}[ht!]
+\begin{figure}[]
     \includegraphics[width=0.47\textwidth]{images/Run2/nMtags_StackLogY_HF_wo_reweight.pdf} 
     \includegraphics[width=0.47\textwidth]{images/Run2/nMtags_StackLogY_HF_w_reweight.pdf} 
-    \caption{\nMtags are shown for the muon channel with heavy flavour reweighting (right) and without(left).}
+    \caption{\nMtags are shown for the muon channel with heavy flavour reweighting (right) and without(right).}
     \label{fig:HF_reweight}
 \end{figure}
 
-\clearpage
-
+The scale factors applied for the heavy flavour modelling are described in Section~\ref{ttbbmod}. The distributions for the \nMtags are shown with and without the heavy flavour modelling scale factors applied. It is not obvious that there is a significant improvement in the \nMtags distribution after the scale factors have been applied. However, the heavy flavour fraction is allowed to float as a shape nuisance parameter in the template fit.
 \section{Effect of selection requirements \label{cutflow13}}
-
-The event counts, weighted by each correction factor in MC, are given after each selection requirement for $\mu$ + jets in Table~\ref{tab:museltable} and e + jets in Table~\ref{tab:eseltable}.
+The event counts, which are weighted by each correction factor in simulation, are given after each selection requirement for $\mu$ + jets in Table~\ref{tab:museltable} and e + jets in Table~\ref{tab:eseltable}.
 % In tables~\ref{tab:museltable} and~\ref{tab:eseltable}, the numbers of data events selected and the weighted number of simulated events expected after each step of the $\mu$ + jets and e + jets baseline selections are detailed respectively. 
 Small discrepancies between the initial simulated events in each table are due to different lepton scale factors being applied in each case.
-After the baseline selection has been applied the \ttbar component represents $\approx 97\%$ of the background samples combined. The ttbb and ttll/ttcc components of the main \ttbar sample are also given in the tables. \ttZ and \ttW have been merged into TTV for the tables.
+After the baseline selection has been applied the \ttbar component represents $\approx 97\%$ of the number of events combined across all background samples. The ttbb and ttll/ttcc components of the main \ttbar sample are also given in the tables. \ttZ and \ttW have been merged into TTV for the tables.
 Note that these studies were performed when method 1 from Section~\ref{subsec:method1btag} was used for b-tagging before the analysis was updated to using method 2 from Section~\ref{subsec:method2btag}.
 
 \begin{table}[ht!]
 \small
-\caption{Number of events after successive selection requirements in the $\mu$ + jets channel ($\mathcal{L}=2.6~\fb$)}
-\label{tab:museltable}
 \centering
 \begin{tabular}{c|cccccccc|cc}
 
@@ -171,9 +163,11 @@ Note that these studies were performed when method 1 from Section~\ref{subsec:me
 \hline
 \tiny initial&       \tiny 85493692     & \tiny 24.83  & \tiny 90650       & \tiny 16047092   & \tiny 164877974  & \tiny 751.39 & \tiny 1310 & \tiny 2129712 &      \tiny    104490.21       & \tiny 2025221.86     \\
 
-\tiny Is Good PV&    \tiny 85162369     & \tiny 24.82  & \tiny 90614       & \tiny 15965470   & \tiny 164144695  & \tiny 751.11 & \tiny 1309.5 & \tiny 2128929 &    \tiny   104462.79       & \tiny 2024466.92   \\
+% \tiny Is Good PV&    \tiny 85162369     & \tiny 24.82  & \tiny 90614       & \tiny 15965470   & \tiny 164144695  & \tiny 751.11 & \tiny 1309.5 & \tiny 2128929 &    \tiny   104462.79       & \tiny 2024466.92   \\
 
 \tiny Trigger&        \tiny55410616     & \tiny 6.66   & \tiny 14609       & \tiny 3878887    & \tiny 27271551   & \tiny 112.68 & \tiny 371 & \tiny 327184 &       \tiny   15017.71        & \tiny 312166.40     \\
+
+
 
 \tiny Exactly 1 mu&  \tiny 21066450     & \tiny 4.57   & \tiny 11204       & \tiny 1573769    & \tiny 18270602   & \tiny 82.65  & \tiny 248 & \tiny 243848  &  \tiny   11164.52        & \tiny 232684.31    \\
 
@@ -188,13 +182,13 @@ Note that these studies were performed when method 1 from Section~\ref{subsec:me
 
 \hline
 \end{tabular}
+\caption{Number of expected and observed events after successive selection requirements in the $\mu$ + jets channel ($\mathcal{L}=2.6~\fb$).}
+\label{tab:museltable}
 \end{table}
 
 %\begin{landscape}
 \begin{table}[ht!]
 \small
-\caption{Number of events after successive selection requirements in the e + jets channel ($\mathcal{L}=2.6~\fb$)} %(2.6 \fbinv of int. lumi.)}
-\label{tab:eseltable}
 \centering
 \begin{tabular}{c|cccccccc|cc}
 \hline
@@ -203,7 +197,7 @@ Note that these studies were performed when method 1 from Section~\ref{subsec:me
 \hline
 \tiny initial& \tiny         124817372    & \tiny 24.85  & \tiny 90654.24       & \tiny 16064098    & \tiny 165066697   & \tiny 751.61 & \tiny 1311 & \tiny 2130186  &    \tiny    104478.04       & \tiny 2025708.35   \\
 
-\tiny Is Good PV& \tiny      124485606    & \tiny 24.85  & \tiny 90617.89       & \tiny 15982367    & \tiny 164331394   & \tiny 751.32 & \tiny 1310  & \tiny 2129403 &   \tiny  104450.58       & \tiny 2024952.90      \\
+% \tiny Is Good PV& \tiny      124485606    & \tiny 24.85  & \tiny 90617.89       & \tiny 15982367    & \tiny 164331394   & \tiny 751.32 & \tiny 1310  & \tiny 2129403 &   \tiny  104450.58       & \tiny 2024952.90      \\
 
 \tiny Trigger& \tiny         110109139    & \tiny 5.72   & \tiny 12032.47       & \tiny 3197556     & \tiny 20048189    & \tiny 93.63  & \tiny 327.3 & \tiny 265851  &   \tiny     12262.32        & \tiny 253589.27      \\
 
@@ -219,6 +213,9 @@ Note that these studies were performed when method 1 from Section~\ref{subsec:me
 
 \hline
 \end{tabular}
+\caption{Number of expected and observed events after successive selection requirements in the e + jets channel ($\mathcal{L}=2.6~\fb$).} %(2.6 \fbinv of int. lumi.)}
+\label{tab:eseltable}
+
 \end{table}
 
 \section{Control distributions between data and simulation}
@@ -227,7 +224,7 @@ Distributions are shown for HTb, \HTrat, $p_{\textrm{T trijet1}}$, \nLtags, \nTt
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/HTb_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/HTb_StackLogY_e.pdf}
-    \caption{The HTb distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+    \caption{The HTb distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
     \label{fig:HTB}
 \end{figure}
 
@@ -235,7 +232,7 @@ Distributions are shown for HTb, \HTrat, $p_{\textrm{T trijet1}}$, \nLtags, \nTt
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/HTRat_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/HTRat_StackLogY_e.pdf}
-    \caption{The \HTrat distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+    \caption{The \HTrat distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
     \label{fig:HTRat}
 \end{figure}
 
@@ -244,7 +241,7 @@ Distributions are shown for HTb, \HTrat, $p_{\textrm{T trijet1}}$, \nLtags, \nTt
 % \begin{figure}[ht!]
 %     \includegraphics[width=0.48\textwidth]{images/Run2/LeadingBJetPt_StackLogY.pdf}
 %     \includegraphics[width=0.48\textwidth]{images/Run2/LeadingBJetPt_StackLogY.pdf}
-%     \caption{The \leadbpt distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+%     \caption{The \leadbpt distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
 %     \label{fig:LeadingBJetPt}
 % \end{figure}
 
@@ -252,7 +249,7 @@ Distributions are shown for HTb, \HTrat, $p_{\textrm{T trijet1}}$, \nLtags, \nTt
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/bestTopPt_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/bestTopPt_StackLogY_e.pdf}
-    \caption{The $p_{\textrm{T trijet1}}$ distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+    \caption{The $p_{\textrm{T trijet1}}$ distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
     \label{fig:bestTopPt}
 \end{figure}
    
@@ -260,28 +257,28 @@ Distributions are shown for HTb, \HTrat, $p_{\textrm{T trijet1}}$, \nLtags, \nTt
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/nLtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/nLtags_StackLogY_e.pdf}
-    \caption{The \nLtags distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+    \caption{The \nLtags distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
     \label{fig:nLtagsInc}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/nTtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/nTtags_StackLogY_e.pdf}
-    \caption{The \nTtags distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+    \caption{The \nTtags distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
     \label{fig:nTtagsInc}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/SumJetMassX_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/SumJetMassX_StackLogY_e.pdf}
-    \caption{The \redhadmass distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+    \caption{The \redhadmass distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
     \label{fig:SumJetMassX}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/HTX_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/HTX_StackLogY_e.pdf}
-    \caption{The \HTX distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left).}
+    \caption{The \HTX distributions for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right).}
     \label{fig:HTX}
 \end{figure} 
 
@@ -300,11 +297,11 @@ It can be seen in Section~\ref{cutflow13} that the \ttbar background is three or
 
 \subsection{Hadronic top quark content}
 \label{sec:topContent13}
-The hadronic top quark reconstruction, which is described in Section~\ref{sec:topreco}, is now discussed.
-
-As the \antikt algorithm cannot resolve jets which have $\Delta R = \sqrt{  \eta^{2} + \phi^{2} } < 0.4$, a hadronically decaying top quark can only be deemed \emph{reconstructible} if the minimal $\Delta R$ between all three jets is $> 0.4$ which happens $> 98\%$ of the time in \ttbar and \tttt simulation when studying the decay products of the top quarks.\\
+The hadronic top quark reconstruction is fully described in Section~\ref{sec:topreco}.\\
+As the \antikt algorithm cannot resolve jets which have $\Delta R = \sqrt{  \eta^{2} + \phi^{2} } < 0.4$, a hadronically decaying top quark can only be deemed \emph{reconstructible} if the minimal $\Delta R$ between all three jets is $> 0.4$. This happens $> 98\%$ of the time in \ttbar and \tttt simulation when studying the decay products of the top quarks.\\
  % leptons and partons, and pairs of partons.\\
-The BDT training was performed on 273~K \ttbar events. The input variables to the hadronic top quark reconstruction BDT are shown in Fig.~\ref{fig:TrijetBDTInputFeatures13}. The separation power for each of these variables and for the output BDT discriminator distribution in Fig.~\ref{fig:TrijetBDTOutput13} is evident as in the \runone studies in Chapter~\ref{c:Run1}. 
+The BDT training was performed on 273,000 \ttbar events. The input variables to the hadronic top quark reconstruction BDT are shown in Fig.~\ref{fig:TrijetBDTInputFeatures13}. The separation power for each of these variables and for the output BDT discriminator distribution in Fig.~\ref{fig:TrijetBDTOutput13} is eviden.
+ % as in the \runone studies in Chapter~\ref{c:Run1}. 
 
 \begin{figure}[ht!]
 \centering
@@ -370,7 +367,7 @@ The reduced variables formed from the reduced event, where the jets from the hig
 
 
 \subsection{Event activity and b-jet content variables chosen for the event-level BDT}
-The following variables were chosen for their discrimination power within the event-level BDT and were previously described in Section~\ref{sec:Strategy}. It should be noted that the third-highest CSV and fourth-highest CSV values can be used in the $\sqrt{s} = 13$~TeV analysis as the CSV distributions have been corrected by the modelling in Section~\ref{subsec:method2btag}.
+The following variables were chosen for their discrimination power within the event-level BDT. The details are described in Section~\ref{sec:Strategy}. It should be noted that the third-highest CSV and fourth-highest CSV values can be used in the $\sqrt{s} = 13$~TeV analysis as the CSV distributions have been corrected by the modelling in Section~\ref{subsec:method2btag}.
 
 
 \begin{multicols}{2}
@@ -388,9 +385,9 @@ The following variables were chosen for their discrimination power within the ev
 
 \end{multicols}
 
-\subsection{Event-level BDT}
-A \ttbar sample and a \tttt sample are provided to the TMVA package to train and test the performance of the event-level BDT using the AdaBoost boosting algorithm~\cite{FREUND1997119}. The \MADGRAPH\aMCATNLO \tttt sample was used with all negative weights set to one in the training. The gradient boosting algorithm~\cite{mason1999boosting} can be used with negative weights, hence it was used to verify that the inclusion of negative weights had negligible impact on the final limit compared to set all weights to unity (See Appendix~\ref{app:gradBoost}). Ultimately the AdaBoost algorithm produced a stronger expected limit on the \tttt cross section than the gradient boosting algorithm with the negative weights set to one so it was the algorithm of choice for this analysis. The jet modelling scale factor weight from Section~\ref{subsec:alphaS} is supplied to the BDT as it is important to correct the mismodelling of the most powerful variable input into the BDT.\\
-The separation of the input variables, before any boost weights are applied, is shown in Fig.~\ref{fig:BDTInputVars} and the ranking of the variables in terms of variable importance are shown for the muon channel in Table~\ref{tab:BDTrankings}. The variables \njets, third-highest CSV and \htrat are the highest ranked variables and their discriminating power is evident in their initial separation power. The lowest ranked variable is \leadleppt, which is also seen in Fig.~\ref{fig:BDTInputVars} to have poor separation power initially. However it still enhances the discrimination power of the BDT to include the \leadleppt variable and it is preferable to have at least one leptonic variable in the list of input variables rather than all hadronic variables.
+\subsection{Event-level BDT ~\label{sec:ELBDT13}}
+A \ttbar sample and a \tttt sample are provided to the TMVA package to train and test the performance of the event-level BDT using the AdaBoost boosting algorithm~\cite{FREUND1997119}. The \MADGRAPH\aMCATNLO \tttt sample was used with all negative weights set to one in the training. The gradient boosting algorithm~\cite{mason1999boosting} can be used with negative weights, hence it was used to verify that the inclusion of negative weights had negligible impact on the final limit compared to setting all weights to unity (See Appendix~\ref{app:gradBoost}). Ultimately the AdaBoost algorithm produced a stronger expected limit on the \tttt cross section than the gradient boosting algorithm with the negative weights set to one. Therefore, it was the algorithm of choice for this analysis. The jet modelling scale factor weight from Section~\ref{subsec:alphaS} is supplied to the BDT as it is important to correct the mismodelling of the most powerful variable input into the BDT.\\
+The separation of the input variables, before any boost weights are applied, is shown in Fig.~\ref{fig:BDTInputVars} and the ranking of the variables in terms of variable importance are shown for the muon channel in Table~\ref{tab:BDTrankings}. The variables \njets, third-highest CSV and \htrat are the highest ranked variables and their discriminating power is evident in their initial separation as seen in Fig.~\ref{fig:BDTInputVars}. The lowest ranked variable is \leadleppt, which is also seen in Fig.~\ref{fig:BDTInputVars} to have poor separation power initially. However it still enhances the discrimination power of the BDT to include the \leadleppt variable and it is preferable to have at least one leptonic variable in the list of input variables rather than all hadronic variables.
 
 \begin{figure}[h!]
     \includegraphics[width=\textwidth]{images/Run2/variables_id_c1_ELBDT13.pdf}\\
@@ -422,41 +419,41 @@ Rank & Variable & Importance \\
   \end{table}
 
 The output discriminator value for the event level BDT is split into \njets categories of 6, 7, 8 and $\geq$9 jets . Further to the \runone analysis in Chapter~\ref{c:Run1}, the distributions are also split into \nMtags categories of 2, 3 and $\geq$4 b-tags which further categorises the distributions into regions which are more sensitive to the signal and regions which are better for constraining the background.
-The output BDT plots are shown for the $\njets=6$ and $\nMtags=2$ category in Fig.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}, which has a large background to signal ratio. Comparatively in the $\njets=6$ and $\nMtags=3$ category and $\njets=6$ and $\nMtags\geq4$ category, in Figs.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents93} and~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94} respectively, it can be seen that the background contribution is a lot smaller and there is better separation between signal and background. The other BDT categories can be found in Appendix~\ref{app:BDTtemp}.
+The output BDT distributions are shown for the $\njets=6$ and $\nMtags=2$ category in Fig.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}, which has a large ratio of background to signal. Comparatively in the $\njets=6$ and $\nMtags=3$ category and $\njets=6$ and $\nMtags\geq4$ category, in Figs.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents93} and~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94} respectively, it can be seen that the background contribution is two orders of magnitude smaller and there is better separation between signal and background. The other BDT categories can be found in Appendix~\ref{app:BDTtemp}.
  % in Figs.~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}~-~\ref{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94}. It can be seen that the signal becomes more separated from the background in the higher \njets and \nMtags categories as it moves towards higher BDT discriminator values.
 The lower \njets and \nMtags categories are still included as they can be used to help to constrain the \ttbar background. These categories act like control regions due to the very large background to signal ratio. 
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets2nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents6nJets2nMtags_StackLogY.pdf} 
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 6 \njets and 2\nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and e + jets channel (left) are shown for the 6 \njets and 2\nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents62}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets3nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets3nMtags_StackLogY.pdf}
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the $\geq9$ \njets  and 3 \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (left) are shown for the $\geq9$ \njets  and 3 \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents93}
 \end{figure}
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets4nMtags_StackLogY.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/BDT_El29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents9nJets4nMtags_StackLogY.pdf}    
-    \caption{The BDT output distributions for AdaBoost for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right) are shown for the $\geq9$ \njets and $\geq4$ \nMtags category.}
+    \caption{The BDT output distributions for the Event-level BDT for data and simulation in the $\mu$ + jets channel (left) and $e$ + jets channel (right) are shown for the $\geq9$ \njets and $\geq4$ \nMtags category.}
     \label{fig:BDT_Mu29Aug400trees_5MinNodeSize_20nCuts_3MaxDepth_5adaboostbeta_adaBoost_alphaSTune_noMinEvents94}
 \end{figure}
 
 \subsubsection{Stability of the event-level BDT}
 
-The BDT was seen to be very stable with respect to changes in the number of trees used and to the minimum number of events required at a node for further splitting to occur. The impact on the final expected limit was negligible when changing these BDT hyperparameters. Training was also performed in jet categories of 6-7 jets and $\geq$8 jets separately to study whether a separate training in the $\geq8$ jets category would improve the power of the BDT to separate \ttbar and \tttt events in a signal-rich region. However the expected limit derived from this alternative training was not enhanced with respect to the inclusive training in all jet categories. The most significant improvement in the expected limit comes from optimising the \njets and \nMtags categories. Further categorisation into higher \njets and \nMtags categories improves the expected limit however these categories become very statistically limited with 2.6~\fbinv of data.
+The BDT was seen to be very stable with respect to changes in the number of trees used and to the minimum number of events required at a node for further splitting to occur. The impact on the final expected limit was negligible when changing these BDT hyperparameters. Training was also performed in jet categories of 6-7 jets and $\geq$8 jets separately to study whether a separate training in the $\geq8$ jets category would improve the power of the BDT to separate \ttbar and \tttt events in a signal-rich region. However, the expected limit derived from this alternative training was not enhanced with respect to the inclusive training in all jet categories. The most significant improvement in the expected limit comes from optimising the \njets and \nMtags categories. Further categorisation into higher \njets and \nMtags categories improves the expected limit. However, these categories become very statistically limited with 2.6~\fbinv of data.
 
 \subsubsection{Correlation matrices for BDT input variables}
 
 % The correlation matrices for signal and background are shown in Fig.~\ref{fig:corrMat}. The largest correlation exists between \njetsw and \redhadmass. This is not surprising as \njetsw takes into account the weight of jets above a pt threshold and \redhadmass is the invariant mass of the reduced event. Many high pt jets in an event will correspond to a larger value of \redhadmass. 
 % Correlated variables are handled well within a BDT and that was one of the reasons for the choice of this type of multivariate algorithm. The correlation matrices were used at an earlier stage in the analysis to assess what variables were very highly correlated and could be removed from the input BDT variables as they would serve little use within the BDT.
 
-Figure~\ref{fig:corrMat} shows the correlation matrices for the input BDT variables for the background \ttbar (left) and signal \tttt (right). It can be seen that the most highly correlated variables are \njetsw and \redhadmass. This correlation arises from the fact that the \njetsw variable weights events by the \pt of jets and more additional higher-\pt jets will lead to a larger value of \redhadmass. BDTs are effective at handling correlated variables and this was one reason for the chosen of using this multivariate algorithm.
+Figure~\ref{fig:corrMat} shows the correlation matrices for the input BDT variables for the background \ttbar (left) and signal \tttt (right). It can be seen that the most highly correlated variables are \njetsw and \redhadmass. This correlation arises from the fact that the \njetsw variable is weighted with respect to the \pt of the jets in the event and more additional higher-\pt jets will lead to a larger value of \redhadmass. BDTs are effective at handling correlated variables and this was one reason for the choice of using this multivariate algorithm.
 
 \begin{figure}[ht!]
     \includegraphics[width=0.48\textwidth]{images/Run2/CorrelationMatrixB.pdf}
@@ -465,14 +462,14 @@ Figure~\ref{fig:corrMat} shows the correlation matrices for the input BDT variab
     \label{fig:corrMat}
 \end{figure}
 
-Correlation matrices were used when choosing which variables to include in the final set which was used to train the BDT for this analysis. Highly correlated variables were removed as they are largely superfluous.
+Correlation matrices were used when choosing which variables to include in the final set used to train the BDT for this analysis. Variables which were highly correlated variables in both signal and background were removed as they are largely superfluous.
 
 \subsubsection{Overtraining tests}
 
-Figure~\ref{fig:ROC} shows the BDT distribution from training and testing (left) and the associated ROC curve for this training. The training sample is shown as a filled histogram and the testing sample is shown as overlaid data points for the signal \tttt (blue) and background \ttbar for red. It can be seen that there is good agreement between the training and testing samples with Kolmogorov-Smirnov values of 0.159 for background and 0.998 for signal. This suggest that the BDT has not been overtrained.
+Figure~\ref{fig:ROC} shows the BDT distribution from training and testing (left) and the associated ROC\footnote{Receiver Operating Characteristic curve: Illustrates the performance of a binary classifier as its discrimination threshold is varied.} curve for this training. The training sample is shown as a filled histogram and the testing sample is shown as overlaid data points for the signal \tttt (blue) and background \ttbar (red). It can be seen that there is good agreement between the training and testing samples with Kolmogorov-Smirnov values of 0.159 for background and 0.998 for signal. This suggests that the BDT has not been overtrained.
 
 \begin{figure}
-    \includegraphics[width=0.48\textwidth]{images/Run2/overtrain_BDT.pdf}
+    \includegraphics[width=0.48\textwidth]{images/Run2/overtrain_BDTEL.pdf}
     \includegraphics[width=0.48\textwidth]{images/Run2/rejBvsS.pdf}
     \caption{The over-training test for the BDT (left) and the rejection of background \ttbar (red) vs signal \tttt (blue) (right).}
     \label{fig:ROC}
@@ -491,17 +488,17 @@ The uncertainty on the main background of \ttbar is ${}^{+2.5\%}_{-3.4\%}$ renor
 \item \textbf{Lepton SF}\\
 The lepton SF is applied to all backgrounds. The uncertainty on these SFs is 1.3$\%$ in muon channel and 3.6$\%$ in electron channel
 \item \textbf{Matrix Element Factorisation and renormalisation scales}\\
-Weights are available in the \ttbar and \tttt samples which correspond to the factorisation and renormalisation scale $\left(\mu_{f},~\mu_{s}\right)$ being individually varied through 1/2u, u and 2u, where u represents the central value. This gives nine weights however the extreme unphysical values of (1/2u, 1/2u) and (2u, 2u) are not included. Applying these weights individually gives six alternative event-level BDT histograms to the central histogram, which uses (u,u). 
-\item \textbf{Parton Shower Factorisation and renormalisation scales}\\
-The effect of the parton showering (PS) scale in the \PYTHIA~8 generator is evaluated by using alternative \ttbar samples with the PS scale (u$_{PS}$) varied by 2u$_{PS}$, 1/2u$_{PS}$. This shift in the PS scale is equivalent to modifying the value of $\alpha_{S}$ hence the alternative parton shower histogram shapes have been inflated by a factor of 1.5 relative to the nominal template to take into account the uncertainty on the jet multiplicity modelling.
+Weights are available in the \ttbar and \tttt samples which correspond to the factorisation and renormalisation scale $\left(\mu_{f},~\mu_{s}\right)$ being individually varied through 1/2u, u and 2u, where u represents the central value. This gives nine weights. However, the extreme unphysical values of (1/2u, 1/2u) and (2u, 2u) are not included. Applying these weights individually gives six alternative event-level BDT histograms to the central histogram, which uses (u,u). 
+\item \textbf{Parton Shower Factorisation and Renormalisation Scales}\\
+The effect of the parton showering (PS) scale in the \PYTHIA~8 generator is evaluated by using alternative \ttbar samples with the PS scale (u$_{PS}$) varied by 2u$_{PS}$, 1/2u$_{PS}$. This shift in the PS scale is equivalent to modifying the value of $\alpha_{S}$, hence the alternative parton shower histogram shapes have been inflated by a factor of 1.5 relative to the nominal template to take into account the uncertainty on the jet multiplicity modelling.
 \item \textbf{\ttbar generator}\\
-The \POWHEG generator was used to produce the nominal \ttbar sample for this analysis. The dependence of the generator can be estimated by running the analysis with the \MLM and \MADGRAPH\aMCATNLO~FxFx \ttbar samples. A symmetric envelope is formed around the nominal by symmetrising the difference in event counts in each bin between the alternative and nominal samples. The \MLM sample was found to produce the most conservative uncertainty for this effect and so it was used to produce the symmetric up and down histograms.
+The \POWHEG generator was used to produce the nominal \ttbar sample for this analysis. The dependence of the generator can be estimated by running the analysis with the \MLM and \MADGRAPH\aMCATNLO~FxFx \ttbar samples. A symmetric envelope is formed around the nominal template by symmetrising the difference in event counts in each bin between the alternative and nominal samples. The \MLM sample was found to produce the most conservative uncertainty for this effect and so it was used to produce the symmetric up and down histograms.
 \item \textbf{JES}\\
 The JES uncertainty is derived by varying the JES by $\pm1\sigma$ for the \ttbar and \tttt samples.
 \item \textbf{JER}\\
 The JER uncertainty is derived by varying the smearing by $\pm1\sigma$ for the \ttbar and \tttt samples.
 \item \textbf{b tagging}\\
-As detailed in Section~\ref{sec:Calibrations13}, the difference between b-tagging efficiency in data and simulation is accounted for by the application of scale factors to simulated events via an event weighting procedure. This is the event weighting procedure was developed for Ref.~\cite{CMS-PAS-HIG-16-004}, details of which are documented here~\cite{CMS-NOTE-2013-130}. Given the significant uncertainty on these scale factors and that the CSV distributions are input variables to the BDT algorithm, a significant systematic effect is expected. Light flavour contamination, `lf', and linear statistical and quadratic statistical fluctuations, `hfstats1' and `hfstats2', are applied to heavy flavour jets. Heavy flavour contamination, `hf', and linear statistical and quadratic statistical fluctuations, `lfstats1' and `lfstats2', are applied to light flavour jets. Linear and quadratic uncertainties, `cferr1' and `cferr2', are applied to charm flavour jets. A b-tagging JES systematic is applied to light and heavy flavour jets when the standard jet energy scale systematics are applied and hence it is incorporated into the alternative JES systematic shapes. The b-tagging systematic is studied for the \ttbar and \tttt samples.
+As detailed in Section~\ref{sec:Calibrations13}, the difference between b-tagging efficiency in data and simulation is accounted for by the application of scale factors to simulated events via an event weighting procedure. This event weighting procedure was developed for Ref.~\cite{CMS-PAS-HIG-16-004}, details of which are documented here~\cite{CMS-NOTE-2013-130}. Given the significant uncertainty on these scale factors and that the CSV distributions are input variables to the BDT algorithm, a significant systematic effect is expected. Light flavour contamination, `lf', and linear statistical and quadratic statistical fluctuations, `hfstats1' and `hfstats2', are applied to heavy flavour jets. Heavy flavour contamination, `hf', and linear statistical and quadratic statistical fluctuations, `lfstats1' and `lfstats2', are applied to light flavour jets. Linear and quadratic uncertainties, `cferr1' and `cferr2', are applied to charm flavour jets. A b-tagging JES systematic is applied to light and heavy flavour jets when the standard jet energy scale systematics are applied and hence it is incorporated into the alternative JES systematic shapes. The b-tagging systematic is studied for the \ttbar and \tttt samples.
 \item \textbf{Pile up}\\
 The PU systematic uncertainty is found by varying the MinBias cross section by $\pm5\%$ and is applied to the \ttbar and \tttt samples.
 \item \textbf{\heavyflavourone / \heavyflavourtwo modelling}
@@ -537,7 +534,7 @@ The combined expected limit is $147.2^{+90}_{-51}$~fb and the observed limit is 
 
 \subsubsection{Nuisance parameters}
 
-Figure~\ref{fig:datanuis} shows the variation of the post-fit nuisance parameters, $\theta$, with respect to their pre-fit values. As all of the parameters have not shifted outside of the pre-fit uncertainty, the number of uncertainties and their modelling is deduced to be appropriate for modelling the data. It can be seen that both the \ttbar ME scale uncertainty and the PS scale, denoted \emph{ttMEScale} and \emph{scaleH} respectively on the plot, have much smaller post-fit uncertainties with respect to their pre-fit uncertainties which suggests that they were larger than necessary.
+Figure~\ref{fig:datanuis} shows the variation of the post-fit nuisance parameters, $\theta$, with respect to their pre-fit values. As all of the parameters have not shifted outside of the pre-fit uncertainty, the number of uncertainties and their modelling is deduced to be appropriate for modelling the data. It can be seen that both the \ttbar ME scale uncertainty and the PS scale, denoted \emph{ttMEScale} and \emph{scaleH} respectively on the figure, have much smaller post-fit uncertainties with respect to their pre-fit uncertainties which suggests that they were larger than necessary.
 
 \begin{figure}[h!]
 \begin{center}
@@ -702,9 +699,9 @@ Further studies of the expected limit with each systematic removed can be found 
 
 \section{Combination with OS dilepton channel and SS dilepton channel ~\label{sec:combo13}}
 
-The sensitivity of the search for standard model four top quark production can be improved by combining with other search channels. An opposite-sign (OS) search was developed in parallel with the single lepton channel study described in this chapter~\cite{CMS-PAS-TOP-16-016}. The analysis selects events which contain any combination of $\mu^{+}\mu^{-}$, $\mu^{\pm} e^{\mp}$, $e^{+}e^{-}$. It uses the same hadronic top quark reconstruction as in Section~\ref{sec:topContent13} to identify the BDT value for highest-ranked top quark candidate, $BDT_{trijet1}$. This variable is fed into the event-level BDT along with other variables based on the event-topology, event activity and b-jet content. A simultaneous fit was made using the BDT histogram templates described above for the single lepton channel and the BDT histogram templates (which are split only in \njets categories due to statistical limitations) from the dilepton channel. All systematic uncertainties apart from the lepton scale factors were treated as correlated. The results of this fit can be found in Table~\ref{tab:limits_combined} in the row labelled \emph{Combined (single lepton and OS dilepton)}. It is clear that the OS dilepton channel alone is not as sensitive as the single lepton channel, which is due in part to it having a smaller branching ratio, however its combination with the single lepton channel improves the overall sensitivity.\\
+The sensitivity of the search for standard model four top quark production can be improved by combining with other search channels. An opposite-sign (OS) search was developed in parallel with the single lepton channel study described in this chapter~\cite{CMS-PAS-TOP-16-016}. The analysis selects events which contain any combination of $\mu^{+}\mu^{-}$, $\mu^{\pm} e^{\mp}$, $e^{+}e^{-}$. It uses the same hadronic top quark reconstruction as in Section~\ref{sec:topContent13} to identify the BDT value for highest-ranked top quark candidate, $BDT_{trijet1}$. This variable is fed into the event-level BDT along with other variables based on the event-topology, event activity and b-jet content. A simultaneous fit was performed using the BDT histogram templates described above for the single lepton channel and the BDT histogram templates (which are split only in \njets categories due to statistical limitations) from the dilepton channel. All systematic uncertainties apart from the lepton scale factors were treated as correlated. The results of this fit can be found in Table~\ref{tab:limits_combined} in the row labelled \emph{Combined (single lepton and OS dilepton)}. It is clear that the OS dilepton channel alone is not as sensitive as the single lepton channel, which is due in part to it having a smaller branching ratio. However, its combination with the single lepton channel improves the overall sensitivity.\\
 
-The analysis was then further combined with a search for new physics in events with same-sign (SS) dileptons which places limits on the SM production of four top quarks~\cite{Khachatryan:2016kod}. This search benefits from very low numbers of events from background processes which gives rise to its good signal sensitivity. The luminosity, JES and PU systematic uncertainties were treated as correlated between the SS dilepton channel and the other two channels. The uncertainty in response of the CMS trigger system to events containing dileptons is also treated as correlated between the two dilepton analyses, whilst all other systematic uncertainties were treated as fully uncorrelated between the SS dilepton analysis and the other two search channels. The combination of all channels is listed in Table~\ref{tab:limits_combined} where it can be seen that this gives a significant improvement in the expected limit compared to any individual channel.
+The analysis was then further combined with a search for new physics in events with same-sign (SS) dileptons which places limits on the SM production of four top quarks~\cite{Khachatryan:2016kod}. This search benefits from very low numbers of events from background processes which gives rise to its good signal sensitivity. The luminosity, JES and PU systematic uncertainties were treated as correlated between the SS dilepton channel and the other two channels. The uncertainty in response of the CMS trigger system to events containing dileptons is also treated as correlated between the two dilepton analyses, whilst all other systematic uncertainties were treated as fully uncorrelated between the SS dilepton analysis and the other two search channels. The combination of all channels is listed in Table~\ref{tab:limits_combined}. It can be seen that this gives a significant improvement in the expected limit compared to any individual channel.
 
 \clearpage
 
@@ -735,12 +732,12 @@ The analysis was then further combined with a search for new physics in events w
 \section{Summary and conclusion}
 \label{sec:summary13}
 
-The SM production of four top quarks at $\sqrt{s} =$~13~TeV has been studied with 2.6~\fbinv of data from the 2015 CMS dataset. In the absence of an excess, limits were placed on the SM cross section, which is 9.2~fb. The single lepton channel was primarily studied in the $\mu$ + jets and e + jets final states. Baseline selection requirements were implemented to suppress backgrounds and select the signal \tttt process. Good agreement was observed between the simulation and data in many variables after corrections were applied to the events. BDTs were employed to reconstruct hadronically decaying top quarks and then to increase the separation of the signal and background processes using several discriminating variables including those formed from the hadronic top quark BDT. Many tests were performed to check the performance of the BDTs, that it didn't suffer from overtraining and was stable with respect to changing hyperparameters. Categorisation of the histograms going into the template fit was optimised to enhance the sensitivity of the analysis and hence reduce the expected limit. The limit set on the SM production of four top quarks is $16.0^{+9.8}_{-5.5}\times \sigmattttSM$ expected and $16.8\times \sigmattttSM$ observed which equates to $147.2^{+90}_{-51}$ expected and 154.6 fb observed.
+The SM production of four top quarks at $\sqrt{s} =$~13~TeV has been studied with 2.6~\fbinv of data from the 2015 CMS dataset. In the absence of an excess, limits were placed on the SM cross section, which is 9.2~fb. The single lepton channel was primarily studied in the $\mu$ + jets and e + jets final states. Baseline selection requirements were implemented to suppress backgrounds and select the signal \tttt process. Good agreement was observed between the simulation and data in many variables after corrections were applied to the events. BDTs were employed to reconstruct hadronically decaying top quarks and then to increase the separation of the signal and background processes using several discriminating variables including those formed from the hadronic top quark BDT. Many tests were performed to check the performance of the BDTs, that it wasn't overtrained and was stable with respect to changing the hyperparameters. Categorisation of the histograms used in the template fit was optimised to enhance the sensitivity of the analysis and hence reduce the expected limit. The limit set on the SM production of four top quarks is $16.0^{+9.8}_{-5.5}\times \sigmattttSM$ expected and $16.8\times \sigmattttSM$ observed which equates to $147.2^{+90}_{-51}$~fb expected and 154.6 fb observed.
 
 \section{Discussion of other searches for \tttt production studies at $\sqrt{s} =$~13~TeV}
 \label{sec:ATLASresult13}
 
-There are a number of searches for the production of four top quarks at $\sqrt{s}=13$~TeV in the single lepton, opposite-sign dilepton and same-sign dilepton channels, and at both the CMS and ATLAS experiments. A summary of the results is given in Table~\ref{tab:CmsAtlasSum} including three CMS analyses in three different channels using the 2015 CMS dataset and a combination of those results as discussed in Section~\ref{sec:combo13}. The table also includes two different ATLAS searches, ATLAS-CONF-2016-013 and ATLAS-CONF-2016-020, which place limits on four-top-quark production in the single lepton channel using the 2015 ATLAS dataset of 3.2~\fbinv. ATLAS-CONF-2016-104 is a progression from ATLAS-CONF-2016-013 that uses the 2015 and 2016 ATLAS datasets using a total of 13.2~\fbinv. Finally there is a same-sign dilepton search by ATLAS which uses the 2015 ATLAS dataset with 3.2~\fbinv also.
+There are a number of searches for the production of four top quarks at $\sqrt{s}=13$~TeV in the single lepton, opposite-sign dilepton and same-sign dilepton channels, at both the CMS and ATLAS experiments. A summary of the results is given in Table~\ref{tab:CmsAtlasSum} including three CMS analyses in three different channels using the 2015 CMS dataset and a combination of those results as discussed in Section~\ref{sec:combo13}. The table also includes two different ATLAS searches, ATLAS-CONF-2016-013 and ATLAS-CONF-2016-020, which place limits on four-top-quark production in the single lepton channel using the 2015 ATLAS dataset of 3.2~\fbinv. ATLAS-CONF-2016-104 is a progression from ATLAS-CONF-2016-013 that uses the 2015 and 2016 ATLAS datasets using a total of 13.2~\fbinv. Finally there is a same-sign dilepton search by ATLAS which uses the 2015 ATLAS dataset with 3.2~\fbinv.
 
 Of all the analyses the same-sign dilepton searches are the most sensitive. 
 ATLAS-CONF-2016-020 is more sensitive than ATLAS-CONF-2016-013 as it categorises into more jet and b-tag categories. There is a significant reduction in the limit between ATLAS-CONF-2016-013 and ATLAS-CONF-2016-140 of $\approx 40\%$ by using four times more data. The results, between searches in the same channels in CMS and ATLAS are compatible with each other within the systematic errors. Overall the CMS combination has the strongest limit on four-top-quark production so far of 66~fb (69$^{+37}_{-23}$~fb) observed (expected).
